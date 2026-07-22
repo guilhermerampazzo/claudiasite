@@ -575,10 +575,23 @@ button {
   gap: 20px;
 }
 
-.header-preview img {
+.header-brand-preview {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.header-brand-preview img:first-child {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.header-brand-preview img:last-child {
   width: auto;
   max-width: min(270px, 65%);
-  height: 52px;
+  height: 42px;
   object-fit: contain;
   object-position: left center;
 }
