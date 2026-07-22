@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Persianas sob medida — Casa Estampa Interiores</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --fendi: #c2a57a; --mustard: #c8960c; --dark: #1e1608;
+  --charcoal: #2e2410; --charcoal2: #3a2e16; --off-dark: #463820;
+  --text-light: #f5eed8; --text-muted: #a89370; --wa: #25D366;
+  --pad: clamp(20px, 5vw, 80px);
+}
+body { background: var(--dark); color: var(--text-light); font-family: 'Montserrat', sans-serif; font-weight: 300; }
+a { text-decoration: none; }
+button { border: none; background: none; cursor: pointer; font-family: inherit; }
+
+/* ── NAVBAR ── */
+.navbar {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; gap: 32px;
+  padding: 0 var(--pad); height: 64px;
+  background: rgba(30,22,8,0.96); backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(194,165,122,0.1);
+}
+.navbar-logo { display: flex; align-items: center; gap: 10px; margin-right: auto; }
+.navbar-logo img { height: 36px; width: auto; }
+.logo-name { font-family: 'Italiana', serif; font-size: 18px; color: var(--text-light); letter-spacing: 1px; }
+.logo-tag { font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: var(--fendi); margin-top: -2px; }
+.navbar-nav { display: flex; gap: 28px; list-style: none; }
+.navbar-nav a { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; }
+.navbar-nav a:hover, .navbar-nav a.active { color: var(--fendi); }
+.navbar-wa {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--wa); color: #fff; padding: 8px 16px;
+  font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+  transition: background 0.2s;
+}
+.navbar-wa:hover { background: #1fb155; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 480px; display: flex; align-items: center;
+  padding: 80px var(--pad) 80px;
+  background: linear-gradient(135deg, var(--dark) 60%, var(--charcoal) 100%);
+  position: relative; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+  font-family: 'Italiana', serif; font-size: clamp(100px, 18vw, 220px);
+  color: rgba(194,165,122,0.04); line-height: 1; pointer-events: none; user-select: none;
+}
+.eyebrow {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--fendi);
+  margin-bottom: 20px;
+}
+.eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--mustard); }
+.hero-h {
+  font-family: 'Italiana', serif;
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 400; line-height: 1.1; margin-bottom: 20px;
+}
+.hero-h .destaque { display: block; color: var(--fendi); }
+.hero-sub-italic { font-family: 'Playfair Display', serif; font-style: italic; font-size: 18px; color: var(--text-muted); margin-bottom: 14px; }
+.hero-desc { font-size: 17px; color: var(--text-muted); font-weight: 300; max-width: 520px; line-height: 1.7; margin-bottom: 36px; }
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-wa {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--wa); color: #fff; padding: 14px 28px;
+  font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+  transition: background 0.2s;
+}
+.btn-wa:hover { background: #1fb155; }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid rgba(194,165,122,0.3); color: var(--fendi); padding: 14px 28px;
+  font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
+  transition: border-color 0.2s;
+}
+.btn-ghost:hover { border-color: var(--fendi); }
+.btn-mustard {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--mustard); color: #fff; padding: 14px 28px;
+  font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+  transition: background 0.2s;
+}
+.btn-mustard:hover { background: #a87a0a; }
+
+/* ── COMMON ── */
+.section-title {
+  font-family: 'Playfair Display', serif; font-size: clamp(26px, 4vw, 42px);
+  font-weight: 400; color: var(--text-light); line-height: 1.2;
+}
+.section-title em { color: var(--fendi); font-style: italic; }
+.rule { width: 48px; height: 2px; background: var(--mustard); margin-top: 16px; }
+
+/* ── MODELOS DE PERSIANA ── */
+.modelos { background: var(--charcoal); padding: 80px var(--pad) 60px; }
+.persiana-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 6px; margin-top: 40px;
+}
+.persiana-card {
+  background: var(--charcoal2); overflow: hidden;
+  border: 1px solid rgba(194,165,122,0.06); transition: border-color 0.25s;
+  display: flex; flex-direction: column;
+}
+.persiana-card:hover { border-color: rgba(194,165,122,0.25); }
+.persiana-fotos {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2px; height: 180px;
+}
+.persiana-foto {
+  background: var(--off-dark);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 4px; position: relative; overflow: hidden;
+}
+.persiana-foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.persiana-foto i { font-size: 24px; color: rgba(194,165,122,0.18); }
+.persiana-foto span { font-size: 7px; letter-spacing: 1px; text-transform: uppercase; color: rgba(194,165,122,0.2); }
+.persiana-info { padding: 16px 16px 0; flex: 1; }
+.persiana-nome {
+  font-family: 'Playfair Display', serif; font-size: 13px; font-weight: 700;
+  color: var(--text-muted); margin-bottom: 4px; line-height: 1.2;
+  display: flex; flex-direction: column; text-transform: uppercase; letter-spacing: 1px;
+}
+.persiana-sub {
+  font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700;
+  color: var(--text-light); line-height: 1.2; text-transform: none; letter-spacing: 0;
+}
+.persiana-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; line-height: 1.6; padding-bottom: 14px; margin-top: 8px; }
+.persiana-btn {
+  width: 100%; background: var(--wa); color: #fff;
+  font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 10px; text-align: center;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  text-decoration: none; transition: background 0.2s; font-family: 'Montserrat', sans-serif; font-weight: 600;
+  margin-top: auto;
+}
+.persiana-btn:hover { background: #1fb155; }
+
+/* ── FABRICANTES ── */
+.fabricantes { background: var(--dark); padding: 80px var(--pad); }
+.fab-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 6px; margin-top: 40px;
+}
+.fab-card {
+  background: var(--charcoal2); overflow: hidden;
+  border: 1px solid rgba(194,165,122,0.06); transition: border-color 0.25s;
+}
+.fab-card:hover { border-color: rgba(194,165,122,0.25); }
+.fab-thumb {
+  height: 140px; background: var(--off-dark);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 8px;
+}
+.fab-thumb i { font-size: 32px; color: rgba(194,165,122,0.18); }
+.fab-thumb span { font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: rgba(194,165,122,0.2); }
+.fab-info { padding: 16px; }
+.fab-nome { font-family: 'Italiana', serif; font-size: 22px; color: var(--text-light); margin-bottom: 6px; }
+.fab-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; line-height: 1.6; }
+.fab-btn {
+  width: 100%; background: transparent; color: var(--fendi);
+  font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 10px; text-align: center;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  border-top: 1px solid rgba(194,165,122,0.12);
+  text-decoration: none; font-family: 'Montserrat', sans-serif; font-weight: 600;
+  transition: background 0.2s;
+}
+.fab-btn:hover { background: rgba(194,165,122,0.06); }
+
+/* ── POR QUE ESCOLHER ── */
+.porque { background: var(--charcoal2); padding: 80px var(--pad); }
+.porque-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 40px;
+}
+.porque-card {
+  background: var(--charcoal); padding: 24px 20px;
+  border-left: 3px solid transparent; transition: all 0.25s;
+}
+.porque-card:hover { border-left-color: var(--mustard); background: var(--off-dark); }
+.porque-icon { font-size: 22px; color: var(--fendi); margin-bottom: 12px; display: block; }
+.porque-title { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: var(--text-light); margin-bottom: 6px; }
+.porque-desc { font-size: 13px; color: var(--text-muted); font-weight: 300; line-height: 1.7; }
+
+/* ── PARA QUEM ── */
+.para-quem { background: var(--charcoal); padding: 80px var(--pad); }
+.pq-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 40px; }
+.pq-card { background: var(--charcoal2); padding: 40px 36px; }
+.pq-eyebrow { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--mustard); margin-bottom: 12px; }
+.pq-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--text-light); margin-bottom: 16px; line-height: 1.3; }
+.pq-desc { font-size: 14px; color: var(--text-muted); font-weight: 300; line-height: 1.8; margin-bottom: 24px; }
+
+/* ── MOTORIZADAS ── */
+.motorizadas { background: var(--dark); padding: 80px var(--pad); }
+.mot-videos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 40px; }
+.mot-video-ph {
+  background: var(--off-dark); height: 200px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+  border: 1px solid rgba(194,165,122,0.06);
+}
+.mot-video-ph i { font-size: 36px; color: rgba(194,165,122,0.18); }
+.mot-video-ph span { font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: rgba(194,165,122,0.2); }
+.mot-desc { font-size: 15px; color: var(--text-muted); font-weight: 300; line-height: 1.8; max-width: 640px; margin: 32px auto 32px; text-align: center; }
+
+/* ── GALERIA ── */
+.galeria { background: var(--charcoal2); padding: 80px 0; }
+.galeria .gal-header { padding: 0 var(--pad) 48px; }
+.gal-track-wrap { overflow: hidden; cursor: grab; }
+.gal-track {
+  display: flex; gap: 10px; overflow-x: auto; scroll-behavior: auto;
+  scrollbar-width: none; -ms-overflow-style: none; padding: 0 var(--pad);
+  user-select: none;
+}
+.gal-track::-webkit-scrollbar { display: none; }
+.gal-slide {
+  flex: 0 0 auto; width: 220px; height: 280px;
+  background: var(--off-dark); position: relative; overflow: hidden;
+}
+.gal-slide.wide { width: 320px; }
+.gal-slide-ph {
+  width: 100%; height: 100%; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 8px;
+}
+.gal-slide-ph i { font-size: 24px; color: rgba(194,165,122,0.18); }
+.gal-slide-ph span { font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: rgba(194,165,122,0.2); }
+.gal-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 8px 12px; font-size: 10px; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--fendi);
+  background: linear-gradient(to top, rgba(30,22,8,0.85), transparent);
+}
+.gal-cta { display: flex; align-items: center; gap: 16px; padding: 32px var(--pad) 0; flex-wrap: wrap; }
+.gal-nav { display: flex; gap: 4px; margin-left: auto; }
+.gal-arrow {
+  width: 36px; height: 36px; background: var(--off-dark);
+  border: 1px solid rgba(194,165,122,0.2); color: var(--fendi);
+  font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+.gal-arrow:hover { background: var(--charcoal2); }
+
+/* ── COMO FUNCIONA ── */
+.como-funciona { background: var(--charcoal); padding: 80px var(--pad); }
+.steps { display: flex; gap: 0; margin-top: 48px; flex-wrap: wrap; }
+.step { flex: 1; min-width: 160px; padding: 0 24px; position: relative; }
+.step:not(:first-child)::before {
+  content: ''; position: absolute; left: 0; top: 20px;
+  width: 1px; height: 40px; background: rgba(194,165,122,0.2);
+}
+.step-num {
+  font-family: 'Italiana', serif; font-size: 48px; color: var(--mustard);
+  line-height: 1; margin-bottom: 8px; opacity: 0.75;
+}
+.step-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: var(--text-light); margin-bottom: 6px; }
+.step-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; line-height: 1.6; }
+
+/* ── CTA FINAL ── */
+.cta-final { background: var(--charcoal2); padding: 80px var(--pad); text-align: center; }
+.cta-title { font-family: 'Italiana', serif; font-size: clamp(28px, 5vw, 52px); color: var(--text-light); margin-bottom: 12px; }
+.cta-sub { font-size: 15px; color: var(--text-muted); font-weight: 300; margin-bottom: 36px; }
+.cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.cta-opt { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.cta-opt-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); }
+
+/* ── FAQ ── */
+.faq { background: var(--dark); padding: 80px var(--pad); }
+.faq-list { margin-top: 40px; }
+.faq-item { border-bottom: 1px solid rgba(194,165,122,0.1); }
+.faq-q {
+  width: 100%; text-align: left; padding: 18px 0;
+  font-size: 14px; font-weight: 500; color: var(--text-light);
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  font-family: 'Montserrat', sans-serif; cursor: pointer; transition: color 0.2s;
+}
+.faq-q:hover { color: var(--fendi); }
+.faq-q i { font-size: 16px; color: var(--fendi); flex-shrink: 0; transition: transform 0.3s; }
+.faq-a {
+  font-size: 13px; color: var(--text-muted); font-weight: 300; line-height: 1.8;
+  max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.3s;
+}
+.faq-item.open .faq-a { max-height: 300px; padding-bottom: 18px; }
+.faq-item.open .faq-q i { transform: rotate(45deg); }
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--dark); padding: 32px var(--pad);
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid rgba(194,165,122,0.08);
+}
+.footer-logo { display: flex; align-items: center; gap: 10px; }
+.footer-logo img { height: 32px; width: auto; }
+.footer-name { font-family: 'Italiana', serif; font-size: 16px; color: var(--text-light); }
+.footer-sub { font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: var(--fendi); }
+
+/* ── WA FLOAT ── */
+.wa-float {
+  position: fixed; bottom: 28px; right: 28px; z-index: 200;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--wa); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+  text-decoration: none; transition: transform 0.2s, background 0.2s;
+}
+.wa-float:hover { background: #1fb155; transform: scale(1.08); }
+.wa-float i { font-size: 28px; }
+</style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar">
+  <a href="https://casaestampa.com" class="navbar-logo">
+    <img src="https://casaestampa.com/wp-content/uploads/2022/09/Logo-Original-Fundo-Transparente.png" alt="Casa Estampa" onerror="this.style.display='none'" />
+    <div>
+      <div class="logo-name">Casa Estampa</div>
+      <div class="logo-tag">Interiores</div>
+    </div>
+  </a>
+  <ul class="navbar-nav">
+    <li><a href="#">Papéis de Parede</a></li>
+    <li><a href="#">Cortinas</a></li>
+    <li><a href="#" class="active">Persianas</a></li>
+    <li><a href="#">Pisos</a></li>
+    <li><a href="#">Arquitetos</a></li>
+  </ul>
+  <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá, Casa Estampa! Estou no site e quero ajuda para escolher persianas." class="navbar-wa">
+    <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Falar agora
+  </a>
+</nav>
+
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg">PERSIANA</div>
+  <div style="position:relative;z-index:2;">
+    <div class="eyebrow">Feitas sob medida</div>
+    <h1 class="hero-h">
+      <span class="destaque">Persianas sob medida</span>
+    </h1>
+    <p class="hero-desc">Encontre o modelo ideal para o seu ambiente — com medição técnica, fabricação sob medida e instalação especializada.</p>
+    <div class="hero-btns">
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Quero solicitar um orçamento de persianas." class="btn-wa">
+        <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Solicitar orçamento
+      </a>
+      <a href="#modelos" class="btn-ghost">Ver modelos ↓</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ MODELOS ══ -->
+<section class="modelos" id="modelos">
+  <div class="eyebrow">Modelos disponíveis</div>
+  <h2 class="section-title">Encontre o modelo <em>ideal para você</em></h2>
+  <div class="rule"></div>
+  <p style="font-size:14px;color:var(--text-muted);font-weight:300;margin-top:16px;">Clique em qualquer modelo para falar com nossa equipe e receber seu orçamento.</p>
+
+  <div class="persiana-grid">
+
+    <div class="persiana-card">
+      <div class="persiana-fotos">
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+      </div>
+      <div class="persiana-info">
+        <div class="persiana-nome">Persiana<span class="persiana-sub">Rolo</span></div>
+        <div class="persiana-desc">Minimalista, funcional e extremamente versátil. Adapta-se a diferentes estilos, oferecendo controle de luz, privacidade e visual limpo.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse na persiana rolo. Quero um orçamento." class="persiana-btn"><i class="ti ti-brand-whatsapp"></i> Quero essa</a>
+    </div>
+
+    <div class="persiana-card">
+      <div class="persiana-fotos">
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+      </div>
+      <div class="persiana-info">
+        <div class="persiana-nome">Persiana<span class="persiana-sub">Romana</span></div>
+        <div class="persiana-desc">Sofisticada e acolhedora. Cria dobras suaves ao ser recolhida, trazendo textura, movimento e um toque de elegância ao espaço.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse na persiana romana. Quero um orçamento." class="persiana-btn"><i class="ti ti-brand-whatsapp"></i> Quero essa</a>
+    </div>
+
+    <div class="persiana-card">
+      <div class="persiana-fotos">
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+      </div>
+      <div class="persiana-info">
+        <div class="persiana-nome">Painel<span class="persiana-sub">Sem hastes</span></div>
+        <div class="persiana-desc">Moderna e fluida. Ideal para grandes vãos, proporciona um visual contínuo, leve e contemporâneo, com excelente controle de luz.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse na persiana painel sem hastes. Quero um orçamento." class="persiana-btn"><i class="ti ti-brand-whatsapp"></i> Quero essa</a>
+    </div>
+
+    <div class="persiana-card">
+      <div class="persiana-fotos">
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+      </div>
+      <div class="persiana-info">
+        <div class="persiana-nome">Painel<span class="persiana-sub">Com hastes</span></div>
+        <div class="persiana-desc">Design estruturado e imponente. Combina estética marcante com funcionalidade, sendo perfeita para ambientes amplos e projetos arquitetônicos.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse na persiana painel com hastes. Quero um orçamento." class="persiana-btn"><i class="ti ti-brand-whatsapp"></i> Quero essa</a>
+    </div>
+
+    <div class="persiana-card">
+      <div class="persiana-fotos">
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+      </div>
+      <div class="persiana-info">
+        <div class="persiana-nome">Persiana<span class="persiana-sub">Double Vision</span></div>
+        <div class="persiana-desc">Controle total de luz e privacidade. Suas faixas alternadas permitem regular a luminosidade com precisão e muito estilo.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse na persiana double vision. Quero um orçamento." class="persiana-btn"><i class="ti ti-brand-whatsapp"></i> Quero essa</a>
+    </div>
+
+    <div class="persiana-card">
+      <div class="persiana-fotos">
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+      </div>
+      <div class="persiana-info">
+        <div class="persiana-nome">Persiana<span class="persiana-sub">Tela Solar</span></div>
+        <div class="persiana-desc">Tecnologia e conforto térmico. Filtra os raios solares, reduz o calor e mantém a visão externa, sem abrir mão da proteção UV.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse na persiana tela solar. Quero um orçamento." class="persiana-btn"><i class="ti ti-brand-whatsapp"></i> Quero essa</a>
+    </div>
+
+    <div class="persiana-card">
+      <div class="persiana-fotos">
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+      </div>
+      <div class="persiana-info">
+        <div class="persiana-nome">Vertical<span class="persiana-sub">Em tecido</span></div>
+        <div class="persiana-desc">Elegantes e funcionais. Ideais para portas, janelas amplas e ambientes corporativos, permitem regulagem precisa da entrada de luz.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse na persiana vertical em tecido. Quero um orçamento." class="persiana-btn"><i class="ti ti-brand-whatsapp"></i> Quero essa</a>
+    </div>
+
+    <div class="persiana-card">
+      <div class="persiana-fotos">
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+      </div>
+      <div class="persiana-info">
+        <div class="persiana-nome">Vertical<span class="persiana-sub">Em PVC</span></div>
+        <div class="persiana-desc">Práticas, resistentes e fáceis de limpar. Uma solução eficiente para ambientes que exigem durabilidade e manutenção simplificada.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse na persiana vertical em PVC. Quero um orçamento." class="persiana-btn"><i class="ti ti-brand-whatsapp"></i> Quero essa</a>
+    </div>
+
+    <div class="persiana-card">
+      <div class="persiana-fotos">
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+      </div>
+      <div class="persiana-info">
+        <div class="persiana-nome">Horizontal<span class="persiana-sub">Em alumínio</span></div>
+        <div class="persiana-desc">Moderna e versátil. Oferece excelente controle de luminosidade, com visual leve e contemporâneo.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse na persiana horizontal em alumínio. Quero um orçamento." class="persiana-btn"><i class="ti ti-brand-whatsapp"></i> Quero essa</a>
+    </div>
+
+    <div class="persiana-card">
+      <div class="persiana-fotos">
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+      </div>
+      <div class="persiana-info">
+        <div class="persiana-nome">Horizontal<span class="persiana-sub">Em madeira</span></div>
+        <div class="persiana-desc">Natural, sofisticada e atemporal. A madeira traz aconchego, textura e um toque de exclusividade ao ambiente.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse na persiana horizontal em madeira. Quero um orçamento." class="persiana-btn"><i class="ti ti-brand-whatsapp"></i> Quero essa</a>
+    </div>
+
+    <div class="persiana-card">
+      <div class="persiana-fotos">
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+      </div>
+      <div class="persiana-info">
+        <div class="persiana-nome">Cortina<span class="persiana-sub">Celular</span></div>
+        <div class="persiana-desc">Alta performance térmica e acústica. Sua estrutura em colmeia ajuda a manter a temperatura do ambiente, com visual clean e elegante.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse na cortina celular. Quero um orçamento." class="persiana-btn"><i class="ti ti-brand-whatsapp"></i> Quero essa</a>
+    </div>
+
+    <div class="persiana-card">
+      <div class="persiana-fotos">
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+      </div>
+      <div class="persiana-info">
+        <div class="persiana-nome">Cortina<span class="persiana-sub">Plissada</span></div>
+        <div class="persiana-desc">Leve, delicada e moderna. Ideal para quem busca um efeito visual diferenciado, com controle suave da luz.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse na cortina plissada. Quero um orçamento." class="persiana-btn"><i class="ti ti-brand-whatsapp"></i> Quero essa</a>
+    </div>
+
+    <div class="persiana-card">
+      <div class="persiana-fotos">
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+      </div>
+      <div class="persiana-info">
+        <div class="persiana-nome">Rolo Stillo<span class="persiana-sub">Contemporânea</span></div>
+        <div class="persiana-desc">Contemporânea e funcional. Une design atual, praticidade e excelente controle de luminosidade.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse na cortina Rolo Stillo. Quero um orçamento." class="persiana-btn"><i class="ti ti-brand-whatsapp"></i> Quero essa</a>
+    </div>
+
+    <div class="persiana-card">
+      <div class="persiana-fotos">
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+      </div>
+      <div class="persiana-info">
+        <div class="persiana-nome">Cortina<span class="persiana-sub">Passione</span></div>
+        <div class="persiana-desc">Elegância com personalidade. Pensada para quem busca impacto visual e sofisticação nos detalhes.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse na cortina Passione. Quero um orçamento." class="persiana-btn"><i class="ti ti-brand-whatsapp"></i> Quero essa</a>
+    </div>
+
+    <div class="persiana-card">
+      <div class="persiana-fotos">
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+      </div>
+      <div class="persiana-info">
+        <div class="persiana-nome">Cortina<span class="persiana-sub">Illuminê</span></div>
+        <div class="persiana-desc">Leveza e luminosidade na medida certa. Ideal para criar ambientes claros, suaves e acolhedores.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse na cortina Illuminê. Quero um orçamento." class="persiana-btn"><i class="ti ti-brand-whatsapp"></i> Quero essa</a>
+    </div>
+
+    <div class="persiana-card">
+      <div class="persiana-fotos">
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+        <div class="persiana-foto"><i class="ti ti-photo"></i><span>Foto</span></div>
+      </div>
+      <div class="persiana-info">
+        <div class="persiana-nome">Cortina<span class="persiana-sub">Atena</span></div>
+        <div class="persiana-desc">Imponente e refinada. Um modelo que combina presença estética, movimento fluido e acabamento premium.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse na cortina Atena. Quero um orçamento." class="persiana-btn"><i class="ti ti-brand-whatsapp"></i> Quero essa</a>
+    </div>
+
+  </div>
+
+  <div style="text-align:center;margin-top:36px;">
+    <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Quero minha persiana sob medida. Podem me ajudar?" class="btn-wa">
+      <i class="ti ti-brand-whatsapp"></i> Quero minha persiana sob medida
+    </a>
+  </div>
+</section>
+
+
+<!-- ══ GALERIA INLINE (abaixo dos modelos) ══ -->
+<section style="background:var(--charcoal2);padding:60px 0;">
+  <div style="padding:0 var(--pad) 36px;">
+    <div class="eyebrow">Ambientes reais</div>
+    <h2 class="section-title">Galeria de ambientes <em>com persianas instaladas</em></h2>
+    <div class="rule"></div>
+  </div>
+  <div style="overflow:hidden;cursor:grab;" id="galWrap2">
+    <div id="galTrack2" style="display:flex;gap:10px;overflow-x:auto;scroll-behavior:auto;scrollbar-width:none;-ms-overflow-style:none;padding:0 var(--pad);user-select:none;">
+      <div style="flex:0 0 auto;width:320px;height:280px;background:var(--off-dark);position:relative;overflow:hidden;"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;"><i class="ti ti-photo" style="font-size:24px;color:rgba(194,165,122,0.18);"></i><span style="font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(194,165,122,0.2);">Sala</span></div><div style="position:absolute;bottom:0;left:0;right:0;padding:8px 12px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--fendi);background:linear-gradient(to top,rgba(30,22,8,0.85),transparent);">Sala</div></div>
+      <div style="flex:0 0 auto;width:220px;height:280px;background:var(--off-dark);position:relative;overflow:hidden;"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;"><i class="ti ti-photo" style="font-size:24px;color:rgba(194,165,122,0.18);"></i><span style="font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(194,165,122,0.2);">Lavabo</span></div><div style="position:absolute;bottom:0;left:0;right:0;padding:8px 12px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--fendi);background:linear-gradient(to top,rgba(30,22,8,0.85),transparent);">Lavabo</div></div>
+      <div style="flex:0 0 auto;width:220px;height:280px;background:var(--off-dark);position:relative;overflow:hidden;"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;"><i class="ti ti-photo" style="font-size:24px;color:rgba(194,165,122,0.18);"></i><span style="font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(194,165,122,0.2);">Quarto</span></div><div style="position:absolute;bottom:0;left:0;right:0;padding:8px 12px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--fendi);background:linear-gradient(to top,rgba(30,22,8,0.85),transparent);">Quarto</div></div>
+      <div style="flex:0 0 auto;width:320px;height:280px;background:var(--off-dark);position:relative;overflow:hidden;"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;"><i class="ti ti-photo" style="font-size:24px;color:rgba(194,165,122,0.18);"></i><span style="font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(194,165,122,0.2);">Home Office</span></div><div style="position:absolute;bottom:0;left:0;right:0;padding:8px 12px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--fendi);background:linear-gradient(to top,rgba(30,22,8,0.85),transparent);">Home Office</div></div>
+      <div style="flex:0 0 auto;width:220px;height:280px;background:var(--off-dark);position:relative;overflow:hidden;"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;"><i class="ti ti-photo" style="font-size:24px;color:rgba(194,165,122,0.18);"></i><span style="font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(194,165,122,0.2);">Corporativo</span></div><div style="position:absolute;bottom:0;left:0;right:0;padding:8px 12px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--fendi);background:linear-gradient(to top,rgba(30,22,8,0.85),transparent);">Corporativo</div></div>
+      <div style="flex:0 0 auto;width:220px;height:280px;background:var(--off-dark);position:relative;overflow:hidden;"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;"><i class="ti ti-photo" style="font-size:24px;color:rgba(194,165,122,0.18);"></i><span style="font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(194,165,122,0.2);">Varanda</span></div><div style="position:absolute;bottom:0;left:0;right:0;padding:8px 12px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--fendi);background:linear-gradient(to top,rgba(30,22,8,0.85),transparent);">Varanda</div></div>
+      <div style="flex:0 0 auto;width:320px;height:280px;background:var(--off-dark);position:relative;overflow:hidden;"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;"><i class="ti ti-photo" style="font-size:24px;color:rgba(194,165,122,0.18);"></i><span style="font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(194,165,122,0.2);">Quarto Infantil</span></div><div style="position:absolute;bottom:0;left:0;right:0;padding:8px 12px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--fendi);background:linear-gradient(to top,rgba(30,22,8,0.85),transparent);">Quarto Infantil</div></div>
+    </div>
+  </div>
+  <div style="display:flex;align-items:center;gap:16px;padding:28px var(--pad) 0;flex-wrap:wrap;">
+    <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Vi os ambientes no site e quero um orçamento de persianas." class="btn-wa"><i class="ti ti-brand-whatsapp"></i> Quero o mesmo no meu espaço</a>
+    <div style="display:flex;gap:4px;margin-left:auto;">
+      <button class="gal-arrow" id="galPrev2"><i class="ti ti-arrow-left"></i></button>
+      <button class="gal-arrow" id="galNext2"><i class="ti ti-arrow-right"></i></button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ FABRICANTES ══ -->
+<section class="fabricantes">
+  <div class="eyebrow">Parceiros de qualidade</div>
+  <h2 class="section-title">Trabalhamos com os <em>principais fabricantes do mercado</em></h2>
+  <div class="rule"></div>
+
+  <div class="fab-grid">
+    <div class="fab-card">
+      <div class="fab-thumb"><i class="ti ti-photo"></i><span>Logo / foto capa</span></div>
+      <div class="fab-info">
+        <div class="fab-nome">Amorim</div>
+        <div class="fab-desc">Linha completa de persianas com qualidade e acabamento premium.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Quero ver os modelos Amorim." class="fab-btn">Ver modelos →</a>
+    </div>
+    <div class="fab-card">
+      <div class="fab-thumb"><i class="ti ti-photo"></i><span>Logo / foto capa</span></div>
+      <div class="fab-info">
+        <div class="fab-nome">Rio Flex</div>
+        <div class="fab-desc">Variedade de modelos com ótimo custo-benefício e durabilidade.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Quero ver os modelos Rio Flex." class="fab-btn">Ver modelos →</a>
+    </div>
+    <div class="fab-card">
+      <div class="fab-thumb"><i class="ti ti-photo"></i><span>Logo / foto capa</span></div>
+      <div class="fab-info">
+        <div class="fab-nome">Gabriel Persianas</div>
+        <div class="fab-desc">Especialista em persianas com foco em design e inovação.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Quero ver os modelos Gabriel Persianas." class="fab-btn">Ver modelos →</a>
+    </div>
+    <div class="fab-card">
+      <div class="fab-thumb"><i class="ti ti-photo"></i><span>Logo / foto capa</span></div>
+      <div class="fab-info">
+        <div class="fab-nome">Nitflex</div>
+        <div class="fab-desc">Tecnologia e qualidade em persianas para todos os ambientes.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Quero ver os modelos Nitflex." class="fab-btn">Ver modelos →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ POR QUE ESCOLHER ══ -->
+<section class="porque">
+  <div class="eyebrow">Por que Casa Estampa</div>
+  <h2 class="section-title">Por que escolher <em>nossas persianas sob medida?</em></h2>
+  <div class="rule"></div>
+
+  <div class="porque-grid">
+    <div class="porque-card">
+      <i class="ti ti-ruler porque-icon"></i>
+      <div class="porque-title">Medição técnica profissional</div>
+      <p class="porque-desc">Nossa equipe vai até você para garantir medidas precisas e o caimento perfeito em cada ambiente.</p>
+    </div>
+    <div class="porque-card">
+      <i class="ti ti-scissors porque-icon"></i>
+      <div class="porque-title">Fabricação sob medida</div>
+      <p class="porque-desc">Cada persiana é produzida especialmente para o seu espaço, sem adaptações ou improvisos.</p>
+    </div>
+    <div class="porque-card">
+      <i class="ti ti-tool porque-icon"></i>
+      <div class="porque-title">Instalação especializada</div>
+      <p class="porque-desc">Instalação feita por equipe treinada, com acabamento impecável e funcionamento garantido.</p>
+    </div>
+    <div class="porque-card">
+      <i class="ti ti-palette porque-icon"></i>
+      <div class="porque-title">Ampla variedade de tecidos</div>
+      <p class="porque-desc">Dezenas de tecidos, cores e acabamentos para você encontrar exatamente o que combina com seu projeto.</p>
+    </div>
+    <div class="porque-card">
+      <i class="ti ti-smart-home porque-icon"></i>
+      <div class="porque-title">Opções motorizadas</div>
+      <p class="porque-desc">Automatize suas persianas com controle remoto, aplicativo ou integração com automação residencial.</p>
+    </div>
+    <div class="porque-card">
+      <i class="ti ti-pencil-ruler porque-icon"></i>
+      <div class="porque-title">Apoio para arquitetos</div>
+      <p class="porque-desc">Agilidade em orçamentos, amostras, detalhamento técnico e execução precisa para projetos profissionais.</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ══ MOTORIZADAS ══ -->
+<section class="motorizadas">
+  <div class="eyebrow">Tecnologia &amp; Conforto</div>
+  <h2 class="section-title">Persianas motorizadas: <em>mais conforto, mais privacidade, mais tecnologia</em></h2>
+  <div class="rule"></div>
+
+  <div class="mot-videos">
+    <div class="mot-video-ph"><i class="ti ti-player-play"></i><span>Vídeo 1</span></div>
+    <div class="mot-video-ph"><i class="ti ti-player-play"></i><span>Vídeo 2</span></div>
+    <div class="mot-video-ph"><i class="ti ti-player-play"></i><span>Vídeo 3</span></div>
+    <div class="mot-video-ph"><i class="ti ti-player-play"></i><span>Vídeo 4</span></div>
+  </div>
+
+  <p class="mot-desc">Com as persianas motorizadas você tem acionamento por controle remoto, aplicativo ou integração com automação residencial. Controle a entrada de luz, privacidade e conforto com apenas um toque — ou por comando de voz.</p>
+
+  <div style="text-align:center;">
+    <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse em persiana motorizada. Quero um orçamento." class="btn-mustard">
+      <i class="ti ti-brand-whatsapp"></i> Quero persiana motorizada
+    </a>
+  </div>
+</section>
+
+
+
+
+<!-- ══ COMO FUNCIONA ══ -->
+<section class="como-funciona">
+  <div class="eyebrow">Simples assim</div>
+  <h2 class="section-title">Como <em>funciona</em></h2>
+  <div class="rule"></div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Você entra em contato</div>
+      <p class="step-desc">Fale com nossa equipe pelo WhatsApp — é rápido e sem compromisso.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">Informamos ou agendamos</div>
+      <p class="step-desc">Você informa as medidas ou agendamos a visita técnica no seu espaço.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">Modelos e orçamento</div>
+      <p class="step-desc">Apresentamos os modelos ideais para o seu ambiente e enviamos o orçamento.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-title">Produção sob medida</div>
+      <p class="step-desc">Sua persiana é fabricada exclusivamente para o seu espaço.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">05</div>
+      <div class="step-title">Instalação profissional</div>
+      <p class="step-desc">Nossa equipe instala com precisão, cuidado e acabamento impecável.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ FAQ ══ -->
+<section class="faq">
+  <div class="eyebrow">Dúvidas frequentes</div>
+  <h2 class="section-title">Perguntas <em>mais comuns</em></h2>
+  <div class="rule"></div>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Qual a diferença entre persiana Rolô e Romana? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">
+        <strong style="color:var(--text-light);">Rolô</strong><br>
+        Visual minimalista, enrola completamente. Excelente para ambientes modernos.<br><br>
+        <strong style="color:var(--text-light);">Romana</strong><br>
+        Forma gomos quando recolhida, com aparência mais sofisticada. Ideal para salas e quartos.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Tela Solar ou Blackout? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">
+        <strong style="color:var(--text-light);">Tela Solar</strong><br>
+        Mantém a luminosidade, permite ver o exterior durante o dia e reduz calor e raios UV.<br><br>
+        <strong style="color:var(--text-light);">Blackout</strong><br>
+        Bloqueia praticamente toda a luz. Ideal para quartos, home theater e salas de TV.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Qual a diferença entre Tela Solar 1%, 3% e 5%? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">
+        Quanto menor o percentual, menor a abertura da trama.<br><br>
+        <strong style="color:var(--text-light);">1%</strong> → maior privacidade e menor entrada de calor.<br>
+        <strong style="color:var(--text-light);">3%</strong> → equilíbrio entre vista e proteção.<br>
+        <strong style="color:var(--text-light);">5%</strong> → maior visibilidade externa e mais entrada de luz.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Persiana pode ser motorizada? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Sim. Diversos modelos podem ser automatizados e controlados por controle remoto, aplicativo ou assistentes de voz.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Persiana acumula muita poeira? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Não. Basta limpeza periódica com espanador ou pano seco.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Qual a vida útil? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Com uso correto, uma persiana de qualidade pode durar mais de 10 anos.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:32px;text-align:center;">
+    <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">Ficou com alguma dúvida que não está aqui?</p>
+    <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho uma dúvida sobre persianas." class="btn-wa">
+      <i class="ti ti-brand-whatsapp"></i> Perguntar no WhatsApp
+    </a>
+  </div>
+</section>
+
+
+<!-- ══ CTA FINAL ══ -->
+<section class="cta-final">
+  <div class="cta-title">Pronto para escolher sua persiana sob medida?</div>
+  <p class="cta-sub">Nossa equipe te orienta desde a escolha até a instalação final.</p>
+  <div class="cta-btns">
+    <div class="cta-opt">
+      <span class="cta-opt-label">Fale agora</span>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Quero ajuda para escolher persianas." class="btn-wa">
+        <i class="ti ti-brand-whatsapp"></i> Falar no WhatsApp
+      </a>
+    </div>
+    <div class="cta-opt">
+      <span class="cta-opt-label">Agendar visita</span>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Gostaria de agendar uma medição de persianas." class="btn-mustard">
+        <i class="ti ti-calendar"></i> Agendar medição
+      </a>
+    </div>
+    <div class="cta-opt">
+      <span class="cta-opt-label">Ver modelos</span>
+      <a href="#modelos" class="btn-ghost">Ver todos os modelos</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="footer-logo">
+    <img src="https://casaestampa.com/wp-content/uploads/2022/09/Logo-Original-Fundo-Transparente.png" alt="Casa Estampa" onerror="this.style.display='none'" />
+    <div>
+      <div class="footer-name">Casa Estampa</div>
+      <div class="footer-sub">Interiores</div>
+    </div>
+  </div>
+  <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(194,165,122,0.3);">
+    casaestampa.com
+  </div>
+  <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(194,165,122,0.3);text-align:right;">
+    Rio de Janeiro · (21) 99988-6842
+  </div>
+</footer>
+
+
+<!-- ══ BOTÃO WA FLUTUANTE ══ -->
+<a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Estou no site e quero ajuda para escolher persianas." class="wa-float" aria-label="Falar pelo WhatsApp">
+  <i class="ti ti-brand-whatsapp"></i>
+</a>
+
+
+<script>
+function toggleFaq(btn) {
+  var item = btn.parentElement;
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el) { el.classList.remove('open'); });
+  if (!isOpen) item.classList.add('open');
+}
+
+// ── CARROSSEL INLINE (abaixo dos modelos) ──
+(function(){
+  var track = document.getElementById('galTrack2');
+  if (!track) return;
+  var wrap = document.getElementById('galWrap2');
+  var slides = Array.from(track.children);
+  slides.forEach(function(s){ track.appendChild(s.cloneNode(true)); });
+  slides.forEach(function(s){ track.insertBefore(s.cloneNode(true), track.firstChild); });
+  var gap = 10;
+  var slideW = track.children[slides.length].offsetWidth + gap;
+  track.scrollLeft = slideW * slides.length;
+  var isDragging = false, startX = 0, scrollLeft = 0;
+  wrap.addEventListener('mousedown', function(e){ isDragging = true; startX = e.pageX - wrap.offsetLeft; scrollLeft = track.scrollLeft; wrap.style.cursor = 'grabbing'; });
+  window.addEventListener('mouseup', function(){ isDragging = false; wrap.style.cursor = 'grab'; });
+  wrap.addEventListener('mousemove', function(e){ if (!isDragging) return; e.preventDefault(); track.scrollLeft = scrollLeft - (e.pageX - wrap.offsetLeft - startX); });
+  wrap.addEventListener('touchstart', function(e){ startX = e.touches[0].pageX; scrollLeft = track.scrollLeft; }, {passive:true});
+  wrap.addEventListener('touchmove', function(e){ track.scrollLeft = scrollLeft - (e.touches[0].pageX - startX); }, {passive:true});
+  track.addEventListener('scroll', function(){ var total = slides.length * slideW; if (track.scrollLeft >= total * 2) track.scrollLeft -= total; if (track.scrollLeft <= 0) track.scrollLeft += total; });
+  document.getElementById('galPrev2').addEventListener('click', function(){ track.scrollBy({ left: -(slideW * 2), behavior: 'smooth' }); });
+  document.getElementById('galNext2').addEventListener('click', function(){ track.scrollBy({ left: slideW * 2, behavior: 'smooth' }); });
+  var auto = setInterval(function(){ track.scrollBy({ left: 1, behavior: 'auto' }); }, 30);
+  wrap.addEventListener('mouseenter', function(){ clearInterval(auto); });
+  wrap.addEventListener('mouseleave', function(){ auto = setInterval(function(){ track.scrollBy({ left: 1, behavior: 'auto' }); }, 30); });
+})();
+
+</script>
+
+</body>
+</html>

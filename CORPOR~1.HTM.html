@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Corporativo – Casa Estampa Interiores</title>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Paleta — versão mais clara com tons fendi/mostarda */
+  --fendi:       #c2a57a;
+  --fendi-dark:  #9e7d4e;
+  --fendi-bg:    #ede0cc;
+  --fendi-pale:  #f5ede0;
+  --mustard:     #c8960c;
+  --mustard-deep:#8f6a08;
+
+  /* Fundos — escalados para tom fendi escuro/médio */
+  --dark:        #1e1608;   /* antes #100e09 */
+  --charcoal:    #2e2410;   /* antes #1e1a12 */
+  --charcoal2:   #3a2e16;   /* antes #2b2418 */
+  --off-dark:    #463820;   /* antes #342c1e */
+
+  /* Texto */
+  --text-light:  #f5eed8;
+  --text-muted:  #a89370;
+  --white:       #ffffff;
+
+  --pad: 90px;
+  --gap: 60px;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--charcoal);
+  color: var(--text-light);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ──────────────────────────────────
+   TIPOGRAFIA GLOBAL
+────────────────────────────────── */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--mustard);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.eyebrow::before {
+  content: '';
+  width: 32px; height: 1px;
+  background: var(--mustard);
+  display: block;
+}
+
+h2.block-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(34px, 4.5vw, 52px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+h2.block-title em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.block-sub {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.9;
+  max-width: 580px;
+}
+
+.rule {
+  width: 64px; height: 2px;
+  background: linear-gradient(to right, var(--mustard), var(--fendi));
+  margin-top: 24px;
+}
+
+/* ──────────────────────────────────
+   NAVBAR (referência visual)
+────────────────────────────────── */
+.navbar {
+  background: var(--dark);
+  padding: 20px var(--pad);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(194,165,122,0.12);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.logo-symbol {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Fallback se a imagem não carregar */
+.logo-symbol-fallback {
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid var(--fendi);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Italiana', serif;
+  font-size: 18px;
+  color: var(--fendi);
+  flex-shrink: 0;
+}
+
+.logo-text-wrap {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.logo-name {
+  font-family: 'Italiana', serif;
+  font-size: 22px;
+  color: var(--fendi);
+  letter-spacing: 2px;
+}
+.logo-tagline {
+  font-size: 8.5px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(194,165,122,0.5);
+  font-weight: 400;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+.navbar-nav a {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.25s;
+}
+.navbar-nav a:hover,
+.navbar-nav a.active { color: var(--mustard); }
+
+.navbar-cta {
+  background: var(--mustard);
+  color: #fff;
+  padding: 11px 28px;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.25s;
+}
+.navbar-cta:hover { background: #d9a820; }
+
+/* ──────────────────────────────────
+   HERO
+────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  background: var(--dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 100px var(--pad);
+  position: relative;
+  overflow: hidden;
+}
+
+/* letras grandes ao fundo */
+.hero-bg-word {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-48%, -50%);
+  font-family: 'Italiana', serif;
+  font-size: clamp(140px, 25vw, 380px);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(194,165,122,0.09);
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  line-height: 1;
+}
+
+/* barra lateral mostarda */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; right: 0;
+  width: 5px;
+  background: linear-gradient(to bottom, transparent 5%, var(--mustard) 40%, var(--fendi) 70%, transparent 95%);
+}
+
+.hero-label {
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--mustard);
+  font-weight: 600;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.hero-label::before {
+  content: '';
+  width: 36px; height: 1px;
+  background: var(--mustard);
+}
+
+.hero-title {
+  font-family: 'Italiana', serif;
+  font-size: clamp(80px, 14vw, 190px);
+  line-height: 0.9;
+  color: var(--text-light);
+  letter-spacing: 0.01em;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 2.5vw, 28px);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--fendi);
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-desc {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-muted);
+  max-width: 560px;
+  line-height: 1.9;
+  margin-bottom: 52px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-mustard {
+  background: var(--mustard);
+  color: #fff;
+  padding: 17px 40px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s;
+  font-family: 'Montserrat', sans-serif;
+}
+.btn-mustard:hover { background: #d9a820; }
+
+.btn-ghost {
+  border: 1px solid var(--fendi);
+  color: var(--fendi);
+  padding: 16px 36px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.25s;
+  font-family: 'Montserrat', sans-serif;
+}
+.btn-ghost:hover {
+  background: var(--fendi);
+  color: var(--dark);
+}
+
+/* ──────────────────────────────────
+   INTRODUÇÃO (dark com acento)
+────────────────────────────────── */
+.intro {
+  background: var(--charcoal2);
+  padding: 90px var(--pad);
+  border-top: 1px solid rgba(194,165,122,0.12);
+  border-bottom: 1px solid rgba(194,165,122,0.12);
+}
+
+.intro-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* Bloco de texto */
+.intro-body {}
+
+.intro-body p {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 400;
+  color: var(--text-light);
+  line-height: 1.85;
+  margin-bottom: 28px;
+}
+.intro-body p:last-child { margin-bottom: 0; }
+
+.intro-body p strong {
+  font-weight: 700;
+  color: var(--fendi);
+  font-style: italic;
+}
+
+/* Bloco de segmentos */
+.intro-segs {}
+
+.intro-segs-title {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--mustard);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.intro-segs-title::before {
+  content: '';
+  width: 28px; height: 2px;
+  background: var(--mustard);
+  display: block;
+  flex-shrink: 0;
+}
+
+.intro-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.intro-pill {
+  display: inline-block;
+  border: 1px solid rgba(194,165,122,0.35);
+  background: rgba(194,165,122,0.09);
+  padding: 12px 22px;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--fendi);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.25s;
+  cursor: pointer;
+}
+.intro-pill:hover {
+  background: var(--mustard);
+  border-color: var(--mustard);
+  color: #fff;
+}
+
+/* ──────────────────────────────────
+   CASES — GALERIA DE PROJETOS
+────────────────────────────────── */
+.casos {
+  background: var(--dark);
+  padding: 100px var(--pad);
+}
+.casos .block-sub { color: var(--text-muted); }
+
+/* Grupo por cliente */
+.caso-grupo {
+  margin-top: 72px;
+  padding-bottom: 72px;
+  border-bottom: 1px solid rgba(194,165,122,0.1);
+}
+.caso-grupo:last-child { padding-bottom: 0; border-bottom: none; }
+
+/* Cabeçalho do cliente */
+.caso-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+.caso-logo {
+  width: 110px; height: 62px;
+  background: rgba(194,165,122,0.09);
+  border: 1px solid rgba(194,165,122,0.2);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.caso-logo img {
+  max-width: 90px; max-height: 44px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+}
+.caso-logo-placeholder {
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--fendi); text-align: center; font-weight: 500;
+  line-height: 1.4; padding: 4px;
+}
+.caso-cliente {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px; font-weight: 700;
+  color: var(--text-light); line-height: 1.1;
+}
+.caso-segmento {
+  font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--mustard);
+  font-weight: 500; margin-top: 5px;
+}
+
+/* Sub-bloco por unidade */
+.unidade-bloco {
+  margin-bottom: 20px;
+}
+.unidade-bloco:last-child { margin-bottom: 0; }
+
+.unidade-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+.unidade-label-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px; font-weight: 600;
+  color: var(--fendi);
+}
+.unidade-label-line {
+  flex: 1; height: 1px;
+  background: rgba(194,165,122,0.15);
+}
+
+/* Grid de fotos */
+.fotos-grid {
+  display: grid;
+  gap: 6px;
+}
+.fotos-grid.cols-1 { grid-template-columns: 1fr; max-width: 520px; }
+.fotos-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.fotos-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.fotos-grid.cols-6 { grid-template-columns: repeat(3, 1fr); } /* 6 fotos = 2 linhas de 3 */
+
+/* Card de foto */
+.foto-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--charcoal2);
+  aspect-ratio: 4/3;
+}
+.foto-card img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform 0.5s ease;
+}
+.foto-card:hover img { transform: scale(1.04); }
+
+/* Placeholder */
+.foto-placeholder {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 10px;
+}
+.foto-placeholder-icon {
+  width: 40px; height: 40px;
+  border: 1px dashed rgba(194,165,122,0.25);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(194,165,122,0.3); font-size: 16px;
+}
+.foto-placeholder-txt {
+  font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(194,165,122,0.25);
+}
+
+/* Rodapé da foto: nome + serviço */
+.foto-info {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 32px 16px 14px;
+  background: linear-gradient(to top, rgba(26,18,8,0.92) 0%, rgba(26,18,8,0.55) 55%, transparent 100%);
+  z-index: 2;
+}
+.foto-info-unidade {
+  font-size: 12px; font-weight: 600;
+  color: #fff; line-height: 1.2; margin-bottom: 3px;
+  font-family: 'Playfair Display', serif;
+}
+.foto-info-servico {
+  font-size: 9px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--mustard);
+  font-weight: 600;
+}
+
+/* ──────────────────────────────────
+   NOSSAS SOLUÇÕES — Opção A
+────────────────────────────────── */
+.solucoes {
+  background: var(--charcoal);
+  padding: 100px var(--pad);
+}
+
+.sol-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-top: 56px;
+}
+
+.sol-card {
+  background: var(--charcoal2);
+  padding: 40px 32px;
+  border-left: 3px solid var(--mustard);
+  transition: all 0.3s;
+}
+.sol-card:hover {
+  background: #46381e;
+  border-left-color: var(--fendi);
+}
+
+.sol-icon {
+  font-size: 26px;
+  color: var(--mustard);
+  margin-bottom: 18px;
+  display: block;
+  transition: color 0.3s;
+}
+.sol-card:hover .sol-icon { color: var(--fendi); }
+
+.sol-num {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+.sol-nome {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+.sol-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+/* ──────────────────────────────────
+   DIFERENCIAIS — Opção C (linhas)
+────────────────────────────────── */
+.diferenciais {
+  background: var(--charcoal);
+  padding: 100px var(--pad);
+}
+
+.dif-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 56px;
+}
+
+.dif-card {
+  display: grid;
+  grid-template-columns: 64px 260px 1fr;
+  gap: 32px;
+  align-items: start;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(194,165,122,0.1);
+  transition: background 0.2s;
+}
+.dif-card:first-child { border-top: 1px solid rgba(194,165,122,0.1); }
+.dif-card:hover { background: rgba(200,150,12,0.03); }
+
+.dif-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: rgba(200,150,12,0.22);
+  line-height: 1;
+  padding-top: 4px;
+}
+.dif-nome {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-light);
+  line-height: 1.3;
+  padding-top: 5px;
+}
+.dif-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.85;
+  padding-top: 5px;
+}
+
+/* ──────────────────────────────────
+   PROCESSO — Opção B (timeline)
+────────────────────────────────── */
+.processo {
+  background: var(--charcoal2);
+  padding: 100px var(--pad);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 64px;
+  position: relative;
+}
+.steps::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 32px; right: 32px;
+  height: 1px;
+  background: linear-gradient(to right, var(--mustard), var(--fendi), var(--mustard));
+  opacity: 0.3;
+}
+
+.step {
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+.step-dot {
+  width: 40px; height: 40px;
+  background: var(--mustard);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  flex-shrink: 0;
+  transition: background 0.3s;
+}
+.step:hover .step-dot { background: var(--fendi); }
+.step-dot-num {
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  font-family: 'Montserrat', sans-serif;
+}
+.step-nome {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.step-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+/* ──────────────────────────────────
+   VÍDEO (charcoal)
+────────────────────────────────── */
+.video-sec {
+  background: var(--charcoal2);
+  padding: 100px var(--pad);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+  align-items: center;
+}
+
+.video-sec h2.block-title em { color: var(--fendi); }
+.video-sec .block-sub { color: var(--text-muted); }
+
+.video-wrap {
+  position: relative;
+  aspect-ratio: 16/9;
+  background: var(--charcoal);
+  overflow: hidden;
+}
+.video-wrap video {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.video-badge {
+  position: absolute;
+  top: 18px; left: 18px;
+  background: var(--mustard);
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  font-weight: 600;
+  z-index: 2;
+}
+
+/* ──────────────────────────────────
+   CTA FINAL (dark)
+────────────────────────────────── */
+.cta-final {
+  background: var(--dark);
+  padding: 110px var(--pad);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-bg {
+  position: absolute;
+  font-family: 'Italiana', serif;
+  font-size: 300px;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(194,165,122,0.05);
+  bottom: -60px; right: -30px;
+  pointer-events: none;
+  line-height: 1;
+  user-select: none;
+}
+
+.cta-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 4.5vw, 54px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-light);
+  margin-bottom: 24px;
+}
+.cta-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--fendi);
+}
+.cta-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.9;
+}
+
+.cta-right {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.cta-segs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-bottom: 12px;
+}
+.cta-seg {
+  background: var(--charcoal2);
+  border: 1px solid rgba(194,165,122,0.1);
+  padding: 16px 20px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cta-seg::before {
+  content: '◆';
+  font-size: 5px;
+  color: var(--mustard);
+  flex-shrink: 0;
+}
+.cta-phone {
+  font-size: 12px;
+  color: rgba(194,165,122,0.35);
+  letter-spacing: 1.5px;
+  margin-top: 4px;
+}
+
+/* ──────────────────────────────────
+   FOOTER
+────────────────────────────────── */
+.footer {
+  background: #1a1208;
+  border-top: 1px solid rgba(194,165,122,0.1);
+  padding: 40px var(--pad);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.footer-logo img {
+  height: 36px;
+  object-fit: contain;
+  filter: brightness(0.9);
+}
+.footer-logo-text {
+  font-family: 'Italiana', serif;
+  font-size: 20px;
+  color: var(--fendi);
+  letter-spacing: 3px;
+}
+.footer-sub {
+  font-size: 9px;
+  color: rgba(194,165,122,0.3);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════
+     NAVBAR
+══════════════════════════════ -->
+<nav class="navbar">
+  <a href="https://casaestampa.com" class="navbar-logo">
+    <img
+      class="logo-symbol"
+      src="https://casaestampa.com/wp-content/uploads/2022/09/Logo-Original-Fundo-Transparente.png"
+      alt="Casa Estampa"
+      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+    />
+    <div class="logo-symbol-fallback" style="display:none;">CE</div>
+    <div class="logo-text-wrap">
+      <span class="logo-name">Casa Estampa</span>
+      <span class="logo-tagline">Interiores</span>
+    </div>
+  </a>
+  <ul class="navbar-nav">
+    <li><a href="#">Papéis de Parede</a></li>
+    <li><a href="#">Cortinas</a></li>
+    <li><a href="#">Persianas</a></li>
+    <li><a href="#">Pisos</a></li>
+    <li><a href="#" class="active">Corporativo</a></li>
+  </ul>
+  <a href="https://api.whatsapp.com/send?phone=5521999886842" class="navbar-cta">Fale conosco</a>
+</nav>
+
+
+<!-- ══════════════════════════════
+     HERO
+══════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg-word">CORPORATIVO</div>
+
+  <div class="hero-label">Casa Estampa · Atendimento Corporativo</div>
+
+  <h1 class="hero-title">Corporativo</h1>
+  <p class="hero-subtitle">Transformamos ambientes com qualidade, agilidade e excelência.</p>
+  <p class="hero-desc">
+    Atendemos hotéis, hospitais, clínicas, construtoras, escritórios e áreas comuns com soluções completas em revestimentos, cortinas, persianas, pisos e películas arquitetônicas.
+  </p>
+  <div class="hero-actions">
+    <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá, quero solicitar atendimento corporativo." class="btn-mustard">Solicitar atendimento</a>
+    <a href="#casos" class="btn-ghost">Ver projetos</a>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     INTRODUÇÃO
+══════════════════════════════ -->
+<section class="intro">
+  <div class="intro-inner">
+
+    <div class="intro-body">
+      <p>
+        A Casa Estampa possui <strong>ampla experiência</strong> no atendimento de projetos corporativos de diferentes portes, de pequenas reformas a <strong>grandes implantações</strong>.
+      </p>
+      <p>
+        Nossa equipe oferece suporte técnico completo, acompanhamento em obra e soluções personalizadas para cada segmento e <strong>compromisso real de prazo</strong>.
+      </p>
+    </div>
+
+    <div class="intro-segs">
+      <div class="intro-segs-title">Segmentos Atendidos</div>
+      <div class="intro-pills">
+        <a class="intro-pill" href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá, Casa Estampa! Gostaria de atendimento corporativo para Hospitais e clínicas." target="_blank">Hospitais e clínicas</a>
+        <a class="intro-pill" href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá, Casa Estampa! Gostaria de atendimento corporativo para Hotéis e hospedagem." target="_blank">Hotéis e hospedagem</a>
+        <a class="intro-pill" href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá, Casa Estampa! Gostaria de atendimento corporativo para Escritórios corporativos." target="_blank">Escritórios corporativos</a>
+        <a class="intro-pill" href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá, Casa Estampa! Gostaria de atendimento corporativo para Construtoras e incorporadoras." target="_blank">Construtoras e incorporadoras</a>
+        <a class="intro-pill" href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá, Casa Estampa! Gostaria de atendimento corporativo para Áreas comuns de condomínios." target="_blank">Áreas comuns de condomínios</a>
+        <a class="intro-pill" href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá, Casa Estampa! Gostaria de atendimento corporativo para Restaurantes e espaços comerciais." target="_blank">Restaurantes e espaços comerciais</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     GALERIA — CASES E CLIENTES
+══════════════════════════════ -->
+<section class="casos" id="casos">
+  <div class="eyebrow">Cases e Clientes</div>
+  <h2 class="block-title">Projetos que <em>entregamos</em></h2>
+  <p class="block-sub">Referências que comprovam capacidade de execução em diferentes segmentos e escalas.</p>
+  <div class="rule"></div>
+
+  <!-- ══ MED SENIOR ══ -->
+  <div class="caso-grupo">
+    <div class="caso-header">
+      <div class="caso-logo">
+        <!-- <img src="logo-medsenior.png" alt="Med Senior" /> -->
+        <div class="caso-logo-placeholder">Logo<br/>Med Senior</div>
+      </div>
+      <div>
+        <div class="caso-cliente">Hospital Med Senior</div>
+        <div class="caso-segmento">Saúde · Hospitalar</div>
+      </div>
+    </div>
+
+    <!-- Barra da Tijuca: 3 fotos -->
+    <div class="unidade-bloco">
+      <div class="unidade-label">
+        <span class="unidade-label-name">Barra da Tijuca</span>
+        <span class="unidade-label-line"></span>
+      </div>
+      <div class="fotos-grid cols-3">
+        <div class="foto-card">
+          <!-- <img src="medsenior-barra-papelparede.jpg" alt="" /> -->
+          <div class="foto-placeholder"><div class="foto-placeholder-icon">⬡</div><div class="foto-placeholder-txt">Inserir foto</div></div>
+          <div class="foto-info">
+            <div class="foto-info-unidade">Med Senior · Barra da Tijuca</div>
+            <div class="foto-info-servico">Papel de Parede</div>
+          </div>
+        </div>
+        <div class="foto-card">
+          <!-- <img src="medsenior-barra-persiana1.jpg" alt="" /> -->
+          <div class="foto-placeholder"><div class="foto-placeholder-icon">⬡</div><div class="foto-placeholder-txt">Inserir foto</div></div>
+          <div class="foto-info">
+            <div class="foto-info-unidade">Med Senior · Barra da Tijuca</div>
+            <div class="foto-info-servico">Persiana</div>
+          </div>
+        </div>
+        <div class="foto-card">
+          <!-- <img src="medsenior-barra-persiana2.jpg" alt="" /> -->
+          <div class="foto-placeholder"><div class="foto-placeholder-icon">⬡</div><div class="foto-placeholder-txt">Inserir foto</div></div>
+          <div class="foto-info">
+            <div class="foto-info-unidade">Med Senior · Barra da Tijuca</div>
+            <div class="foto-info-servico">Persiana</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Campo Grande: 3 fotos (1 por serviço) -->
+    <div class="unidade-bloco">
+      <div class="unidade-label">
+        <span class="unidade-label-name">Campo Grande</span>
+        <span class="unidade-label-line"></span>
+      </div>
+      <div class="fotos-grid cols-3">
+        <div class="foto-card">
+          <!-- <img src="medsenior-cg-papelparede.jpg" alt="" /> -->
+          <div class="foto-placeholder"><div class="foto-placeholder-icon">⬡</div><div class="foto-placeholder-txt">Inserir foto</div></div>
+          <div class="foto-info">
+            <div class="foto-info-unidade">Med Senior · Campo Grande</div>
+            <div class="foto-info-servico">Papel de Parede</div>
+          </div>
+        </div>
+        <div class="foto-card">
+          <!-- <img src="medsenior-cg-persiana.jpg" alt="" /> -->
+          <div class="foto-placeholder"><div class="foto-placeholder-icon">⬡</div><div class="foto-placeholder-txt">Inserir foto</div></div>
+          <div class="foto-info">
+            <div class="foto-info-unidade">Med Senior · Campo Grande</div>
+            <div class="foto-info-servico">Persiana</div>
+          </div>
+        </div>
+        <div class="foto-card">
+          <!-- <img src="medsenior-cg-pelicula.jpg" alt="" /> -->
+          <div class="foto-placeholder"><div class="foto-placeholder-icon">⬡</div><div class="foto-placeholder-txt">Inserir foto</div></div>
+          <div class="foto-info">
+            <div class="foto-info-unidade">Med Senior · Campo Grande</div>
+            <div class="foto-info-servico">Película</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botafogo: 1 foto -->
+    <div class="unidade-bloco">
+      <div class="unidade-label">
+        <span class="unidade-label-name">Botafogo</span>
+        <span class="unidade-label-line"></span>
+      </div>
+      <div class="fotos-grid cols-1">
+        <div class="foto-card">
+          <!-- <img src="medsenior-botafogo-papelparede.jpg" alt="" /> -->
+          <div class="foto-placeholder"><div class="foto-placeholder-icon">⬡</div><div class="foto-placeholder-txt">Inserir foto</div></div>
+          <div class="foto-info">
+            <div class="foto-info-unidade">Med Senior · Botafogo</div>
+            <div class="foto-info-servico">Papel de Parede</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ MOZAK ══ -->
+  <div class="caso-grupo">
+    <div class="caso-header">
+      <div class="caso-logo">
+        <!-- <img src="logo-mozak.png" alt="Mozak" /> -->
+        <div class="caso-logo-placeholder">Logo<br/>Mozak</div>
+      </div>
+      <div>
+        <div class="caso-cliente">Construtora Mozak</div>
+        <div class="caso-segmento">Construção · Incorporação</div>
+      </div>
+    </div>
+
+    <!-- Essência: 3 fotos papel de parede + 3 fotos cortinas -->
+    <div class="unidade-bloco">
+      <div class="unidade-label">
+        <span class="unidade-label-name">Essência</span>
+        <span class="unidade-label-line"></span>
+      </div>
+      <div class="fotos-grid cols-3" style="margin-bottom:6px;">
+        <div class="foto-card">
+          <!-- <img src="mozak-essencia-pp1.jpg" alt="" /> -->
+          <div class="foto-placeholder"><div class="foto-placeholder-icon">⬡</div><div class="foto-placeholder-txt">Inserir foto</div></div>
+          <div class="foto-info">
+            <div class="foto-info-unidade">Mozak · Essência</div>
+            <div class="foto-info-servico">Papel de Parede</div>
+          </div>
+        </div>
+        <div class="foto-card">
+          <!-- <img src="mozak-essencia-pp2.jpg" alt="" /> -->
+          <div class="foto-placeholder"><div class="foto-placeholder-icon">⬡</div><div class="foto-placeholder-txt">Inserir foto</div></div>
+          <div class="foto-info">
+            <div class="foto-info-unidade">Mozak · Essência</div>
+            <div class="foto-info-servico">Papel de Parede</div>
+          </div>
+        </div>
+        <div class="foto-card">
+          <!-- <img src="mozak-essencia-pp3.jpg" alt="" /> -->
+          <div class="foto-placeholder"><div class="foto-placeholder-icon">⬡</div><div class="foto-placeholder-txt">Inserir foto</div></div>
+          <div class="foto-info">
+            <div class="foto-info-unidade">Mozak · Essência</div>
+            <div class="foto-info-servico">Papel de Parede</div>
+          </div>
+        </div>
+      </div>
+      <div class="fotos-grid cols-3">
+        <div class="foto-card">
+          <!-- <img src="mozak-essencia-cortina1.jpg" alt="" /> -->
+          <div class="foto-placeholder"><div class="foto-placeholder-icon">⬡</div><div class="foto-placeholder-txt">Inserir foto</div></div>
+          <div class="foto-info">
+            <div class="foto-info-unidade">Mozak · Essência</div>
+            <div class="foto-info-servico">Cortinas</div>
+          </div>
+        </div>
+        <div class="foto-card">
+          <!-- <img src="mozak-essencia-cortina2.jpg" alt="" /> -->
+          <div class="foto-placeholder"><div class="foto-placeholder-icon">⬡</div><div class="foto-placeholder-txt">Inserir foto</div></div>
+          <div class="foto-info">
+            <div class="foto-info-unidade">Mozak · Essência</div>
+            <div class="foto-info-servico">Cortinas</div>
+          </div>
+        </div>
+        <div class="foto-card">
+          <!-- <img src="mozak-essencia-cortina3.jpg" alt="" /> -->
+          <div class="foto-placeholder"><div class="foto-placeholder-icon">⬡</div><div class="foto-placeholder-txt">Inserir foto</div></div>
+          <div class="foto-info">
+            <div class="foto-info-unidade">Mozak · Essência</div>
+            <div class="foto-info-servico">Cortinas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nove + Era Botafogo lado a lado: 1 foto cada -->
+    <div class="unidade-bloco">
+      <div class="fotos-grid cols-2">
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div class="unidade-label">
+            <span class="unidade-label-name">Nove</span>
+            <span class="unidade-label-line"></span>
+          </div>
+          <div class="foto-card">
+            <!-- <img src="mozak-nove-pp.jpg" alt="" /> -->
+            <div class="foto-placeholder"><div class="foto-placeholder-icon">⬡</div><div class="foto-placeholder-txt">Inserir foto</div></div>
+            <div class="foto-info">
+              <div class="foto-info-unidade">Mozak · Nove</div>
+              <div class="foto-info-servico">Papel de Parede</div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div class="unidade-label">
+            <span class="unidade-label-name">Era Botafogo</span>
+            <span class="unidade-label-line"></span>
+          </div>
+          <div class="foto-card">
+            <!-- <img src="mozak-era-botafogo-pp.jpg" alt="" /> -->
+            <div class="foto-placeholder"><div class="foto-placeholder-icon">⬡</div><div class="foto-placeholder-txt">Inserir foto</div></div>
+            <div class="foto-info">
+              <div class="foto-info-unidade">Mozak · Era Botafogo</div>
+              <div class="foto-info-servico">Papel de Parede</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ HOTEL FAIRMONT ══ -->
+  <div class="caso-grupo">
+    <div class="caso-header">
+      <div class="caso-logo">
+        <!-- <img src="logo-fairmont.png" alt="Fairmont" /> -->
+        <div class="caso-logo-placeholder">Logo<br/>Fairmont</div>
+      </div>
+      <div>
+        <div class="caso-cliente">Hotel Fairmont Copacabana</div>
+        <div class="caso-segmento">Hotelaria · Alto Padrão</div>
+      </div>
+    </div>
+
+    <!-- 6 fotos: 2 linhas de 3 -->
+    <div class="fotos-grid cols-6">
+      <div class="foto-card">
+        <!-- <img src="fairmont-pp1.jpg" alt="" /> -->
+        <div class="foto-placeholder"><div class="foto-placeholder-icon">⬡</div><div class="foto-placeholder-txt">Inserir foto</div></div>
+        <div class="foto-info">
+          <div class="foto-info-unidade">Hotel Fairmont · Copacabana</div>
+          <div class="foto-info-servico">Papel de Parede</div>
+        </div>
+      </div>
+      <div class="foto-card">
+        <!-- <img src="fairmont-pp2.jpg" alt="" /> -->
+        <div class="foto-placeholder"><div class="foto-placeholder-icon">⬡</div><div class="foto-placeholder-txt">Inserir foto</div></div>
+        <div class="foto-info">
+          <div class="foto-info-unidade">Hotel Fairmont · Copacabana</div>
+          <div class="foto-info-servico">Papel de Parede</div>
+        </div>
+      </div>
+      <div class="foto-card">
+        <!-- <img src="fairmont-pp3.jpg" alt="" /> -->
+        <div class="foto-placeholder"><div class="foto-placeholder-icon">⬡</div><div class="foto-placeholder-txt">Inserir foto</div></div>
+        <div class="foto-info">
+          <div class="foto-info-unidade">Hotel Fairmont · Copacabana</div>
+          <div class="foto-info-servico">Papel de Parede</div>
+        </div>
+      </div>
+      <div class="foto-card">
+        <!-- <img src="fairmont-pp4.jpg" alt="" /> -->
+        <div class="foto-placeholder"><div class="foto-placeholder-icon">⬡</div><div class="foto-placeholder-txt">Inserir foto</div></div>
+        <div class="foto-info">
+          <div class="foto-info-unidade">Hotel Fairmont · Copacabana</div>
+          <div class="foto-info-servico">Papel de Parede</div>
+        </div>
+      </div>
+      <div class="foto-card">
+        <!-- <img src="fairmont-pp5.jpg" alt="" /> -->
+        <div class="foto-placeholder"><div class="foto-placeholder-icon">⬡</div><div class="foto-placeholder-txt">Inserir foto</div></div>
+        <div class="foto-info">
+          <div class="foto-info-unidade">Hotel Fairmont · Copacabana</div>
+          <div class="foto-info-servico">Papel de Parede</div>
+        </div>
+      </div>
+      <div class="foto-card">
+        <!-- <img src="fairmont-pp6.jpg" alt="" /> -->
+        <div class="foto-placeholder"><div class="foto-placeholder-icon">⬡</div><div class="foto-placeholder-txt">Inserir foto</div></div>
+        <div class="foto-info">
+          <div class="foto-info-unidade">Hotel Fairmont · Copacabana</div>
+          <div class="foto-info-servico">Papel de Parede</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ══════════════════════════════
+     NOSSAS SOLUÇÕES
+══════════════════════════════ -->
+<section class="solucoes">
+  <div class="eyebrow">O que entregamos</div>
+  <h2 class="block-title">Nossas <em>soluções</em></h2>
+  <p class="block-sub">Produtos e instalação alinhados ao uso real do espaço, prazo da obra e padrão de acabamento esperado.</p>
+  <div class="rule"></div>
+
+  <div class="sol-grid">
+    <div class="sol-card">
+      <i class="sol-icon ti ti-layers-subtract" aria-hidden="true"></i>
+      <div class="sol-num">01</div>
+      <div class="sol-nome">Papéis de Parede Corporativos</div>
+      <p class="sol-desc">Alta durabilidade e excelente acabamento para ambientes de grande circulação.</p>
+    </div>
+    <div class="sol-card">
+      <i class="sol-icon ti ti-layout-list" aria-hidden="true"></i>
+      <div class="sol-num">02</div>
+      <div class="sol-nome">Cortinas e Persianas</div>
+      <p class="sol-desc">Soluções funcionais e sofisticadas para hotéis, clínicas, escritórios e áreas comuns.</p>
+    </div>
+    <div class="sol-card">
+      <i class="sol-icon ti ti-sun" aria-hidden="true"></i>
+      <div class="sol-num">03</div>
+      <div class="sol-nome">Películas Arquitetônicas</div>
+      <p class="sol-desc">Controle solar, privacidade e redução térmica para fachadas e áreas envidraçadas.</p>
+    </div>
+    <div class="sol-card">
+      <i class="sol-icon ti ti-square-check" aria-hidden="true"></i>
+      <div class="sol-num">04</div>
+      <div class="sol-nome">Pisos Laminados e Vinílicos</div>
+      <p class="sol-desc">Praticidade, conforto e rápida instalação para ambientes corporativos.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     DIFERENCIAIS
+══════════════════════════════ -->
+<section class="diferenciais">
+  <div class="eyebrow">Por que a Casa Estampa</div>
+  <h2 class="block-title">Diferenciais que <em>importam</em></h2>
+  <p class="block-sub">O que garante segurança na escolha e tranquilidade na execução do seu projeto.</p>
+  <div class="rule"></div>
+
+  <div class="dif-grid">
+    <div class="dif-card">
+      <div class="dif-num">01</div>
+      <div class="dif-nome">Atendimento técnico especializado</div>
+      <p class="dif-desc">Suporte completo para especificação, viabilidade e acompanhamento do projeto do início ao fim.</p>
+    </div>
+    <div class="dif-card">
+      <div class="dif-num">02</div>
+      <div class="dif-nome">Equipe própria de instalação</div>
+      <p class="dif-desc">Instalação feita por equipe treinada para acabamento e padrão de obra, sem terceirizações.</p>
+    </div>
+    <div class="dif-card">
+      <div class="dif-num">03</div>
+      <div class="dif-nome">Cronograma alinhado à obra</div>
+      <p class="dif-desc">Planejamento integrado para reduzir retrabalho, atrasos e imprevistos na entrega.</p>
+    </div>
+    <div class="dif-card">
+      <div class="dif-num">04</div>
+      <div class="dif-nome">Produtos nacionais e importados</div>
+      <p class="dif-desc">Curadoria de linhas para diferentes padrões técnicos e estéticos de projeto.</p>
+    </div>
+    <div class="dif-card">
+      <div class="dif-num">05</div>
+      <div class="dif-nome">Capacidade para qualquer porte</div>
+      <p class="dif-desc">Atendemos obras de pequeno, médio e grande porte com a mesma atenção ao detalhe.</p>
+    </div>
+    <div class="dif-card">
+      <div class="dif-num">06</div>
+      <div class="dif-nome">Compromisso com qualidade e prazo</div>
+      <p class="dif-desc">Execução cuidadosa, comunicação clara e entrega responsável em cada projeto.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     PROCESSO
+══════════════════════════════ -->
+<section class="processo">
+  <div class="eyebrow">Como trabalhamos</div>
+  <h2 class="block-title">Seu projeto, passo a <em>passo</em></h2>
+  <p class="block-sub">Do primeiro contato à entrega, um fluxo claro e sem surpresas.</p>
+  <div class="rule"></div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-dot"><div class="step-dot-num">01</div></div>
+      <div class="step-nome">Entendimento</div>
+      <p class="step-desc">Levantamento de demanda, escopo, prazo e padrão de acabamento desejado.</p>
+    </div>
+    <div class="step">
+      <div class="step-dot"><div class="step-dot-num">02</div></div>
+      <div class="step-nome">Indicação técnica</div>
+      <p class="step-desc">Materiais e soluções adequados ao uso real do espaço.</p>
+    </div>
+    <div class="step">
+      <div class="step-dot"><div class="step-dot-num">03</div></div>
+      <div class="step-nome">Orçamento e medição</div>
+      <p class="step-desc">Medição in loco, orçamento detalhado e alinhamento com o cronograma da obra.</p>
+    </div>
+    <div class="step">
+      <div class="step-dot"><div class="step-dot-num">04</div></div>
+      <div class="step-nome">Instalação e entrega</div>
+      <p class="step-desc">Acabamento profissional e comunicação ativa do início ao fim.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     VÍDEO
+══════════════════════════════ -->
+<section class="video-sec">
+  <div>
+    <div class="eyebrow">Execução em vídeo</div>
+    <h2 class="block-title">Hotel Fairmont <em>Copacabana</em></h2>
+    <p class="block-sub">Veja na prática como conduzimos projetos de hotelaria de alto padrão — da especificação à entrega, com acabamento e escala.</p>
+    <div class="rule"></div>
+  </div>
+  <div class="video-wrap">
+    <video controls>
+      <source src="https://casaestampa.com/wp-content/uploads/2026/07/casa-estampa-hotel-fairmont.mov" type="video/mp4" />
+    </video>
+    <span class="video-badge">Hotel Fairmont · Copacabana</span>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     CTA FINAL
+══════════════════════════════ -->
+<section class="cta-final">
+  <div class="cta-bg">CE</div>
+  <div class="cta-left">
+    <div class="eyebrow">Pronto para começar</div>
+    <h2 class="cta-title">Sua empresa tem um projeto<br/><em>em andamento?</em></h2>
+    <p class="cta-desc">
+      Nossa equipe está preparada para atender desde pequenas intervenções até grandes implantações corporativas. Entre em contato e receba atendimento especializado.
+    </p>
+  </div>
+  <div class="cta-right">
+    <div class="cta-segs">
+      <div class="cta-seg">Hotéis</div>
+      <div class="cta-seg">Hospitais</div>
+      <div class="cta-seg">Construtoras</div>
+      <div class="cta-seg">Escritórios</div>
+    </div>
+    <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá, Casa Estampa. Quero solicitar atendimento corporativo." class="btn-mustard" style="text-align:center;display:block;">
+      Solicitar atendimento corporativo
+    </a>
+    <p class="cta-phone">(21) 99988-6842 · WhatsApp</p>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     FOOTER
+══════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-logo">
+    <img
+      src="https://casaestampa.com/wp-content/uploads/2022/09/Logo-Original-Fundo-Transparente.png"
+      alt="Casa Estampa Interiores"
+      onerror="this.style.display='none'"
+    />
+    <div>
+      <div class="footer-logo-text">Casa Estampa</div>
+      <div class="footer-sub">Interiores</div>
+    </div>
+  </div>
+  <span class="footer-sub">casaestampa.com</span>
+  <span class="footer-sub">Rio de Janeiro · (21) 99988-6842</span>
+</footer>
+
+</body>
+</html>

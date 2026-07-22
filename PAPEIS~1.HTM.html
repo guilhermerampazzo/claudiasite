@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Papéis de Parede – Casa Estampa Interiores</title>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --fendi:        #c2a57a;
+  --fendi-dark:   #9e7d4e;
+  --fendi-bg:     #ede0cc;
+  --fendi-pale:   #f5ede0;
+  --mustard:      #c8960c;
+  --mustard-deep: #8f6a08;
+  --wa:           #25D366;
+  --dark:         #1e1608;
+  --charcoal:     #2e2410;
+  --charcoal2:    #3a2e16;
+  --off-dark:     #463820;
+  --text-light:   #f5eed8;
+  --text-muted:   #a89370;
+  --pad: 80px;
+}
+
+body { font-family: 'Montserrat', sans-serif; background: var(--charcoal); color: var(--text-light); line-height: 1.7; overflow-x: hidden; }
+
+/* ── UTILITÁRIOS ── */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--mustard); font-weight: 600; margin-bottom: 16px;
+}
+.eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--mustard); }
+h2.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 4vw, 48px); font-weight: 700; line-height: 1.1; margin-bottom: 12px;
+}
+h2.section-title em { font-style: italic; font-weight: 400; }
+.rule { width: 56px; height: 2px; background: linear-gradient(to right, var(--mustard), var(--fendi)); margin-top: 20px; }
+
+.btn-wa {
+  background: var(--wa); color: #fff;
+  padding: 16px 32px; font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; font-weight: 600; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'Montserrat', sans-serif; transition: background 0.2s; border: none; cursor: pointer;
+}
+.btn-wa:hover { background: #1fb155; }
+.btn-wa i { font-size: 18px; }
+.btn-mustard {
+  background: var(--mustard); color: #fff;
+  padding: 15px 30px; font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; font-weight: 600; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Montserrat', sans-serif; transition: background 0.2s; border: none; cursor: pointer;
+}
+.btn-mustard:hover { background: #d9a820; }
+.btn-ghost {
+  border: 1px solid var(--fendi); color: var(--fendi);
+  padding: 14px 28px; font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; font-weight: 500; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Montserrat', sans-serif; background: transparent; cursor: pointer; transition: all 0.2s;
+}
+.btn-ghost:hover { background: var(--fendi); color: var(--dark); }
+
+/* ── NAVBAR ── */
+.navbar {
+  background: var(--dark); padding: 18px var(--pad);
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid rgba(194,165,122,0.12);
+  position: sticky; top: 0; z-index: 100;
+}
+.navbar-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.navbar-logo img { height: 38px; object-fit: contain; }
+.logo-name { font-family: 'Italiana', serif; font-size: 20px; color: var(--fendi); letter-spacing: 2px; }
+.logo-tag { font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: rgba(194,165,122,0.45); }
+.navbar-nav { display: flex; gap: 32px; list-style: none; }
+.navbar-nav a { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+.navbar-nav a:hover, .navbar-nav a.active { color: var(--mustard); }
+.navbar-wa {
+  background: var(--wa); color: #fff; padding: 10px 22px;
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 7px;
+  transition: background 0.2s;
+}
+.navbar-wa:hover { background: #1fb155; }
+
+/* ── HERO ── */
+.hero {
+  background: var(--dark); min-height: 55vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 70px var(--pad) 50px;
+  position: relative; overflow: hidden;
+}
+.hero-left {
+  position: relative; z-index: 2; max-width: 100%;
+}
+.hero-bg {
+  position: absolute; bottom: -40px; right: -20px;
+  font-family: 'Italiana', serif; font-size: clamp(160px, 22vw, 320px);
+  color: transparent; -webkit-text-stroke: 1px rgba(194,165,122,0.04);
+  pointer-events: none; line-height: 1; user-select: none; white-space: nowrap;
+}
+.hero-h {
+  font-family: 'Italiana', serif;
+  font-size: clamp(44px, 6vw, 90px);
+  line-height: 0.95; color: var(--text-light); margin-bottom: 12px;
+}
+.hero-h .destaque {
+  display: block;
+  color: var(--fendi);
+}
+.hero-sub-italic { font-family: 'Playfair Display', serif; font-size: clamp(16px, 2vw, 22px); font-style: italic; color: var(--text-muted); margin-bottom: 24px; }
+.hero-desc { font-size: 14px; font-weight: 300; color: var(--text-muted); line-height: 1.9; max-width: 560px; margin-bottom: 36px; }
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* Hero busca */
+.hero-search {
+  margin-top: 36px; display: flex; max-width: 460px;
+  border: 1px solid rgba(194,165,122,0.25);
+}
+.hero-search input {
+  flex: 1; background: rgba(194,165,122,0.06); border: none; outline: none;
+  padding: 14px 20px; font-size: 13px; color: var(--text-light);
+  font-family: 'Montserrat', sans-serif; font-weight: 300;
+}
+.hero-search input::placeholder { color: rgba(194,165,122,0.35); }
+.hero-search button {
+  background: var(--mustard); border: none; padding: 14px 20px;
+  color: #fff; font-size: 18px; cursor: pointer; display: flex; align-items: center;
+}
+
+.hero-right { position: relative; background: var(--charcoal2); overflow: hidden; }
+.hero-right-bg {
+  position: absolute; inset: 0; opacity: 0.04;
+  background-image: repeating-linear-gradient(45deg, var(--fendi) 0, var(--fendi) 1px, transparent 0, transparent 50%);
+  background-size: 18px 18px;
+}
+.hero-right-content {
+  position: relative; z-index: 2; height: 100%;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 60px;
+}
+.hero-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.hero-stat {
+  background: rgba(0,0,0,0.3); border: 1px solid rgba(194,165,122,0.1);
+  padding: 24px 20px;
+}
+.hero-stat-num { font-family: 'Italiana', serif; font-size: 40px; color: var(--mustard); line-height: 1; }
+.hero-stat-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-top: 4px; }
+.hero-img-placeholder {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 12px;
+}
+.hero-img-placeholder i { font-size: 32px; color: rgba(194,165,122,0.2); }
+.hero-img-placeholder span { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(194,165,122,0.2); }
+
+/* ── INSPIRAÇÃO ── */
+.inspiracao { background: var(--charcoal2); padding: 80px 0; }
+.inspiracao .insp-header { padding: 0 var(--pad) 48px; }
+.insp-badge-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.insp-badge { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-muted); }
+.insp-badge-tag { background: rgba(194,165,122,0.12); border: 1px solid rgba(194,165,122,0.25); color: var(--fendi); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; }
+
+/* carrossel */
+.insp-carousel-wrap { position: relative; overflow: hidden; }
+.insp-carousel-wrap::before,
+.insp-carousel-wrap::after {
+  content:''; position:absolute; top:0; bottom:0; width:80px; z-index:2; pointer-events:none;
+}
+.insp-carousel-wrap::before { left:0; background:linear-gradient(to right, var(--charcoal2), transparent); }
+.insp-carousel-wrap::after  { right:0; background:linear-gradient(to left, var(--charcoal2), transparent); }
+.insp-track {
+  display: flex; gap: 10px;
+  overflow-x: scroll; scroll-behavior: auto;
+  scrollbar-width: none;
+  cursor: grab; user-select: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 var(--pad) 8px;
+}
+.insp-track::-webkit-scrollbar { display: none; }
+.insp-track:active { cursor: grabbing; }
+.insp-slide {
+  flex: 0 0 auto;
+  width: 160px; height: 210px;
+  background: var(--off-dark);
+  overflow: hidden; position: relative;
+  border-radius: 4px;
+}
+.insp-slide.tall { height: 210px; }
+.insp-slide.wide { width: 240px; }
+.insp-slide img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s; }
+.insp-slide:hover img { transform: scale(1.04); }
+.insp-ph {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+}
+.insp-ph i { font-size: 26px; color: rgba(194,165,122,0.2); }
+.insp-ph span { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(194,165,122,0.2); }
+.insp-slide-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(10,8,3,0.75), transparent);
+  padding: 32px 18px 16px;
+  font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: rgba(245,238,216,0.7);
+}
+.insp-cta { padding: 36px var(--pad) 0; display: flex; gap: 14px; align-items: center; }
+
+/* nav arrows */
+.insp-nav { display:flex; gap:8px; margin-top:4px; }
+.insp-arrow {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(194,165,122,0.1); border: 1px solid rgba(194,165,122,0.25);
+  color: var(--fendi); font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background 0.2s;
+}
+.insp-arrow:hover { background: rgba(194,165,122,0.2); }
+
+/* ── DIFERENCIAIS ── */
+.diferenciais { background: var(--dark); padding: 80px var(--pad); }
+.dif-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 48px; }
+.dif-list { display: flex; flex-direction: column; gap: 0; }
+.dif-item {
+  display: flex; align-items: flex-start; gap: 18px;
+  padding: 22px 0; border-bottom: 1px solid rgba(194,165,122,0.1);
+}
+.dif-item:first-child { padding-top: 0; }
+.dif-check {
+  width: 36px; height: 36px; background: rgba(200,150,12,0.12);
+  border: 1px solid rgba(200,150,12,0.25);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; color: var(--mustard); flex-shrink: 0; margin-top: 2px;
+}
+.dif-text-title { font-size: 14px; font-weight: 600; color: var(--text-light); margin-bottom: 2px; }
+.dif-text-sub { font-size: 12px; color: var(--text-muted); font-weight: 300; }
+.dif-right { display: flex; flex-direction: column; gap: 2px; }
+.dif-number-card {
+  background: var(--charcoal2); padding: 18px 20px;
+  border-left: 3px solid var(--mustard);
+  display: flex; align-items: center; gap: 14px;
+}
+.dif-n { font-family: 'Italiana', serif; font-size: 36px; color: rgba(200,150,12,0.25); line-height: 1; flex-shrink: 0; }
+.dif-nc-text { font-size: 13px; color: var(--text-light); font-weight: 500; line-height: 1.3; }
+.dif-nc-sub { font-size: 13px; color: var(--text-muted); font-weight: 300; margin-top: 2px; }
+
+/* ── CATÁLOGOS ── */
+.catalogos { background: var(--charcoal); padding: 80px var(--pad) 40px; }
+.cat-filters { display: flex; gap: 4px; margin-top: 40px; margin-bottom: 40px; flex-wrap: wrap; }
+.cat-pill {
+  border: 1px solid rgba(194,165,122,0.25); color: var(--text-muted);
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  padding: 9px 20px; cursor: pointer; font-family: 'Montserrat', sans-serif;
+  background: transparent; transition: all 0.2s;
+}
+.cat-pill.active, .cat-pill:hover { background: var(--mustard); border-color: var(--mustard); color: #fff; }
+
+.cat-section { margin-bottom: 56px; }
+.cat-section-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 20px; padding-bottom: 14px;
+  border-bottom: 1px solid rgba(194,165,122,0.12);
+}
+.cat-section-name {
+  font-size: 20px;
+  color: var(--fendi); font-family: 'Playfair Display', serif; font-weight: 700;
+  display: flex; align-items: center; gap: 10px;
+}
+.cat-section-name::before { content: ''; width: 20px; height: 1px; background: var(--mustard); }
+.cat-badge {
+  background: rgba(200,150,12,0.12); border: 1px solid rgba(200,150,12,0.25);
+  color: var(--mustard); font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; padding: 4px 12px; font-weight: 600;
+}
+.cat-badge.new { background: var(--mustard); color: #fff; border-color: var(--mustard); }
+
+.album-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; }
+.album-card {
+  background: var(--charcoal2); overflow: hidden;
+  border: 1px solid rgba(194,165,122,0.06); transition: border-color 0.25s;
+}
+.album-card:hover { border-color: rgba(194,165,122,0.25); }
+.album-thumb {
+  height: 100px; background: var(--off-dark);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; color: rgba(194,165,122,0.18); position: relative; overflow: hidden;
+}
+.album-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.album-info { padding: 12px 12px 0; }
+.album-name { font-size: 11px; color: var(--text-light); font-weight: 500; line-height: 1.3; margin-bottom: 3px; }
+.album-count { font-size: 9px; color: var(--text-muted); letter-spacing: 1px; }
+.album-btn {
+  width: 100%; background: transparent; color: var(--fendi);
+  font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 9px 10px; text-align: center; margin-top: 10px;
+  display: flex; align-items: center; justify-content: center; gap: 5px;
+  text-decoration: none; transition: all 0.2s; font-family: 'Montserrat', sans-serif; font-weight: 600;
+  border-top: 1px solid rgba(194,165,122,0.12);
+}
+.album-btn:hover { background: rgba(194,165,122,0.08); color: var(--text-light); }
+.album-btn i { font-size: 13px; }
+.album-btn.wa-btn { background: var(--wa); color: #fff; border-top: none; }
+.album-btn.wa-btn:hover { background: #1fb155; color: #fff; }
+
+/* ── WA FLUTUANTE ── */
+.wa-float {
+  position: fixed; bottom: 28px; right: 28px; z-index: 200;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--wa); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+  text-decoration: none; transition: transform 0.2s, background 0.2s;
+}
+.wa-float:hover { background: #1fb155; transform: scale(1.08); }
+.wa-float i { font-size: 28px; }
+
+/* ── SIMULADOR ── */
+.simulador { background: var(--dark); padding: 32px var(--pad); }
+.sim-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 28px; align-items: stretch; }
+.sim-form { background: var(--charcoal2); padding: 24px 28px; display: flex; flex-direction: column; }
+.sim-field { margin-bottom: 20px; }
+.sim-label {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--fendi); font-weight: 600; margin-bottom: 8px; display: block;
+}
+.sim-input {
+  width: 100%; background: var(--off-dark); border: 1px solid rgba(194,165,122,0.2);
+  padding: 13px 16px; font-size: 14px; color: var(--text-light);
+  font-family: 'Montserrat', sans-serif; font-weight: 300; outline: none;
+  transition: border-color 0.2s; box-sizing: border-box;
+}
+.sim-input:focus { border-color: var(--mustard); }
+.sim-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+/* resultado inline no form */
+.sim-inline-result {
+  display: none; margin-top: 8px;
+  background: rgba(200,150,12,0.07); border: 1px solid rgba(200,150,12,0.2);
+  padding: 20px 24px;
+}
+.sim-inline-result.show { display: flex; align-items: center; gap: 32px; }
+.sim-stat { text-align: center; }
+.sim-stat-num { font-family: 'Italiana', serif; font-size: 38px; color: var(--mustard); line-height: 1; }
+.sim-stat-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-top: 2px; }
+.sim-divider { width: 1px; height: 60px; background: rgba(194,165,122,0.2); flex-shrink: 0; }
+/* lado direito */
+.sim-result {
+  background: var(--charcoal); padding: 24px 28px;
+  border: 1px solid rgba(194,165,122,0.1);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center;
+}
+.sim-empty { font-size: 13px; color: var(--text-muted); font-weight: 300; line-height: 1.8; }
+.sim-empty i { font-size: 36px; color: rgba(194,165,122,0.2); margin-bottom: 16px; display: block; }
+
+/* ── TIPOS ── */
+.tipos { background: var(--charcoal2); padding: 32px var(--pad); }
+.tipos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 20px; }
+.tipo-card {
+  background: var(--charcoal); padding: 18px 22px;
+  border-left: 3px solid var(--mustard); transition: all 0.25s;
+}
+.tipo-card:hover { background: var(--off-dark); }
+.tipo-icon { font-size: 18px; color: var(--mustard); margin-bottom: 6px; display: block; }
+.tipo-nome { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--text-light); margin-bottom: 6px; }
+.tipo-desc { font-size: 13px; color: var(--text-muted); font-weight: 300; line-height: 1.7; }
+.tipo-tag {
+  display: inline-block; margin-top: 10px;
+  border: 1px solid rgba(194,165,122,0.25); color: var(--fendi);
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px;
+}
+
+/* ── PROCESSO ── */
+.processo { background: var(--dark); padding: 48px var(--pad); }
+.proc-steps {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: 2px; margin-top: 28px; position: relative;
+}
+.proc-steps::before {
+  content: ''; position: absolute;
+  top: 20px; left: 40px; right: 40px; height: 1px;
+  background: linear-gradient(to right, var(--mustard), var(--fendi), var(--mustard));
+  opacity: 0.25;
+}
+.proc-step { text-align: center; padding: 0 16px; }
+.proc-num {
+  width: 40px; height: 40px; background: var(--mustard);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 600; color: #fff;
+  margin: 0 auto 20px; position: relative; z-index: 1;
+}
+.proc-title { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: var(--text-light); margin-bottom: 8px; line-height: 1.3; }
+.proc-desc { font-size: 13px; color: var(--text-muted); font-weight: 300; line-height: 1.6; margin-top: 6px; }
+
+/* ── DEPOIMENTOS ── */
+.depoimentos { background: var(--fendi-bg); padding: 80px var(--pad); }
+.dep-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 40px; }
+.dep-num {
+  font-family: 'Italiana', serif; font-size: clamp(60px, 8vw, 100px);
+  color: var(--mustard-deep); line-height: 1; opacity: 0.5;
+}
+.dep-num-label { font-size: 13px; color: var(--charcoal); margin-top: 4px; }
+.dep-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; }
+.dep-card {
+  background: var(--fendi-pale); padding: 22px 20px;
+  border: 1px solid rgba(158,125,78,0.15); transition: background 0.2s;
+}
+.dep-card:hover { background: #fff; }
+.dep-aspas { font-family: 'Italiana', serif; font-size: 60px; color: rgba(200,150,12,0.2); line-height: 0.6; margin-bottom: 16px; }
+.dep-texto { font-family: 'Playfair Display', serif; font-size: 15px; font-style: italic; color: var(--charcoal); line-height: 1.7; margin-bottom: 20px; }
+.dep-autor { border-top: 1px solid rgba(158,125,78,0.2); padding-top: 16px; }
+.dep-nome { font-size: 12px; font-weight: 600; color: var(--charcoal); }
+.dep-cargo { font-size: 11px; color: var(--fendi-dark); font-weight: 300; }
+.dep-ph {
+  background: rgba(158,125,78,0.06); border: 1px dashed rgba(158,125,78,0.2);
+  padding: 22px 20px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 10px; min-height: 120px;
+}
+.dep-ph i { font-size: 24px; color: rgba(158,125,78,0.3); }
+.dep-ph span { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(158,125,78,0.35); }
+
+/* ── SALVAR FAVORITOS ── */
+.favoritos { background: var(--charcoal); padding: 80px var(--pad); }
+.fav-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.fav-desc { font-size: 14px; font-weight: 300; color: var(--text-muted); line-height: 1.9; margin-top: 20px; }
+.fav-form { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.fav-field { display: flex; flex-direction: column; gap: 7px; }
+.fav-field.full { grid-column: 1 / -1; }
+.fav-label { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--fendi); font-weight: 600; }
+.fav-input {
+  background: var(--charcoal2); border: 1px solid rgba(194,165,122,0.18);
+  padding: 13px 16px; font-size: 13px; color: var(--text-light);
+  font-family: 'Montserrat', sans-serif; font-weight: 300; outline: none; width: 100%;
+  transition: border-color 0.2s;
+}
+.fav-input:focus { border-color: var(--mustard); }
+.fav-input::placeholder { color: rgba(194,165,122,0.3); }
+
+/* ── FAQ ── */
+.faq { background: var(--charcoal2); padding: 60px var(--pad); }
+.faq-list { margin-top: 32px; display: flex; flex-direction: column; gap: 2px; }
+.faq-item { background: var(--charcoal); border-left: 3px solid transparent; transition: border-color 0.2s; }
+.faq-item.open { border-left-color: var(--mustard); }
+.faq-q {
+  width: 100%; background: none; border: none; cursor: pointer;
+  padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600;
+  color: var(--text-light); text-align: left; transition: color 0.2s;
+}
+.faq-q:hover { color: var(--fendi); }
+.faq-q i { font-size: 16px; color: var(--mustard); flex-shrink: 0; transition: transform 0.25s; }
+.faq-item.open .faq-q i { transform: rotate(45deg); }
+.faq-a {
+  display: none; padding: 0 20px 18px 20px;
+  font-size: 13px; color: var(--text-muted); font-weight: 300; line-height: 1.8;
+}
+.faq-item.open .faq-a { display: block; }
+
+/* ── CTA FINAL ── */
+.cta-final {
+  background: var(--dark); padding: 36px var(--pad);
+  text-align: center; position: relative; overflow: hidden;
+}
+.cta-final::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 70%, rgba(200,150,12,0.07) 0%, transparent 65%);
+}
+.cta-title {
+  font-family: 'Italiana', serif; font-size: clamp(28px, 3.5vw, 48px);
+  color: var(--text-light); line-height: 1; margin-bottom: 8px; position: relative;
+}
+.cta-sub {
+  font-family: 'Playfair Display', serif; font-size: clamp(13px, 1.2vw, 16px);
+  font-style: italic; color: var(--fendi); margin-bottom: 20px; position: relative;
+}
+.cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; position: relative; }
+.cta-opt { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.cta-opt-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); }
+
+/* ── FOOTER ── */
+.footer {
+  background: #1a1208; border-top: 1px solid rgba(194,165,122,0.1);
+  padding: 36px var(--pad); display: flex; align-items: center; justify-content: space-between;
+}
+.footer-logo { display: flex; align-items: center; gap: 12px; }
+.footer-logo img { height: 32px; object-fit: contain; }
+.footer-name { font-family: 'Italiana', serif; font-size: 18px; color: var(--fendi); letter-spacing: 3px; }
+.footer-sub { font-size: 9px; color: rgba(194,165,122,0.3); letter-spacing: 3px; text-transform: uppercase; }
+</style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar">
+  <a href="https://casaestampa.com" class="navbar-logo">
+    <img src="https://casaestampa.com/wp-content/uploads/2022/09/Logo-Original-Fundo-Transparente.png" alt="Casa Estampa" onerror="this.style.display='none'" />
+    <div>
+      <div class="logo-name">Casa Estampa</div>
+      <div class="logo-tag">Interiores</div>
+    </div>
+  </a>
+  <ul class="navbar-nav">
+    <li><a href="#" class="active">Papéis de Parede</a></li>
+    <li><a href="#">Cortinas</a></li>
+    <li><a href="#">Persianas</a></li>
+    <li><a href="#">Pisos</a></li>
+    <li><a href="#">Arquitetos</a></li>
+  </ul>
+  <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá, Casa Estampa! Estou no site e quero ajuda para escolher papéis de parede." class="navbar-wa">
+    <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Falar agora
+  </a>
+</nav>
+
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg">PAPEL</div>
+
+  <div class="hero-left">
+    <div class="eyebrow">Mais de 1.500 opções</div>
+    <h1 class="hero-h">
+      <span class="destaque">Papéis de Parede</span>
+    </h1>
+    <p class="hero-sub-italic">Texturas, cores e desenhos com personalidade — com medição e instalação profissional.</p>
+    <p class="hero-desc">Curadoria de marcas nacionais e internacionais, com medição e instalação profissional incluída. Suporte do início ao fim.</p>
+    <div class="hero-btns">
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Quero ajuda para escolher um papel de parede." class="btn-wa">
+        <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Falar com especialista
+      </a>
+      <a href="#catalogos" class="btn-ghost">Ver catálogos ↓</a>
+    </div>
+    <div class="hero-search">
+      <input type="text" placeholder="Buscar álbum ou estilo..." />
+      <button><i class="ti ti-search" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ INSPIRAÇÃO ══ -->
+<section class="inspiracao">
+  <div class="insp-header">
+    <div class="insp-badge-row">
+      <span class="insp-badge">Quero inspiração</span>
+      <span class="insp-badge-tag">Instalações próprias</span>
+    </div>
+    <h2 class="section-title" style="margin-bottom:8px;">Veja como fica <em>na prática</em></h2>
+    <div class="rule"></div>
+    <p style="font-size:17px;color:var(--text-muted);margin-top:16px;font-weight:300;">Todos os ambientes abaixo foram instalados pela nossa equipe. Arraste para ver mais →</p>
+  </div>
+
+  <div class="insp-carousel-wrap">
+    <div class="insp-track" id="inspTrack">
+      <div class="insp-slide wide">
+        <!-- <img src="inspi-1.jpg" alt="Sala com papel de parede" /> -->
+        <div class="insp-ph"><i class="ti ti-photo" aria-hidden="true"></i><span>Inserir foto</span></div>
+        <div class="insp-slide-label">Sala de estar</div>
+      </div>
+      <div class="insp-slide">
+        <!-- <img src="inspi-2.jpg" alt="" /> -->
+        <div class="insp-ph"><i class="ti ti-photo" aria-hidden="true"></i><span>Inserir foto</span></div>
+        <div class="insp-slide-label">Quarto</div>
+      </div>
+      <div class="insp-slide">
+        <!-- <img src="inspi-3.jpg" alt="" /> -->
+        <div class="insp-ph"><i class="ti ti-photo" aria-hidden="true"></i><span>Inserir foto</span></div>
+        <div class="insp-slide-label">Home office</div>
+      </div>
+      <div class="insp-slide wide">
+        <!-- <img src="inspi-4.jpg" alt="" /> -->
+        <div class="insp-ph"><i class="ti ti-photo" aria-hidden="true"></i><span>Inserir foto</span></div>
+        <div class="insp-slide-label">Corredor</div>
+      </div>
+      <div class="insp-slide">
+        <!-- <img src="inspi-5.jpg" alt="" /> -->
+        <div class="insp-ph"><i class="ti ti-photo" aria-hidden="true"></i><span>Inserir foto</span></div>
+        <div class="insp-slide-label">Closet</div>
+      </div>
+      <div class="insp-slide">
+        <!-- <img src="inspi-6.jpg" alt="" /> -->
+        <div class="insp-ph"><i class="ti ti-photo" aria-hidden="true"></i><span>Inserir foto</span></div>
+        <div class="insp-slide-label">Quarto infantil</div>
+      </div>
+      <div class="insp-slide wide">
+        <!-- <img src="inspi-7.jpg" alt="" /> -->
+        <div class="insp-ph"><i class="ti ti-photo" aria-hidden="true"></i><span>Inserir foto</span></div>
+        <div class="insp-slide-label">Sala de jantar</div>
+      </div>
+      <div class="insp-slide">
+        <!-- <img src="inspi-8.jpg" alt="" /> -->
+        <div class="insp-ph"><i class="ti ti-photo" aria-hidden="true"></i><span>Inserir foto</span></div>
+        <div class="insp-slide-label">Banheiro</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="insp-cta">
+    <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Vi fotos no site e quero um orçamento de papel de parede." class="btn-wa">
+      <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Pedir orçamento agora
+    </a>
+    <a href="#catalogos" class="btn-ghost">Escolher meu papel →</a>
+    <div class="insp-nav">
+      <button class="insp-arrow" id="inspPrev" aria-label="anterior">&#8592;</button>
+      <button class="insp-arrow" id="inspNext" aria-label="próximo">&#8594;</button>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  const track = document.getElementById('inspTrack');
+  if (!track) return;
+  let isDragging = false, startX = 0, scrollLeft = 0;
+
+  // Clone slides for infinite loop
+  const slides = Array.from(track.children);
+  slides.forEach(s => track.appendChild(s.cloneNode(true)));
+  slides.forEach(s => track.insertBefore(s.cloneNode(true), track.firstChild));
+
+  const slideW = slides[0].offsetWidth + 10;
+  track.scrollLeft = slideW * slides.length;
+
+  // Drag to scroll
+  track.addEventListener('mousedown', e => {
+    isDragging = true; startX = e.pageX - track.offsetLeft; scrollLeft = track.scrollLeft;
+    track.style.cursor = 'grabbing';
+  });
+  document.addEventListener('mouseup', () => { isDragging = false; track.style.cursor = 'grab'; });
+  track.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - track.offsetLeft;
+    track.scrollLeft = scrollLeft - (x - startX);
+  });
+
+  // Touch
+  track.addEventListener('touchstart', e => { startX = e.touches[0].pageX; scrollLeft = track.scrollLeft; }, {passive:true});
+  track.addEventListener('touchmove', e => {
+    const x = e.touches[0].pageX;
+    track.scrollLeft = scrollLeft - (x - startX);
+  }, {passive:true});
+
+  // Infinite loop reset
+  track.addEventListener('scroll', () => {
+    const total = slideW * slides.length;
+    if (track.scrollLeft < total * 0.25) track.scrollLeft += total;
+    if (track.scrollLeft > total * 1.75) track.scrollLeft -= total;
+  });
+
+  // Arrow buttons
+  document.getElementById('inspPrev').addEventListener('click', () => {
+    track.scrollBy({left: -(slideW * 2), behavior:'smooth'});
+  });
+  document.getElementById('inspNext').addEventListener('click', () => {
+    track.scrollBy({left: slideW * 2, behavior:'smooth'});
+  });
+
+  // Auto-scroll
+  let auto = setInterval(() => { if (!isDragging) track.scrollBy({left: 1, behavior:'instant'}); }, 20);
+  track.addEventListener('mouseenter', () => clearInterval(auto));
+  track.addEventListener('mouseleave', () => {
+    auto = setInterval(() => { if (!isDragging) track.scrollBy({left: 1, behavior:'instant'}); }, 20);
+  });
+})();
+</script>
+
+
+
+
+<!-- ══ COMO FUNCIONA ══ -->
+<section class="processo">
+  <div class="eyebrow">Por que Casa Estampa</div>
+  <h2 class="section-title" style="font-size:clamp(24px,3vw,42px);">Transformar com papel de parede <em>não precisa ser complicado</em></h2>
+  <div class="rule"></div>
+  <p style="font-size:12px;color:var(--text-muted);font-weight:300;margin:10px 0 0;letter-spacing:1px;text-transform:uppercase;">Como funciona — Simples, sem erro e sem desperdício</p>
+
+  <div class="proc-steps">
+    <div class="proc-step">
+      <div class="proc-num">1</div>
+      <div class="proc-title">Você escolhe os modelos</div>
+      <p class="proc-desc">Navega pelo catálogo e manda os favoritos pelo WhatsApp</p>
+    </div>
+    <div class="proc-step">
+      <div class="proc-num">2</div>
+      <div class="proc-title">Envia as medidas</div>
+      <p class="proc-desc">Quantidade de rolos ou a medida de cada parede</p>
+    </div>
+    <div class="proc-step">
+      <div class="proc-num">3</div>
+      <div class="proc-title">Calculamos os rolos</div>
+      <p class="proc-desc">Nossa equipe faz o cálculo exato para você, sem erro</p>
+    </div>
+    <div class="proc-step">
+      <div class="proc-num">4</div>
+      <div class="proc-title">Recebe o orçamento</div>
+      <p class="proc-desc">Rápido e sem burocracia, direto no WhatsApp</p>
+    </div>
+    <div class="proc-step">
+      <div class="proc-num" style="background:var(--fendi-dark);">5</div>
+      <div class="proc-title">Pedido + instalação</div>
+      <p class="proc-desc">Cuidamos de tudo após a aprovação, do início ao fim</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ CATÁLOGOS ══ -->
+<section class="catalogos" id="catalogos">
+  <div class="eyebrow">Ver catálogos</div>
+  <h2 class="section-title">Escolha o papel <em>ideal</em></h2>
+  <p style="font-size:17px;color:var(--text-muted);font-weight:300;margin-top:8px;">Clique em qualquer álbum para ver os modelos e peça seu orçamento direto no WhatsApp.</p>
+  <div class="rule"></div>
+
+  <div class="cat-filters">
+    <button class="cat-pill active">Todos</button>
+    <button class="cat-pill">⚡ Pronta Entrega</button>
+    <button class="cat-pill">✨ Lançamentos</button>
+    <button class="cat-pill">Adulto</button>
+    <button class="cat-pill">Infantil</button>
+    <button class="cat-pill">🎨 Painéis Personalizados</button>
+  </div>
+
+  <!-- PRONTA ENTREGA -->
+  <div class="cat-section">
+    <div class="cat-section-header">
+      <div class="cat-section-name">Pronta Entrega</div>
+      <div class="cat-badge">17 álbuns</div>
+    </div>
+    <div class="album-grid">
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-layout-grid" aria-hidden="true"></i><!-- <img src="..." alt="Whisper" /> --></div>
+        <div class="album-info"><div class="album-name">Whisper</div><div class="album-count">79 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-whisper/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-leaf" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Botânica</div><div class="album-count">54 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-botanica/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-clock" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Vintage</div><div class="album-count">40 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-vintage/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-flame" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Spirit</div><div class="album-count">50 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-spirit/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-diamond" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Avalon</div><div class="album-count">47 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-avalon/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-building" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Loft</div><div class="album-count">48 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-loft/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-brush" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Modernista</div><div class="album-count">47 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-modernista/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-star" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Unique</div><div class="album-count">92 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-unique/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-layout-2" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">New Modern</div><div class="album-count">53 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-new-modern/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-heart" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Sheilas</div><div class="album-count">84 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-sheilas/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-texture" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Travertino</div><div class="album-count">102 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-travertino/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-puzzle" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Mini Marburg</div><div class="album-count">51 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-mini-marburg/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-grain" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">New Texture</div><div class="album-count">139 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-new-texture/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-building-community" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">City Romance</div><div class="album-count">116 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-city-romance/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-plant" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Boho</div><div class="album-count">37 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-boho/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-calendar-up" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Up to Date</div><div class="album-count">58 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/up-to-date/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-mountain" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Terra</div><div class="album-count">11 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-terra/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- LANÇAMENTOS -->
+  <div class="cat-section">
+    <div class="cat-section-header">
+      <div class="cat-section-name">Lançamentos</div>
+      <div class="cat-badge new">Novidades</div>
+    </div>
+    <div class="album-grid">
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-sparkles" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Stories of Life</div><div class="album-count">75 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/stories-of-life/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-building-community" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">City Romance</div><div class="album-count">116 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-city-romance/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-mountain" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Terra</div><div class="album-count">11 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-terra/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADULTO -->
+  <div class="cat-section">
+    <div class="cat-section-header">
+      <div class="cat-section-name">Adulto</div>
+      <div class="cat-badge">30 álbuns</div>
+    </div>
+    <div class="album-grid">
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Gramado</div><div class="album-count">58 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-gramado/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Holambra</div><div class="album-count">65 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-holambra/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Monte Verde</div><div class="album-count">54 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-monte-verde/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Campos de Jordão</div><div class="album-count">47 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-campos-de-jordao/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Trend Wall 2</div><div class="album-count">95 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-trend-wall-2/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">My Home My Spa</div><div class="album-count">85 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-my-home-my-spa/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Metropolis 4</div><div class="album-count">53 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-metropolis-4/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Santorini</div><div class="album-count">68 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-santorini/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Neo Geometric</div><div class="album-count">51 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-neo-geometric/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Classic Stripes</div><div class="album-count">97 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-classic-stripes/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Infinity</div><div class="album-count">61 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-infinity/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Ambiance</div><div class="album-count">47 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-ambiance/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Modern Rustic</div><div class="album-count">66 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-modern-rustic/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Vita</div><div class="album-count">53 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-vita/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Texture World</div><div class="album-count">122 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-texture-world/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Bright Wall</div><div class="album-count">55 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-bright-wall/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Suite</div><div class="album-count">56 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-suite/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Versace 4</div><div class="album-count">73 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-versace-4/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Versace 5</div><div class="album-count">87 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-versace-5/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Absolutely Chic</div><div class="album-count">49 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-absolutely-chic/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Arty</div><div class="album-count">52 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-arty/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Bjorn</div><div class="album-count">49 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-bjorn/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Flow 3</div><div class="album-count">72 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-flow-3/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Metropolitan Stories 2</div><div class="album-count">87 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-metropolitan-stories-2/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Metropolitan Stories 3</div><div class="album-count">101 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-metropolitan-stories-3/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Nacional Atemporal</div><div class="album-count">43 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-nacional-atemporal/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Nacional Contemporâneo</div><div class="album-count">74 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-nacional-contemporaneo/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Nacional Texturas 2</div><div class="album-count">59 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-nacional-texturas-2/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Joy</div><div class="album-count">79 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-joy/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="album-card"><div class="album-thumb"><i class="ti ti-photo" aria-hidden="true"></i></div><div class="album-info"><div class="album-name">Essencial Bobinex</div><div class="album-count">57 produtos</div></div><a href="https://casaestampa.com/categoria-produto/papeis-de-parede/adulto/album-essencial-bobinex/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a></div>
+    </div>
+  </div>
+
+  <!-- INFANTIL -->
+  <div class="cat-section">
+    <div class="cat-section-header">
+      <div class="cat-section-name">Coleção Infantil</div>
+      <div class="cat-badge">10 álbuns</div>
+    </div>
+    <div class="album-grid">
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-baby-carriage" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Babylandia</div><div class="album-count">69 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/infantil/album-babylandia/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-rocket" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Boys and Girls 6</div><div class="album-count">122 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/infantil/album-boys-and-girls-6/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-map" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Les Aventures 4</div><div class="album-count">65 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/infantil/album-les-aventures-4/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-moon-stars" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Mondo Baby</div><div class="album-count">80 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/infantil/album-mondo-baby/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-star" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Ola Baby</div><div class="album-count">53 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/infantil/album-ola-baby/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-pacman" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Play</div><div class="album-count">59 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/infantil/album-play/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-butterfly" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Revoada</div><div class="album-count">59 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/infantil/album-revoada-nacional/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-cloud" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Sonhos</div><div class="album-count">64 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/infantil/album-sonhos-nacional/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-circle-dotted" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Yoyo 2</div><div class="album-count">63 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/infantil/album-yoyo-2/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-package" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Painel Pack Dreams</div><div class="album-count">35 produtos</div></div>
+        <a href="https://casaestampa.com/categoria-produto/papeis-de-parede/infantil/album-painel-pack-dreams/" class="album-btn">Ver modelos <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAINÉIS PERSONALIZADOS -->
+  <div class="cat-section">
+    <div class="cat-section-header">
+      <div class="cat-section-name">Painel Personalizado por m²</div>
+      <div class="cat-badge new">Exclusivo</div>
+    </div>
+
+    <!-- CARDS -->
+    <div class="album-grid">
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-mountain" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Paisagens &amp; Natureza</div><div class="album-count">Florestas, montanhas, mar...</div></div>
+        <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse em um painel personalizado de paisagem ou natureza." class="album-btn wa-btn"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Solicitar</a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-camera" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Foto Personalizada</div><div class="album-count">Qualquer imagem sua</div></div>
+        <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse em um painel com foto personalizada." class="album-btn wa-btn"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Solicitar</a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-flower" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Florais &amp; Botânicos</div><div class="album-count">Arte floral exclusiva</div></div>
+        <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse em um painel floral ou botânico personalizado." class="album-btn wa-btn"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Solicitar</a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-letter-case" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Nome &amp; Tipografia</div><div class="album-count">Seu nome na parede</div></div>
+        <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse em um painel com nome ou tipografia." class="album-btn wa-btn"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Solicitar</a>
+      </div>
+      <div class="album-card">
+        <div class="album-thumb"><i class="ti ti-palette" aria-hidden="true"></i></div>
+        <div class="album-info"><div class="album-name">Arte &amp; Ilustração</div><div class="album-count">Estilo único e exclusivo</div></div>
+        <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse em um painel de arte ou ilustração personalizado." class="album-btn wa-btn"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Solicitar</a>
+      </div>
+      <div class="album-card" style="border-left:3px solid var(--mustard);background:rgba(200,150,12,0.06);">
+        <div class="album-thumb" style="font-size:32px;color:var(--mustard);"><i class="ti ti-sparkles" aria-hidden="true"></i></div>
+        <div class="album-info">
+          <div class="album-name" style="color:var(--mustard);">Outra ideia?</div>
+          <div class="album-count">Conta pra gente</div>
+        </div>
+        <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho uma ideia para um painel personalizado e quero um orçamento." class="album-btn wa-btn"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Falar com especialista</a>
+      </div>
+    </div>
+
+    <!-- Destaque card -->
+    <div style="background:linear-gradient(135deg,rgba(194,165,122,0.10) 0%,rgba(70,56,32,0.40) 100%);border:1px solid rgba(194,165,122,0.25);border-radius:4px;padding:24px 32px;margin-top:20px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;">
+      <div>
+        <div class="eyebrow">Criação sob medida</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--text-light);margin-bottom:10px;line-height:1.2;">Tem uma ideia? <em style="font-weight:400;color:var(--fendi);">A gente cria pra você.</em></h3>
+        <p style="font-size:13px;color:var(--text-muted);font-weight:300;line-height:1.7;margin-bottom:16px;">Painéis exclusivos impressos em papel liso alemão ou textura de linho. Pode ser uma foto, uma paisagem, uma ilustração, um nome — qualquer ideia vira papel de parede.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;">
+          <span style="font-size:9px;letter-spacing:1.5px;text-transform:uppercase;border:1px solid rgba(194,165,122,0.3);color:var(--fendi);padding:4px 10px;display:inline-flex;align-items:center;gap:5px;"><i class="ti ti-photo" style="font-size:12px;" aria-hidden="true"></i>Fotos e paisagens</span>
+          <span style="font-size:9px;letter-spacing:1.5px;text-transform:uppercase;border:1px solid rgba(194,165,122,0.3);color:var(--fendi);padding:4px 10px;display:inline-flex;align-items:center;gap:5px;"><i class="ti ti-palette" style="font-size:12px;" aria-hidden="true"></i>Arte e ilustração</span>
+          <span style="font-size:9px;letter-spacing:1.5px;text-transform:uppercase;border:1px solid rgba(194,165,122,0.3);color:var(--fendi);padding:4px 10px;display:inline-flex;align-items:center;gap:5px;"><i class="ti ti-letter-case" style="font-size:12px;" aria-hidden="true"></i>Nome impresso</span>
+          <span style="font-size:9px;letter-spacing:1.5px;text-transform:uppercase;border:1px solid rgba(194,165,122,0.3);color:var(--fendi);padding:4px 10px;display:inline-flex;align-items:center;gap:5px;"><i class="ti ti-file" style="font-size:12px;" aria-hidden="true"></i>Papel liso alemão</span>
+          <span style="font-size:9px;letter-spacing:1.5px;text-transform:uppercase;border:1px solid rgba(194,165,122,0.3);color:var(--fendi);padding:4px 10px;display:inline-flex;align-items:center;gap:5px;"><i class="ti ti-texture" style="font-size:12px;" aria-hidden="true"></i>Textura de linho</span>
+        </div>
+        <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho uma ideia para um painel personalizado e quero um orçamento." class="btn-wa"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Falar com nossa equipe</a>
+      </div>
+      <i class="ti ti-artboard" style="font-size:48px;color:var(--fendi);opacity:0.4;" aria-hidden="true"></i>
+    </div>
+
+  </div><!-- /cat-section painéis -->
+
+</section><!-- /catalogos -->
+
+
+<!-- ══ SIMULADOR ══ -->
+<section class="simulador">
+  <div class="eyebrow">Calcular quantidade</div>
+  <h2 class="section-title">Simule quantos rolos <em>você precisa</em></h2>
+  <div class="rule"></div>
+
+  <div class="sim-layout">
+    <div class="sim-form">
+      <div class="sim-row">
+        <div class="sim-field">
+          <label class="sim-label" for="largura">Largura da parede (m)</label>
+          <input class="sim-input" type="number" id="largura" placeholder="Ex: 3.5" step="0.1" oninput="calcularRolos()" />
+        </div>
+        <div class="sim-field">
+          <label class="sim-label" for="altura">Altura / Pé direito (m)</label>
+          <input class="sim-input" type="number" id="altura" placeholder="Ex: 2.8" step="0.1" oninput="calcularRolos()" />
+        </div>
+      </div>
+      <div class="sim-field">
+        <label class="sim-label" for="rendimento">Rendimento do rolo (m² por rolo)</label>
+        <select class="sim-input" id="rendimento" onchange="calcularRolos()">
+          <option value="4.5">4,5 m² — Padrão (mais comum)</option>
+          <option value="5">5 m²</option>
+          <option value="5.5">5,5 m²</option>
+          <option value="3.5">3,5 m² — Papel importado</option>
+        </select>
+      </div>
+
+      <!-- Resultado inline -->
+      <div id="simVazio" style="font-size:13px;color:var(--text-muted);font-weight:300;">Preencha largura e altura para calcular →</div>
+      <div id="simInline" class="sim-inline-result">
+        <div class="sim-stat">
+          <div class="sim-stat-num" id="resM2">—</div>
+          <div class="sim-stat-label">m² de parede</div>
+        </div>
+        <div class="sim-divider"></div>
+        <div class="sim-stat">
+          <div class="sim-stat-num" id="resRolos">—</div>
+          <div class="sim-stat-label">rolos exatos</div>
+        </div>
+        <div class="sim-divider"></div>
+        <div class="sim-stat">
+          <div class="sim-stat-num" id="resRolosExtra">—</div>
+          <div class="sim-stat-label">rolos (+10% margem)</div>
+        </div>
+        <div style="margin-left:auto;">
+          <a id="simWaLink" href="#" class="btn-wa" style="white-space:nowrap;font-size:9px;padding:10px 14px;">
+            <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Pedir orçamento
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sim-result">
+      <i class="ti ti-calculator" style="font-size:32px;color:rgba(194,165,122,0.2);margin-bottom:12px;" aria-hidden="true"></i>
+      <p style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--mustard);margin-bottom:8px;">Com dúvida<br>na medição?</p>
+      <p class="sim-empty">Chame a gente no WhatsApp que te ajudamos a calcular a quantidade certa de rolos, sem erro.</p>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Preciso de ajuda para calcular a quantidade de rolos de papel de parede." class="btn-wa" style="margin-top:20px;">
+        <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Falar com nossa equipe
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+function calcularRolos() {
+  var l = parseFloat(document.getElementById('largura').value) || 0;
+  var a = parseFloat(document.getElementById('altura').value) || 0;
+  var r = parseFloat(document.getElementById('rendimento').value) || 4.5;
+  var inline = document.getElementById('simInline');
+  var vazio  = document.getElementById('simVazio');
+  if (!l || !a) { inline.style.display='none'; vazio.style.display='block'; return; }
+  var m2 = Math.round(l * a * 10) / 10;
+  var rolos = Math.ceil(m2 / r);
+  var rolosExtra = Math.ceil(m2 * 1.1 / r);
+  document.getElementById('resM2').textContent = m2.toFixed(1).replace('.', ',');
+  document.getElementById('resRolos').textContent = rolos;
+  document.getElementById('resRolosExtra').textContent = rolosExtra;
+  var msg = encodeURIComponent('Olá! Calculei que preciso de ' + rolosExtra + ' rolos para uma parede de ' + m2.toFixed(1) + 'm². Quero um orçamento!');
+  document.getElementById('simWaLink').href = 'https://api.whatsapp.com/send?phone=5521999886842&text=' + msg;
+  vazio.style.display = 'none';
+  inline.style.display = 'flex';
+}
+</script>
+
+
+<!-- ══ TIPOS ══ -->
+<section class="tipos">
+  <div class="eyebrow">Materiais</div>
+  <h2 class="section-title">Tipos de <em>papel de parede</em></h2>
+  <div class="rule"></div>
+  <div class="tipos-grid">
+    <div class="tipo-card">
+      <i class="ti ti-droplet tipo-icon" aria-hidden="true"></i>
+      <div class="tipo-nome">Vinílico</div>
+      <p class="tipo-desc">Ideal para áreas de maior uso, como salas, corredores e quartos. É lavável, resistente e tem ótima durabilidade — até 10 anos com boa conservação.</p>
+      <span class="tipo-tag">Alta resistência</span>
+      <span class="tipo-tag">Lavável</span>
+    </div>
+    <div class="tipo-card">
+      <i class="ti ti-pencil tipo-icon" aria-hidden="true"></i>
+      <div class="tipo-nome">TNT — Tecido Não Tecido</div>
+      <p class="tipo-desc">Textura mais delicada, visual sofisticado e toque aconchegante. Indicado para quartos, salas e ambientes elegantes. Fácil instalação e remoção.</p>
+      <span class="tipo-tag">Sofisticado</span>
+      <span class="tipo-tag">Fácil remoção</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ DEPOIMENTOS ══ -->
+<section class="depoimentos">
+  <div class="dep-header">
+    <div>
+      <div class="eyebrow" style="color:var(--mustard-deep);">Quem já transformou</div>
+      <h2 class="section-title" style="color:var(--charcoal);">Mais de <em>5.000 ambientes</em><br>transformados</h2>
+    </div>
+    <div>
+      <div class="dep-num">5k+</div>
+      <div class="dep-num-label">clientes satisfeitos</div>
+    </div>
+  </div>
+  <div class="dep-grid">
+    <div class="dep-ph"><i class="ti ti-message-circle" aria-hidden="true"></i><span>Inserir depoimento</span></div>
+    <div class="dep-ph"><i class="ti ti-message-circle" aria-hidden="true"></i><span>Inserir depoimento</span></div>
+    <div class="dep-ph"><i class="ti ti-message-circle" aria-hidden="true"></i><span>Inserir depoimento</span></div>
+  </div>
+</section>
+
+
+<!-- ══ SALVAR FAVORITOS ══ -->
+<section class="favoritos">
+  <div class="fav-layout">
+    <div>
+      <div class="eyebrow">Salvar favoritos</div>
+      <h2 class="section-title">Receba sugestões <em>personalizadas</em></h2>
+      <div class="rule"></div>
+      <p class="fav-desc">Cadastre-se e nossa equipe te envia sugestões de papéis de parede de acordo com o seu estilo, ambiente e orçamento — direto no WhatsApp.</p>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Quero receber sugestões personalizadas de papéis de parede." class="btn-wa" style="margin-top:24px;">
+        <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Falar com especialista
+      </a>
+    </div>
+    <form class="fav-form" onsubmit="return false;">
+      <div class="fav-field">
+        <label class="fav-label">Nome</label>
+        <input class="fav-input" type="text" placeholder="Seu nome" />
+      </div>
+      <div class="fav-field">
+        <label class="fav-label">WhatsApp</label>
+        <input class="fav-input" type="tel" placeholder="(21) 00000-0000" />
+      </div>
+      <div class="fav-field">
+        <label class="fav-label">E-mail</label>
+        <input class="fav-input" type="email" placeholder="seu@email.com" />
+      </div>
+      <div class="fav-field">
+        <label class="fav-label">Ambiente</label>
+        <select class="fav-input">
+          <option value="">Qual ambiente?</option>
+          <option>Sala de estar</option>
+          <option>Quarto</option>
+          <option>Quarto infantil</option>
+          <option>Home office</option>
+          <option>Corredor</option>
+          <option>Banheiro</option>
+          <option>Outro</option>
+        </select>
+      </div>
+      <div class="fav-field full">
+        <label class="fav-label">Estilo preferido</label>
+        <input class="fav-input" type="text" placeholder="Ex: moderno, rústico, floral, minimalista..." />
+      </div>
+      <div class="fav-field full">
+        <button class="btn-mustard" style="width:100%;justify-content:center;">
+          <i class="ti ti-send" aria-hidden="true"></i> Enviar e receber sugestões
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+<!-- ══ FAQ ══ -->
+<section class="faq">
+  <div class="eyebrow">Dúvidas frequentes</div>
+  <h2 class="section-title">Perguntas <em>mais comuns</em></h2>
+  <div class="rule"></div>
+
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">É normal aparecerem bolhas logo após a instalação? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Sim. Pequenas bolhas são normais durante a secagem da cola e costumam desaparecer naturalmente entre 24 e 72 horas. Evite apertá-las ou tentar furá-las.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Vejo manchas ou acúmulo de cola. É normal? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Sim. Durante a instalação pode haver pequenos resíduos de cola, que secam e desaparecem em poucos dias. Não tente remover com panos úmidos ou produtos químicos sem orientação.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Qual a diferença entre papel de parede e adesivo de parede? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Embora possam parecer semelhantes, são produtos bem diferentes. O papel de parede possui maior durabilidade, acabamento superior, melhor encaixe entre as emendas e aparência muito mais sofisticada. O adesivo de PVC tende a encolher, desbota com o tempo e tem vida útil inferior. Se o objetivo é um acabamento elegante e duradouro, o papel de parede é a melhor escolha.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Posso limpar o papel de parede? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Depende do modelo. A maioria dos papéis vinílicos pode ser limpa com pano levemente úmido e detergente neutro.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Papel de parede pode ser aplicado em banheiro? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Sim, desde que seja na área seca, sem contato direto com água. Trabalhamos com papéis específicos que suportam melhor a umidade do ambiente.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Posso aplicar papel de parede sobre azulejo ou cerâmica? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Sim, é possível. Porém, antes da instalação é necessário emassar toda a superfície para eliminar as juntas dos azulejos e aplicar uma seladora, garantindo uma base lisa e adequada. A preparação da parede deve ser realizada previamente por um profissional de pintura — nossa equipe realiza apenas a instalação do papel sobre a superfície já preparada.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Preciso pintar a parede antes? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Nem sempre. É necessário apenas que a parede esteja lisa, seca, firme e sem infiltrações.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Pode aplicar sobre outro papel de parede? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">O recomendado é remover o papel antigo para garantir uma instalação perfeita.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Pode instalar na cozinha? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Sim, desde que não fique atrás da pia, fogão ou locais com contato constante com gordura e água.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">O papel estraga a parede? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Não. Quando instalado corretamente sobre uma parede preparada, ele protege a superfície. A remoção depende do tipo de papel e da condição da parede.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Quanto tempo dura o papel de parede? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Com instalação profissional e os cuidados corretos, é comum que dure entre 10 e 15 anos, podendo durar ainda mais em ambientes bem conservados.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Em quanto tempo a instalação fica pronta? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Na maioria dos ambientes residenciais, a instalação é concluída em apenas um dia.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Qual a diferença entre papel vinílico e Non Woven (TNT)? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">O papel vinílico recebe uma camada de PVC na superfície — é resistente à limpeza e ao desgaste do dia a dia, com excelente durabilidade. O Non Woven (TNT Premium) é produzido com fibras têxteis de alta qualidade, considerado linha premium pelos principais fabricantes europeus. É mais respirável, tem maior estabilidade dimensional, evita bolhas por umidade residual e tem fácil remoção na hora da troca. Nossa equipe ajuda você a escolher o mais indicado para cada ambiente.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Vocês têm papéis importados à pronta entrega? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Sim. Mantemos estoque de diversos modelos importados para agilizar a entrega. Também trabalhamos com catálogos exclusivos e lançamentos de grandes fabricantes internacionais.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Papel de parede com relevo acumula poeira? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Não de forma significativa. A poeira é semelhante à de uma parede pintada e pode ser removida com espanador, pano seco ou aspirador com bocal de escova. A textura não exige manutenção especial.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Se eu enjoar, é fácil trocar? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Sim. O papel pode ser removido e substituído quando quiser renovar o ambiente. Nos papéis Non Woven, a remoção é bastante simples quando a parede foi preparada corretamente.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">A instalação tem cheiro? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Não. Utilizamos cola à base de água, própria para instalação de papéis de parede.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Vale mais a pena pintar ou colocar papel de parede? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Quando pensamos em custo-benefício a longo prazo, o papel de parede costuma ser a melhor escolha. Enquanto a pintura precisa de retoques a cada poucos anos, um papel de qualidade dura entre 10 e 15 anos mantendo beleza e acabamento. Além disso, agrega textura, estampas exclusivas e sofisticação — transformando o ambiente com rapidez e pouca sujeira.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Posso instalar atrás da cabeceira da cama? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Sim. Essa é uma das aplicações mais procuradas e cria um grande impacto visual sem necessidade de reformas.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Papel de parede pode mofar? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">O papel de parede não é a causa do mofo. Se houver infiltração ou umidade na parede, o problema precisa ser resolvido antes da instalação — caso contrário, qualquer revestimento pode ser comprometido.</div>
+    </div>
+
+  </div>
+
+  <div style="margin-top:32px;text-align:center;">
+    <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">Ficou com alguma dúvida que não está aqui?</p>
+    <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho uma dúvida sobre papel de parede." class="btn-wa">
+      <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Perguntar no WhatsApp
+    </a>
+  </div>
+</section>
+
+<script>
+function toggleFaq(btn) {
+  var item = btn.parentElement;
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el) { el.classList.remove('open'); });
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+
+
+<!-- ══ CTA FINAL ══ -->
+<section class="cta-final">
+  <div class="cta-title">Quer ajuda para escolher?</div>
+  <p class="cta-sub">Nossa equipe te orienta desde a escolha até a instalação final.</p>
+  <div class="cta-btns">
+    <div class="cta-opt">
+      <span class="cta-opt-label">Fale agora</span>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Quero ajuda para escolher um papel de parede." class="btn-wa">
+        <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Falar com especialista
+      </a>
+    </div>
+    <div class="cta-opt">
+      <span class="cta-opt-label">Agendar visita</span>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Gostaria de agendar uma medição." class="btn-mustard">
+        <i class="ti ti-calendar" aria-hidden="true"></i> Agendar medição
+      </a>
+    </div>
+    <div class="cta-opt">
+      <span class="cta-opt-label">Ver mais</span>
+      <a href="#catalogos" class="btn-ghost">Ver todos os catálogos</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="footer-logo">
+    <img src="https://casaestampa.com/wp-content/uploads/2022/09/Logo-Original-Fundo-Transparente.png" alt="Casa Estampa" onerror="this.style.display='none'" />
+    <div>
+      <div class="footer-name">Casa Estampa</div>
+      <div class="footer-sub">Interiores · (21) 99988-6842</div>
+    </div>
+  </div>
+  <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(194,165,122,0.3);">
+    casaestampa.com
+  </div>
+  <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(194,165,122,0.3);text-align:right;">
+    Rio de Janeiro · (21) 99988-6842
+  </div>
+</footer>
+
+
+<!-- ══ BOTÃO WA FLUTUANTE ══ -->
+<a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Estou no site e quero ajuda para escolher papéis de parede." class="wa-float" aria-label="Falar pelo WhatsApp">
+  <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+</a>
+
+
+</body>
+</html>

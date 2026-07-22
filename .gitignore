@@ -1,0 +1,7 @@
+.env
+.next/
+node_modules/
+uploads/
+.codex-deploy-key
+npm-debug.log*
+

@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Arquitetos & Designers – Casa Estampa Interiores</title>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --fendi:        #c2a57a;
+  --fendi-dark:   #9e7d4e;
+  --fendi-bg:     #ede0cc;
+  --fendi-pale:   #f5ede0;
+  --mustard:      #c8960c;
+  --mustard-deep: #8f6a08;
+  --dark:         #1e1608;
+  --charcoal:     #2e2410;
+  --charcoal2:    #3a2e16;
+  --off-dark:     #463820;
+  --text-light:   #f5eed8;
+  --text-muted:   #a89370;
+  --pad: 90px;
+  --gap: 60px;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--charcoal);
+  color: var(--text-light);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── TIPOGRAFIA ── */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--mustard);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.eyebrow::before {
+  content: '';
+  width: 32px; height: 1px;
+  background: var(--mustard);
+}
+h2.block-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(34px, 4.5vw, 52px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+h2.block-title em { font-style: italic; font-weight: 400; }
+.block-sub {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.9;
+  max-width: 580px;
+  color: var(--text-muted);
+}
+.rule {
+  width: 64px; height: 2px;
+  background: linear-gradient(to right, var(--mustard), var(--fendi));
+  margin-top: 24px;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+  background: var(--dark);
+  padding: 20px var(--pad);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(194,165,122,0.12);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+.logo-symbol {
+  width: 40px; height: 40px;
+  object-fit: contain;
+}
+.logo-text-wrap { display: flex; flex-direction: column; line-height: 1.1; }
+.logo-name { font-family: 'Italiana', serif; font-size: 22px; color: var(--fendi); letter-spacing: 2px; }
+.logo-tagline { font-size: 8.5px; letter-spacing: 3px; text-transform: uppercase; color: rgba(194,165,122,0.5); }
+.navbar-nav { display: flex; gap: 36px; list-style: none; }
+.navbar-nav a { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); text-decoration: none; font-weight: 400; transition: color 0.25s; }
+.navbar-nav a:hover, .navbar-nav a.active { color: var(--mustard); }
+.navbar-cta {
+  background: var(--mustard);
+  color: #fff;
+  padding: 11px 28px;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.25s;
+}
+.navbar-cta:hover { background: #d9a820; }
+
+/* ── BOTÕES ── */
+.btn-mustard {
+  background: var(--mustard);
+  color: #fff;
+  padding: 17px 40px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s;
+  font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+}
+.btn-mustard:hover { background: #d9a820; }
+.btn-ghost {
+  border: 1px solid var(--fendi);
+  color: var(--fendi);
+  padding: 16px 36px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.25s;
+  font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+}
+.btn-ghost:hover { background: var(--fendi); color: var(--dark); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: var(--dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px var(--pad) 100px;
+}
+.hero-bg-word {
+  position: absolute;
+  bottom: -40px; right: 0;
+  font-family: 'Italiana', serif;
+  font-size: clamp(140px, 20vw, 280px);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(194,165,122,0.05);
+  user-select: none;
+  pointer-events: none;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.hero-left {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+.hero-label {
+  font-size: 14px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--mustard);
+  font-weight: 600;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.hero-label::before { content: ''; width: 36px; height: 1px; background: var(--mustard); }
+.hero-title {
+  font-family: 'Italiana', serif;
+  font-size: clamp(48px, 7vw, 96px);
+  line-height: 0.95;
+  color: var(--text-light);
+  margin-bottom: 16px;
+}
+.hero-title-line2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 2.5vw, 28px);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--fendi);
+  margin-bottom: 32px;
+}
+.hero-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 2.5vw, 30px);
+  font-weight: 400;
+  color: var(--text-light);
+  line-height: 1.4;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.hero-sub {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-muted);
+  max-width: 480px;
+  line-height: 1.9;
+  margin-bottom: 48px;
+}
+.hero-ctas { display: flex; gap: 16px; align-items: center; }
+
+/* Hero direita — visual */
+.hero-right {
+  background: var(--charcoal2);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.hero-right-pattern {
+  position: absolute; inset: 0;
+  opacity: 0.04;
+  background-image: repeating-linear-gradient(45deg, var(--fendi) 0, var(--fendi) 1px, transparent 0, transparent 50%);
+  background-size: 18px 18px;
+}
+.hero-right-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+.hero-badge {
+  background: rgba(200,150,12,0.12);
+  border: 1px solid rgba(200,150,12,0.25);
+  padding: 40px 36px;
+  margin-bottom: 4px;
+}
+.hero-badge-label {
+  font-size: 9px;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--mustard);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.hero-badge-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-light);
+  line-height: 1.5;
+  font-style: italic;
+}
+.hero-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+.hero-feat {
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(194,165,122,0.1);
+  padding: 20px 22px;
+  font-size: 11px;
+  color: var(--fendi);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-feat i { font-size: 15px; color: var(--mustard); }
+
+/* ── QUEM SOMOS ── */
+.quem-somos {
+  background: var(--charcoal2);
+  padding: 90px var(--pad);
+}
+.quem-somos-inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 80px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+.quem-left h2.block-title { color: var(--text-light); white-space: nowrap; }
+.quem-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(15px, 1.5vw, 18px);
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.85;
+  padding-top: 6px;
+}
+.quem-text p { margin-bottom: 14px; }
+.quem-text p:last-child { margin-bottom: 0; }
+.quem-text strong { color: var(--fendi); font-weight: 600; }
+
+/* ── BENEFÍCIOS ── */
+.beneficios {
+  background: var(--charcoal);
+  padding: 100px var(--pad);
+}
+.ben-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-top: 56px;
+}
+.ben-card {
+  background: var(--charcoal2);
+  padding: 36px 28px;
+  border-left: 3px solid var(--mustard);
+  transition: all 0.3s;
+}
+.ben-card:hover { background: var(--off-dark); border-left-color: var(--fendi); }
+.ben-icon { font-size: 24px; color: var(--mustard); margin-bottom: 16px; display: block; transition: color 0.3s; }
+.ben-card:hover .ben-icon { color: var(--fendi); }
+.ben-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px; font-weight: 700;
+  color: var(--text-light);
+  line-height: 1.3; margin-bottom: 10px;
+}
+.ben-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; line-height: 1.8; }
+
+/* ── CLUBE ── */
+.clube {
+  background: var(--dark);
+  padding: 100px var(--pad);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  position: relative;
+  overflow: hidden;
+}
+.clube::before {
+  content: 'CLUBE';
+  position: absolute;
+  font-family: 'Italiana', serif;
+  font-size: 220px;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(194,165,122,0.05);
+  right: -20px; bottom: -40px;
+  pointer-events: none;
+  line-height: 1;
+}
+.clube-left {}
+.clube-desc {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.9;
+  margin-top: 28px;
+  max-width: 460px;
+}
+.clube-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 8px;
+}
+.clube-item {
+  background: var(--charcoal2);
+  border: 1px solid rgba(194,165,122,0.1);
+  padding: 32px 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  transition: all 0.25s;
+}
+.clube-item:hover {
+  background: var(--off-dark);
+  border-color: rgba(200,150,12,0.25);
+}
+.clube-item-icon {
+  width: 40px; height: 40px;
+  background: rgba(200,150,12,0.1);
+  border: 1px solid rgba(200,150,12,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; color: var(--mustard);
+}
+.clube-item-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px; font-weight: 700;
+  color: var(--text-light); line-height: 1.2;
+}
+
+/* ── PORTFÓLIO / VÍDEOS ── */
+.portfolio {
+  background: var(--charcoal2);
+  padding: 100px var(--pad);
+}
+.vid-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  margin-top: 56px;
+}
+.vid-card {
+  position: relative;
+  background: var(--off-dark);
+  border: 1px solid rgba(194,165,122,0.08);
+  overflow: hidden;
+}
+.vid-placeholder {
+  aspect-ratio: 16/9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(0,0,0,0.2);
+  position: relative;
+}
+.vid-play {
+  width: 56px; height: 56px;
+  border: 2px solid rgba(194,165,122,0.35);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  color: rgba(194,165,122,0.5);
+}
+.vid-placeholder span {
+  font-size: 9px; letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(194,165,122,0.3);
+  font-weight: 500;
+}
+/* video tag ocupa o container inteiro quando inserido */
+.vid-card video {
+  width: 100%; aspect-ratio: 16/9;
+  display: block; object-fit: cover;
+}
+.vid-info {
+  padding: 22px 24px;
+  border-top: 1px solid rgba(194,165,122,0.08);
+}
+.vid-projeto {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px; font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 4px;
+}
+.vid-arq {
+  font-size: 11px; letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--mustard); font-weight: 500;
+}
+
+/* ── MOSTRA MORAR MAIS ── */
+.mostra {
+  background: var(--dark);
+  padding: 100px var(--pad);
+}
+.mostra-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  margin-bottom: 64px;
+}
+.mostra-texto {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.9;
+  margin-top: 20px;
+}
+.mostra-texto p { margin-bottom: 16px; }
+.mostra-texto p:last-child { margin-bottom: 0; }
+.mostra-texto strong { color: var(--fendi); font-weight: 600; }
+.mostra-badge {
+  background: rgba(200,150,12,0.08);
+  border: 1px solid rgba(200,150,12,0.2);
+  padding: 32px 36px;
+  align-self: center;
+}
+.mostra-badge-ano {
+  font-family: 'Italiana', serif;
+  font-size: 64px;
+  color: var(--mustard);
+  line-height: 1;
+  opacity: 0.7;
+}
+.mostra-badge-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-top: 8px;
+  line-height: 1.2;
+}
+.mostra-badge-sub {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--mustard);
+  font-weight: 600;
+  margin-top: 14px;
+}
+.mostra-badge-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-top: 10px;
+  line-height: 1.7;
+}
+.mostra-fotos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+.mostra-foto {
+  position: relative;
+  background: var(--off-dark);
+  border: 1px solid rgba(194,165,122,0.06);
+  overflow: hidden;
+  aspect-ratio: 3/4;
+}
+.mostra-foto.wide {
+  grid-column: span 2;
+  aspect-ratio: 16/9;
+}
+.mostra-foto img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+.mostra-foto:hover img { transform: scale(1.04); }
+.mostra-foto-ph {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 10px;
+}
+.mostra-foto-ph i { font-size: 24px; color: rgba(194,165,122,0.2); }
+.mostra-foto-ph span { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(194,165,122,0.2); }
+
+/* ── FORMULÁRIO ── */
+.cadastro {
+  background: var(--charcoal);
+  padding: 100px var(--pad);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.cadastro-left {}
+.cadastro-left .block-sub { color: var(--text-muted); margin-top: 16px; }
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.form-field.full { grid-column: 1 / -1; }
+.form-label {
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--fendi);
+  font-weight: 600;
+}
+.form-input {
+  background: var(--charcoal2);
+  border: 1px solid rgba(194,165,122,0.2);
+  padding: 14px 18px;
+  font-size: 14px;
+  color: var(--text-light);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.25s;
+  width: 100%;
+}
+.form-input::placeholder { color: rgba(194,165,122,0.3); }
+.form-input:focus { border-color: var(--mustard); }
+.form-submit {
+  grid-column: 1 / -1;
+  margin-top: 8px;
+}
+
+/* ── CTA FINAL ── */
+.cta-final {
+  background: var(--dark);
+  padding: 110px var(--pad);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-final::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 60%, rgba(200,150,12,0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+.cta-final-eyebrow { justify-content: center; margin-bottom: 24px; }
+.cta-final-title {
+  font-family: 'Italiana', serif;
+  font-size: clamp(48px, 7vw, 90px);
+  color: var(--text-light);
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.cta-final-sub {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(16px, 2vw, 22px);
+  font-style: italic;
+  color: var(--fendi);
+  margin-bottom: 48px;
+  font-weight: 400;
+}
+.cta-final-btns { display: flex; gap: 16px; justify-content: center; }
+
+/* ── FOOTER ── */
+.footer {
+  background: #1a1208;
+  border-top: 1px solid rgba(194,165,122,0.1);
+  padding: 40px var(--pad);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-logo { display: flex; align-items: center; gap: 14px; }
+.footer-logo img { height: 36px; object-fit: contain; }
+.footer-logo-text { font-family: 'Italiana', serif; font-size: 20px; color: var(--fendi); letter-spacing: 3px; }
+.footer-sub { font-size: 9px; color: rgba(194,165,122,0.3); letter-spacing: 3px; text-transform: uppercase; }
+</style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar">
+  <a href="https://casaestampa.com" class="navbar-logo">
+    <img class="logo-symbol"
+      src="https://casaestampa.com/wp-content/uploads/2022/09/Logo-Original-Fundo-Transparente.png"
+      alt="Casa Estampa"
+      onerror="this.style.display='none'" />
+    <div class="logo-text-wrap">
+      <span class="logo-name">Casa Estampa</span>
+      <span class="logo-tagline">Interiores</span>
+    </div>
+  </a>
+  <ul class="navbar-nav">
+    <li><a href="#">Papéis de Parede</a></li>
+    <li><a href="#">Cortinas</a></li>
+    <li><a href="#">Persianas</a></li>
+    <li><a href="#">Pisos</a></li>
+    <li><a href="#" class="active">Arquitetos</a></li>
+  </ul>
+  <a href="https://api.whatsapp.com/send?phone=5521999886842" class="navbar-cta">Quero ser parceiro</a>
+</nav>
+
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg-word">ARQUITETOS</div>
+
+  <div class="hero-left">
+    <div class="hero-label">Programa de Relacionamento Casa Estampa</div>
+    <h1 class="hero-title">Arquitetos &amp; Designers</h1>
+    <p class="hero-title-line2">Parcerias que elevam projetos</p>
+    <p class="hero-quote">"Grandes projetos nascem de grandes parcerias."</p>
+    <p class="hero-sub">Atendimento personalizado, produtos exclusivos e suporte completo para arquitetos e designers de interiores.</p>
+    <div class="hero-ctas">
+      <a href="#cadastro" class="btn-mustard">Quero ser parceiro</a>
+      <a href="#beneficios" class="btn-ghost">Ver benefícios</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ QUEM SOMOS ══ -->
+<section class="quem-somos">
+  <div class="eyebrow">Nossa proposta</div>
+  <div class="quem-somos-inner">
+    <div class="quem-left">
+      <h2 class="block-title">Seu projeto,<br/>nossa <em>prioridade</em></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="quem-text">
+      <p>Na Casa Estampa, entendemos que cada projeto é único. Por isso, oferecemos <strong>suporte completo</strong> aos arquitetos e designers de interiores, proporcionando agilidade, atendimento personalizado e acompanhamento técnico em todas as etapas.</p>
+      <p>Nosso objetivo é <strong>transformar especificações em experiências</strong>, garantindo qualidade, sofisticação e excelência na entrega de cada projeto.</p>
+    </div>
+  </div>
+  <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Gostaria de conhecer o Programa de Parceria Casa Estampa para arquitetos." class="btn-mustard" style="font-size:10px;padding:14px 28px;">Falar com consultor</a>
+</section>
+
+
+<!-- ══ BENEFÍCIOS ══ -->
+<section class="beneficios" id="beneficios">
+  <div class="eyebrow">Exclusivo para parceiros</div>
+  <h2 class="block-title">Benefícios que fazem a <em>diferença</em></h2>
+  <p class="block-sub">Tudo o que você precisa para especificar com confiança e entregar com excelência.</p>
+  <div class="rule"></div>
+
+  <div class="ben-grid">
+    <div class="ben-card">
+      <i class="ben-icon ti ti-truck-delivery" aria-hidden="true"></i>
+      <div class="ben-title">Mostruários até o escritório ou obra</div>
+      <p class="ben-desc">Levamos as amostras até você, sem precisar se deslocar.</p>
+    </div>
+    <div class="ben-card">
+      <i class="ben-icon ti ti-file-invoice" aria-hidden="true"></i>
+      <div class="ben-title">Orçamentos rápidos e personalizados</div>
+      <p class="ben-desc">Respostas ágeis e propostas adaptadas a cada projeto.</p>
+    </div>
+    <div class="ben-card">
+      <i class="ben-icon ti ti-ruler-measure" aria-hidden="true"></i>
+      <div class="ben-title">Visita técnica e medição especializada</div>
+      <p class="ben-desc">Nossa equipe vai até o local para garantir precisão na especificação.</p>
+    </div>
+    <div class="ben-card">
+      <i class="ben-icon ti ti-route" aria-hidden="true"></i>
+      <div class="ben-title">Acompanhamento da especificação à instalação</div>
+      <p class="ben-desc">Suporte completo em todas as etapas do seu projeto.</p>
+    </div>
+    <div class="ben-card">
+      <i class="ben-icon ti ti-tool" aria-hidden="true"></i>
+      <div class="ben-title">Equipe própria e especializada de instalação</div>
+      <p class="ben-desc">Instalação feita por profissionais treinados, sem terceirizações.</p>
+    </div>
+    <div class="ben-card">
+      <i class="ben-icon ti ti-package" aria-hidden="true"></i>
+      <div class="ben-title">Produtos exclusivos, nacionais e importados</div>
+      <p class="ben-desc">Curadoria especial com linhas que não estão disponíveis para o público geral.</p>
+    </div>
+    <div class="ben-card">
+      <i class="ben-icon ti ti-star" aria-hidden="true"></i>
+      <div class="ben-title">Atendimento prioritário</div>
+      <p class="ben-desc">Profissionais parceiros têm prioridade no atendimento e nas entregas.</p>
+    </div>
+    <div class="ben-card">
+      <i class="ben-icon ti ti-discount" aria-hidden="true"></i>
+      <div class="ben-title">Condições comerciais diferenciadas</div>
+      <p class="ben-desc">Tabela exclusiva e condições especiais para parceiros do programa.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ CLUBE DE BENEFÍCIOS ══ -->
+<section class="clube">
+  <div class="clube-left">
+    <div class="eyebrow">Programa exclusivo</div>
+    <h2 class="block-title">Clube de Benefícios<br/><em>Casa Estampa</em></h2>
+    <div class="rule"></div>
+    <p class="clube-desc">Reconhecemos e valorizamos nossos parceiros através de um programa exclusivo de relacionamento, com benefícios comerciais diferenciados, campanhas de incentivo e premiações especiais conforme o volume de projetos realizados.</p>
+  </div>
+  <div class="clube-right">
+    <div class="clube-item">
+      <div class="clube-item-icon"><i class="ti ti-gift" aria-hidden="true"></i></div>
+      <div class="clube-item-title">Vouchers gastronômicos</div>
+    </div>
+    <div class="clube-item">
+      <div class="clube-item-icon"><i class="ti ti-shopping-bag" aria-hidden="true"></i></div>
+      <div class="clube-item-title">Vale-compras exclusivos</div>
+    </div>
+    <div class="clube-item">
+      <div class="clube-item-icon"><i class="ti ti-rocket" aria-hidden="true"></i></div>
+      <div class="clube-item-title">Campanhas de incentivo</div>
+    </div>
+    <div class="clube-item">
+      <div class="clube-item-icon"><i class="ti ti-award" aria-hidden="true"></i></div>
+      <div class="clube-item-title">Premiações especiais</div>
+    </div>
+    <div class="clube-item">
+      <div class="clube-item-icon"><i class="ti ti-calendar-event" aria-hidden="true"></i></div>
+      <div class="clube-item-title">Eventos e lançamentos</div>
+    </div>
+    <div class="clube-item">
+      <div class="clube-item-icon"><i class="ti ti-school" aria-hidden="true"></i></div>
+      <div class="clube-item-title">Treinamentos e atualizações</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ PORTFÓLIO ══ -->
+<section class="portfolio">
+  <div class="eyebrow">Portfólio</div>
+  <h2 class="block-title">Obras que <em>inspiram</em></h2>
+  <p class="block-sub">Projetos residenciais, hotéis, hospitais e ambientes da Mostra Morar Mais.</p>
+  <div class="rule"></div>
+
+  <div class="vid-grid">
+
+    <div class="vid-card">
+      <!-- <video src="video-flavio.mp4" controls></video> -->
+      <div class="vid-placeholder">
+        <div class="vid-play"><i class="ti ti-player-play" aria-hidden="true"></i></div>
+        <span>Inserir vídeo</span>
+      </div>
+      <div class="vid-info">
+        <div class="vid-projeto">Projeto Flavio</div>
+        <div class="vid-arq">Arquiteta Patricia Machado</div>
+      </div>
+    </div>
+
+    <div class="vid-card">
+      <!-- <video src="video-servi-promo.mp4" controls></video> -->
+      <div class="vid-placeholder">
+        <div class="vid-play"><i class="ti ti-player-play" aria-hidden="true"></i></div>
+        <span>Inserir vídeo</span>
+      </div>
+      <div class="vid-info">
+        <div class="vid-projeto">Projeto Servi Promo</div>
+        <div class="vid-arq">Arquiteta Suellen Soares</div>
+      </div>
+    </div>
+
+    <div class="vid-card">
+      <!-- <video src="video-liana.mp4" controls></video> -->
+      <div class="vid-placeholder">
+        <div class="vid-play"><i class="ti ti-player-play" aria-hidden="true"></i></div>
+        <span>Inserir vídeo</span>
+      </div>
+      <div class="vid-info">
+        <div class="vid-projeto">Projeto</div>
+        <div class="vid-arq">Arquiteta Liana Figueirinha</div>
+      </div>
+    </div>
+
+    <div class="vid-card">
+      <!-- <video src="video-taciana.mp4" controls></video> -->
+      <div class="vid-placeholder">
+        <div class="vid-play"><i class="ti ti-player-play" aria-hidden="true"></i></div>
+        <span>Inserir vídeo</span>
+      </div>
+      <div class="vid-info">
+        <div class="vid-projeto">Projeto</div>
+        <div class="vid-arq">Arquiteta Taciana Lessa</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══ MOSTRA MORAR MAIS ══ -->
+<section class="mostra">
+  <div class="eyebrow">Presença e Reconhecimento</div>
+  <h2 class="block-title">Mostra Morar Mais <em>2025</em></h2>
+  <div class="rule"></div>
+
+  <div class="mostra-intro">
+    <div>
+      <div class="mostra-texto">
+        <p>Em 2025, a Casa Estampa foi <strong>fornecedora oficial</strong> da Mostra Morar Mais, um dos maiores eventos de decoração e design de interiores do Rio de Janeiro.</p>
+        <p>Montamos uma loja exclusiva dentro da Mostra, onde apresentamos nossa coleção de <strong>papéis de parede a pronta entrega</strong>, persianas, cortinas e revestimentos — permitindo que arquitetos, designers e o público geral experimentassem de perto o universo Casa Estampa.</p>
+        <p>Uma oportunidade única de conectar nossos produtos diretamente com profissionais e clientes que buscam o melhor em decoração de alto padrão.</p>
+      </div>
+    </div>
+    <div class="mostra-badge">
+      <div class="mostra-badge-ano">2025</div>
+      <div class="mostra-badge-titulo">Fornecedora Oficial</div>
+      <div class="mostra-badge-sub">Mostra Morar Mais · Rio de Janeiro</div>
+      <div class="mostra-badge-desc">Papéis de parede a pronta entrega · Persianas · Cortinas · Revestimentos exclusivos</div>
+    </div>
+  </div>
+
+  <div class="mostra-fotos">
+    <div class="mostra-foto wide">
+      <!-- <img src="morar-mais-1.jpg" alt="Loja Casa Estampa na Mostra Morar Mais 2025" /> -->
+      <div class="mostra-foto-ph"><i class="ti ti-photo" aria-hidden="true"></i><span>Inserir foto</span></div>
+    </div>
+    <div class="mostra-foto">
+      <!-- <img src="morar-mais-2.jpg" alt="" /> -->
+      <div class="mostra-foto-ph"><i class="ti ti-photo" aria-hidden="true"></i><span>Inserir foto</span></div>
+    </div>
+    <div class="mostra-foto">
+      <!-- <img src="morar-mais-3.jpg" alt="" /> -->
+      <div class="mostra-foto-ph"><i class="ti ti-photo" aria-hidden="true"></i><span>Inserir foto</span></div>
+    </div>
+    <div class="mostra-foto">
+      <!-- <img src="morar-mais-4.jpg" alt="" /> -->
+      <div class="mostra-foto-ph"><i class="ti ti-photo" aria-hidden="true"></i><span>Inserir foto</span></div>
+    </div>
+    <div class="mostra-foto">
+      <!-- <img src="morar-mais-5.jpg" alt="" /> -->
+      <div class="mostra-foto-ph"><i class="ti ti-photo" aria-hidden="true"></i><span>Inserir foto</span></div>
+    </div>
+    <div class="mostra-foto wide">
+      <!-- <img src="morar-mais-6.jpg" alt="" /> -->
+      <div class="mostra-foto-ph"><i class="ti ti-photo" aria-hidden="true"></i><span>Inserir foto</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ FORMULÁRIO ══ -->
+<section class="cadastro" id="cadastro">
+  <div class="cadastro-left">
+    <div class="eyebrow">Faça parte</div>
+    <h2 class="block-title">Cadastre-se como <em>parceiro</em></h2>
+    <div class="rule"></div>
+    <p class="block-sub" style="margin-top:20px;">Preencha o formulário e nossa equipe entrará em contato para apresentar todas as condições exclusivas do programa.</p>
+  </div>
+
+  <form class="form-grid">
+    <div class="form-field">
+      <label class="form-label">Nome completo</label>
+      <input type="text" class="form-input" placeholder="Seu nome" />
+    </div>
+    <div class="form-field">
+      <label class="form-label">Nome do escritório</label>
+      <input type="text" class="form-input" placeholder="Nome do escritório" />
+    </div>
+    <div class="form-field">
+      <label class="form-label">Telefone / WhatsApp</label>
+      <input type="tel" class="form-input" placeholder="(21) 00000-0000" />
+    </div>
+    <div class="form-field">
+      <label class="form-label">E-mail</label>
+      <input type="email" class="form-input" placeholder="seu@email.com" />
+    </div>
+    <div class="form-field">
+      <label class="form-label">Instagram</label>
+      <input type="text" class="form-input" placeholder="@seuinstagram" />
+    </div>
+    <div class="form-field">
+      <label class="form-label">Cidade / Região de atuação</label>
+      <input type="text" class="form-input" placeholder="Rio de Janeiro" />
+    </div>
+    <div class="form-field form-submit">
+      <button type="submit" class="btn-mustard" style="width:100%;padding:18px;">Enviar cadastro</button>
+    </div>
+  </form>
+</section>
+
+
+<!-- ══ CTA FINAL ══ -->
+<section class="cta-final">
+  <div class="eyebrow cta-final-eyebrow">Agende uma visita</div>
+  <h2 class="cta-final-title">Vamos até você</h2>
+  <p class="cta-final-sub">Agende uma visita ao seu escritório e conheça nossos mostruários exclusivos.</p>
+  <div class="cta-final-btns">
+    <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá, Casa Estampa! Quero agendar uma visita ao meu escritório para conhecer os mostruários." class="btn-mustard">Agendar visita pelo WhatsApp</a>
+    <a href="#cadastro" class="btn-ghost">Fazer cadastro</a>
+  </div>
+</section>
+
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="footer-logo">
+    <img src="https://casaestampa.com/wp-content/uploads/2022/09/Logo-Original-Fundo-Transparente.png" alt="Casa Estampa" onerror="this.style.display='none'" />
+    <div>
+      <div class="footer-logo-text">Casa Estampa</div>
+      <div class="footer-sub">Interiores</div>
+    </div>
+  </div>
+  <span class="footer-sub">casaestampa.com</span>
+  <span class="footer-sub">Rio de Janeiro · (21) 99988-6842</span>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cortinas – Casa Estampa Interiores</title>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --fendi:        #c2a57a;
+  --fendi-dark:   #9e7d4e;
+  --fendi-bg:     #ede0cc;
+  --fendi-pale:   #f5ede0;
+  --mustard:      #c8960c;
+  --mustard-deep: #8f6a08;
+  --wa:           #25D366;
+  --dark:         #1e1608;
+  --charcoal:     #2e2410;
+  --charcoal2:    #3a2e16;
+  --off-dark:     #463820;
+  --text-light:   #f5eed8;
+  --text-muted:   #a89370;
+  --pad: 80px;
+}
+
+body { font-family: 'Montserrat', sans-serif; background: var(--charcoal); color: var(--text-light); line-height: 1.7; overflow-x: hidden; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--mustard); font-weight: 600; margin-bottom: 16px;
+}
+.eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--mustard); }
+h2.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 4vw, 48px); font-weight: 700; line-height: 1.1; margin-bottom: 12px;
+}
+h2.section-title em { font-style: italic; font-weight: 400; }
+.rule { width: 56px; height: 2px; background: linear-gradient(to right, var(--mustard), var(--fendi)); margin-top: 20px; }
+
+.btn-wa {
+  background: var(--wa); color: #fff;
+  padding: 16px 32px; font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; font-weight: 600; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'Montserrat', sans-serif; transition: background 0.2s; border: none; cursor: pointer;
+}
+.btn-wa:hover { background: #1fb155; }
+.btn-wa i { font-size: 18px; }
+.btn-mustard {
+  background: var(--mustard); color: #fff;
+  padding: 15px 30px; font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; font-weight: 600; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Montserrat', sans-serif; transition: background 0.2s; border: none; cursor: pointer;
+}
+.btn-mustard:hover { background: #d9a820; }
+.btn-ghost {
+  border: 1px solid var(--fendi); color: var(--fendi);
+  padding: 14px 28px; font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; font-weight: 500; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Montserrat', sans-serif; background: transparent; cursor: pointer; transition: all 0.2s;
+}
+.btn-ghost:hover { background: var(--fendi); color: var(--dark); }
+
+/* ── NAVBAR ── */
+.navbar {
+  background: var(--dark); padding: 18px var(--pad);
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid rgba(194,165,122,0.12);
+  position: sticky; top: 0; z-index: 100;
+}
+.navbar-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.navbar-logo img { height: 38px; object-fit: contain; }
+.logo-name { font-family: 'Italiana', serif; font-size: 20px; color: var(--fendi); letter-spacing: 2px; }
+.logo-tag { font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: rgba(194,165,122,0.45); }
+.navbar-nav { display: flex; gap: 32px; list-style: none; }
+.navbar-nav a { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+.navbar-nav a:hover, .navbar-nav a.active { color: var(--mustard); }
+.navbar-wa {
+  background: var(--wa); color: #fff; padding: 10px 22px;
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 7px;
+  transition: background 0.2s;
+}
+.navbar-wa:hover { background: #1fb155; }
+
+/* ── HERO ── */
+.hero {
+  background: var(--dark); min-height: 55vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 70px var(--pad) 50px;
+  position: relative; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; bottom: -40px; right: -20px;
+  font-family: 'Italiana', serif; font-size: clamp(160px, 22vw, 320px);
+  color: transparent; -webkit-text-stroke: 1px rgba(194,165,122,0.04);
+  pointer-events: none; line-height: 1; user-select: none; white-space: nowrap;
+}
+.hero-h {
+  font-family: 'Italiana', serif;
+  font-size: clamp(44px, 6vw, 90px);
+  line-height: 0.95; color: var(--text-light); margin-bottom: 12px;
+}
+.hero-h .destaque { display: block; color: var(--fendi); }
+.hero-sub-italic { font-family: 'Playfair Display', serif; font-size: clamp(16px, 2vw, 22px); font-style: italic; color: var(--text-muted); margin-bottom: 24px; }
+.hero-desc { font-size: 17px; font-weight: 300; color: var(--text-muted); line-height: 1.9; max-width: 560px; margin-bottom: 36px; }
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ── CARROSSEL INSTALAÇÕES ── */
+.instalacoes { background: var(--charcoal2); padding: 80px 0; }
+.instalacoes .inst-header { padding: 0 var(--pad) 48px; }
+.inst-badge-tag {
+  display: inline-block; font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  border: 1px solid rgba(194,165,122,0.25); color: var(--fendi);
+  padding: 4px 12px; margin-left: 8px;
+}
+.inst-carousel-wrap { overflow: hidden; cursor: grab; }
+.inst-track {
+  display: flex; gap: 10px; overflow-x: auto; scroll-behavior: auto;
+  scrollbar-width: none; -ms-overflow-style: none; padding: 0 var(--pad);
+  user-select: none;
+}
+.inst-track::-webkit-scrollbar { display: none; }
+.inst-slide {
+  flex: 0 0 auto; width: 200px; height: 260px;
+  background: var(--off-dark); border-radius: 4px; position: relative; overflow: hidden;
+}
+.inst-slide.wide { width: 300px; }
+.inst-slide img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.inst-ph {
+  width: 100%; height: 100%; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 8px;
+}
+.inst-ph i { font-size: 24px; color: rgba(194,165,122,0.18); }
+.inst-ph span { font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: rgba(194,165,122,0.2); }
+.inst-slide-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 8px 12px; font-size: 10px; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--fendi);
+  background: linear-gradient(to top, rgba(30,22,8,0.85), transparent);
+}
+.inst-cta { display: flex; align-items: center; gap: 16px; padding: 32px var(--pad) 0; flex-wrap: wrap; }
+.inst-nav { display: flex; gap: 4px; margin-left: auto; }
+.inst-arrow {
+  width: 36px; height: 36px; background: var(--off-dark);
+  border: 1px solid rgba(194,165,122,0.2); color: var(--fendi);
+  font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+.inst-arrow:hover { background: var(--charcoal2); }
+
+/* ── TIPOS DE CORTINA ── */
+.tipos-cortina { background: var(--charcoal); padding: 80px var(--pad) 60px; }
+.cortina-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 6px; margin-top: 40px;
+}
+.cortina-card {
+  background: var(--charcoal2); overflow: hidden;
+  border: 1px solid rgba(194,165,122,0.06); transition: border-color 0.25s;
+  display: flex; flex-direction: column;
+}
+.cortina-card:hover { border-color: rgba(194,165,122,0.25); }
+.cortina-fotos {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2px; height: 180px;
+}
+.cortina-foto {
+  background: var(--off-dark);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; color: rgba(194,165,122,0.18); position: relative; overflow: hidden;
+}
+.cortina-foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.cortina-foto span { font-size: 8px; letter-spacing: 1px; text-transform: uppercase; color: rgba(194,165,122,0.2); position: absolute; bottom: 6px; left: 0; right: 0; text-align: center; }
+.cortina-info { padding: 16px 16px 0; flex: 1; }
+.cortina-nome { font-family: 'Playfair Display', serif; font-size: 13px; font-weight: 700; color: var(--text-muted); margin-bottom: 8px; line-height: 1.2; display: flex; flex-direction: column; text-transform: uppercase; letter-spacing: 1px; }
+.cortina-sub { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--text-light); line-height: 1.2; text-transform: none; letter-spacing: 0; }
+.cortina-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; line-height: 1.6; padding-bottom: 14px; }
+.cortina-btn {
+  width: 100%; background: var(--wa); color: #fff;
+  font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 10px; text-align: center;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  text-decoration: none; transition: background 0.2s; font-family: 'Montserrat', sans-serif; font-weight: 600;
+}
+.cortina-btn:hover { background: #1fb155; }
+
+/* ── SOFT WAVE DESTAQUE ── */
+.softwave { background: var(--dark); padding: 80px var(--pad); }
+.sw-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 40px; align-items: stretch; }
+.sw-fotos { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 2px; }
+.sw-foto { background: var(--off-dark); min-height: 160px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px; position: relative; overflow: hidden; }
+.sw-foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.sw-foto i { font-size: 28px; color: rgba(194,165,122,0.18); }
+.sw-foto span { font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: rgba(194,165,122,0.2); }
+.sw-content { background: var(--charcoal2); padding: 36px 32px; display: flex; flex-direction: column; justify-content: center; }
+.sw-badge { display: inline-block; background: var(--mustard); color: #fff; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; margin-bottom: 16px; font-weight: 600; }
+
+/* ── PERSONALIZAÇÃO ── */
+.personalizacao { background: var(--charcoal2); padding: 60px var(--pad); }
+.pers-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.pers-items { display: flex; flex-direction: column; gap: 20px; margin-top: 24px; }
+.pers-item { display: flex; align-items: flex-start; gap: 14px; }
+.pers-icon { width: 36px; height: 36px; background: rgba(200,150,12,0.1); border: 1px solid rgba(200,150,12,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.pers-icon i { font-size: 16px; color: var(--mustard); }
+.pers-title { font-size: 13px; font-weight: 600; color: var(--text-light); margin-bottom: 3px; }
+.pers-desc { font-size: 12px; color: var(--text-muted); font-weight: 300; line-height: 1.6; }
+
+/* ── MOTORIZADAS ── */
+.motorizadas { background: var(--dark); padding: 80px var(--pad); }
+.mot-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-top: 40px; }
+.mot-video {
+  background: var(--off-dark); aspect-ratio: 16/9;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(194,165,122,0.1);
+}
+.mot-video i { font-size: 48px; color: rgba(194,165,122,0.2); }
+.mot-features { display: flex; flex-direction: column; gap: 24px; }
+.mot-feature { display: flex; gap: 16px; align-items: flex-start; }
+.mot-icon {
+  width: 40px; height: 40px; background: rgba(200,150,12,0.1);
+  border: 1px solid rgba(200,150,12,0.2);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.mot-icon i { font-size: 18px; color: var(--mustard); }
+.mot-feature-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--text-light); margin-bottom: 6px; }
+.mot-feature-desc { font-size: 14px; color: var(--text-muted); font-weight: 300; line-height: 1.7; }
+
+/* ── BENEFÍCIOS ── */
+.beneficios { background: var(--charcoal2); padding: 80px var(--pad); }
+.ben-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 6px; margin-top: 40px;
+}
+.ben-card {
+  background: var(--charcoal); padding: 24px 20px;
+  border-left: 3px solid transparent; transition: all 0.25s;
+}
+.ben-card:hover { border-left-color: var(--mustard); background: var(--off-dark); }
+.ben-emoji { font-size: 22px; margin-bottom: 10px; display: block; }
+.ben-title { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: var(--text-light); margin-bottom: 8px; }
+.ben-desc { font-size: 13px; color: var(--text-muted); font-weight: 300; line-height: 1.7; }
+
+/* ── FAQ ── */
+.faq { background: var(--dark); padding: 80px var(--pad); }
+.faq-list { margin-top: 32px; display: flex; flex-direction: column; gap: 2px; }
+.faq-item { background: var(--charcoal); border-left: 3px solid transparent; transition: border-color 0.2s; }
+.faq-item.open { border-left-color: var(--mustard); }
+.faq-q {
+  width: 100%; background: none; border: none; cursor: pointer;
+  padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600;
+  color: var(--text-light); text-align: left; transition: color 0.2s;
+}
+.faq-q:hover { color: var(--fendi); }
+.faq-q i { font-size: 16px; color: var(--mustard); flex-shrink: 0; transition: transform 0.25s; }
+.faq-item.open .faq-q i { transform: rotate(45deg); }
+.faq-a {
+  display: none; padding: 0 20px 18px 20px;
+  font-size: 13px; color: var(--text-muted); font-weight: 300; line-height: 1.8;
+}
+.faq-item.open .faq-a { display: block; }
+
+/* ── CTA FINAL ── */
+.cta-final {
+  background: var(--dark); padding: 36px var(--pad);
+  text-align: center; position: relative; overflow: hidden;
+}
+.cta-final::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 70%, rgba(200,150,12,0.07) 0%, transparent 65%);
+}
+.cta-title {
+  font-family: 'Italiana', serif; font-size: clamp(28px, 3.5vw, 48px);
+  color: var(--text-light); line-height: 1; margin-bottom: 8px; position: relative;
+}
+.cta-sub {
+  font-family: 'Playfair Display', serif; font-size: clamp(13px, 1.2vw, 16px);
+  font-style: italic; color: var(--fendi); margin-bottom: 20px; position: relative;
+}
+.cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; position: relative; }
+.cta-opt { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.cta-opt-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); }
+
+/* ── FOOTER ── */
+.footer {
+  background: #1a1208; border-top: 1px solid rgba(194,165,122,0.1);
+  padding: 36px var(--pad); display: flex; align-items: center; justify-content: space-between;
+}
+.footer-logo { display: flex; align-items: center; gap: 12px; }
+.footer-logo img { height: 32px; object-fit: contain; }
+.footer-name { font-family: 'Italiana', serif; font-size: 18px; color: var(--fendi); letter-spacing: 3px; }
+.footer-sub { font-size: 9px; color: rgba(194,165,122,0.3); letter-spacing: 3px; text-transform: uppercase; }
+
+/* ── WA FLUTUANTE ── */
+.wa-float {
+  position: fixed; bottom: 28px; right: 28px; z-index: 200;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--wa); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+  text-decoration: none; transition: transform 0.2s, background 0.2s;
+}
+.wa-float:hover { background: #1fb155; transform: scale(1.08); }
+.wa-float i { font-size: 28px; }
+</style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar">
+  <a href="https://casaestampa.com" class="navbar-logo">
+    <img src="https://casaestampa.com/wp-content/uploads/2022/09/Logo-Original-Fundo-Transparente.png" alt="Casa Estampa" onerror="this.style.display='none'" />
+    <div>
+      <div class="logo-name">Casa Estampa</div>
+      <div class="logo-tag">Interiores</div>
+    </div>
+  </a>
+  <ul class="navbar-nav">
+    <li><a href="#">Papéis de Parede</a></li>
+    <li><a href="#" class="active">Cortinas</a></li>
+    <li><a href="#">Persianas</a></li>
+    <li><a href="#">Pisos</a></li>
+    <li><a href="#">Arquitetos</a></li>
+  </ul>
+  <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá, Casa Estampa! Estou no site e quero ajuda para escolher cortinas." class="navbar-wa">
+    <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Falar agora
+  </a>
+</nav>
+
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg">CORTINA</div>
+  <div style="position:relative;z-index:2;">
+    <div class="eyebrow">Feitas sob medida</div>
+    <h1 class="hero-h">
+      <span class="destaque">Cortinas de tecido</span>sob medida
+    </h1>
+    <p class="hero-sub-italic">Conforto, elegância e caimento perfeito para cada ambiente.</p>
+    <p class="hero-desc">Linho, voil, blackout, wave, prega americana e trilhos suíços — tudo feito sob medida e instalado por especialistas.</p>
+    <div class="hero-btns">
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Quero solicitar um orçamento de cortinas." class="btn-wa">
+        <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Solicitar orçamento
+      </a>
+      <a href="#tipos" class="btn-ghost">Ver modelos ↓</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ TIPOS DE CORTINA ══ -->
+<section class="tipos-cortina" id="tipos">
+  <div class="eyebrow">Tipos de cortina</div>
+  <h2 class="section-title">Encontre o modelo <em>ideal para você</em></h2>
+  <div class="rule"></div>
+  <p style="font-size:14px;color:var(--text-muted);font-weight:300;margin-top:16px;">Clique em qualquer modelo para falar com nossa equipe e receber seu orçamento.</p>
+
+  <div class="cortina-grid">
+
+    <div class="cortina-card">
+      <div class="cortina-fotos">
+        <div class="cortina-foto"><i class="ti ti-photo" aria-hidden="true"></i><span>Foto</span></div>
+        <div class="cortina-foto"><i class="ti ti-photo" aria-hidden="true"></i><span>Foto</span></div>
+      </div>
+      <div class="cortina-info">
+        <div class="cortina-nome">Cortina Varão<span class="cortina-sub">Ilhões</span></div>
+        <div class="cortina-desc">Modelo moderno e prático, com ilhós metálicos que deslizam diretamente no varão, formando ondas suaves e uniformes.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse na cortina de varão com ilhões. Quero um orçamento." class="cortina-btn"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Quero essa</a>
+    </div>
+
+    <div class="cortina-card">
+      <div class="cortina-fotos">
+        <div class="cortina-foto"><i class="ti ti-photo" aria-hidden="true"></i><span>Foto</span></div>
+        <div class="cortina-foto"><i class="ti ti-photo" aria-hidden="true"></i><span>Foto</span></div>
+      </div>
+      <div class="cortina-info">
+        <div class="cortina-nome">Cortina Varão<span class="cortina-sub">Argolas</span></div>
+        <div class="cortina-desc">Clássica e versátil, instalada em argolas que proporcionam um caimento elegante e um deslizamento suave no varão.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse na cortina de varão com argolas. Quero um orçamento." class="cortina-btn"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Quero essa</a>
+    </div>
+
+    <div class="cortina-card">
+      <div class="cortina-fotos">
+        <div class="cortina-foto"><i class="ti ti-photo" aria-hidden="true"></i><span>Foto</span></div>
+        <div class="cortina-foto"><i class="ti ti-photo" aria-hidden="true"></i><span>Foto</span></div>
+      </div>
+      <div class="cortina-info">
+        <div class="cortina-nome">Cortina Trilho Suíço<span class="cortina-sub">Modelo Wave</span></div>
+        <div class="cortina-desc">Ondas contínuas e uniformes, trazendo um design contemporâneo, leve e sofisticado.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse na cortina de trilho suíço modelo Wave. Quero um orçamento." class="cortina-btn"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Quero essa</a>
+    </div>
+
+    <div class="cortina-card">
+      <div class="cortina-fotos">
+        <div class="cortina-foto"><i class="ti ti-photo" aria-hidden="true"></i><span>Foto</span></div>
+        <div class="cortina-foto"><i class="ti ti-photo" aria-hidden="true"></i><span>Foto</span></div>
+      </div>
+      <div class="cortina-info">
+        <div class="cortina-nome">Soft Wave<span class="cortina-sub">Casa Estampa</span></div>
+        <div class="cortina-desc">Exclusiva da Casa Estampa, desenvolvida para criar ondas mais marcadas e elegantes apenas na parte frontal, proporcionando um visual leve, sofisticado e diferenciado.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse no modelo exclusivo Soft Wave. Quero saber mais." class="cortina-btn"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Quero essa</a>
+    </div>
+
+    <div class="cortina-card">
+      <div class="cortina-fotos">
+        <div class="cortina-foto"><i class="ti ti-photo" aria-hidden="true"></i><span>Foto</span></div>
+        <div class="cortina-foto"><i class="ti ti-photo" aria-hidden="true"></i><span>Foto</span></div>
+      </div>
+      <div class="cortina-info">
+        <div class="cortina-nome">Cortina Trilho Suíço<span class="cortina-sub">Prega Americana</span></div>
+        <div class="cortina-desc">Modelo com pregas triplas, que garantem maior volume, excelente caimento e um visual clássico.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse na cortina de prega americana. Quero um orçamento." class="cortina-btn"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Quero essa</a>
+    </div>
+
+    <div class="cortina-card">
+      <div class="cortina-fotos">
+        <div class="cortina-foto"><i class="ti ti-photo" aria-hidden="true"></i><span>Foto</span></div>
+        <div class="cortina-foto"><i class="ti ti-photo" aria-hidden="true"></i><span>Foto</span></div>
+      </div>
+      <div class="cortina-info">
+        <div class="cortina-nome">Cortina Trilho Suíço<span class="cortina-sub">Prega Macho</span></div>
+        <div class="cortina-desc">Acabamento sofisticado com pregas voltadas para frente, criando um visual alinhado, volumoso e atemporal.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse na cortina de prega macho. Quero um orçamento." class="cortina-btn"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Quero essa</a>
+    </div>
+
+    <div class="cortina-card">
+      <div class="cortina-fotos">
+        <div class="cortina-foto"><i class="ti ti-photo" aria-hidden="true"></i><span>Foto</span></div>
+        <div class="cortina-foto"><i class="ti ti-photo" aria-hidden="true"></i><span>Foto</span></div>
+      </div>
+      <div class="cortina-info">
+        <div class="cortina-nome">Cortina Trilho Suíço<span class="cortina-sub">Prega Fêmea</span></div>
+        <div class="cortina-desc">Pregas voltadas para dentro, proporcionando um caimento discreto, elegante e com aparência mais reta.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse na cortina de prega fêmea. Quero um orçamento." class="cortina-btn"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Quero essa</a>
+    </div>
+
+    <div class="cortina-card">
+      <div class="cortina-fotos">
+        <div class="cortina-foto"><i class="ti ti-photo" aria-hidden="true"></i><span>Foto</span></div>
+        <div class="cortina-foto"><i class="ti ti-photo" aria-hidden="true"></i><span>Foto</span></div>
+      </div>
+      <div class="cortina-info">
+        <div class="cortina-nome">Cortina Trilho Suíço<span class="cortina-sub">Blackout</span></div>
+        <div class="cortina-desc">Bloqueio total da luz externa para noites de sono perfeitas. Ideal para quartos, home theaters e ambientes que precisam de escuridão total.</div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse na cortina blackout. Quero um orçamento." class="cortina-btn"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Quero essa</a>
+    </div>
+
+  </div>
+
+  <div style="text-align:center;margin-top:36px;">
+    <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Quero minha cortina sob medida. Podem me ajudar?" class="btn-wa">
+      <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Quero minha cortina sob medida
+    </a>
+  </div>
+</section>
+
+
+<!-- ══ SOFT WAVE DESTAQUE ══ -->
+<section class="softwave">
+  <div class="eyebrow">Exclusividade Casa Estampa</div>
+  <h2 class="section-title">Soft Wave: <em>o nosso modelo exclusivo</em></h2>
+  <div class="rule"></div>
+  <p style="font-size:14px;color:var(--text-muted);font-weight:300;margin-top:16px;max-width:560px;">Um modelo desenvolvido pela Casa Estampa com ondas ainda mais suaves, caimento mais fluido e acabamento que você não encontra em lugar nenhum.</p>
+
+  <div class="sw-layout">
+    <div class="sw-fotos">
+      <div class="sw-foto">
+        <i class="ti ti-photo" aria-hidden="true"></i>
+        <span>Foto 1</span>
+      </div>
+      <div class="sw-foto">
+        <i class="ti ti-photo" aria-hidden="true"></i>
+        <span>Foto 2</span>
+      </div>
+      <div class="sw-foto">
+        <i class="ti ti-photo" aria-hidden="true"></i>
+        <span>Foto 3</span>
+      </div>
+      <div class="sw-foto">
+        <i class="ti ti-photo" aria-hidden="true"></i>
+        <span>Foto 4</span>
+      </div>
+    </div>
+    <div class="sw-content">
+      <span class="sw-badge">Modelo exclusivo</span>
+      <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--text-light);margin-bottom:14px;line-height:1.3;">Ondas mais suaves. Caimento mais elegante.</h3>
+      <p style="font-size:14px;color:var(--text-muted);font-weight:400;line-height:1.8;margin-bottom:18px;">O Soft Wave é uma evolução do Wave clássico — ondas mais abertas e fluidas, caimento mais natural. Desenvolvido exclusivamente pela Casa Estampa.</p>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:24px;">
+        <li style="display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--text-light);"><i class="ti ti-check" style="color:var(--mustard);" aria-hidden="true"></i> Ondulação exclusiva, mais suave que o Wave padrão</li>
+        <li style="display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--text-light);"><i class="ti ti-check" style="color:var(--mustard);" aria-hidden="true"></i> Caimento perfeito do teto ao piso</li>
+        <li style="display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--text-light);"><i class="ti ti-check" style="color:var(--mustard);" aria-hidden="true"></i> Disponível em linho, voil e blackout</li>
+        <li style="display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--text-light);"><i class="ti ti-check" style="color:var(--mustard);" aria-hidden="true"></i> Feito sob medida para o seu espaço</li>
+      </ul>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Quero saber mais sobre o modelo exclusivo Soft Wave." class="btn-wa">
+        <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Quero conhecer o Soft Wave
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ══ CARROSSEL INSTALAÇÕES ══ -->
+<section class="instalacoes">
+  <div class="inst-header">
+    <div class="eyebrow">Ambientes reais</div>
+    <h2 class="section-title">Cortinas instaladas <em>por nós</em></h2>
+    <div class="rule"></div>
+  </div>
+
+  <div class="inst-carousel-wrap" id="instWrap">
+    <div class="inst-track" id="instTrack">
+      <div class="inst-slide wide">
+        <div class="inst-ph"><i class="ti ti-photo"></i><span>Sala de Estar</span></div>
+        <div class="inst-slide-label">Sala de Estar</div>
+      </div>
+      <div class="inst-slide">
+        <div class="inst-ph"><i class="ti ti-photo"></i><span>Quarto</span></div>
+        <div class="inst-slide-label">Quarto</div>
+      </div>
+      <div class="inst-slide">
+        <div class="inst-ph"><i class="ti ti-photo"></i><span>Sala de Jantar</span></div>
+        <div class="inst-slide-label">Sala de Jantar</div>
+      </div>
+      <div class="inst-slide wide">
+        <div class="inst-ph"><i class="ti ti-photo"></i><span>Escritório</span></div>
+        <div class="inst-slide-label">Escritório</div>
+      </div>
+      <div class="inst-slide">
+        <div class="inst-ph"><i class="ti ti-photo"></i><span>Home Theater</span></div>
+        <div class="inst-slide-label">Home Theater</div>
+      </div>
+      <div class="inst-slide">
+        <div class="inst-ph"><i class="ti ti-photo"></i><span>Varanda</span></div>
+        <div class="inst-slide-label">Varanda</div>
+      </div>
+      <div class="inst-slide wide">
+        <div class="inst-ph"><i class="ti ti-photo"></i><span>Quarto Infantil</span></div>
+        <div class="inst-slide-label">Quarto Infantil</div>
+      </div>
+      <div class="inst-slide">
+        <div class="inst-ph"><i class="ti ti-photo"></i><span>Corredor</span></div>
+        <div class="inst-slide-label">Corredor</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="inst-cta">
+    <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Vi os ambientes no site e quero um orçamento de cortinas." class="btn-wa">
+      <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Quero o mesmo no meu espaço
+    </a>
+    <div class="inst-nav">
+      <button class="inst-arrow" id="instPrev"><i class="ti ti-arrow-left"></i></button>
+      <button class="inst-arrow" id="instNext"><i class="ti ti-arrow-right"></i></button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ MOTORIZADAS ══ -->
+<section class="motorizadas">
+  <div class="eyebrow">Tecnologia &amp; Conforto</div>
+  <h2 class="section-title">Cortinas motorizadas: <em>conforto ao toque de um botão</em></h2>
+  <div class="rule"></div>
+  <p style="font-size:14px;color:var(--text-muted);font-weight:300;margin-top:16px;max-width:600px;">Automatize sua rotina e transforme seu ambiente com mais praticidade, sofisticação e controle.</p>
+
+  <div class="mot-layout">
+    <div class="mot-video">
+      <div style="text-align:center;">
+        <i class="ti ti-player-play" style="font-size:48px;color:rgba(194,165,122,0.2);" aria-hidden="true"></i>
+        <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(194,165,122,0.2);margin-top:12px;">Inserir vídeo</div>
+      </div>
+    </div>
+
+    <div class="mot-features">
+      <div class="mot-feature">
+        <div class="mot-icon"><i class="ti ti-sofa" aria-hidden="true"></i></div>
+        <div>
+          <div class="mot-feature-title">Mais conforto no dia a dia</div>
+          <p class="mot-feature-desc">Abra e feche suas cortinas com controle remoto, aplicativo ou comando de voz — sem esforço, sem levantar do sofá.</p>
+        </div>
+      </div>
+      <div class="mot-feature">
+        <div class="mot-icon"><i class="ti ti-eye-off" aria-hidden="true"></i></div>
+        <div>
+          <div class="mot-feature-title">Elegância sem interferência visual</div>
+          <p class="mot-feature-desc">Motores discretos, silenciosos e integrados ao projeto, sem comprometer o design do ambiente.</p>
+        </div>
+      </div>
+      <div class="mot-feature">
+        <div class="mot-icon"><i class="ti ti-maximize" aria-hidden="true"></i></div>
+        <div>
+          <div class="mot-feature-title">Perfeitas para grandes vãos</div>
+          <p class="mot-feature-desc">Ideal para janelas amplas, cortinas altas e projetos onde o acesso manual não é prático.</p>
+        </div>
+      </div>
+      <div class="mot-feature">
+        <div class="mot-icon"><i class="ti ti-smart-home" aria-hidden="true"></i></div>
+        <div>
+          <div class="mot-feature-title">Integração com automação residencial</div>
+          <p class="mot-feature-desc">Compatível com sistemas de casa inteligente — Alexa, Google Home e outros.</p>
+        </div>
+      </div>
+      <div style="margin-top:8px;">
+        <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho interesse em cortina motorizada. Quero um orçamento." class="btn-mustard">
+          <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Quero minha cortina motorizada
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ BENEFÍCIOS ══ -->
+<section class="beneficios">
+  <div class="eyebrow">Por que Casa Estampa</div>
+  <h2 class="section-title">Muito além de uma cortina. <em>Um novo ambiente.</em></h2>
+  <div class="rule"></div>
+
+  <div class="ben-grid">
+    <div class="ben-card">
+      <span class="ben-emoji">🪄</span>
+      <div class="ben-title">Tecidos selecionados</div>
+      <p class="ben-desc">Escolhemos tecidos que não só são bonitos, mas que transformam o ambiente: mais aconchego, mais sofisticação e uma sensação real de casa bem cuidada.</p>
+    </div>
+    <div class="ben-card">
+      <span class="ben-emoji">🌤</span>
+      <div class="ben-title">Controle de luz</div>
+      <p class="ben-desc">Desde tecidos leves e translúcidos até opções com blackout, suas cortinas vão controlar a luminosidade do jeito que você precisa — sem perder elegância.</p>
+    </div>
+    <div class="ben-card">
+      <span class="ben-emoji">🏡</span>
+      <div class="ben-title">Caimento impecável</div>
+      <p class="ben-desc">Nada de cortina torta, curta ou "sem vida". Cada peça é feita sob medida para o seu pé-direito, sua janela e o seu estilo.</p>
+    </div>
+    <div class="ben-card">
+      <span class="ben-emoji">🔇</span>
+      <div class="ben-title">Mais conforto térmico</div>
+      <p class="ben-desc">Além da estética, nossas cortinas ajudam a reduzir o calor e o excesso de luz, criando um ambiente mais calmo e acolhedor.</p>
+    </div>
+    <div class="ben-card">
+      <span class="ben-emoji">✨</span>
+      <div class="ben-title">Projeto personalizado</div>
+      <p class="ben-desc">Aqui, cada cortina é pensada para o seu espaço, sua rotina e seu gosto. Você não escolhe um produto — você cria uma solução.</p>
+    </div>
+    <div class="ben-card">
+      <span class="ben-emoji">⚡</span>
+      <div class="ben-title">Tecnologia que simplifica</div>
+      <p class="ben-desc">Com a opção de motorização, suas cortinas se adaptam à sua rotina: um toque e tudo se transforma.</p>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:40px;">
+    <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Quero falar com um especialista em cortinas." class="btn-wa">
+      <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Falar com especialista
+    </a>
+  </div>
+</section>
+
+
+<!-- ══ FAQ ══ -->
+<section class="faq">
+  <div class="eyebrow">Dúvidas frequentes</div>
+  <h2 class="section-title">Perguntas <em>mais comuns</em></h2>
+  <div class="rule"></div>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Qual a diferença entre cortina de varão e trilho suíço? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">
+        <strong style="color:var(--text-light);">Varão</strong><br>
+        Fica aparente e tem visual mais decorativo. Ideal para ambientes clássicos ou descontraídos.<br><br>
+        <strong style="color:var(--text-light);">Trilho suíço</strong><br>
+        Fica escondido no gesso ou sanca. Visual mais sofisticado, deslizamento mais suave e é o mais utilizado em projetos de arquitetura.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Qual a diferença entre Wave e a Soft Wave Casa Estampa? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">A Wave possui ondas contínuas em toda a cortina. A <strong style="color:var(--fendi);">Soft Wave Casa Estampa</strong> tem um limitador de distância que cria ondas mais leves e elegantes, proporcionando um caimento mais natural, sofisticado e slim.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Cortina bloqueia totalmente a luz? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Depende do tecido. <strong style="color:var(--text-light);">Voil</strong> filtra a luz. <strong style="color:var(--text-light);">Linho</strong> reduz a luminosidade. <strong style="color:var(--text-light);">Blackout</strong> pode bloquear até praticamente 100% da luz quando bem instalado.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Posso lavar minha cortina? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Sim, mas cada tecido possui uma recomendação específica. Alguns podem ser lavados normalmente, outros exigem limpeza profissional. Orientamos você no momento do atendimento.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Cortina melhora a acústica? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Sim. Tecidos absorvem parte da reverberação do ambiente, tornando-o mais confortável e silencioso.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Quanto tempo leva para fabricar? <i class="ti ti-plus"></i></button>
+      <div class="faq-a">Em média, entre 15 e 20 dias úteis após a aprovação do pedido.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:32px;text-align:center;">
+    <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">Ficou com alguma dúvida que não está aqui?</p>
+    <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Tenho uma dúvida sobre cortinas." class="btn-wa">
+      <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Perguntar no WhatsApp
+    </a>
+  </div>
+</section>
+
+
+<!-- ══ CTA FINAL ══ -->
+<section class="cta-final">
+  <div class="cta-title">Quer ajuda para escolher?</div>
+  <p class="cta-sub">Nossa equipe te orienta desde a escolha até a instalação final.</p>
+  <div class="cta-btns">
+    <div class="cta-opt">
+      <span class="cta-opt-label">Fale agora</span>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Quero ajuda para escolher cortinas." class="btn-wa">
+        <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Falar com especialista
+      </a>
+    </div>
+    <div class="cta-opt">
+      <span class="cta-opt-label">Agendar visita</span>
+      <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Gostaria de agendar uma medição de cortinas." class="btn-mustard">
+        <i class="ti ti-calendar" aria-hidden="true"></i> Agendar medição
+      </a>
+    </div>
+    <div class="cta-opt">
+      <span class="cta-opt-label">Ver mais</span>
+      <a href="#tipos" class="btn-ghost">Ver todos os modelos</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="footer-logo">
+    <img src="https://casaestampa.com/wp-content/uploads/2022/09/Logo-Original-Fundo-Transparente.png" alt="Casa Estampa" onerror="this.style.display='none'" />
+    <div>
+      <div class="footer-name">Casa Estampa</div>
+      <div class="footer-sub">Interiores</div>
+    </div>
+  </div>
+  <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(194,165,122,0.3);">
+    casaestampa.com
+  </div>
+  <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(194,165,122,0.3);text-align:right;">
+    Rio de Janeiro · (21) 99988-6842
+  </div>
+</footer>
+
+
+<!-- ══ BOTÃO WA FLUTUANTE ══ -->
+<a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Estou no site e quero ajuda para escolher cortinas." class="wa-float" aria-label="Falar pelo WhatsApp">
+  <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+</a>
+
+
+<script>
+function toggleFaq(btn) {
+  var item = btn.parentElement;
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el) { el.classList.remove('open'); });
+  if (!isOpen) item.classList.add('open');
+}
+
+// ── CARROSSEL INSTALAÇÕES ──
+(function(){
+  var track = document.getElementById('instTrack');
+  if (!track) return;
+  var slides = Array.from(track.children);
+  slides.forEach(function(s){ track.appendChild(s.cloneNode(true)); });
+  slides.forEach(function(s){ track.insertBefore(s.cloneNode(true), track.firstChild); });
+  var gap = 10;
+  var firstSlide = track.children[slides.length];
+  var slideW = firstSlide.offsetWidth + gap;
+  track.scrollLeft = slideW * slides.length;
+
+  var isDragging = false, startX = 0, scrollLeft = 0;
+  var wrap = document.getElementById('instWrap');
+  wrap.addEventListener('mousedown', function(e){
+    isDragging = true; startX = e.pageX - wrap.offsetLeft; scrollLeft = track.scrollLeft;
+    wrap.style.cursor = 'grabbing';
+  });
+  window.addEventListener('mouseup', function(){ isDragging = false; wrap.style.cursor = 'grab'; });
+  wrap.addEventListener('mousemove', function(e){
+    if (!isDragging) return;
+    e.preventDefault();
+    track.scrollLeft = scrollLeft - (e.pageX - wrap.offsetLeft - startX);
+  });
+  wrap.addEventListener('touchstart', function(e){ startX = e.touches[0].pageX; scrollLeft = track.scrollLeft; }, {passive:true});
+  wrap.addEventListener('touchmove', function(e){ track.scrollLeft = scrollLeft - (e.touches[0].pageX - startX); }, {passive:true});
+
+  function resetInfinite(){
+    var total = slides.length * slideW;
+    if (track.scrollLeft >= total * 2) track.scrollLeft -= total;
+    if (track.scrollLeft <= 0) track.scrollLeft += total;
+  }
+  track.addEventListener('scroll', resetInfinite);
+
+  document.getElementById('instPrev').addEventListener('click', function(){
+    track.scrollBy({ left: -(slideW * 2), behavior: 'smooth' });
+  });
+  document.getElementById('instNext').addEventListener('click', function(){
+    track.scrollBy({ left: slideW * 2, behavior: 'smooth' });
+  });
+
+  var auto = setInterval(function(){ track.scrollBy({ left: 1, behavior: 'auto' }); }, 30);
+  wrap.addEventListener('mouseenter', function(){ clearInterval(auto); });
+  wrap.addEventListener('mouseleave', function(){
+    auto = setInterval(function(){ track.scrollBy({ left: 1, behavior: 'auto' }); }, 30);
+  });
+})();
+</script>
+
+</body>
+</html>

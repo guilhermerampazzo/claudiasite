@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Amorim Persianas e Cortinas — Casa Estampa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --fendi: #c2a57a; --mustard: #c8960c; --dark: #1e1608;
+  --charcoal: #2e2410; --charcoal2: #3a2e16; --off-dark: #463820;
+  --text-light: #f5eed8; --text-muted: #a89370; --wa: #25D366;
+  --pad: clamp(20px, 5vw, 80px);
+}
+body { background: var(--dark); color: var(--text-light); font-family: 'Montserrat', sans-serif; font-weight: 300; }
+a { text-decoration: none; }
+button { border: none; background: none; cursor: pointer; font-family: inherit; }
+
+/* ── NAVBAR ── */
+.navbar {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; gap: 32px;
+  padding: 0 var(--pad); height: 64px;
+  background: rgba(30,22,8,0.96); backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(194,165,122,0.1);
+}
+.navbar-logo { display: flex; align-items: center; gap: 10px; margin-right: auto; }
+.navbar-logo img { height: 36px; width: auto; }
+.logo-name { font-family: 'Italiana', serif; font-size: 18px; color: var(--text-light); letter-spacing: 1px; }
+.logo-tag { font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: var(--fendi); margin-top: -2px; }
+.navbar-nav { display: flex; gap: 28px; list-style: none; }
+.navbar-nav a { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; }
+.navbar-nav a:hover, .navbar-nav a.active { color: var(--fendi); }
+.navbar-wa {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--wa); color: #fff; padding: 8px 16px;
+  font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+  transition: background 0.2s;
+}
+.navbar-wa:hover { background: #1fb155; }
+
+/* ── BREADCRUMB ── */
+.breadcrumb {
+  padding: 14px var(--pad);
+  border-bottom: 1px solid rgba(194,165,122,0.08);
+  display: flex; align-items: center; gap: 8px;
+  font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted);
+}
+.breadcrumb a { color: var(--fendi); transition: opacity 0.2s; }
+.breadcrumb a:hover { opacity: 0.7; }
+.breadcrumb span { color: rgba(194,165,122,0.3); }
+
+/* ── HEADER ── */
+.fab-header {
+  padding: 56px var(--pad) 48px;
+  background: linear-gradient(135deg, var(--dark) 60%, var(--charcoal) 100%);
+  position: relative; overflow: hidden;
+}
+.fab-header-bg {
+  position: absolute; right: -10px; top: 50%; transform: translateY(-50%);
+  font-family: 'Italiana', serif; font-size: clamp(80px, 14vw, 160px);
+  color: rgba(194,165,122,0.04); pointer-events: none; user-select: none; white-space: nowrap;
+}
+.eyebrow {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--fendi);
+  margin-bottom: 14px;
+}
+.eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--mustard); }
+.fab-title { font-family: 'Italiana', serif; font-size: clamp(32px, 5vw, 60px); color: var(--text-light); line-height: 1.1; margin-bottom: 12px; }
+.fab-subtitle { font-size: 14px; color: var(--text-muted); font-weight: 300; max-width: 480px; line-height: 1.7; }
+.rule { width: 48px; height: 2px; background: var(--mustard); margin-top: 16px; }
+
+/* ── CATEGORIAS ── */
+.categorias { padding: 60px var(--pad); background: var(--charcoal); }
+.cat-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 6px; margin-top: 36px;
+}
+.cat-card {
+  position: relative; overflow: hidden; cursor: pointer;
+  border: 1px solid rgba(194,165,122,0.06);
+  transition: border-color 0.25s;
+  display: block; text-decoration: none;
+}
+.cat-card:hover { border-color: rgba(194,165,122,0.3); }
+.cat-thumb {
+  height: 240px; background: var(--off-dark);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 10px; position: relative; overflow: hidden;
+}
+.cat-thumb img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; transition: transform 0.4s ease;
+}
+.cat-card:hover .cat-thumb img { transform: scale(1.04); }
+.cat-thumb-ph { display: flex; flex-direction: column; align-items: center; gap: 8px; position: relative; z-index: 1; }
+.cat-thumb-ph i { font-size: 36px; color: rgba(194,165,122,0.18); }
+.cat-thumb-ph span { font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: rgba(194,165,122,0.2); }
+.cat-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(30,22,8,0.92) 0%, rgba(30,22,8,0.4) 60%, transparent 100%);
+  padding: 24px 20px 20px;
+}
+.cat-nome {
+  font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700;
+  color: var(--text-light); margin-bottom: 4px; line-height: 1.2;
+}
+.cat-count { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--fendi); }
+.cat-arrow {
+  position: absolute; top: 50%; right: 16px; transform: translateY(-50%);
+  width: 32px; height: 32px; background: rgba(200,150,12,0.15);
+  border: 1px solid rgba(200,150,12,0.3);
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+.cat-card:hover .cat-arrow { background: rgba(200,150,12,0.3); }
+.cat-arrow i { font-size: 14px; color: var(--mustard); }
+
+/* ── WA SECTION ── */
+.wa-section {
+  padding: 48px var(--pad); background: var(--charcoal2); text-align: center;
+}
+.wa-section p { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; font-weight: 300; }
+.btn-wa {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--wa); color: #fff; padding: 14px 28px;
+  font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+  transition: background 0.2s;
+}
+.btn-wa:hover { background: #1fb155; }
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--dark); padding: 32px var(--pad);
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid rgba(194,165,122,0.08);
+}
+.footer-logo { display: flex; align-items: center; gap: 10px; }
+.footer-logo img { height: 32px; width: auto; }
+.footer-name { font-family: 'Italiana', serif; font-size: 16px; color: var(--text-light); }
+.footer-sub { font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: var(--fendi); }
+
+/* ── WA FLOAT ── */
+.wa-float {
+  position: fixed; bottom: 28px; right: 28px; z-index: 200;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--wa); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+  text-decoration: none; transition: transform 0.2s, background 0.2s;
+}
+.wa-float:hover { background: #1fb155; transform: scale(1.08); }
+.wa-float i { font-size: 28px; }
+</style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar">
+  <a href="https://casaestampa.com" class="navbar-logo">
+    <img src="https://casaestampa.com/wp-content/uploads/2022/09/Logo-Original-Fundo-Transparente.png" alt="Casa Estampa" onerror="this.style.display='none'" />
+    <div>
+      <div class="logo-name">Casa Estampa</div>
+      <div class="logo-tag">Interiores</div>
+    </div>
+  </a>
+  <ul class="navbar-nav">
+    <li><a href="#">Papéis de Parede</a></li>
+    <li><a href="#">Cortinas</a></li>
+    <li><a href="persianas-casa-estampa.html" class="active">Persianas</a></li>
+    <li><a href="#">Pisos</a></li>
+    <li><a href="#">Arquitetos</a></li>
+  </ul>
+  <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Quero saber mais sobre as persianas Amorim." class="navbar-wa">
+    <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Falar agora
+  </a>
+</nav>
+
+
+<!-- ══ BREADCRUMB ══ -->
+<div class="breadcrumb">
+  <a href="#">Início</a>
+  <span>/</span>
+  <a href="persianas-casa-estampa.html">Persianas</a>
+  <span>/</span>
+  <span style="color:var(--text-light);">Amorim</span>
+</div>
+
+
+<!-- ══ HEADER ══ -->
+<section class="fab-header">
+  <div class="fab-header-bg">AMORIM</div>
+  <div style="position:relative;z-index:2;">
+    <div class="eyebrow">Fabricante parceiro</div>
+    <h1 class="fab-title">Amorim</h1>
+    <div class="rule"></div>
+    <p class="fab-subtitle" style="margin-top:16px;">Escolha a categoria e encontre o tecido ideal para o seu projeto. Nossa equipe orienta você na escolha e cuida de tudo, da medição à instalação.</p>
+  </div>
+</section>
+
+
+<!-- ══ CATEGORIAS ══ -->
+<section class="categorias">
+  <div class="eyebrow">Coleções disponíveis</div>
+  <h2 style="font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,34px);font-weight:400;color:var(--text-light);">Escolha a <em style="color:var(--fendi);font-style:italic;">categoria</em></h2>
+  <div class="rule"></div>
+
+  <div class="cat-grid">
+
+    <a href="amorim-atena.html" class="cat-card">
+      <div class="cat-thumb">
+        <div class="cat-thumb-ph">
+          <i class="ti ti-photo" aria-hidden="true"></i>
+          <span>Foto capa</span>
+        </div>
+      </div>
+      <div class="cat-overlay">
+        <div class="cat-nome">Premium Atena</div>
+        <div class="cat-count">7 produtos</div>
+      </div>
+      <div class="cat-arrow"><i class="ti ti-arrow-right"></i></div>
+    </a>
+
+    <a href="amorim-rolo-romana-com-blackout.html" class="cat-card">
+      <div class="cat-thumb">
+        <div class="cat-thumb-ph">
+          <i class="ti ti-photo" aria-hidden="true"></i>
+          <span>Foto capa</span>
+        </div>
+      </div>
+      <div class="cat-overlay">
+        <div class="cat-nome">Rolo Romana Painel<br>com Blackout</div>
+        <div class="cat-count">53 produtos</div>
+      </div>
+      <div class="cat-arrow"><i class="ti ti-arrow-right"></i></div>
+    </a>
+
+    <a href="amorim-rolo-romana-sem-blackout.html" class="cat-card">
+      <div class="cat-thumb">
+        <div class="cat-thumb-ph">
+          <i class="ti ti-photo" aria-hidden="true"></i>
+          <span>Foto capa</span>
+        </div>
+      </div>
+      <div class="cat-overlay">
+        <div class="cat-nome">Rolo Romana Painel<br>sem Blackout</div>
+        <div class="cat-count">37 produtos</div>
+      </div>
+      <div class="cat-arrow"><i class="ti ti-arrow-right"></i></div>
+    </a>
+
+    <a href="amorim-tela-solar.html" class="cat-card">
+      <div class="cat-thumb">
+        <div class="cat-thumb-ph">
+          <i class="ti ti-photo" aria-hidden="true"></i>
+          <span>Foto capa</span>
+        </div>
+      </div>
+      <div class="cat-overlay">
+        <div class="cat-nome">Tela Solar</div>
+        <div class="cat-count">50 produtos</div>
+      </div>
+      <div class="cat-arrow"><i class="ti ti-arrow-right"></i></div>
+    </a>
+
+  </div>
+</section>
+
+
+<!-- ══ WA ══ -->
+<section class="wa-section">
+  <p>Não sabe qual categoria escolher? Nossa equipe te orienta na hora.</p>
+  <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Estou vendo as persianas Amorim e preciso de ajuda para escolher." class="btn-wa">
+    <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Falar com especialista
+  </a>
+</section>
+
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="footer-logo">
+    <img src="https://casaestampa.com/wp-content/uploads/2022/09/Logo-Original-Fundo-Transparente.png" alt="Casa Estampa" onerror="this.style.display='none'" />
+    <div>
+      <div class="footer-name">Casa Estampa</div>
+      <div class="footer-sub">Interiores</div>
+    </div>
+  </div>
+  <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(194,165,122,0.3);">casaestampa.com</div>
+  <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(194,165,122,0.3);text-align:right;">Rio de Janeiro · (21) 99988-6842</div>
+</footer>
+
+
+<!-- ══ WA FLOAT ══ -->
+<a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Estou vendo as persianas Amorim e quero ajuda." class="wa-float" aria-label="Falar pelo WhatsApp">
+  <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+</a>
+
+</body>
+</html>
