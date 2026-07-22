@@ -1026,6 +1026,17 @@ button {
   padding: 5px;
 }
 
+.color-control {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 7px;
+}
+
+.color-control input[type="color"] {
+  width: 44px;
+  min-width: 44px;
+}
+
 .text-action {
   justify-self: start;
   padding: 0;
@@ -1239,6 +1250,13 @@ button {
   min-height: 28px;
   padding: 0;
   accent-color: var(--admin-mustard);
+}
+
+.range-control {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 76px;
+  gap: 10px;
+  align-items: center;
 }
 
 .quick-structure-grid {
