@@ -24,7 +24,7 @@ export async function PUT(request, { params }) {
     `UPDATE pages
      SET html = $1, title = COALESCE($2, title), updated_at = now()
      WHERE slug = $3
-     RETURNING slug, title, html, original_html, is_home, updated_at`,
+     RETURNING slug, title, html, original_html, is_home, page_type, updated_at`,
     [body.html, body.title || null, slug]
   );
 

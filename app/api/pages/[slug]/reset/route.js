@@ -10,7 +10,7 @@ export async function POST(request, { params }) {
     `UPDATE pages
      SET html = original_html, updated_at = now()
      WHERE slug = $1
-     RETURNING slug, title, html, original_html, is_home, updated_at`,
+     RETURNING slug, title, html, original_html, is_home, page_type, updated_at`,
     [slug]
   );
   if (!result.rows[0]) {
