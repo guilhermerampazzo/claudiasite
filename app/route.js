@@ -1,12 +1,11 @@
-import { getGlobalParts, getHomePage, getSettings, renderHtml } from "@/lib/db";
+import { getHomePage, getSettings, renderHtml } from "@/lib/db";
 
 export async function GET() {
-  const [page, settings, globalParts] = await Promise.all([
+  const [page, settings] = await Promise.all([
     getHomePage(),
-    getSettings(),
-    getGlobalParts()
+    getSettings()
   ]);
-  return new Response(renderHtml(page.html, settings, globalParts), {
+  return new Response(renderHtml(page.html, settings), {
     headers: {
       "content-type": "text/html; charset=utf-8",
       "cache-control": "no-store"

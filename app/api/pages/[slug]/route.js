@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/auth";
-import { dbQuery, getPageBySlug } from "@/lib/db";
+import { dbQuery, getPageBySlug, setHomePage } from "@/lib/db";
 
 export async function GET(request, { params }) {
   const denied = requireAdmin(request);
@@ -32,4 +32,19 @@ export async function PUT(request, { params }) {
     return NextResponse.json({ error: "Pagina nao encontrada." }, { status: 404 });
   }
   return NextResponse.json({ page: result.rows[0] });
+}
+
+export async function PATCH(request, { params }) {
+  const denied = requireAdmin(request);
+  if (denied) return denied;
+  const { slug } = await params;
+  const body = await request.json().catch(() => ({}));
+  if (body.action !== "set_home") {
+    return NextResponse.json({ error: "Acao invalida." }, { status: 400 });
+  }
+  const page = await setHomePage(slug);
+  if (!page) {
+    return NextResponse.json({ error: "Pagina nao encontrada." }, { status: 404 });
+  }
+  return NextResponse.json({ page });
 }
