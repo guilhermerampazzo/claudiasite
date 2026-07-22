@@ -187,6 +187,52 @@ button {
   border-color: var(--admin-gold);
 }
 
+.password-input-wrap {
+  position: relative;
+  display: block;
+}
+
+.password-input-wrap input {
+  padding-right: 48px;
+}
+
+.password-input-wrap button {
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 34px;
+  padding: 0;
+  color: var(--admin-muted);
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  transform: translateY(-50%);
+}
+
+.password-input-wrap button:hover {
+  color: var(--admin-text);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.field-warning {
+  color: #f0c56c;
+  font-size: 11px;
+}
+
+.error-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.error-box svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
