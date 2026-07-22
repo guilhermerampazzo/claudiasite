@@ -583,15 +583,15 @@ button {
 }
 
 .header-brand-preview img:first-child {
-  width: 32px;
-  height: 32px;
+  width: 42px;
+  height: 42px;
   object-fit: contain;
 }
 
 .header-brand-preview img:last-child {
   width: auto;
-  max-width: min(270px, 65%);
-  height: 42px;
+  max-width: min(300px, 70%);
+  height: 58px;
   object-fit: contain;
   object-position: left center;
 }
