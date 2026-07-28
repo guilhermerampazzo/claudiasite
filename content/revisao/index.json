@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "home",
+    "title": "Casa Estampa Interiores",
+    "origem": "home-revisao",
+    "refsRestantes": 2
+  },
+  {
+    "slug": "papeis-de-parede",
+    "title": "Papéis de Parede",
+    "origem": "papeis-de-parede-revisao",
+    "refsRestantes": 3
+  },
+  {
+    "slug": "cortinas",
+    "title": "Cortinas",
+    "origem": "cortinas-revisao",
+    "refsRestantes": 3
+  },
+  {
+    "slug": "persianas",
+    "title": "Persianas",
+    "origem": "persianas-revisao",
+    "refsRestantes": 3
+  },
+  {
+    "slug": "pisos",
+    "title": "Pisos",
+    "origem": "pisos-revisao",
+    "refsRestantes": 2
+  },
+  {
+    "slug": "area-do-arquiteto",
+    "title": "Área do Arquiteto",
+    "origem": "area-do-arquiteto-revisao",
+    "refsRestantes": 3
+  },
+  {
+    "slug": "corporativo",
+    "title": "Corporativo",
+    "origem": "corporativo-revisao",
+    "refsRestantes": 32
+  },
+  {
+    "slug": "cases",
+    "title": "Cases Casa Estampa",
+    "origem": "cases-casa-estampa-revisao",
+    "refsRestantes": 3
+  },
+  {
+    "slug": "amorim",
+    "title": "Amorim",
+    "origem": "amorim-revisao",
+    "refsRestantes": 3
+  },
+  {
+    "slug": "amorim-tela-solar",
+    "title": "Amorim Tela Solar",
+    "origem": "amorim-tela-solar-revisao",
+    "refsRestantes": 3
+  }
+]
