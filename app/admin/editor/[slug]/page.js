@@ -320,6 +320,38 @@ export default function EditorPage() {
     event.target.value = "";
   }
 
+  async function uploadBackgroundVideo(event) {
+    const file = event.target.files?.[0];
+    if (!file) return;
+    if (file.size > 50 * 1024 * 1024) {
+      setError("Video muito grande. O limite e 50 MB.");
+      event.target.value = "";
+      return;
+    }
+    setStatus("Enviando video...");
+    const form = new FormData();
+    form.append("file", file);
+    const response = await fetch("/api/uploads", { method: "POST", body: form });
+    if (!response.ok) { setStatus(""); setError("Upload do video nao concluido."); return; }
+    const data = await response.json();
+    setStatus("");
+    setSelected((current) => current ? { ...current, bgVideo: data.path, bgVideoTipo: "arquivo" } : current);
+    post("ce-bg-video", { tipo: "arquivo", src: data.path });
+    event.target.value = "";
+  }
+
+  function aplicarVideoUrl(url) {
+    const limpo = String(url || "").trim();
+    if (!limpo) return;
+    setSelected((current) => current ? { ...current, bgVideo: limpo, bgVideoTipo: "youtube" } : current);
+    post("ce-bg-video", { tipo: "youtube", src: limpo });
+  }
+
+  function removerVideoFundo() {
+    setSelected((current) => current ? { ...current, bgVideo: "", bgVideoTipo: "" } : current);
+    post("ce-bg-video-remove");
+  }
+
   function updateStyle(name, value) {
     setSelected((current) => current ? { ...current, [name]: value } : current);
     post("ce-style", { name, value });
@@ -385,7 +417,7 @@ export default function EditorPage() {
 
             {panel === "navigator" ? <div className="navigator-wrap"><div className="tool-title">Estrutura da pagina</div>{tree.length ? <TreeNodes nodes={tree} selectedId={selected?.id} onSelect={(id) => post("ce-select-id", { id })} /> : <p className="panel-help">A estrutura aparecera quando a pagina carregar.</p>}</div> : null}
 
-            {panel === "edit" && selected ? <ElementEditor selected={selected} settingsTab={settingsTab} setSettingsTab={setSettingsTab} updateStyle={updateStyle} updateStyles={updateStyles} updateAttr={updateAttr} setSelected={setSelected} post={post} uploadImage={uploadImage} uploadBackgroundImage={uploadBackgroundImage} setContainerLayout={setContainerLayout} addWidget={addWidget} /> : null}
+            {panel === "edit" && selected ? <ElementEditor selected={selected} settingsTab={settingsTab} setSettingsTab={setSettingsTab} updateStyle={updateStyle} updateStyles={updateStyles} updateAttr={updateAttr} setSelected={setSelected} post={post} uploadImage={uploadImage} uploadBackgroundImage={uploadBackgroundImage} uploadBackgroundVideo={uploadBackgroundVideo} aplicarVideoUrl={aplicarVideoUrl} removerVideoFundo={removerVideoFundo} setContainerLayout={setContainerLayout} addWidget={addWidget} /> : null}
           </div>
         </aside>
 
@@ -408,7 +440,7 @@ export default function EditorPage() {
   );
 }
 
-function ElementEditor({ selected, settingsTab, setSettingsTab, updateStyle, updateStyles, updateAttr, setSelected, post, uploadImage, uploadBackgroundImage, setContainerLayout, addWidget }) {
+function ElementEditor({ selected, settingsTab, setSettingsTab, updateStyle, updateStyles, updateAttr, setSelected, post, uploadImage, uploadBackgroundImage, uploadBackgroundVideo, aplicarVideoUrl, removerVideoFundo, setContainerLayout, addWidget }) {
   const structural = selected.kind === "container" || selected.kind === "section" || selected.kind === "structure";
   const isImage = selected.tag === "img";
   const isVideo = selected.tag === "video";
@@ -452,6 +484,31 @@ function ElementEditor({ selected, settingsTab, setSettingsTab, updateStyle, upd
             <button className="text-action" onClick={() => updateStyles({ backgroundImage: "none", backgroundSize: "", backgroundPosition: "", backgroundRepeat: "" })}>Remover imagem de fundo</button>
           </>
         ) : null}
+      </div>
+      <div className="control-section">
+        <div className="control-label">Video de fundo</div>
+        <p className="field-hint">Envie um arquivo de video ou cole um link do YouTube. O video roda em loop, sem som, atras do conteudo.</p>
+        {selected.bgVideo ? (
+          <div className="media-status">
+            <IconPlayerPlay size={22} />
+            <div>
+              <strong>{selected.bgVideoTipo === "youtube" ? "Video do YouTube" : "Arquivo de video"}</strong>
+              <span>{String(selected.bgVideo).slice(0, 52)}</span>
+            </div>
+          </div>
+        ) : null}
+        <label className="upload-field"><IconPlayerPlay size={18} />{selected.bgVideo ? "Trocar arquivo de video" : "Enviar arquivo de video"}<input type="file" accept="video/*" onChange={uploadBackgroundVideo} /></label>
+        <p className="field-hint">Arquivo de ate 50 MB.</p>
+        <label className="field">
+          <span>Ou link do YouTube</span>
+          <input
+            placeholder="https://www.youtube.com/watch?v=..."
+            defaultValue={selected.bgVideoTipo === "youtube" ? selected.bgVideo : ""}
+            onKeyDown={(event) => { if (event.key === "Enter") { event.preventDefault(); aplicarVideoUrl(event.target.value); } }}
+            onBlur={(event) => aplicarVideoUrl(event.target.value)}
+          />
+        </label>
+        {selected.bgVideo ? <button className="text-action" onClick={removerVideoFundo}>Remover video de fundo</button> : null}
       </div>
       <div className="control-section"><div className="control-label">Tipografia</div><div className="field-row"><label className="field"><span>Tamanho</span><input value={selected.fontSize || ""} placeholder="16 ou 16px" onChange={(event) => updateStyle("fontSize", event.target.value)} /></label><label className="field"><span>Peso</span><select value={selected.fontWeight || ""} onChange={(event) => updateStyle("fontWeight", event.target.value)}><option value="">Herdar</option><option value="300">Leve</option><option value="400">Normal</option><option value="600">Semi-negrito</option><option value="700">Negrito</option></select></label></div><p className="field-hint">Numeros sem unidade sao aplicados em pixels.</p><div className="field-row"><label className="field"><span>Altura da linha</span><input value={selected.lineHeight || ""} placeholder="1.6" onChange={(event) => updateStyle("lineHeight", event.target.value)} /></label><label className="field"><span>Espaco entre letras</span><input value={selected.letterSpacing || ""} placeholder="0 ou 0px" onChange={(event) => updateStyle("letterSpacing", event.target.value)} /></label></div><label className="field"><span>Fonte</span><select value={selected.fontFamily || ""} onChange={(event) => updateStyle("fontFamily", event.target.value)}><option value="">Herdar fonte global</option>{GOOGLE_FONTS.map((font) => <option key={font} value={font}>{font}</option>)}</select></label><label className="field"><span>Alinhamento do texto</span><select value={selected.textAlign || ""} onChange={(event) => updateStyle("textAlign", event.target.value)}><option value="">Herdar</option><option value="left">Esquerda</option><option value="center">Centro</option><option value="right">Direita</option><option value="justify">Justificado</option></select></label></div>
       <div className="control-section"><div className="control-label">Borda</div><div className="field-row"><label className="field"><span>Espessura</span><input value={selected.borderWidth || ""} placeholder="1px" onChange={(event) => updateStyles({ borderWidth: event.target.value, borderStyle: event.target.value ? "solid" : "" })} /></label><label className="field"><span>Raio</span><input value={selected.borderRadius || ""} placeholder="0px" onChange={(event) => updateStyle("borderRadius", event.target.value)} /></label></div><ColorField label="Cor da borda" value={selected.borderColor || selected.color || "#222222"} onChange={(value) => updateStyle("borderColor", value)} /></div>
@@ -531,7 +588,7 @@ function withEditorBridge(html) {
   function canContain(element) { return ["BODY","MAIN","HEADER","FOOTER","NAV","SECTION","ARTICLE","DIV","LI","FORM"].includes(element.tagName); }
   function pathOf(element) { const path = []; let current = element; while (current && current !== document.body) { if (!isUi(current)) path.unshift({ id:current.dataset.ceId,label:labelOf(current),kind:kindOf(current) }); current = current.parentElement; } return path.slice(-6); }
   function inlineOrComputed(element, name) { return element.style[name] || window.getComputedStyle(element)[name] || ""; }
-  function info(element) { const style = window.getComputedStyle(element); const classNames = typeof element.className === "string" ? element.className.split(/\\s+/) : []; const iconName = classNames.find((name) => name.startsWith("ti-") && name !== "ti") || ""; return { id:element.dataset.ceId,tag:element.tagName.toLowerCase(),kind:kindOf(element),label:labelOf(element),customLabel:element.dataset.ceLabel || "",path:pathOf(element),isContainer:canContain(element),className:typeof element.className === "string" ? element.className : "",html:element.innerHTML || "",href:element.getAttribute("href") || "",src:element.getAttribute("src") || element.querySelector("source")?.getAttribute("src") || "",alt:element.getAttribute("alt") || "",poster:element.getAttribute("poster") || "",controls:element.hasAttribute("controls"),autoplay:element.hasAttribute("autoplay"),loop:element.hasAttribute("loop"),muted:element.hasAttribute("muted"),iconName,color:rgbToHex(style.color,"#222222"),backgroundColor:rgbToHex(style.backgroundColor,""),backgroundImage:element.style.backgroundImage||(style.backgroundImage!=="none"?style.backgroundImage:"")||"",backgroundSize:element.style.backgroundSize||"",backgroundPosition:element.style.backgroundPosition||"",backgroundRepeat:element.style.backgroundRepeat||"",fontSize:inlineOrComputed(element,"fontSize"),fontWeight:inlineOrComputed(element,"fontWeight"),lineHeight:inlineOrComputed(element,"lineHeight"),letterSpacing:inlineOrComputed(element,"letterSpacing"),fontFamily:element.style.fontFamily || "",textAlign:inlineOrComputed(element,"textAlign"),display:inlineOrComputed(element,"display"),flexDirection:inlineOrComputed(element,"flexDirection"),flexWrap:inlineOrComputed(element,"flexWrap"),gridTemplateColumns:inlineOrComputed(element,"gridTemplateColumns"),justifyContent:inlineOrComputed(element,"justifyContent"),alignItems:inlineOrComputed(element,"alignItems"),gap:inlineOrComputed(element,"gap"),width:element.style.width || "",maxWidth:element.style.maxWidth || "",minHeight:element.style.minHeight || "",objectFit:element.style.objectFit || "",padding:element.style.padding || "",margin:element.style.margin || "",borderWidth:element.style.borderWidth || "",borderColor:rgbToHex(style.borderColor,"#222222"),borderRadius:element.style.borderRadius || "",position:element.style.position || "",zIndex:element.style.zIndex || "",opacity:element.style.opacity || "1" }; }
+  function info(element) { const style = window.getComputedStyle(element); const classNames = typeof element.className === "string" ? element.className.split(/\\s+/) : []; const iconName = classNames.find((name) => name.startsWith("ti-") && name !== "ti") || ""; return { id:element.dataset.ceId,tag:element.tagName.toLowerCase(),kind:kindOf(element),label:labelOf(element),customLabel:element.dataset.ceLabel || "",path:pathOf(element),isContainer:canContain(element),className:typeof element.className === "string" ? element.className : "",html:element.innerHTML || "",href:element.getAttribute("href") || "",src:element.getAttribute("src") || element.querySelector("source")?.getAttribute("src") || "",alt:element.getAttribute("alt") || "",poster:element.getAttribute("poster") || "",controls:element.hasAttribute("controls"),autoplay:element.hasAttribute("autoplay"),loop:element.hasAttribute("loop"),muted:element.hasAttribute("muted"),iconName,color:rgbToHex(style.color,"#222222"),backgroundColor:rgbToHex(style.backgroundColor,""),bgVideo:(()=>{const c=element.querySelector(":scope > [data-ce-bg-video]");if(!c)return "";const f=c.querySelector("iframe");return f?f.getAttribute("src")||"":(c.querySelector("video")?.getAttribute("src")||"");})(),bgVideoTipo:element.querySelector(":scope > [data-ce-bg-video]")?.getAttribute("data-ce-bg-video")||"",backgroundImage:element.style.backgroundImage||(style.backgroundImage!=="none"?style.backgroundImage:"")||"",backgroundSize:element.style.backgroundSize||"",backgroundPosition:element.style.backgroundPosition||"",backgroundRepeat:element.style.backgroundRepeat||"",fontSize:inlineOrComputed(element,"fontSize"),fontWeight:inlineOrComputed(element,"fontWeight"),lineHeight:inlineOrComputed(element,"lineHeight"),letterSpacing:inlineOrComputed(element,"letterSpacing"),fontFamily:element.style.fontFamily || "",textAlign:inlineOrComputed(element,"textAlign"),display:inlineOrComputed(element,"display"),flexDirection:inlineOrComputed(element,"flexDirection"),flexWrap:inlineOrComputed(element,"flexWrap"),gridTemplateColumns:inlineOrComputed(element,"gridTemplateColumns"),justifyContent:inlineOrComputed(element,"justifyContent"),alignItems:inlineOrComputed(element,"alignItems"),gap:inlineOrComputed(element,"gap"),width:element.style.width || "",maxWidth:element.style.maxWidth || "",minHeight:element.style.minHeight || "",objectFit:element.style.objectFit || "",padding:element.style.padding || "",margin:element.style.margin || "",borderWidth:element.style.borderWidth || "",borderColor:rgbToHex(style.borderColor,"#222222"),borderRadius:element.style.borderRadius || "",position:element.style.position || "",zIndex:element.style.zIndex || "",opacity:element.style.opacity || "1" }; }
   function select(element) { if (!element || ignoredTags.has(element.tagName) || isUi(element)) return; if (selected) selected.removeAttribute("data-ce-selected"); selected = element; selected.dataset.ceSelected = "true"; positionSelectionUi(); window.parent.postMessage({type:"ce-selected",element:info(selected)},"*"); }
   function positionSelectionUi() { if (!selected || !document.contains(selected)) { selectionBar.style.display="none"; quickWrap.style.display="none"; return; } const rect=selected.getBoundingClientRect(); const left=Math.max(2,rect.left+window.scrollX); const top=Math.max(window.scrollY,rect.top+window.scrollY-28); selectionBar.style.display="flex"; selectionBar.style.left=left+"px"; selectionBar.style.top=top+"px"; selectionBar.querySelector(".ce-name").textContent=labelOf(selected); if (canContain(selected) || kindOf(selected)==="section") { quickWrap.style.display="block"; quickWrap.style.left=(rect.left+window.scrollX+rect.width/2)+"px"; quickWrap.style.top=(rect.bottom+window.scrollY)+"px"; } else quickWrap.style.display="none"; }
   function treeNode(element,depth) { const children=depth<6 ? Array.from(element.children).filter((child)=>!isUi(child)&&!ignoredTags.has(child.tagName)).map((child)=>treeNode(child,depth+1)).filter(Boolean) : []; const meaningful=structuralTags.has(element.tagName)||element.dataset.ceKind||element.dataset.ceWidget||["H1","H2","H3","P","A","IMG","DIV","UL","OL","FORM","IFRAME","VIDEO","BLOCKQUOTE"].includes(element.tagName); if(!meaningful&&!children.length)return null; return {id:element.dataset.ceId,label:labelOf(element),kind:kindOf(element),children}; }
@@ -544,6 +601,36 @@ function withEditorBridge(html) {
   function resolveDrop(event){let target=event.target.closest?.("[data-ce-id]")||document.body;if(isUi(target))target=selected||document.body;const rect=target.getBoundingClientRect();const horizontal=isHorizontalParent(target);const axis=horizontal?event.clientX:event.clientY;const start=horizontal?rect.left:rect.top;const size=horizontal?rect.width:rect.height;const edge=Math.min(40,Math.max(12,size*.25));let position="inside";if(!canContain(target)||axis<start+edge)position=axis<start+size/2?"before":"after";else if(axis>start+size-edge)position="after";return {target,position,horizontal};}
   function showDrop(state){if(dropState?.target)dropState.target.removeAttribute("data-ce-drop-inside");dropState=state;if(!state)return clearDrop();const rect=state.target.getBoundingClientRect();if(state.position==="inside"){state.target.dataset.ceDropInside="true";dropLine.style.display="none";dropLabel.textContent="Soltar dentro de "+labelOf(state.target);dropLabel.style.display="block";dropLabel.style.left=(rect.left+window.scrollX+rect.width/2-dropLabel.offsetWidth/2)+"px";dropLabel.style.top=(rect.top+window.scrollY+rect.height/2)+"px";return;}dropLabel.style.display="none";dropLine.classList.toggle("vertical",state.horizontal);dropLine.style.display="block";if(state.horizontal){dropLine.style.left=((state.position==="before"?rect.left:rect.right)+window.scrollX-2)+"px";dropLine.style.top=(rect.top+window.scrollY)+"px";dropLine.style.height=rect.height+"px";}else{dropLine.style.left=(rect.left+window.scrollX)+"px";dropLine.style.top=((state.position==="before"?rect.top:rect.bottom)+window.scrollY-2)+"px";dropLine.style.width=rect.width+"px";}}
   function clearDrop(){if(dropState?.target)dropState.target.removeAttribute("data-ce-drop-inside");dropState=null;dropLine.style.display="none";dropLine.classList.remove("vertical");dropLabel.style.display="none";}
+  function youtubeId(url){const m=String(url).match(/(?:youtu\\.be\\/|v=|\\/embed\\/|\\/shorts\\/)([A-Za-z0-9_-]{6,})/);return m?m[1]:"";}
+  function removeBgVideo(element){if(!element)return;element.querySelectorAll('[data-ce-bg-video]').forEach((n)=>n.remove());}
+  function setBgVideo(element,tipo,src){
+    if(!element||!src)return;
+    removeBgVideo(element);
+    const camada=document.createElement("div");
+    camada.setAttribute("data-ce-bg-video",tipo);
+    camada.style.cssText="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;";
+    if(tipo==="youtube"){
+      const id=youtubeId(src);
+      if(!id)return;
+      const frame=document.createElement("iframe");
+      frame.src="https://www.youtube.com/embed/"+id+"?autoplay=1&mute=1&loop=1&playlist="+id+"&controls=0&modestbranding=1&playsinline=1&rel=0";
+      frame.setAttribute("allow","autoplay; encrypted-media");
+      frame.setAttribute("frameborder","0");
+      frame.style.cssText="position:absolute;top:50%;left:50%;width:177.78vh;height:56.25vw;min-width:100%;min-height:100%;transform:translate(-50%,-50%);border:0;";
+      camada.appendChild(frame);
+    }else{
+      const video=document.createElement("video");
+      video.setAttribute("src",src);
+      ["autoplay","muted","loop","playsinline"].forEach((a)=>video.setAttribute(a,""));
+      video.style.cssText="width:100%;height:100%;object-fit:cover;display:block;";
+      camada.appendChild(video);
+    }
+    if(window.getComputedStyle(element).position==="static")element.style.position="relative";
+    element.style.overflow="hidden";
+    stripPlaceholders(element);
+    Array.from(element.children).forEach((filho)=>{if(isUi(filho))return;const s=window.getComputedStyle(filho);if(s.position==="static")filho.style.position="relative";if(!filho.style.zIndex)filho.style.zIndex="1";});
+    element.insertBefore(camada,element.firstChild);
+  }
   function stripPlaceholders(element){if(!element)return;element.querySelectorAll('[class*="placeholder" i]').forEach((node)=>node.remove());const remaining=Array.from(element.children).filter((child)=>!isUi(child));if(remaining.length===1&&remaining[0].tagName==="I"&&Array.from(remaining[0].classList).some((name)=>name.startsWith("ti-")))remaining[0].remove();}
   function deleteSelected(){if(!selected)return;const next=selected.parentElement;selected.remove();selected=null;changed();if(next&&!ignoredTags.has(next.tagName))select(next);}
   function duplicateSelected(){if(!selected)return;const copy=selected.cloneNode(true);copy.removeAttribute("data-ce-selected");copy.querySelectorAll("[data-ce-id]").forEach((node)=>node.removeAttribute("data-ce-id"));copy.removeAttribute("data-ce-id");selected.after(copy);changed();select(copy);}
@@ -561,7 +648,7 @@ function withEditorBridge(html) {
   document.addEventListener("dragleave",(event)=>{if(!event.relatedTarget)clearDrop();});
   document.addEventListener("drop",(event)=>{event.preventDefault();const type=event.dataTransfer.getData("text/casa-estampa-widget")||window.parent.__CE_DRAG_WIDGET||"container";insertWidget(type,dropState||resolveDrop(event));window.parent.__CE_DRAG_WIDGET=null;});
   window.addEventListener("scroll",positionSelectionUi,{passive:true});window.addEventListener("resize",positionSelectionUi);
-  window.addEventListener("message",(event)=>{const data=event.data||{};if(data.type==="ce-request-html")window.parent.postMessage({type:"ce-html",html:serialize()},"*");if(data.type==="ce-add-widget")insertWidget(data.widget,{target:currentTarget(),position:canContain(currentTarget())?"inside":"after"});if(data.type==="ce-select-id")select(document.querySelector('[data-ce-id="'+data.id+'"]'));if(!selected)return;if(data.type==="ce-select-parent"&&selected.parentElement!==document.body)select(selected.parentElement);if(data.type==="ce-html-content"){selected.innerHTML=data.value||"";changed();select(selected);}if(data.type==="ce-icon"){Array.from(selected.classList).filter((name)=>name.startsWith("ti-")).forEach((name)=>selected.classList.remove(name));selected.classList.add("ti",data.iconName);changed(false);select(selected);}if(data.type==="ce-attr"){if(data.name==="src"&&["VIDEO","AUDIO"].includes(selected.tagName)){let source=selected.querySelector("source");if(!source){source=document.createElement("source");selected.appendChild(source);}source.setAttribute("src",data.value||"");selected.load?.();}else if(data.value)selected.setAttribute(data.name,data.value);else selected.removeAttribute(data.name);changed();select(selected);}if(data.type==="ce-style"){selected.style[data.name]=normalizeStyleValue(data.name,data.value);if(data.name==="backgroundImage"&&data.value&&data.value!=="none")stripPlaceholders(selected);changed(false);}if(data.type==="ce-styles"){Object.entries(data.styles||{}).forEach(([name,value])=>{selected.style[name]=normalizeStyleValue(name,value);});if(data.styles?.backgroundImage&&data.styles.backgroundImage!=="none")stripPlaceholders(selected);changed(false);}if(data.type==="ce-delete")deleteSelected();if(data.type==="ce-duplicate")duplicateSelected();});
+  window.addEventListener("message",(event)=>{const data=event.data||{};if(data.type==="ce-request-html")window.parent.postMessage({type:"ce-html",html:serialize()},"*");if(data.type==="ce-add-widget")insertWidget(data.widget,{target:currentTarget(),position:canContain(currentTarget())?"inside":"after"});if(data.type==="ce-select-id")select(document.querySelector('[data-ce-id="'+data.id+'"]'));if(!selected)return;if(data.type==="ce-select-parent"&&selected.parentElement!==document.body)select(selected.parentElement);if(data.type==="ce-html-content"){selected.innerHTML=data.value||"";changed();select(selected);}if(data.type==="ce-icon"){Array.from(selected.classList).filter((name)=>name.startsWith("ti-")).forEach((name)=>selected.classList.remove(name));selected.classList.add("ti",data.iconName);changed(false);select(selected);}if(data.type==="ce-attr"){if(data.name==="src"&&["VIDEO","AUDIO"].includes(selected.tagName)){let source=selected.querySelector("source");if(!source){source=document.createElement("source");selected.appendChild(source);}source.setAttribute("src",data.value||"");selected.load?.();}else if(data.value)selected.setAttribute(data.name,data.value);else selected.removeAttribute(data.name);changed();select(selected);}if(data.type==="ce-style"){selected.style[data.name]=normalizeStyleValue(data.name,data.value);if(data.name==="backgroundImage"&&data.value&&data.value!=="none")stripPlaceholders(selected);changed(false);}if(data.type==="ce-styles"){Object.entries(data.styles||{}).forEach(([name,value])=>{selected.style[name]=normalizeStyleValue(name,value);});if(data.styles?.backgroundImage&&data.styles.backgroundImage!=="none")stripPlaceholders(selected);changed(false);}if(data.type==="ce-bg-video"){setBgVideo(selected,data.tipo,data.src);changed(false);select(selected);}if(data.type==="ce-bg-video-remove"){removeBgVideo(selected);changed(false);select(selected);}if(data.type==="ce-delete")deleteSelected();if(data.type==="ce-duplicate")duplicateSelected();});
 })();
 </script>`;
   return html.includes("</body>") ? html.replace("</body>", `${bridge}\n</body>`) : `${html}\n${bridge}`;
