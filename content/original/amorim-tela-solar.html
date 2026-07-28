@@ -245,17 +245,19 @@ a { text-decoration: none; }
 </head>
 <body>
 <!-- ce-header-unificado -->
-<style id="ce-header-css">.navbar{position:fixed;top:0;left:0;width:100%;z-index:99999;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px clamp(20px,5vw,80px);background:rgba(28,24,16,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(194,165,122,.25);box-sizing:border-box;}
+<style id="ce-header-css">.navbar{position:fixed;top:0;left:0;width:100%;z-index:99999;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:10px clamp(16px,3vw,48px);background:rgba(28,24,16,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(194,165,122,.25);box-sizing:border-box;}
 .navbar *,.navbar *::before,.navbar *::after{box-sizing:border-box;}
-.navbar-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
-.navbar-nav{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0;flex-wrap:wrap;justify-content:center;}
-.navbar-nav li{margin:0;padding:0;list-style:none;}
-.navbar-nav a{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#b8a88a;text-decoration:none;transition:color .2s;}
+.navbar-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex:0 0 auto;}
+.navbar-logo .site-logo-icon{width:30px!important;height:30px!important;flex:0 0 30px!important;object-fit:contain;}
+.navbar-logo .site-logo-lettering{height:38px!important;width:auto!important;max-width:150px!important;object-fit:contain;}
+.navbar-nav{display:flex;flex-wrap:nowrap;align-items:center;gap:clamp(12px,1.6vw,26px);list-style:none;margin:0;padding:0;flex:1 1 auto;justify-content:center;min-width:0;}
+.navbar-nav li{margin:0;padding:0;list-style:none;white-space:nowrap;}
+.navbar-nav a{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:#b8a88a;text-decoration:none;white-space:nowrap;transition:color .2s;}
 .navbar-nav a:hover{color:#c2a57a;}
-.navbar-cta{display:inline-flex;align-items:center;gap:7px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#1c1810;background:#c2a57a;text-decoration:none;padding:10px 20px;border-radius:2px;transition:background .2s;flex-shrink:0;white-space:nowrap;}
+.navbar-cta{display:inline-flex;align-items:center;gap:6px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#1c1810;background:#c2a57a;text-decoration:none;padding:9px 16px;border-radius:2px;transition:background .2s;flex:0 0 auto;white-space:nowrap;}
 .navbar-cta:hover{background:#c8960c;color:#1c1810;}
-@media(max-width:900px){.navbar-nav{display:none;}}
-@media(max-width:768px){.navbar{padding:10px 20px;}.navbar-cta{font-size:9px;padding:9px 14px;letter-spacing:1px;}}</style>
+@media(max-width:1024px){.navbar-nav{display:none;}}
+@media(max-width:768px){.navbar{padding:8px 16px;gap:12px;}.navbar-cta{font-size:9px;padding:8px 12px;letter-spacing:1px;}.navbar-logo .site-logo-lettering{height:32px!important;max-width:120px!important;}}</style>
 <nav class="navbar">
   <a href="/" class="navbar-logo">
     <img class="logo-symbol" src="/assets/logo-icone.svg" alt="Casa Estampa">
