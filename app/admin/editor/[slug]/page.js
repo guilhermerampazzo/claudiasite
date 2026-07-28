@@ -303,6 +303,23 @@ export default function EditorPage() {
     updateAttr("src", data.path);
   }
 
+  async function uploadBackgroundImage(event) {
+    const file = event.target.files?.[0];
+    if (!file) return;
+    const form = new FormData();
+    form.append("file", file);
+    const response = await fetch("/api/uploads", { method: "POST", body: form });
+    if (!response.ok) { setError("Upload nao concluido."); return; }
+    const data = await response.json();
+    updateStyles({
+      backgroundImage: `url('${data.path}')`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat"
+    });
+    event.target.value = "";
+  }
+
   function updateStyle(name, value) {
     setSelected((current) => current ? { ...current, [name]: value } : current);
     post("ce-style", { name, value });
@@ -368,7 +385,7 @@ export default function EditorPage() {
 
             {panel === "navigator" ? <div className="navigator-wrap"><div className="tool-title">Estrutura da pagina</div>{tree.length ? <TreeNodes nodes={tree} selectedId={selected?.id} onSelect={(id) => post("ce-select-id", { id })} /> : <p className="panel-help">A estrutura aparecera quando a pagina carregar.</p>}</div> : null}
 
-            {panel === "edit" && selected ? <ElementEditor selected={selected} settingsTab={settingsTab} setSettingsTab={setSettingsTab} updateStyle={updateStyle} updateStyles={updateStyles} updateAttr={updateAttr} setSelected={setSelected} post={post} uploadImage={uploadImage} setContainerLayout={setContainerLayout} addWidget={addWidget} /> : null}
+            {panel === "edit" && selected ? <ElementEditor selected={selected} settingsTab={settingsTab} setSettingsTab={setSettingsTab} updateStyle={updateStyle} updateStyles={updateStyles} updateAttr={updateAttr} setSelected={setSelected} post={post} uploadImage={uploadImage} uploadBackgroundImage={uploadBackgroundImage} setContainerLayout={setContainerLayout} addWidget={addWidget} /> : null}
           </div>
         </aside>
 
@@ -391,7 +408,7 @@ export default function EditorPage() {
   );
 }
 
-function ElementEditor({ selected, settingsTab, setSettingsTab, updateStyle, updateStyles, updateAttr, setSelected, post, uploadImage, setContainerLayout, addWidget }) {
+function ElementEditor({ selected, settingsTab, setSettingsTab, updateStyle, updateStyles, updateAttr, setSelected, post, uploadImage, uploadBackgroundImage, setContainerLayout, addWidget }) {
   const structural = selected.kind === "container" || selected.kind === "section" || selected.kind === "structure";
   const isImage = selected.tag === "img";
   const isVideo = selected.tag === "video";
@@ -418,6 +435,24 @@ function ElementEditor({ selected, settingsTab, setSettingsTab, updateStyle, upd
 
     {settingsTab === "style" ? <div className="settings-body">
       <div className="control-section"><div className="control-label">Cores</div><div className="color-row"><ColorField label="Texto" value={selected.color || "#222222"} onChange={(value) => updateStyle("color", value)} /><ColorField label="Fundo" value={selected.backgroundColor || "#ffffff"} onChange={(value) => updateStyle("backgroundColor", value)} /></div><button className="text-action" onClick={() => updateStyle("backgroundColor", "transparent")}>Fundo transparente</button></div>
+      <div className="control-section">
+        <div className="control-label">Imagem de fundo (background)</div>
+        <p className="field-hint">Envie uma foto para usar como fundo desta secao/container. Ela cobre toda a area do elemento, atras do conteudo.</p>
+        {selected.backgroundImage && selected.backgroundImage !== "none" ? (
+          <div className="media-preview" style={{ backgroundImage: selected.backgroundImage, backgroundSize: "cover", backgroundPosition: "center", minHeight: 96 }} />
+        ) : null}
+        <label className="upload-field"><IconPhoto size={18} />{selected.backgroundImage && selected.backgroundImage !== "none" ? "Trocar imagem de fundo" : "Enviar imagem de fundo"}<input type="file" accept="image/*" onChange={uploadBackgroundImage} /></label>
+        {selected.backgroundImage && selected.backgroundImage !== "none" ? (
+          <>
+            <div className="field-row">
+              <label className="field"><span>Ajuste</span><select value={selected.backgroundSize || "cover"} onChange={(event) => updateStyle("backgroundSize", event.target.value)}><option value="cover">Preencher e cortar</option><option value="contain">Mostrar inteira</option><option value="auto">Tamanho original</option></select></label>
+              <label className="field"><span>Posicao</span><select value={selected.backgroundPosition || "center"} onChange={(event) => updateStyle("backgroundPosition", event.target.value)}><option value="center">Centro</option><option value="top">Topo</option><option value="bottom">Base</option><option value="left">Esquerda</option><option value="right">Direita</option></select></label>
+            </div>
+            <label className="field"><span>Repetir</span><select value={selected.backgroundRepeat || "no-repeat"} onChange={(event) => updateStyle("backgroundRepeat", event.target.value)}><option value="no-repeat">Nao repetir</option><option value="repeat">Repetir (mosaico)</option></select></label>
+            <button className="text-action" onClick={() => updateStyles({ backgroundImage: "none", backgroundSize: "", backgroundPosition: "", backgroundRepeat: "" })}>Remover imagem de fundo</button>
+          </>
+        ) : null}
+      </div>
       <div className="control-section"><div className="control-label">Tipografia</div><div className="field-row"><label className="field"><span>Tamanho</span><input value={selected.fontSize || ""} placeholder="16 ou 16px" onChange={(event) => updateStyle("fontSize", event.target.value)} /></label><label className="field"><span>Peso</span><select value={selected.fontWeight || ""} onChange={(event) => updateStyle("fontWeight", event.target.value)}><option value="">Herdar</option><option value="300">Leve</option><option value="400">Normal</option><option value="600">Semi-negrito</option><option value="700">Negrito</option></select></label></div><p className="field-hint">Numeros sem unidade sao aplicados em pixels.</p><div className="field-row"><label className="field"><span>Altura da linha</span><input value={selected.lineHeight || ""} placeholder="1.6" onChange={(event) => updateStyle("lineHeight", event.target.value)} /></label><label className="field"><span>Espaco entre letras</span><input value={selected.letterSpacing || ""} placeholder="0 ou 0px" onChange={(event) => updateStyle("letterSpacing", event.target.value)} /></label></div><label className="field"><span>Fonte</span><select value={selected.fontFamily || ""} onChange={(event) => updateStyle("fontFamily", event.target.value)}><option value="">Herdar fonte global</option>{GOOGLE_FONTS.map((font) => <option key={font} value={font}>{font}</option>)}</select></label><label className="field"><span>Alinhamento do texto</span><select value={selected.textAlign || ""} onChange={(event) => updateStyle("textAlign", event.target.value)}><option value="">Herdar</option><option value="left">Esquerda</option><option value="center">Centro</option><option value="right">Direita</option><option value="justify">Justificado</option></select></label></div>
       <div className="control-section"><div className="control-label">Borda</div><div className="field-row"><label className="field"><span>Espessura</span><input value={selected.borderWidth || ""} placeholder="1px" onChange={(event) => updateStyles({ borderWidth: event.target.value, borderStyle: event.target.value ? "solid" : "" })} /></label><label className="field"><span>Raio</span><input value={selected.borderRadius || ""} placeholder="0px" onChange={(event) => updateStyle("borderRadius", event.target.value)} /></label></div><ColorField label="Cor da borda" value={selected.borderColor || selected.color || "#222222"} onChange={(value) => updateStyle("borderColor", value)} /></div>
     </div> : null}
@@ -496,7 +531,7 @@ function withEditorBridge(html) {
   function canContain(element) { return ["BODY","MAIN","HEADER","FOOTER","NAV","SECTION","ARTICLE","DIV","LI","FORM"].includes(element.tagName); }
   function pathOf(element) { const path = []; let current = element; while (current && current !== document.body) { if (!isUi(current)) path.unshift({ id:current.dataset.ceId,label:labelOf(current),kind:kindOf(current) }); current = current.parentElement; } return path.slice(-6); }
   function inlineOrComputed(element, name) { return element.style[name] || window.getComputedStyle(element)[name] || ""; }
-  function info(element) { const style = window.getComputedStyle(element); const classNames = typeof element.className === "string" ? element.className.split(/\\s+/) : []; const iconName = classNames.find((name) => name.startsWith("ti-") && name !== "ti") || ""; return { id:element.dataset.ceId,tag:element.tagName.toLowerCase(),kind:kindOf(element),label:labelOf(element),customLabel:element.dataset.ceLabel || "",path:pathOf(element),isContainer:canContain(element),className:typeof element.className === "string" ? element.className : "",html:element.innerHTML || "",href:element.getAttribute("href") || "",src:element.getAttribute("src") || element.querySelector("source")?.getAttribute("src") || "",alt:element.getAttribute("alt") || "",poster:element.getAttribute("poster") || "",controls:element.hasAttribute("controls"),autoplay:element.hasAttribute("autoplay"),loop:element.hasAttribute("loop"),muted:element.hasAttribute("muted"),iconName,color:rgbToHex(style.color,"#222222"),backgroundColor:rgbToHex(style.backgroundColor,""),fontSize:inlineOrComputed(element,"fontSize"),fontWeight:inlineOrComputed(element,"fontWeight"),lineHeight:inlineOrComputed(element,"lineHeight"),letterSpacing:inlineOrComputed(element,"letterSpacing"),fontFamily:element.style.fontFamily || "",textAlign:inlineOrComputed(element,"textAlign"),display:inlineOrComputed(element,"display"),flexDirection:inlineOrComputed(element,"flexDirection"),flexWrap:inlineOrComputed(element,"flexWrap"),gridTemplateColumns:inlineOrComputed(element,"gridTemplateColumns"),justifyContent:inlineOrComputed(element,"justifyContent"),alignItems:inlineOrComputed(element,"alignItems"),gap:inlineOrComputed(element,"gap"),width:element.style.width || "",maxWidth:element.style.maxWidth || "",minHeight:element.style.minHeight || "",objectFit:element.style.objectFit || "",padding:element.style.padding || "",margin:element.style.margin || "",borderWidth:element.style.borderWidth || "",borderColor:rgbToHex(style.borderColor,"#222222"),borderRadius:element.style.borderRadius || "",position:element.style.position || "",zIndex:element.style.zIndex || "",opacity:element.style.opacity || "1" }; }
+  function info(element) { const style = window.getComputedStyle(element); const classNames = typeof element.className === "string" ? element.className.split(/\\s+/) : []; const iconName = classNames.find((name) => name.startsWith("ti-") && name !== "ti") || ""; return { id:element.dataset.ceId,tag:element.tagName.toLowerCase(),kind:kindOf(element),label:labelOf(element),customLabel:element.dataset.ceLabel || "",path:pathOf(element),isContainer:canContain(element),className:typeof element.className === "string" ? element.className : "",html:element.innerHTML || "",href:element.getAttribute("href") || "",src:element.getAttribute("src") || element.querySelector("source")?.getAttribute("src") || "",alt:element.getAttribute("alt") || "",poster:element.getAttribute("poster") || "",controls:element.hasAttribute("controls"),autoplay:element.hasAttribute("autoplay"),loop:element.hasAttribute("loop"),muted:element.hasAttribute("muted"),iconName,color:rgbToHex(style.color,"#222222"),backgroundColor:rgbToHex(style.backgroundColor,""),backgroundImage:element.style.backgroundImage||(style.backgroundImage!=="none"?style.backgroundImage:"")||"",backgroundSize:element.style.backgroundSize||"",backgroundPosition:element.style.backgroundPosition||"",backgroundRepeat:element.style.backgroundRepeat||"",fontSize:inlineOrComputed(element,"fontSize"),fontWeight:inlineOrComputed(element,"fontWeight"),lineHeight:inlineOrComputed(element,"lineHeight"),letterSpacing:inlineOrComputed(element,"letterSpacing"),fontFamily:element.style.fontFamily || "",textAlign:inlineOrComputed(element,"textAlign"),display:inlineOrComputed(element,"display"),flexDirection:inlineOrComputed(element,"flexDirection"),flexWrap:inlineOrComputed(element,"flexWrap"),gridTemplateColumns:inlineOrComputed(element,"gridTemplateColumns"),justifyContent:inlineOrComputed(element,"justifyContent"),alignItems:inlineOrComputed(element,"alignItems"),gap:inlineOrComputed(element,"gap"),width:element.style.width || "",maxWidth:element.style.maxWidth || "",minHeight:element.style.minHeight || "",objectFit:element.style.objectFit || "",padding:element.style.padding || "",margin:element.style.margin || "",borderWidth:element.style.borderWidth || "",borderColor:rgbToHex(style.borderColor,"#222222"),borderRadius:element.style.borderRadius || "",position:element.style.position || "",zIndex:element.style.zIndex || "",opacity:element.style.opacity || "1" }; }
   function select(element) { if (!element || ignoredTags.has(element.tagName) || isUi(element)) return; if (selected) selected.removeAttribute("data-ce-selected"); selected = element; selected.dataset.ceSelected = "true"; positionSelectionUi(); window.parent.postMessage({type:"ce-selected",element:info(selected)},"*"); }
   function positionSelectionUi() { if (!selected || !document.contains(selected)) { selectionBar.style.display="none"; quickWrap.style.display="none"; return; } const rect=selected.getBoundingClientRect(); const left=Math.max(2,rect.left+window.scrollX); const top=Math.max(window.scrollY,rect.top+window.scrollY-28); selectionBar.style.display="flex"; selectionBar.style.left=left+"px"; selectionBar.style.top=top+"px"; selectionBar.querySelector(".ce-name").textContent=labelOf(selected); if (canContain(selected) || kindOf(selected)==="section") { quickWrap.style.display="block"; quickWrap.style.left=(rect.left+window.scrollX+rect.width/2)+"px"; quickWrap.style.top=(rect.bottom+window.scrollY)+"px"; } else quickWrap.style.display="none"; }
   function treeNode(element,depth) { const children=depth<6 ? Array.from(element.children).filter((child)=>!isUi(child)&&!ignoredTags.has(child.tagName)).map((child)=>treeNode(child,depth+1)).filter(Boolean) : []; const meaningful=structuralTags.has(element.tagName)||element.dataset.ceKind||element.dataset.ceWidget||["H1","H2","H3","P","A","IMG","DIV","UL","OL","FORM","IFRAME","VIDEO","BLOCKQUOTE"].includes(element.tagName); if(!meaningful&&!children.length)return null; return {id:element.dataset.ceId,label:labelOf(element),kind:kindOf(element),children}; }
