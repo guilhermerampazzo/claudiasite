@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Álbum Versace 5 – Papéis de Parede – Casa Estampa</title>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --fendi:#c2a57a;--fendi-dark:#9e7d4e;--mustard:#c8960c;--wa:#25D366;
+  --dark:#1e1608;--charcoal:#2e2410;--charcoal2:#3a2e16;--off-dark:#463820;
+  --text-light:#f5eed8;--text-muted:#a89370;--pad:80px;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--dark);color:var(--text-light);font-family:'Montserrat',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;}
+a{color:inherit;}
+.navbar{position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px var(--pad);background:rgba(30,22,8,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(194,165,122,.18);}
+.navbar-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.navbar-logo img{height:40px;width:auto;object-fit:contain;}
+.logo-name{font-family:'Italiana',serif;font-size:19px;color:var(--fendi);line-height:1;}
+.logo-tag{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);}
+.navbar-nav{display:flex;gap:26px;list-style:none;}
+.navbar-nav a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color .2s;}
+.navbar-nav a:hover,.navbar-nav a.active{color:var(--fendi);}
+.navbar-wa{display:inline-flex;align-items:center;gap:7px;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:var(--dark);background:var(--fendi);padding:10px 18px;text-decoration:none;transition:background .2s;}
+.navbar-wa:hover{background:var(--mustard);}
+.album-hero{padding:150px var(--pad) 44px;background:var(--charcoal);border-bottom:1px solid rgba(194,165,122,.12);}
+.crumbs{display:flex;align-items:center;gap:8px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:18px;}
+.crumbs a{color:var(--text-muted);text-decoration:none;transition:color .2s;}
+.crumbs a:hover{color:var(--fendi);}
+.album-title{font-family:'Playfair Display',serif;font-size:clamp(30px,4.5vw,52px);font-weight:600;line-height:1.1;color:var(--text-light);}
+.album-title em{font-style:italic;color:var(--fendi);}
+.album-meta{display:flex;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap;}
+.album-badge{background:rgba(200,150,12,.12);border:1px solid rgba(200,150,12,.25);color:var(--mustard);font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 13px;font-weight:600;}
+.album-note{font-size:12px;color:var(--text-muted);}
+.grid-wrap{padding:44px var(--pad) 70px;}
+.prod-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;}
+.prod-card{background:var(--charcoal2);border:1px solid rgba(194,165,122,.06);overflow:hidden;display:flex;flex-direction:column;transition:border-color .25s;}
+.prod-card:hover{border-color:rgba(194,165,122,.35);}
+.prod-thumb{aspect-ratio:1;background:var(--off-dark);overflow:hidden;}
+.prod-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s;}
+.prod-card:hover .prod-thumb img{transform:scale(1.05);}
+.prod-name{padding:11px 12px 13px;font-size:11px;color:var(--text-light);line-height:1.35;}
+.album-cta{padding:60px var(--pad);background:var(--charcoal);border-top:1px solid rgba(194,165,122,.12);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.album-cta h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:600;color:var(--text-light);margin-bottom:6px;}
+.album-cta p{font-size:13px;color:var(--text-muted);}
+.btn-wa{display:inline-flex;align-items:center;gap:9px;background:var(--wa);color:#06301a;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:15px 26px;text-decoration:none;transition:filter .2s;}
+.btn-wa:hover{filter:brightness(1.1);}
+.footer{padding:34px var(--pad);background:var(--dark);border-top:1px solid rgba(194,165,122,.12);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.footer-logo{display:flex;align-items:center;gap:11px;}
+.footer-logo img{height:36px;width:auto;object-fit:contain;}
+.footer-name{font-family:'Italiana',serif;font-size:18px;color:var(--fendi);}
+.footer-sub{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);}
+@media(max-width:1100px){:root{--pad:40px;}.prod-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:700px){:root{--pad:20px;}.navbar-nav{display:none;}.prod-grid{grid-template-columns:repeat(2,1fr);}.album-hero{padding-top:120px;}.footer{flex-direction:column;text-align:center;}}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="/" class="navbar-logo">
+    <img src="/assets/logo-letra.svg" alt="Casa Estampa" />
+    <div>
+      <div class="logo-name">Casa Estampa</div>
+      <div class="logo-tag">Interiores</div>
+    </div>
+  </a>
+  <ul class="navbar-nav">
+    <li><a href="/papeis-de-parede" class="active">Papéis de Parede</a></li>
+    <li><a href="/cortinas">Cortinas</a></li>
+    <li><a href="/persianas">Persianas</a></li>
+    <li><a href="/pisos-laminados">Pisos</a></li>
+    <li><a href="/arquitetos-designers">Arquitetos</a></li>
+  </ul>
+  <a href="https://api.whatsapp.com/send?phone=5521999886842" class="navbar-wa"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Falar agora</a>
+</nav>
+
+<section class="album-hero">
+  <div class="crumbs">
+    <a href="/">Início</a><span>/</span>
+    <a href="/papeis-de-parede">Papéis de Parede</a><span>/</span>
+    <span>Versace 5</span>
+  </div>
+  <h1 class="album-title">Álbum <em>Versace 5</em></h1>
+  <div class="album-meta">
+    <span class="album-badge">87 modelos</span>
+    <span class="album-note">Medição e instalação profissional · Entrega para todo o Brasil</span>
+  </div>
+</section>
+
+<section class="grid-wrap">
+  <div class="prod-grid">
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS962406-Versace2-GIUNGLA-Copy-300x300.jpg" alt="Versace 5 AS962406 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS962406 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS962402-Versace2-GIUNGLA-Detail-Copy-300x300.jpg" alt="Versace 5 AS962402 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS962402 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS962406-300x300.jpg" alt="Versace 5 AS962406" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS962406</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS962405-300x300.jpg" alt="Versace 5 AS962405" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS962405</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS962404-300x300.jpg" alt="Versace 5 AS962404" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS962404</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS962402-300x300.jpg" alt="Versace 5 AS962402" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS962402</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS962401-962402-Versace2-GIUNGLA-Copy-300x300.jpg" alt="Versace 5 AS962401 962402" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS962401 962402</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS962401-300x300.jpg" alt="Versace 5 AS962401" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS962401</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS935245-300x300.jpg" alt="Versace 5 AS935245" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS935245</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS935244-300x300.jpg" alt="Versace 5 AS935244" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS935244</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS935242-300x300.jpg" alt="Versace 5 AS935242" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS935242</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS935232-935234-935224-Versace3-RB11b-Copy-300x300.jpg" alt="Versace 5 AS935232 935234 935224" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS935232 935234 935224</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS935232-300x300.jpg" alt="Versace 5 AS935232" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS935232</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS935234-300x300.jpg" alt="Versace 5 AS935234" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS935234</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS935231-300x300.jpg" alt="Versace 5 AS935231" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS935231</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS935224-935232-935234-Versace-RB3-Copy-300x300.jpg" alt="Versace 5 AS935224 935232 935234" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS935224 935232 935234</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS935225-300x251.jpg" alt="Versace 5 AS935225 Faixa" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS935225 Faixa</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS935224-300x251.jpg" alt="Versace 5 AS935224 Faixa" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS935224 Faixa</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS935223-300x246.jpg" alt="Versace 5 AS935223 Faixa" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS935223 Faixa</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS935222-935262-935844-935854-Versace-RB2a-Copy-300x300.jpg" alt="Versace 5 AS935222 935262 935844 935854" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS935222 935262 935844 935854</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS935222-300x250.jpg" alt="Versace 5 AS935222 Faixa" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS935222 Faixa</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387066-AS387056-VERSACE5-RB-Copy-300x300.jpg" alt="Versace 5 AS387066 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387066 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387066-300x300.jpg" alt="Versace 5 AS387066" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387066</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387065-300x300.jpg" alt="Versace 5 AS387065" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387065</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387064-300x300.jpg" alt="Versace 5 AS387064" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387064</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387063-300x300.jpg" alt="Versace 5 AS387063" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387063</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387061-AS387051-VERSACE5-RB-Copy-300x300.jpg" alt="Versace 5 AS387061 e AS387051" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387061 e AS387051</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387062-300x300.jpg" alt="Versace 5 AS387062" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387062</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387061-300x300.jpg" alt="Versace 5 AS387061" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387061</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387056-300x300.jpg" alt="Versace 5 AS387056" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387056</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387055-300x300.jpg" alt="Versace 5 AS387055" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387055</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387054-300x300.jpg" alt="Versace 5 AS387054" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387054</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387053-300x300.jpg" alt="Versace 5 AS387053" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387053</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387052-300x300.jpg" alt="Versace 5 AS387052" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387052</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387051-300x300.jpg" alt="Versace 5 AS387051" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387051</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387046-300x300.jpg" alt="Versace 5 AS387046" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387046</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387045-300x300.jpg" alt="Versace 5 AS387045" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387045</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387044-300x300.jpg" alt="Versace 5 AS387044" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387044</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387043-300x300.jpg" alt="Versace 5 AS387043" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387043</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387042-300x300.jpg" alt="Versace 5 AS387042" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387042</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387046-VERSACE5-RB-Copy-300x300.jpg" alt="Versace 5 AS387046 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387046 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387041-VERSACE5-RB-Copy-300x300.jpg" alt="Versace 5 AS387041 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387041 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387041-300x300.jpg" alt="Versace 5 AS387041" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387041</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387035-300x300.jpg" alt="Versace 5 AS387035" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387035</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387034-300x300.jpg" alt="Versace 5 AS387034" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387034</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387033-VERSACE5-RB-Copy-300x300.jpg" alt="Versace 5 AS387033 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387033 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387033-300x300.jpg" alt="Versace 5 AS387033" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387033</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387032-300x300.jpg" alt="Versace 5 AS387032" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387032</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387031-VERSACE5-RB-Copy-300x300.jpg" alt="Versace 5 AS387031 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387031 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS387031-300x300.jpg" alt="Versace 5 AS387031" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS387031</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS386117-2-300x300.jpg" alt="Versace 5 AS386117" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS386117</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS386115-AS386117-VERSACE5-RB-Copy-300x300.jpg" alt="Versace 5 AS386117 e AS386115" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS386117 e AS386115</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS386113-300x300.jpg" alt="Versace 5 AS386113" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS386113</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS386116-1-300x300.jpg" alt="Versace 5 AS386116" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS386116</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS386114-300x300.jpg" alt="Versace 5 AS386114" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS386114</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS386115-300x300.jpg" alt="Versace 5 AS386115" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS386115</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS386114-AS386113-VERSACE5-RB-Copy-300x300.jpg" alt="Versace 5 AS386114 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS386114 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS386112-300x300.jpg" alt="Versace 5 AS386112" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS386112</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS386111-300x300.jpg" alt="Versace 5 AS386111" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS386111</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS386104-300x300.jpg" alt="Versace 5 AS386104" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS386104</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS386103-300x300.jpg" alt="Versace 5 AS386103" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS386103</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS386104-VERSACE5-RB-Copy-300x300.jpg" alt="Versace 5 AS386104 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS386104 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS386101-VERSACE5-RB-Copy-300x300.jpg" alt="Versace 5 AS386101 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS386101 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS386093-VERSACE5-RB-Copy-300x300.jpg" alt="Versace 5 AS386093 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS386093 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS386102-300x300.jpg" alt="Versace 5 AS386102" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS386102</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS386101-300x300.jpg" alt="Versace 5 AS386101" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS386101</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS386095-300x300.jpg" alt="Versace 5 AS386095" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS386095</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS386094-300x300.jpg" alt="Versace 5 AS386094" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS386094</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS386093-300x300.jpg" alt="Versace 5 AS386093" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS386093</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS386092-300x300.jpg" alt="Versace 5 AS386092" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS386092</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS386091-300x300.jpg" alt="Versace 5 AS386091" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS386091</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS384613-300x300.jpg" alt="Versace 5 AS384613" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS384613</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS384612-300x300.jpg" alt="Versace 5 AS384612" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS384612</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS383846-300x300.jpg" alt="Versace 5 AS383846" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS383846</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS383845-300x300.jpg" alt="Versace 5 AS383845" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS383845</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS383844-300x300.jpg" alt="Versace 5 AS383844" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS383844</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS383843-300x300.jpg" alt="Versace 5 AS383843" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS383843</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS383842-300x300.jpg" alt="Versace 5 AS383842" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS383842</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS383841-300x300.jpg" alt="Versace 5 AS383841" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS383841</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS383839-300x300.jpg" alt="Versace 5 AS383839" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS383839</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS383836-300x300.jpg" alt="Versace 5 AS383836" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS383836</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS383835-300x300.jpg" alt="Versace 5 AS383835" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS383835</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS383834-300x300.jpg" alt="Versace 5 AS383834" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS383834</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS383833-300x300.jpg" alt="Versace 5 AS383833" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS383833</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS383832-300x300.jpg" alt="Versace 5 AS383832" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS383832</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-versace-5/AS383831-300x300.jpg" alt="Versace 5 AS383831" loading="lazy" /></div>
+        <div class="prod-name">Versace 5 AS383831</div>
+      </article>
+  </div>
+</section>
+
+<section class="album-cta">
+  <div>
+    <h2>Gostou de algum modelo do álbum Versace 5?</h2>
+    <p>Fale com nossa equipe e receba orçamento com medição inclusa.</p>
+  </div>
+  <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Ola!%20Tenho%20interesse%20no%20album%20Versace%205%20de%20papel%20de%20parede." class="btn-wa"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Pedir orçamento</a>
+</section>
+
+<footer class="footer">
+  <div class="footer-logo">
+    <img src="/assets/logo-letra.svg" alt="Casa Estampa" />
+    <div>
+      <div class="footer-name">Casa Estampa</div>
+      <div class="footer-sub">Interiores · (21) 99988-6842</div>
+    </div>
+  </div>
+  <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(194,165,122,0.3);">casaestampa.com</div>
+  <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(194,165,122,0.3);text-align:right;">Rio de Janeiro · (21) 99988-6842</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Álbum Trend Wall 2 – Papéis de Parede – Casa Estampa</title>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --fendi:#c2a57a;--fendi-dark:#9e7d4e;--mustard:#c8960c;--wa:#25D366;
+  --dark:#1e1608;--charcoal:#2e2410;--charcoal2:#3a2e16;--off-dark:#463820;
+  --text-light:#f5eed8;--text-muted:#a89370;--pad:80px;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--dark);color:var(--text-light);font-family:'Montserrat',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;}
+a{color:inherit;}
+.navbar{position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px var(--pad);background:rgba(30,22,8,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(194,165,122,.18);}
+.navbar-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.navbar-logo img{height:40px;width:auto;object-fit:contain;}
+.logo-name{font-family:'Italiana',serif;font-size:19px;color:var(--fendi);line-height:1;}
+.logo-tag{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);}
+.navbar-nav{display:flex;gap:26px;list-style:none;}
+.navbar-nav a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color .2s;}
+.navbar-nav a:hover,.navbar-nav a.active{color:var(--fendi);}
+.navbar-wa{display:inline-flex;align-items:center;gap:7px;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:var(--dark);background:var(--fendi);padding:10px 18px;text-decoration:none;transition:background .2s;}
+.navbar-wa:hover{background:var(--mustard);}
+.album-hero{padding:150px var(--pad) 44px;background:var(--charcoal);border-bottom:1px solid rgba(194,165,122,.12);}
+.crumbs{display:flex;align-items:center;gap:8px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:18px;}
+.crumbs a{color:var(--text-muted);text-decoration:none;transition:color .2s;}
+.crumbs a:hover{color:var(--fendi);}
+.album-title{font-family:'Playfair Display',serif;font-size:clamp(30px,4.5vw,52px);font-weight:600;line-height:1.1;color:var(--text-light);}
+.album-title em{font-style:italic;color:var(--fendi);}
+.album-meta{display:flex;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap;}
+.album-badge{background:rgba(200,150,12,.12);border:1px solid rgba(200,150,12,.25);color:var(--mustard);font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 13px;font-weight:600;}
+.album-note{font-size:12px;color:var(--text-muted);}
+.grid-wrap{padding:44px var(--pad) 70px;}
+.prod-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;}
+.prod-card{background:var(--charcoal2);border:1px solid rgba(194,165,122,.06);overflow:hidden;display:flex;flex-direction:column;transition:border-color .25s;}
+.prod-card:hover{border-color:rgba(194,165,122,.35);}
+.prod-thumb{aspect-ratio:1;background:var(--off-dark);overflow:hidden;}
+.prod-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s;}
+.prod-card:hover .prod-thumb img{transform:scale(1.05);}
+.prod-name{padding:11px 12px 13px;font-size:11px;color:var(--text-light);line-height:1.35;}
+.album-cta{padding:60px var(--pad);background:var(--charcoal);border-top:1px solid rgba(194,165,122,.12);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.album-cta h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:600;color:var(--text-light);margin-bottom:6px;}
+.album-cta p{font-size:13px;color:var(--text-muted);}
+.btn-wa{display:inline-flex;align-items:center;gap:9px;background:var(--wa);color:#06301a;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:15px 26px;text-decoration:none;transition:filter .2s;}
+.btn-wa:hover{filter:brightness(1.1);}
+.footer{padding:34px var(--pad);background:var(--dark);border-top:1px solid rgba(194,165,122,.12);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.footer-logo{display:flex;align-items:center;gap:11px;}
+.footer-logo img{height:36px;width:auto;object-fit:contain;}
+.footer-name{font-family:'Italiana',serif;font-size:18px;color:var(--fendi);}
+.footer-sub{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);}
+@media(max-width:1100px){:root{--pad:40px;}.prod-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:700px){:root{--pad:20px;}.navbar-nav{display:none;}.prod-grid{grid-template-columns:repeat(2,1fr);}.album-hero{padding-top:120px;}.footer{flex-direction:column;text-align:center;}}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="/" class="navbar-logo">
+    <img src="/assets/logo-letra.svg" alt="Casa Estampa" />
+    <div>
+      <div class="logo-name">Casa Estampa</div>
+      <div class="logo-tag">Interiores</div>
+    </div>
+  </a>
+  <ul class="navbar-nav">
+    <li><a href="/papeis-de-parede" class="active">Papéis de Parede</a></li>
+    <li><a href="/cortinas">Cortinas</a></li>
+    <li><a href="/persianas">Persianas</a></li>
+    <li><a href="/pisos-laminados">Pisos</a></li>
+    <li><a href="/arquitetos-designers">Arquitetos</a></li>
+  </ul>
+  <a href="https://api.whatsapp.com/send?phone=5521999886842" class="navbar-wa"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Falar agora</a>
+</nav>
+
+<section class="album-hero">
+  <div class="crumbs">
+    <a href="/">Início</a><span>/</span>
+    <a href="/papeis-de-parede">Papéis de Parede</a><span>/</span>
+    <span>Trend Wall 2</span>
+  </div>
+  <h1 class="album-title">Álbum <em>Trend Wall 2</em></h1>
+  <div class="album-meta">
+    <span class="album-badge">95 modelos</span>
+    <span class="album-note">Medição e instalação profissional · Entrega para todo o Brasil</span>
+  </div>
+</section>
+
+<section class="grid-wrap">
+  <div class="prod-grid">
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_381004.jpg" alt="Trend Wall 2 &amp;#8211; p_381004" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_381004</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_381003.jpg" alt="Trend Wall 2 &amp;#8211; p_381003" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_381003</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_381002.jpg" alt="Trend Wall 2 &amp;#8211; p_381002" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_381002</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_381001-1.jpg" alt="Trend Wall 2 &amp;#8211; p_381001-1" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_381001-1</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380992.jpg" alt="Trend Wall 2 &amp;#8211; p_380992" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380992</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380991.jpg" alt="Trend Wall 2 &amp;#8211; p_380991" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380991</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380988.jpg" alt="Trend Wall 2 &amp;#8211; p_380988" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380988</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380987.jpg" alt="Trend Wall 2 &amp;#8211; p_380987" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380987</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380986.jpg" alt="Trend Wall 2 &amp;#8211; p_380986" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380986</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380985.jpg" alt="Trend Wall 2 &amp;#8211; p_380985" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380985</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380984.jpg" alt="Trend Wall 2 &amp;#8211; p_380984" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380984</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380983.jpg" alt="Trend Wall 2 &amp;#8211; p_380983" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380983</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380981.jpg" alt="Trend Wall 2 &amp;#8211; p_380981" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380981</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380977.jpg" alt="Trend Wall 2 &amp;#8211; p_380977" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380977</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380976.jpg" alt="Trend Wall 2 &amp;#8211; p_380976" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380976</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380975.jpg" alt="Trend Wall 2 &amp;#8211; p_380975" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380975</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380971.jpg" alt="Trend Wall 2 &amp;#8211; p_380971" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380971</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380954.jpg" alt="Trend Wall 2 &amp;#8211; p_380954" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380954</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380953.jpg" alt="Trend Wall 2 &amp;#8211; p_380953" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380953</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380951.jpg" alt="Trend Wall 2 &amp;#8211; p_380951" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380951</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380944.jpg" alt="Trend Wall 2 &amp;#8211; p_380944" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380944</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380943.jpg" alt="Trend Wall 2 &amp;#8211; p_380943" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380943</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380942.jpg" alt="Trend Wall 2 &amp;#8211; p_380942" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380942</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380934.jpg" alt="Trend Wall 2 &amp;#8211; p_380934" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380934</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380932.jpg" alt="Trend Wall 2 &amp;#8211; p_380932" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380932</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380931.jpg" alt="Trend Wall 2 &amp;#8211; p_380931" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380931</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380923.jpg" alt="Trend Wall 2 &amp;#8211; p_380923" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380923</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380922.jpg" alt="Trend Wall 2 &amp;#8211; p_380922" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380922</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380921.jpg" alt="Trend Wall 2 &amp;#8211; p_380921" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380921</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380915.jpg" alt="Trend Wall 2 &amp;#8211; p_380915" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380915</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380914.jpg" alt="Trend Wall 2 &amp;#8211; p_380914" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380914</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380913.jpg" alt="Trend Wall 2 &amp;#8211; p_380913" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380913</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380912.jpg" alt="Trend Wall 2 &amp;#8211; p_380912" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380912</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380911.jpg" alt="Trend Wall 2 &amp;#8211; p_380911" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380911</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380895.jpg" alt="Trend Wall 2 &amp;#8211; p_380895" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380895</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380894.jpg" alt="Trend Wall 2 &amp;#8211; p_380894" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380894</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380892.jpg" alt="Trend Wall 2 &amp;#8211; p_380892" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380892</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380891.jpg" alt="Trend Wall 2 &amp;#8211; p_380891" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380891</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380445.jpg" alt="Trend Wall 2 &amp;#8211; p_380445" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380445</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380444.jpg" alt="Trend Wall 2 &amp;#8211; p_380444" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380444</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380443.jpg" alt="Trend Wall 2 &amp;#8211; p_380443" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380443</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380442.jpg" alt="Trend Wall 2 &amp;#8211; p_380442" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380442</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380441.jpg" alt="Trend Wall 2 &amp;#8211; p_380441" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380441</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380291.jpg" alt="Trend Wall 2 &amp;#8211; p_380291" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380291</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380285.jpg" alt="Trend Wall 2 &amp;#8211; p_380285" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380285</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380284.jpg" alt="Trend Wall 2 &amp;#8211; p_380284" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380284</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380282.jpg" alt="Trend Wall 2 &amp;#8211; p_380282" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380282</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380281.jpg" alt="Trend Wall 2 &amp;#8211; p_380281" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380281</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380274.jpg" alt="Trend Wall 2 &amp;#8211; p_380274" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380274</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380272.jpg" alt="Trend Wall 2 &amp;#8211; p_380272" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380272</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380263.jpg" alt="Trend Wall 2 &amp;#8211; p_380263" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380263</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380262.jpg" alt="Trend Wall 2 &amp;#8211; p_380262" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380262</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380261.jpg" alt="Trend Wall 2 &amp;#8211; p_380261" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380261</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380251.jpg" alt="Trend Wall 2 &amp;#8211; p_380251" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380251</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380249.jpg" alt="Trend Wall 2 &amp;#8211; p_380249" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380249</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380242.jpg" alt="Trend Wall 2 &amp;#8211; p_380242" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380242</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380241.jpg" alt="Trend Wall 2 &amp;#8211; p_380241" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380241</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380234.jpg" alt="Trend Wall 2 &amp;#8211; p_380234" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380234</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380233.jpg" alt="Trend Wall 2 &amp;#8211; p_380233" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380233</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380231.jpg" alt="Trend Wall 2 &amp;#8211; p_380231" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380231</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380214.jpg" alt="Trend Wall 2 &amp;#8211; p_380214" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380214</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380211.jpg" alt="Trend Wall 2 &amp;#8211; p_380211" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380211</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380094.jpg" alt="Trend Wall 2 &amp;#8211; p_380094" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380094</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380092.jpg" alt="Trend Wall 2 &amp;#8211; p_380092" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380092</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380091.jpg" alt="Trend Wall 2 &amp;#8211; p_380091" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380091</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380083.jpg" alt="Trend Wall 2 &amp;#8211; p_380083" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380083</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380082.jpg" alt="Trend Wall 2 &amp;#8211; p_380082" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380082</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_380081.jpg" alt="Trend Wall 2 &amp;#8211; p_380081" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_380081</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_379771.jpg" alt="Trend Wall 2 &amp;#8211; p_379771" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_379771</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_379733.jpg" alt="Trend Wall 2 &amp;#8211; p_379733" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_379733</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_379726.jpg" alt="Trend Wall 2 &amp;#8211; p_379726" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_379726</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_379719.jpg" alt="Trend Wall 2 &amp;#8211; p_379719" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_379719</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_379594.jpg" alt="Trend Wall 2 &amp;#8211; p_379594" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_379594</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_379593.jpg" alt="Trend Wall 2 &amp;#8211; p_379593" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_379593</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_379592.jpg" alt="Trend Wall 2 &amp;#8211; p_379592" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_379592</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_379591.jpg" alt="Trend Wall 2 &amp;#8211; p_379591" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_379591</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_379576.jpg" alt="Trend Wall 2 &amp;#8211; p_379576" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_379576</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_379574.jpg" alt="Trend Wall 2 &amp;#8211; p_379574" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_379574</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_379573.jpg" alt="Trend Wall 2 &amp;#8211; p_379573" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_379573</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_379572.jpg" alt="Trend Wall 2 &amp;#8211; p_379572" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_379572</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_379571.jpg" alt="Trend Wall 2 &amp;#8211; p_379571" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_379571</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_371781.jpg" alt="Trend Wall 2 &amp;#8211; p_371781" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_371781</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_369324.jpg" alt="Trend Wall 2 &amp;#8211; p_369324" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_369324</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_326516.jpg" alt="Trend Wall 2 &amp;#8211; p_326516" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_326516</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_326515.jpg" alt="Trend Wall 2 &amp;#8211; p_326515" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_326515</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_326514.jpg" alt="Trend Wall 2 &amp;#8211; p_326514" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_326514</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_326512.jpg" alt="Trend Wall 2 &amp;#8211; p_326512" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_326512</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_326511.jpg" alt="Trend Wall 2 &amp;#8211; p_326511" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_326511</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_306896.jpg" alt="Trend Wall 2 &amp;#8211; p_306896" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_306896</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_306894.jpg" alt="Trend Wall 2 &amp;#8211; p_306894" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_306894</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_306893.jpg" alt="Trend Wall 2 &amp;#8211; p_306893" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_306893</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_306891.jpg" alt="Trend Wall 2 &amp;#8211; p_306891" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_306891</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_306889.jpg" alt="Trend Wall 2 &amp;#8211; p_306889" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_306889</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_306881.jpg" alt="Trend Wall 2 &amp;#8211; p_306881" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_306881</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-trend-wall-2/p_305265.jpg" alt="Trend Wall 2 &amp;#8211; p_305265" loading="lazy" /></div>
+        <div class="prod-name">Trend Wall 2 &amp;#8211; p_305265</div>
+      </article>
+  </div>
+</section>
+
+<section class="album-cta">
+  <div>
+    <h2>Gostou de algum modelo do álbum Trend Wall 2?</h2>
+    <p>Fale com nossa equipe e receba orçamento com medição inclusa.</p>
+  </div>
+  <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Ola!%20Tenho%20interesse%20no%20album%20Trend%20Wall%202%20de%20papel%20de%20parede." class="btn-wa"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Pedir orçamento</a>
+</section>
+
+<footer class="footer">
+  <div class="footer-logo">
+    <img src="/assets/logo-letra.svg" alt="Casa Estampa" />
+    <div>
+      <div class="footer-name">Casa Estampa</div>
+      <div class="footer-sub">Interiores · (21) 99988-6842</div>
+    </div>
+  </div>
+  <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(194,165,122,0.3);">casaestampa.com</div>
+  <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(194,165,122,0.3);text-align:right;">Rio de Janeiro · (21) 99988-6842</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Álbum Unique – Papéis de Parede – Casa Estampa</title>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --fendi:#c2a57a;--fendi-dark:#9e7d4e;--mustard:#c8960c;--wa:#25D366;
+  --dark:#1e1608;--charcoal:#2e2410;--charcoal2:#3a2e16;--off-dark:#463820;
+  --text-light:#f5eed8;--text-muted:#a89370;--pad:80px;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--dark);color:var(--text-light);font-family:'Montserrat',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;}
+a{color:inherit;}
+.navbar{position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px var(--pad);background:rgba(30,22,8,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(194,165,122,.18);}
+.navbar-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.navbar-logo img{height:40px;width:auto;object-fit:contain;}
+.logo-name{font-family:'Italiana',serif;font-size:19px;color:var(--fendi);line-height:1;}
+.logo-tag{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);}
+.navbar-nav{display:flex;gap:26px;list-style:none;}
+.navbar-nav a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color .2s;}
+.navbar-nav a:hover,.navbar-nav a.active{color:var(--fendi);}
+.navbar-wa{display:inline-flex;align-items:center;gap:7px;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:var(--dark);background:var(--fendi);padding:10px 18px;text-decoration:none;transition:background .2s;}
+.navbar-wa:hover{background:var(--mustard);}
+.album-hero{padding:150px var(--pad) 44px;background:var(--charcoal);border-bottom:1px solid rgba(194,165,122,.12);}
+.crumbs{display:flex;align-items:center;gap:8px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:18px;}
+.crumbs a{color:var(--text-muted);text-decoration:none;transition:color .2s;}
+.crumbs a:hover{color:var(--fendi);}
+.album-title{font-family:'Playfair Display',serif;font-size:clamp(30px,4.5vw,52px);font-weight:600;line-height:1.1;color:var(--text-light);}
+.album-title em{font-style:italic;color:var(--fendi);}
+.album-meta{display:flex;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap;}
+.album-badge{background:rgba(200,150,12,.12);border:1px solid rgba(200,150,12,.25);color:var(--mustard);font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 13px;font-weight:600;}
+.album-note{font-size:12px;color:var(--text-muted);}
+.grid-wrap{padding:44px var(--pad) 70px;}
+.prod-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;}
+.prod-card{background:var(--charcoal2);border:1px solid rgba(194,165,122,.06);overflow:hidden;display:flex;flex-direction:column;transition:border-color .25s;}
+.prod-card:hover{border-color:rgba(194,165,122,.35);}
+.prod-thumb{aspect-ratio:1;background:var(--off-dark);overflow:hidden;}
+.prod-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s;}
+.prod-card:hover .prod-thumb img{transform:scale(1.05);}
+.prod-name{padding:11px 12px 13px;font-size:11px;color:var(--text-light);line-height:1.35;}
+.album-cta{padding:60px var(--pad);background:var(--charcoal);border-top:1px solid rgba(194,165,122,.12);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.album-cta h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:600;color:var(--text-light);margin-bottom:6px;}
+.album-cta p{font-size:13px;color:var(--text-muted);}
+.btn-wa{display:inline-flex;align-items:center;gap:9px;background:var(--wa);color:#06301a;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:15px 26px;text-decoration:none;transition:filter .2s;}
+.btn-wa:hover{filter:brightness(1.1);}
+.footer{padding:34px var(--pad);background:var(--dark);border-top:1px solid rgba(194,165,122,.12);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.footer-logo{display:flex;align-items:center;gap:11px;}
+.footer-logo img{height:36px;width:auto;object-fit:contain;}
+.footer-name{font-family:'Italiana',serif;font-size:18px;color:var(--fendi);}
+.footer-sub{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);}
+@media(max-width:1100px){:root{--pad:40px;}.prod-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:700px){:root{--pad:20px;}.navbar-nav{display:none;}.prod-grid{grid-template-columns:repeat(2,1fr);}.album-hero{padding-top:120px;}.footer{flex-direction:column;text-align:center;}}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="/" class="navbar-logo">
+    <img src="/assets/logo-letra.svg" alt="Casa Estampa" />
+    <div>
+      <div class="logo-name">Casa Estampa</div>
+      <div class="logo-tag">Interiores</div>
+    </div>
+  </a>
+  <ul class="navbar-nav">
+    <li><a href="/papeis-de-parede" class="active">Papéis de Parede</a></li>
+    <li><a href="/cortinas">Cortinas</a></li>
+    <li><a href="/persianas">Persianas</a></li>
+    <li><a href="/pisos-laminados">Pisos</a></li>
+    <li><a href="/arquitetos-designers">Arquitetos</a></li>
+  </ul>
+  <a href="https://api.whatsapp.com/send?phone=5521999886842" class="navbar-wa"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Falar agora</a>
+</nav>
+
+<section class="album-hero">
+  <div class="crumbs">
+    <a href="/">Início</a><span>/</span>
+    <a href="/papeis-de-parede">Papéis de Parede</a><span>/</span>
+    <span>Unique</span>
+  </div>
+  <h1 class="album-title">Álbum <em>Unique</em></h1>
+  <div class="album-meta">
+    <span class="album-badge">92 modelos</span>
+    <span class="album-note">Medição e instalação profissional · Entrega para todo o Brasil</span>
+  </div>
+</section>
+
+<section class="grid-wrap">
+  <div class="prod-grid">
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/IMG_2989-300x300.webp" alt="Unique Linhos Diversos" loading="lazy" /></div>
+        <div class="prod-name">Unique Linhos Diversos</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/Arquivo_000-1-300x300.png" alt="Importado Unique 5001" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique 5001</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/Arquivo_003-1-1-300x300.png" alt="Importado Unique 5060" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique 5060</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/Arquivo_001-300x300.png" alt="Importado Unique 5042" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique 5042</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/Arquivo_000-300x300.png" alt="Importado Unique 5043" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique 5043</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/Arquivo_002-300x300.png" alt="Importado Unique 5028" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique 5028</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5060-300x300.jpg" alt="Unique UN5060 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5060 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5050-300x300.jpg" alt="Unique UN5050 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5050 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5049-300x300.jpg" alt="Unique UN5049 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5049 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5048-300x300.jpg" alt="Unique UN5048 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5048 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5047-300x300.jpg" alt="Unique UN5047 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5047 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5046-300x300.jpg" alt="Unique UN5046 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5046 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5044-300x300.jpg" alt="Unique UN5044 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5044 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5043-300x300.jpg" alt="Unique UN5043 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5043 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5042-300x300.jpg" alt="Unique UN5042 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5042 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5031-300x300.jpg" alt="Unique UN5031 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5031 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5029-300x300.jpg" alt="Unique UN5029 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5029 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5028-300x300.jpg" alt="Unique UN5028 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5028 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5025-300x300.jpg" alt="Unique UN5025 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5025 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/IMG_0777-300x300.jpeg" alt="Unique UN5024 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5024 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/IMG_0772-300x300.jpeg" alt="Unique UN5019 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5019 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/IMG_0770-1-300x300.jpeg" alt="Unique UN5017 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5017 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/IMG_0769-300x300.jpeg" alt="Unique UN5016 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5016 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/IMG_0768-300x300.jpeg" alt="Unique UN5015 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5015 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/IMG_0766-300x300.jpeg" alt="Unique UN5013 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5013 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/IMG_0765-300x300.jpeg" alt="Unique UN5012 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5012 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/IMG_0764-300x300.jpeg" alt="Unique UN5011 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5011 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/IMG_0763-300x300.jpeg" alt="Unique UN5010 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5010 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/IMG_0757-300x300.jpeg" alt="Unique UN5004 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5004 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/IMG_0754-300x300.jpeg" alt="Unique UN5001 Foto" loading="lazy" /></div>
+        <div class="prod-name">Unique UN5001 Foto</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5067-decor-300x300.jpg" alt="Importado Unique UN5067 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5067 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5065-decor-300x300.jpg" alt="Importado Unique UN5065 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5065 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5064-decor-300x300.jpg" alt="Importado Unique UN5064 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5064 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5060-decor-300x300.jpg" alt="Importado Unique UN5060 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5060 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5048-decor-300x300.jpg" alt="Importado Unique UN5048 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5048 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5046-decor-300x300.jpg" alt="Importado Unique UN5046 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5046 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5044-decor-300x300.jpg" alt="Importado Unique UN5044 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5044 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5042-decor-300x300.jpg" alt="Importado Unique UN5042 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5042 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5037-decor-300x300.jpg" alt="Importado Unique UN5037 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5037 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5025-decor-300x300.jpg" alt="Importado Unique UN5025 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5025 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5024-decor-300x300.jpg" alt="Importado Unique UN5024 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5024 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5015-decor-300x300.jpg" alt="Importado Unique UN5015 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5015 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5014-decor-300x300.jpg" alt="Importado Unique UN5014 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5014 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5010-decor-300x300.jpg" alt="Importado Unique UN5010 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5010 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5002-decor-300x300.jpg" alt="Importado Unique UN5002 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5002 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/5001-decor-300x300.jpg" alt="Importado Unique UN5001 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5001 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5069-300x300.png" alt="Importado Unique UN5069" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5069</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5068-300x300.png" alt="Importado Unique UN5068" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5068</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5067-300x300.png" alt="Importado Unique UN5067" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5067</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5066-300x300.png" alt="Importado Unique UN5066" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5066</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5065-300x300.png" alt="Importado Unique UN5065" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5065</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5064-300x300.png" alt="Importado Unique UN5064" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5064</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5061.jpg" alt="Importado Unique UN5061" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5061</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5062.jpg" alt="Importado Unique UN5062" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5062</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5063-300x300.png" alt="Importado Unique UN5063" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5063</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5057.jpg" alt="Importado Unique UN5057" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5057</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5058-scaled.jpg" alt="Importado Unique UN5058" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5058</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5059-300x300.png" alt="Importado Unique UN5059" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5059</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5056.jpg" alt="Importado Unique UN5056" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5056</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5055.jpg" alt="Importado Unique UN5055" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5055</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5054-300x300.png" alt="Importado Unique UN5054" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5054</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5051-scaled.jpg" alt="Importado Unique UN5051" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5051</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5052.jpg" alt="Importado Unique UN5052" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5052</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5053-300x300.png" alt="Importado Unique UN5053" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5053</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5045.jpg" alt="Importado Unique UN5045" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5045</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5041.jpg" alt="Importado Unique UN5041" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5041</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5040.jpg" alt="Importado Unique UN5040" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5040</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5039.jpg" alt="Importado Unique UN5039" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5039</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5038.jpg" alt="Importado Unique UN5038" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5038</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5037.jpg" alt="Importado Unique UN5037" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5037</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5034.jpg" alt="Importado Unique UN5034" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5034</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5035.jpg" alt="Importado Unique UN5035" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5035</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5036-300x300.png" alt="Importado Unique UN5036" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5036</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5026.jpg" alt="Importado Unique UN5026" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5026</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5033-300x300.png" alt="Importado Unique UN5033" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5033</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5027.jpg" alt="Importado Unique UN5027" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5027</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5030-scaled.jpg" alt="Importado Unique UN5030" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5030</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5032.jpg" alt="Importado Unique UN5032" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5032</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5023-300x300.png" alt="Importado Unique UN5023" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5023</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5022-scaled.jpg" alt="Importado Unique UN5022" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5022</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5021.jpg" alt="Importado Unique UN5021" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5021</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5020-scaled.jpg" alt="Importado Unique UN5020" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5020</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5018.jpg" alt="Importado Unique UN5018" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5018</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5014.jpg" alt="Importado Unique UN5014" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5014</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5009.jpg" alt="Importado Unique UN5009" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5009</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5006.jpg" alt="Importado Unique UN5006" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5006</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5007.jpg" alt="Importado Unique UN5007" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5007</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5008.jpg" alt="Importado Unique UN5008" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5008</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5005.jpg" alt="Importado Unique UN5005" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5005</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5004.jpg" alt="Importado Unique UN5004" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5004</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5002.jpg" alt="Importado Unique UN5002" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5002</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-unique/UN-5003-300x300.png" alt="Importado Unique UN5003" loading="lazy" /></div>
+        <div class="prod-name">Importado Unique UN5003</div>
+      </article>
+  </div>
+</section>
+
+<section class="album-cta">
+  <div>
+    <h2>Gostou de algum modelo do álbum Unique?</h2>
+    <p>Fale com nossa equipe e receba orçamento com medição inclusa.</p>
+  </div>
+  <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Ola!%20Tenho%20interesse%20no%20album%20Unique%20de%20papel%20de%20parede." class="btn-wa"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Pedir orçamento</a>
+</section>
+
+<footer class="footer">
+  <div class="footer-logo">
+    <img src="/assets/logo-letra.svg" alt="Casa Estampa" />
+    <div>
+      <div class="footer-name">Casa Estampa</div>
+      <div class="footer-sub">Interiores · (21) 99988-6842</div>
+    </div>
+  </div>
+  <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(194,165,122,0.3);">casaestampa.com</div>
+  <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(194,165,122,0.3);text-align:right;">Rio de Janeiro · (21) 99988-6842</div>
+</footer>
+
+</body>
+</html>

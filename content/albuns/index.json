@@ -1,0 +1,350 @@
+[
+  {
+    "slug": "album-absolutely-chic",
+    "name": "Absolutely Chic",
+    "count": 49,
+    "cover": "/assets/albuns/album-absolutely-chic/dd114650-300x300.jpg"
+  },
+  {
+    "slug": "album-ambiance",
+    "name": "Ambiance",
+    "count": 47,
+    "cover": "/assets/albuns/album-ambiance/29621-1-300x300.jpg"
+  },
+  {
+    "slug": "album-arty",
+    "name": "Arty",
+    "count": 52,
+    "cover": "/assets/albuns/album-arty/51211419-300x300.jpg"
+  },
+  {
+    "slug": "album-avalon",
+    "name": "Avalon",
+    "count": 47,
+    "cover": "/assets/albuns/album-avalon/31649-300x300.jpg"
+  },
+  {
+    "slug": "album-babylandia",
+    "name": "Babylandia",
+    "count": 69,
+    "cover": "/assets/albuns/album-babylandia/5499-300x300.jpg"
+  },
+  {
+    "slug": "album-bjorn",
+    "name": "Bjorn",
+    "count": 49,
+    "cover": "/assets/albuns/album-bjorn/353320-300x300.jpg"
+  },
+  {
+    "slug": "album-boho",
+    "name": "Boho",
+    "count": 37,
+    "cover": "/assets/albuns/album-boho/35755_001_closeup-300x300.jpg"
+  },
+  {
+    "slug": "album-botanica",
+    "name": "Botânica",
+    "count": 54,
+    "cover": "/assets/albuns/album-botanica/33971-300x300.jpg"
+  },
+  {
+    "slug": "album-boys-and-girls-6",
+    "name": "Boys and Girls 6",
+    "count": 122,
+    "cover": "/assets/albuns/album-boys-and-girls-6/959503-300x300.jpg"
+  },
+  {
+    "slug": "album-bright-wall",
+    "name": "Bright Wall",
+    "count": 55,
+    "cover": "/assets/albuns/album-bright-wall/Y6131304.jpg"
+  },
+  {
+    "slug": "album-campos-de-jordao",
+    "name": "Campos de Jordão",
+    "count": 47,
+    "cover": "/assets/albuns/album-campos-de-jordao/CJV-47-300x300.jpeg"
+  },
+  {
+    "slug": "album-city-romance",
+    "name": "City Romance",
+    "count": 116,
+    "cover": "/assets/albuns/album-city-romance/Painel-35098-300x300.webp"
+  },
+  {
+    "slug": "album-classic-stripes",
+    "name": "Classic Stripes",
+    "count": 97,
+    "cover": "/assets/albuns/album-classic-stripes/ct889116-300x300.jpg"
+  },
+  {
+    "slug": "album-essencial-bobinex",
+    "name": "Essencial Bobinex",
+    "count": 57,
+    "cover": "/assets/albuns/album-essencial-bobinex/IMG_9031-300x300.jpg"
+  },
+  {
+    "slug": "album-flow-3",
+    "name": "Flow 3",
+    "count": 72,
+    "cover": "/assets/albuns/album-flow-3/86419.jpg"
+  },
+  {
+    "slug": "album-gramado",
+    "name": "Gramado",
+    "count": 58,
+    "cover": "/assets/albuns/album-gramado/GD52-300x300.jpeg"
+  },
+  {
+    "slug": "album-holambra",
+    "name": "Holambra",
+    "count": 65,
+    "cover": "/assets/albuns/album-holambra/H9-300x300.jpg"
+  },
+  {
+    "slug": "album-infinity",
+    "name": "Infinity",
+    "count": 61,
+    "cover": "/assets/albuns/album-infinity/Y6180806.jpg"
+  },
+  {
+    "slug": "album-joy",
+    "name": "Joy",
+    "count": 79,
+    "cover": "/assets/albuns/album-joy/980-300x300.jpeg"
+  },
+  {
+    "slug": "album-les-aventures-4",
+    "name": "Les Aventures 4",
+    "count": 65,
+    "cover": "/assets/albuns/album-les-aventures-4/51183209-M-300x300.jpg"
+  },
+  {
+    "slug": "album-loft",
+    "name": "Loft",
+    "count": 48,
+    "cover": "/assets/albuns/album-loft/59350-300x300.jpg"
+  },
+  {
+    "slug": "album-metropolis-4",
+    "name": "Metropolis 4",
+    "count": 53,
+    "cover": "/assets/albuns/album-metropolis-4/p_907882.jpg"
+  },
+  {
+    "slug": "album-metropolitan-stories-2",
+    "name": "Metropolitan Stories 2",
+    "count": 87,
+    "cover": "/assets/albuns/album-metropolitan-stories-2/p-379544-300x300.jpg"
+  },
+  {
+    "slug": "album-metropolitan-stories-3",
+    "name": "Metropolitan Stories 3",
+    "count": 101,
+    "cover": "/assets/albuns/album-metropolitan-stories-3/392672-300x300.jpg"
+  },
+  {
+    "slug": "album-mini-marburg",
+    "name": "Mini Marburg",
+    "count": 51,
+    "cover": "/assets/albuns/album-mini-marburg/33333-300x300.jpg"
+  },
+  {
+    "slug": "album-modern-rustic",
+    "name": "Modern Rustic",
+    "count": 66,
+    "cover": "/assets/albuns/album-modern-rustic/HE1043-300x300.jpg"
+  },
+  {
+    "slug": "album-modernista",
+    "name": "Modernista",
+    "count": 47,
+    "cover": "/assets/albuns/album-modernista/32282-300x300.jpg"
+  },
+  {
+    "slug": "album-mondo-baby",
+    "name": "Mondo Baby",
+    "count": 80,
+    "cover": "/assets/albuns/album-mondo-baby/5453_MB-300x300.jpg"
+  },
+  {
+    "slug": "album-monte-verde",
+    "name": "Monte Verde",
+    "count": 54,
+    "cover": "/assets/albuns/album-monte-verde/MVN-55-300x300.jpg"
+  },
+  {
+    "slug": "album-my-home-my-spa",
+    "name": "My Home My Spa",
+    "count": 85,
+    "cover": "/assets/albuns/album-my-home-my-spa/p_387131.jpg"
+  },
+  {
+    "slug": "album-nacional-atemporal",
+    "name": "Nacional Atemporal",
+    "count": 43,
+    "cover": "/assets/albuns/album-nacional-atemporal/3817-300x300.jpg"
+  },
+  {
+    "slug": "album-nacional-contemporaneo",
+    "name": "Nacional Contempoâneo",
+    "count": 74,
+    "cover": "/assets/albuns/album-nacional-contemporaneo/4175-300x300.jpg"
+  },
+  {
+    "slug": "album-nacional-texturas-2",
+    "name": "Nacional Texturas 2",
+    "count": 59,
+    "cover": "/assets/albuns/album-nacional-texturas-2/3958-300x300.jpg"
+  },
+  {
+    "slug": "album-neo-geometric",
+    "name": "Neo Geometric",
+    "count": 51,
+    "cover": "/assets/albuns/album-neo-geometric/NG1994-300x300.jpg"
+  },
+  {
+    "slug": "album-new-modern",
+    "name": "New Modern",
+    "count": 53,
+    "cover": "/assets/albuns/album-new-modern/IMG_4056-scaled-300x300.jpeg"
+  },
+  {
+    "slug": "album-new-texture",
+    "name": "New Texture",
+    "count": 139,
+    "cover": "/assets/albuns/album-new-texture/520548779_24355612717375724_3361202279032115853_n-300x300.jpg"
+  },
+  {
+    "slug": "album-ola-baby",
+    "name": "Ola Baby",
+    "count": 53,
+    "cover": "/assets/albuns/album-ola-baby/FA_83601-300x300.jpg"
+  },
+  {
+    "slug": "album-painel-pack-dreams",
+    "name": "Painel Pack Dreams",
+    "count": 35,
+    "cover": "/assets/albuns/album-painel-pack-dreams/35-1-300x300.jpg"
+  },
+  {
+    "slug": "album-play",
+    "name": "Play",
+    "count": 59,
+    "cover": "/assets/albuns/album-play/99815_PL-300x300.jpg"
+  },
+  {
+    "slug": "album-revoada-nacional",
+    "name": "Revoada (Nacional)",
+    "count": 59,
+    "cover": "/assets/albuns/album-revoada-nacional/IMG_4685-300x300.webp"
+  },
+  {
+    "slug": "album-santorini",
+    "name": "Santorini",
+    "count": 68,
+    "cover": "/assets/albuns/album-santorini/SN96-300x300.jpeg"
+  },
+  {
+    "slug": "album-sheilas",
+    "name": "Sheilas",
+    "count": 84,
+    "cover": "/assets/albuns/album-sheilas/47423-300x300.jpg"
+  },
+  {
+    "slug": "album-sonhos-nacional",
+    "name": "Sonhos (Nacional)",
+    "count": 64,
+    "cover": "/assets/albuns/album-sonhos-nacional/PP234_S-300x300.jpg"
+  },
+  {
+    "slug": "album-spirit",
+    "name": "Spirit",
+    "count": 50,
+    "cover": "/assets/albuns/album-spirit/32757-PAINEL-300x300.jpg"
+  },
+  {
+    "slug": "stories-of-life",
+    "name": "Stories of Life",
+    "count": 75,
+    "cover": "/assets/albuns/stories-of-life/IMG_7740-300x300.webp"
+  },
+  {
+    "slug": "album-suite",
+    "name": "Suite",
+    "count": 56,
+    "cover": "/assets/albuns/album-suite/839-44-300x300.jpg"
+  },
+  {
+    "slug": "album-terra",
+    "name": "Terra",
+    "count": 11,
+    "cover": "/assets/albuns/album-terra/543114401_24727932026810456_7985200050531471823_n-300x300.jpg"
+  },
+  {
+    "slug": "album-texture-world",
+    "name": "Texture World",
+    "count": 122,
+    "cover": "/assets/albuns/album-texture-world/TL2056-300x300.jpg"
+  },
+  {
+    "slug": "album-travertino",
+    "name": "Travertino",
+    "count": 102,
+    "cover": "/assets/albuns/album-travertino/452695520_8187644041265849_1427662924375859032_n-300x300.jpg"
+  },
+  {
+    "slug": "album-trend-wall-2",
+    "name": "Trend Wall 2",
+    "count": 95,
+    "cover": "/assets/albuns/album-trend-wall-2/p_381004.jpg"
+  },
+  {
+    "slug": "album-unique",
+    "name": "Unique",
+    "count": 92,
+    "cover": "/assets/albuns/album-unique/IMG_2989-300x300.webp"
+  },
+  {
+    "slug": "up-to-date",
+    "name": "Up to date",
+    "count": 58,
+    "cover": "/assets/albuns/up-to-date/IMG_3905-300x300.jpeg"
+  },
+  {
+    "slug": "album-versace-4",
+    "name": "Versace 4",
+    "count": 73,
+    "cover": "/assets/albuns/album-versace-4/962339-300x300.jpg"
+  },
+  {
+    "slug": "album-versace-5",
+    "name": "Versace 5",
+    "count": 87,
+    "cover": "/assets/albuns/album-versace-5/AS962406-Versace2-GIUNGLA-Copy-300x300.jpg"
+  },
+  {
+    "slug": "album-vintage",
+    "name": "Vintage",
+    "count": 40,
+    "cover": "/assets/albuns/album-vintage/32843-300x300.jpg"
+  },
+  {
+    "slug": "album-vita",
+    "name": "Vita",
+    "count": 53,
+    "cover": "/assets/albuns/album-vita/b1050807-300x300.jpg"
+  },
+  {
+    "slug": "album-whisper",
+    "name": "Whisper",
+    "count": 79,
+    "cover": "/assets/albuns/album-whisper/36412_001_closeup-600x600-1-300x300.jpg"
+  },
+  {
+    "slug": "album-yoyo-2",
+    "name": "Yoyo 2",
+    "count": 63,
+    "cover": "/assets/albuns/album-yoyo-2/IMG_1381-300x300.jpg"
+  }
+]

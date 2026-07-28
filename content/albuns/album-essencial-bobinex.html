@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Álbum Essencial Bobinex – Papéis de Parede – Casa Estampa</title>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --fendi:#c2a57a;--fendi-dark:#9e7d4e;--mustard:#c8960c;--wa:#25D366;
+  --dark:#1e1608;--charcoal:#2e2410;--charcoal2:#3a2e16;--off-dark:#463820;
+  --text-light:#f5eed8;--text-muted:#a89370;--pad:80px;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--dark);color:var(--text-light);font-family:'Montserrat',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;}
+a{color:inherit;}
+.navbar{position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px var(--pad);background:rgba(30,22,8,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(194,165,122,.18);}
+.navbar-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.navbar-logo img{height:40px;width:auto;object-fit:contain;}
+.logo-name{font-family:'Italiana',serif;font-size:19px;color:var(--fendi);line-height:1;}
+.logo-tag{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);}
+.navbar-nav{display:flex;gap:26px;list-style:none;}
+.navbar-nav a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color .2s;}
+.navbar-nav a:hover,.navbar-nav a.active{color:var(--fendi);}
+.navbar-wa{display:inline-flex;align-items:center;gap:7px;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:var(--dark);background:var(--fendi);padding:10px 18px;text-decoration:none;transition:background .2s;}
+.navbar-wa:hover{background:var(--mustard);}
+.album-hero{padding:150px var(--pad) 44px;background:var(--charcoal);border-bottom:1px solid rgba(194,165,122,.12);}
+.crumbs{display:flex;align-items:center;gap:8px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:18px;}
+.crumbs a{color:var(--text-muted);text-decoration:none;transition:color .2s;}
+.crumbs a:hover{color:var(--fendi);}
+.album-title{font-family:'Playfair Display',serif;font-size:clamp(30px,4.5vw,52px);font-weight:600;line-height:1.1;color:var(--text-light);}
+.album-title em{font-style:italic;color:var(--fendi);}
+.album-meta{display:flex;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap;}
+.album-badge{background:rgba(200,150,12,.12);border:1px solid rgba(200,150,12,.25);color:var(--mustard);font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 13px;font-weight:600;}
+.album-note{font-size:12px;color:var(--text-muted);}
+.grid-wrap{padding:44px var(--pad) 70px;}
+.prod-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;}
+.prod-card{background:var(--charcoal2);border:1px solid rgba(194,165,122,.06);overflow:hidden;display:flex;flex-direction:column;transition:border-color .25s;}
+.prod-card:hover{border-color:rgba(194,165,122,.35);}
+.prod-thumb{aspect-ratio:1;background:var(--off-dark);overflow:hidden;}
+.prod-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s;}
+.prod-card:hover .prod-thumb img{transform:scale(1.05);}
+.prod-name{padding:11px 12px 13px;font-size:11px;color:var(--text-light);line-height:1.35;}
+.album-cta{padding:60px var(--pad);background:var(--charcoal);border-top:1px solid rgba(194,165,122,.12);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.album-cta h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:600;color:var(--text-light);margin-bottom:6px;}
+.album-cta p{font-size:13px;color:var(--text-muted);}
+.btn-wa{display:inline-flex;align-items:center;gap:9px;background:var(--wa);color:#06301a;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:15px 26px;text-decoration:none;transition:filter .2s;}
+.btn-wa:hover{filter:brightness(1.1);}
+.footer{padding:34px var(--pad);background:var(--dark);border-top:1px solid rgba(194,165,122,.12);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.footer-logo{display:flex;align-items:center;gap:11px;}
+.footer-logo img{height:36px;width:auto;object-fit:contain;}
+.footer-name{font-family:'Italiana',serif;font-size:18px;color:var(--fendi);}
+.footer-sub{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);}
+@media(max-width:1100px){:root{--pad:40px;}.prod-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:700px){:root{--pad:20px;}.navbar-nav{display:none;}.prod-grid{grid-template-columns:repeat(2,1fr);}.album-hero{padding-top:120px;}.footer{flex-direction:column;text-align:center;}}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="/" class="navbar-logo">
+    <img src="/assets/logo-letra.svg" alt="Casa Estampa" />
+    <div>
+      <div class="logo-name">Casa Estampa</div>
+      <div class="logo-tag">Interiores</div>
+    </div>
+  </a>
+  <ul class="navbar-nav">
+    <li><a href="/papeis-de-parede" class="active">Papéis de Parede</a></li>
+    <li><a href="/cortinas">Cortinas</a></li>
+    <li><a href="/persianas">Persianas</a></li>
+    <li><a href="/pisos-laminados">Pisos</a></li>
+    <li><a href="/arquitetos-designers">Arquitetos</a></li>
+  </ul>
+  <a href="https://api.whatsapp.com/send?phone=5521999886842" class="navbar-wa"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Falar agora</a>
+</nav>
+
+<section class="album-hero">
+  <div class="crumbs">
+    <a href="/">Início</a><span>/</span>
+    <a href="/papeis-de-parede">Papéis de Parede</a><span>/</span>
+    <span>Essencial Bobinex</span>
+  </div>
+  <h1 class="album-title">Álbum <em>Essencial Bobinex</em></h1>
+  <div class="album-meta">
+    <span class="album-badge">57 modelos</span>
+    <span class="album-note">Medição e instalação profissional · Entrega para todo o Brasil</span>
+  </div>
+</section>
+
+<section class="grid-wrap">
+  <div class="prod-grid">
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_9031-300x300.jpg" alt="Nacional Essencial 4347" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4347</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_9032-300x300.jpg" alt="Nacional Essencial 4322" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4322</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_9033-300x300.jpg" alt="Nacional Essencial 4327" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4327</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/Arquivo_003-300x300.png" alt="Nacional Essencial 4330" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4330</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_9023-300x300.jpg" alt="Nacional Essencial 4309" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4309</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_9024.jpg" alt="Nacional Essencial 4307" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4307</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_9025-300x300.jpg" alt="Nacional Essencial 4301" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4301</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_9026-300x300.jpg" alt="Nacional Essencial 4328" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4328</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_9028.jpg" alt="Nacional Essencial 4319" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4319</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/Arquivo_004-1-300x300.png" alt="Nacional Essencial 4329" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4329</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_9020-300x300.jpg" alt="Nacional Essencial 4332" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4332</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/Arquivo_004-300x300.png" alt="Nacional Essencial 4331" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4331</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_9019-300x300.jpg" alt="Nacional Essencial 4344" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4344</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_9018-300x300.jpg" alt="Nacional Essencial 4346" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4346</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_9017-300x300.jpg" alt="Nacional Essencial 4349" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4349</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_9016-300x300.jpg" alt="Nacional Essencial 4342" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4342</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_9014-300x300.jpg" alt="Nacional Essencial 4350" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4350</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/Arquivo_001-2-300x300.png" alt="Nacional Essencial 4335 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4335 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/Arquivo_000-2-300x300.png" alt="Nacional Essencial 4335" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4335</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_9005-300x300.jpg" alt="Nacional Essencial 4317" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4317</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/Arquivo_008-300x300.png" alt="Nacional Essencial 4340" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4340</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_9010-300x300.jpg" alt="Nacional Essencial 4336" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4336</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_9009-300x300.jpg" alt="Nacional Essencial 4303" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4303</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_9008-300x300.jpg" alt="Nacional Essencial 4323" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4323</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_9007.jpg" alt="Nacional Essencial 4311" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4311</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_9006-300x300.jpg" alt="Nacional Essencial 4318" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4318</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/Arquivo_001-1-300x300.png" alt="Nacional Essencial 4338 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4338 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/Arquivo_000-1-300x300.png" alt="Nacional Essencial 4338" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4338</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_9001-300x300.jpg" alt="Nacional Essencial 4333" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4333</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_8999-300x300.jpg" alt="Nacional Essencial 4304" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4304</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_8998-300x300.jpg" alt="Nacional Essencial 4343" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4343</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/Arquivo_005-300x300.png" alt="Nacional Essencial 4339" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4339</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_8996-300x300.jpg" alt="Nacional Essencial 4314" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4314</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_8995-300x300.jpg" alt="Nacional Essencial 4316" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4316</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_8994-300x300.jpg" alt="Nacional Essencial 4345" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4345</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_8993-300x300.jpg" alt="Nacional Essencial 4326" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4326</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_8992-300x300.jpg" alt="Nacional Essencial 4320" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4320</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_8990-300x300.jpg" alt="Nacional Essencial 4351" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4351</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_8989-300x300.jpg" alt="Nacional Essencial 4337" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4337</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_8988-1-300x300.jpg" alt="Nacional Essencial 4341" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4341</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_8987-300x300.jpg" alt="Nacional Essencial 4324" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4324</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/Arquivo_001-300x300.png" alt="Nacional Essencial 4334 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4334 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/Arquivo_000-300x300.png" alt="Nacional Essencial 4334" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4334</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/4308-300x300.jpg" alt="Nacional Essencial 4308" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4308</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/4306-300x300.jpg" alt="Nacional Essencial 4306" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4306</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/4305-300x300.jpg" alt="Nacional Essencial 4305" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4305</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_8976-300x300.jpg" alt="Nacional Essencial 4315" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4315</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_8977-300x300.jpg" alt="Nacional Essencial 4325" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4325</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_8978-300x300.webp" alt="Nacional Essencial 4325 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4325 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_8975-300x300.webp" alt="Nacional Essencial 4302 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4302 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_8974-300x300.jpg" alt="Nacional Essencial 4302" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4302</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_8971-300x300.webp" alt="Nacional Essencial 4310 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4310 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_8970-300x300.jpg" alt="Nacional Essencial 4310" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4310</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_8973-300x300.webp" alt="Nacional Essencial 4321 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4321 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/IMG_8972-300x300.webp" alt="Nacional Essencial 4300 Decorado" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4300 Decorado</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/4321-300x300.jpg" alt="Nacional Essencial 4321" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4321</div>
+      </article>
+      <article class="prod-card">
+        <div class="prod-thumb"><img src="/assets/albuns/album-essencial-bobinex/4300-300x300.jpg" alt="Nacional Essencial 4300" loading="lazy" /></div>
+        <div class="prod-name">Nacional Essencial 4300</div>
+      </article>
+  </div>
+</section>
+
+<section class="album-cta">
+  <div>
+    <h2>Gostou de algum modelo do álbum Essencial Bobinex?</h2>
+    <p>Fale com nossa equipe e receba orçamento com medição inclusa.</p>
+  </div>
+  <a href="https://api.whatsapp.com/send?phone=5521999886842&text=Ola!%20Tenho%20interesse%20no%20album%20Essencial%20Bobinex%20de%20papel%20de%20parede." class="btn-wa"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Pedir orçamento</a>
+</section>
+
+<footer class="footer">
+  <div class="footer-logo">
+    <img src="/assets/logo-letra.svg" alt="Casa Estampa" />
+    <div>
+      <div class="footer-name">Casa Estampa</div>
+      <div class="footer-sub">Interiores · (21) 99988-6842</div>
+    </div>
+  </div>
+  <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(194,165,122,0.3);">casaestampa.com</div>
+  <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(194,165,122,0.3);text-align:right;">Rio de Janeiro · (21) 99988-6842</div>
+</footer>
+
+</body>
+</html>
