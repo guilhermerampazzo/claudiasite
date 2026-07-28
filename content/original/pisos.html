@@ -371,26 +371,36 @@ body { background: var(--dark); color: var(--text-light); font-family: var(--fon
 </style>
 </head>
 <body>
-
-<!-- NAVBAR -->
+<!-- ce-header-unificado -->
+<style id="ce-header-css">.navbar{position:fixed;top:0;left:0;width:100%;z-index:99999;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px clamp(20px,5vw,80px);background:rgba(28,24,16,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(194,165,122,.25);box-sizing:border-box;}
+.navbar *,.navbar *::before,.navbar *::after{box-sizing:border-box;}
+.navbar-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+.navbar-nav{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0;flex-wrap:wrap;justify-content:center;}
+.navbar-nav li{margin:0;padding:0;list-style:none;}
+.navbar-nav a{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#b8a88a;text-decoration:none;transition:color .2s;}
+.navbar-nav a:hover{color:#c2a57a;}
+.navbar-cta{display:inline-flex;align-items:center;gap:7px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#1c1810;background:#c2a57a;text-decoration:none;padding:10px 20px;border-radius:2px;transition:background .2s;flex-shrink:0;white-space:nowrap;}
+.navbar-cta:hover{background:#c8960c;color:#1c1810;}
+@media(max-width:900px){.navbar-nav{display:none;}}
+@media(max-width:768px){.navbar{padding:10px 20px;}.navbar-cta{font-size:9px;padding:9px 14px;letter-spacing:1px;}}</style>
 <nav class="navbar">
-  <a href="https://casaestampa.com" class="navbar-logo">
-    <img class="logo-symbol" src="https://casaestampa.com/wp-content/uploads/2026/07/logo-c-casa-estampa.png" alt="Casa Estampa">
+  <a href="/" class="navbar-logo">
+    <img class="logo-symbol" src="/assets/logo-icone.svg" alt="Casa Estampa">
     <div class="logo-text-wrap">
       <span class="logo-name">Casa Estampa</span>
       <span class="logo-tagline">Interiores</span>
     </div>
   </a>
   <ul class="navbar-nav">
-    <li><a href="#">Papéis de Parede</a></li>
-    <li><a href="#">Cortinas</a></li>
-    <li><a href="#">Persianas</a></li>
-    <li><a href="#" class="active">Pisos</a></li>
-    <li><a href="#">Arquitetos</a></li>
-    <li><a href="#">Corporativo</a></li>
+    <li><a href="/papeis-de-parede">Papeis de Parede</a></li>
   </ul>
-  <a href="https://api.whatsapp.com/send?phone=5521999886842" class="navbar-cta navbar-wa">Fale Conosco</a>
+  <a href="https://api.whatsapp.com/send?phone=5521999886842" class="navbar-cta navbar-wa">Falar agora</a>
 </nav>
+<!-- /ce-header-unificado -->
+
+
+<!-- NAVBAR -->
+
 
 <!-- HERO -->
 <section class="hero">
