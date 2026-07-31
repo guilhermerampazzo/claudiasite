@@ -536,37 +536,37 @@ h2.section-title em { font-style: italic; font-weight: 400; }
   </div>
 
   <div class="inst-carousel-wrap" id="instWrap">
-    <div class="inst-track" id="instTrack">
+    <div class="inst-track" id="instTrack" data-ce-widget="carousel" data-ce-label="Carrossel de instalacoes">
       <div class="inst-slide wide">
-        <div class="inst-ph"><i class="ti ti-photo"></i><span>Sala de Estar</span></div>
+        <img src="/assets/scraped/cortinas/1.jpg" alt="Cortina instalada - Sala de Estar" loading="lazy" />
         <div class="inst-slide-label">Sala de Estar</div>
       </div>
       <div class="inst-slide">
-        <div class="inst-ph"><i class="ti ti-photo"></i><span>Quarto</span></div>
+        <img src="/assets/scraped/cortinas/2.jpg" alt="Cortina instalada - Quarto" loading="lazy" />
         <div class="inst-slide-label">Quarto</div>
       </div>
       <div class="inst-slide">
-        <div class="inst-ph"><i class="ti ti-photo"></i><span>Sala de Jantar</span></div>
+        <img src="/assets/scraped/cortinas/3.jpg" alt="Cortina instalada - Sala de Jantar" loading="lazy" />
         <div class="inst-slide-label">Sala de Jantar</div>
       </div>
       <div class="inst-slide wide">
-        <div class="inst-ph"><i class="ti ti-photo"></i><span>Escritório</span></div>
+        <img src="/assets/scraped/cortinas/4.jpg" alt="Cortina instalada - Escritório" loading="lazy" />
         <div class="inst-slide-label">Escritório</div>
       </div>
       <div class="inst-slide">
-        <div class="inst-ph"><i class="ti ti-photo"></i><span>Home Theater</span></div>
+        <img src="/assets/scraped/cortinas/5.jpg" alt="Cortina instalada - Home Theater" loading="lazy" />
         <div class="inst-slide-label">Home Theater</div>
       </div>
       <div class="inst-slide">
-        <div class="inst-ph"><i class="ti ti-photo"></i><span>Varanda</span></div>
+        <img src="/assets/scraped/cortinas/6.jpg" alt="Cortina instalada - Varanda" loading="lazy" />
         <div class="inst-slide-label">Varanda</div>
       </div>
       <div class="inst-slide wide">
-        <div class="inst-ph"><i class="ti ti-photo"></i><span>Quarto Infantil</span></div>
+        <img src="/assets/scraped/cortinas/7.jpg" alt="Cortina instalada - Quarto Infantil" loading="lazy" />
         <div class="inst-slide-label">Quarto Infantil</div>
       </div>
       <div class="inst-slide">
-        <div class="inst-ph"><i class="ti ti-photo"></i><span>Corredor</span></div>
+        <img src="/assets/scraped/cortinas/8.jpg" alt="Cortina instalada - Corredor" loading="lazy" />
         <div class="inst-slide-label">Corredor</div>
       </div>
     </div>
@@ -692,7 +692,7 @@ h2.section-title em { font-style: italic; font-weight: 400; }
   <div class="rule"></div>
 
   <div class="faq-list">
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">Qual a diferença entre cortina de varão e trilho suíço? <i class="ti ti-plus"></i></button>
       <div class="faq-a">
         <strong style="color:var(--text-light);">Varão</strong><br>
@@ -701,23 +701,23 @@ h2.section-title em { font-style: italic; font-weight: 400; }
         Fica escondido no gesso ou sanca. Visual mais sofisticado, deslizamento mais suave e é o mais utilizado em projetos de arquitetura.
       </div>
     </div>
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">Qual a diferença entre Wave e a Soft Wave Casa Estampa? <i class="ti ti-plus"></i></button>
       <div class="faq-a">A Wave possui ondas contínuas em toda a cortina. A <strong style="color:var(--fendi);">Soft Wave Casa Estampa</strong> tem um limitador de distância que cria ondas mais leves e elegantes, proporcionando um caimento mais natural, sofisticado e slim.</div>
     </div>
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">Cortina bloqueia totalmente a luz? <i class="ti ti-plus"></i></button>
       <div class="faq-a">Depende do tecido. <strong style="color:var(--text-light);">Voil</strong> filtra a luz. <strong style="color:var(--text-light);">Linho</strong> reduz a luminosidade. <strong style="color:var(--text-light);">Blackout</strong> pode bloquear até praticamente 100% da luz quando bem instalado.</div>
     </div>
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">Posso lavar minha cortina? <i class="ti ti-plus"></i></button>
       <div class="faq-a">Sim, mas cada tecido possui uma recomendação específica. Alguns podem ser lavados normalmente, outros exigem limpeza profissional. Orientamos você no momento do atendimento.</div>
     </div>
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">Cortina melhora a acústica? <i class="ti ti-plus"></i></button>
       <div class="faq-a">Sim. Tecidos absorvem parte da reverberação do ambiente, tornando-o mais confortável e silencioso.</div>
     </div>
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">Quanto tempo leva para fabricar? <i class="ti ti-plus"></i></button>
       <div class="faq-a">Em média, entre 15 e 20 dias úteis após a aprovação do pedido.</div>
     </div>
@@ -793,6 +793,7 @@ function toggleFaq(btn) {
 (function(){
   var track = document.getElementById('instTrack');
   if (!track) return;
+  if (window.top !== window.self) return;
   var slides = Array.from(track.children);
   slides.forEach(function(s){ track.appendChild(s.cloneNode(true)); });
   slides.forEach(function(s){ track.insertBefore(s.cloneNode(true), track.firstChild); });

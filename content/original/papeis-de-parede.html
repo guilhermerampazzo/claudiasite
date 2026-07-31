@@ -566,7 +566,7 @@ h2.section-title em { font-style: italic; font-weight: 400; }
   </div>
 
   <div class="insp-carousel-wrap">
-    <div class="insp-track" id="inspTrack">
+    <div class="insp-track" id="inspTrack" data-ce-widget="carousel" data-ce-label="Carrossel de instalacoes">
       <div class="insp-slide wide">
         <img src="/assets/scraped/nossos-servicos/IMG_5719.jpg" alt="Papel de parede instalado - Sala de estar" loading="lazy" />
         <div class="insp-slide-label">Sala de estar</div>
@@ -618,6 +618,7 @@ h2.section-title em { font-style: italic; font-weight: 400; }
 (function(){
   const track = document.getElementById('inspTrack');
   if (!track) return;
+  if (window.top !== window.self) return;
   let isDragging = false, startX = 0, scrollLeft = 0;
 
   // Clone slides for infinite loop
@@ -1205,102 +1206,102 @@ function calcularRolos() {
 
   <div class="faq-list">
 
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">É normal aparecerem bolhas logo após a instalação? <i class="ti ti-plus"></i></button>
       <div class="faq-a">Sim. Pequenas bolhas são normais durante a secagem da cola e costumam desaparecer naturalmente entre 24 e 72 horas. Evite apertá-las ou tentar furá-las.</div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">Vejo manchas ou acúmulo de cola. É normal? <i class="ti ti-plus"></i></button>
       <div class="faq-a">Sim. Durante a instalação pode haver pequenos resíduos de cola, que secam e desaparecem em poucos dias. Não tente remover com panos úmidos ou produtos químicos sem orientação.</div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">Qual a diferença entre papel de parede e adesivo de parede? <i class="ti ti-plus"></i></button>
       <div class="faq-a">Embora possam parecer semelhantes, são produtos bem diferentes. O papel de parede possui maior durabilidade, acabamento superior, melhor encaixe entre as emendas e aparência muito mais sofisticada. O adesivo de PVC tende a encolher, desbota com o tempo e tem vida útil inferior. Se o objetivo é um acabamento elegante e duradouro, o papel de parede é a melhor escolha.</div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">Posso limpar o papel de parede? <i class="ti ti-plus"></i></button>
       <div class="faq-a">Depende do modelo. A maioria dos papéis vinílicos pode ser limpa com pano levemente úmido e detergente neutro.</div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">Papel de parede pode ser aplicado em banheiro? <i class="ti ti-plus"></i></button>
       <div class="faq-a">Sim, desde que seja na área seca, sem contato direto com água. Trabalhamos com papéis específicos que suportam melhor a umidade do ambiente.</div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">Posso aplicar papel de parede sobre azulejo ou cerâmica? <i class="ti ti-plus"></i></button>
       <div class="faq-a">Sim, é possível. Porém, antes da instalação é necessário emassar toda a superfície para eliminar as juntas dos azulejos e aplicar uma seladora, garantindo uma base lisa e adequada. A preparação da parede deve ser realizada previamente por um profissional de pintura — nossa equipe realiza apenas a instalação do papel sobre a superfície já preparada.</div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">Preciso pintar a parede antes? <i class="ti ti-plus"></i></button>
       <div class="faq-a">Nem sempre. É necessário apenas que a parede esteja lisa, seca, firme e sem infiltrações.</div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">Pode aplicar sobre outro papel de parede? <i class="ti ti-plus"></i></button>
       <div class="faq-a">O recomendado é remover o papel antigo para garantir uma instalação perfeita.</div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">Pode instalar na cozinha? <i class="ti ti-plus"></i></button>
       <div class="faq-a">Sim, desde que não fique atrás da pia, fogão ou locais com contato constante com gordura e água.</div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">O papel estraga a parede? <i class="ti ti-plus"></i></button>
       <div class="faq-a">Não. Quando instalado corretamente sobre uma parede preparada, ele protege a superfície. A remoção depende do tipo de papel e da condição da parede.</div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">Quanto tempo dura o papel de parede? <i class="ti ti-plus"></i></button>
       <div class="faq-a">Com instalação profissional e os cuidados corretos, é comum que dure entre 10 e 15 anos, podendo durar ainda mais em ambientes bem conservados.</div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">Em quanto tempo a instalação fica pronta? <i class="ti ti-plus"></i></button>
       <div class="faq-a">Na maioria dos ambientes residenciais, a instalação é concluída em apenas um dia.</div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">Qual a diferença entre papel vinílico e Non Woven (TNT)? <i class="ti ti-plus"></i></button>
       <div class="faq-a">O papel vinílico recebe uma camada de PVC na superfície — é resistente à limpeza e ao desgaste do dia a dia, com excelente durabilidade. O Non Woven (TNT Premium) é produzido com fibras têxteis de alta qualidade, considerado linha premium pelos principais fabricantes europeus. É mais respirável, tem maior estabilidade dimensional, evita bolhas por umidade residual e tem fácil remoção na hora da troca. Nossa equipe ajuda você a escolher o mais indicado para cada ambiente.</div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">Vocês têm papéis importados à pronta entrega? <i class="ti ti-plus"></i></button>
       <div class="faq-a">Sim. Mantemos estoque de diversos modelos importados para agilizar a entrega. Também trabalhamos com catálogos exclusivos e lançamentos de grandes fabricantes internacionais.</div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">Papel de parede com relevo acumula poeira? <i class="ti ti-plus"></i></button>
       <div class="faq-a">Não de forma significativa. A poeira é semelhante à de uma parede pintada e pode ser removida com espanador, pano seco ou aspirador com bocal de escova. A textura não exige manutenção especial.</div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">Se eu enjoar, é fácil trocar? <i class="ti ti-plus"></i></button>
       <div class="faq-a">Sim. O papel pode ser removido e substituído quando quiser renovar o ambiente. Nos papéis Non Woven, a remoção é bastante simples quando a parede foi preparada corretamente.</div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">A instalação tem cheiro? <i class="ti ti-plus"></i></button>
       <div class="faq-a">Não. Utilizamos cola à base de água, própria para instalação de papéis de parede.</div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">Vale mais a pena pintar ou colocar papel de parede? <i class="ti ti-plus"></i></button>
       <div class="faq-a">Quando pensamos em custo-benefício a longo prazo, o papel de parede costuma ser a melhor escolha. Enquanto a pintura precisa de retoques a cada poucos anos, um papel de qualidade dura entre 10 e 15 anos mantendo beleza e acabamento. Além disso, agrega textura, estampas exclusivas e sofisticação — transformando o ambiente com rapidez e pouca sujeira.</div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">Posso instalar atrás da cabeceira da cama? <i class="ti ti-plus"></i></button>
       <div class="faq-a">Sim. Essa é uma das aplicações mais procuradas e cria um grande impacto visual sem necessidade de reformas.</div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item open">
       <button class="faq-q" onclick="toggleFaq(this)">Papel de parede pode mofar? <i class="ti ti-plus"></i></button>
       <div class="faq-a">O papel de parede não é a causa do mofo. Se houver infiltração ou umidade na parede, o problema precisa ser resolvido antes da instalação — caso contrário, qualquer revestimento pode ser comprometido.</div>
     </div>
