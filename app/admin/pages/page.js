@@ -11,6 +11,7 @@ import {
   IconLayoutNavbar,
   IconLogout,
   IconMenu2,
+  IconPackage,
   IconPalette,
   IconPencil,
   IconPhoto,
@@ -140,7 +141,7 @@ export default function PagesDashboard() {
     <div className="admin-shell">
       <header className="admin-topbar">
         <a className="admin-brand" href="/admin/pages"><img src="/assets/logo-icone.svg" alt="" /><img src="/assets/logo-letra.svg" alt="Casa Estampa" /></a>
-        <div className="admin-topbar-actions"><a className="btn" href="/" target="_blank"><IconExternalLink size={18} />Ver site</a><button className="btn btn-icon" onClick={logout} title="Sair"><IconLogout size={18} /></button></div>
+        <div className="admin-topbar-actions"><a className="btn" href="/admin/catalogo"><IconPackage size={18} />Catálogo</a><a className="btn" href="/" target="_blank"><IconExternalLink size={18} />Ver site</a><button className="btn btn-icon" onClick={logout} title="Sair"><IconLogout size={18} /></button></div>
       </header>
 
       <main className="admin-main">
