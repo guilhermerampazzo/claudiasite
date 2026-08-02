@@ -5,7 +5,9 @@ import { useParams } from "next/navigation";
 import {
   IconAdjustments,
   IconArrowBackUp,
+  IconArrowDown,
   IconArrowLeft,
+  IconArrowUp,
   IconBox,
   IconCarouselHorizontal,
   IconChevronDown,
@@ -223,6 +225,9 @@ export default function EditorPage() {
         setSelected(next);
       }
       if (event.data.type === "ce-tree") setTree(event.data.tree || []);
+      if (event.data.type === "ce-carousel-images") {
+        setSelected((current) => current?.id === event.data.id ? { ...current, images: event.data.images || [] } : current);
+      }
       if (event.data.type === "ce-changed") setStatus("Alteracoes nao salvas");
       if (event.data.type === "ce-html" && saveResolver.current) {
         saveResolver.current(event.data.html);
@@ -301,6 +306,30 @@ export default function EditorPage() {
     if (!response.ok) { setError("Upload nao concluido."); return; }
     const data = await response.json();
     updateAttr("src", data.path);
+  }
+
+  async function uploadCarouselImages(event) {
+    const files = Array.from(event.target.files || []);
+    if (!files.length) return;
+    setError("");
+    const paths = [];
+    for (let index = 0; index < files.length; index += 1) {
+      setStatus(`Enviando imagem ${index + 1} de ${files.length}...`);
+      const form = new FormData();
+      form.append("file", files[index]);
+      const response = await fetch("/api/uploads", { method: "POST", body: form });
+      if (!response.ok) {
+        setStatus("");
+        setError(`Nao foi possivel enviar ${files[index].name}.`);
+        event.target.value = "";
+        return;
+      }
+      const data = await response.json();
+      paths.push(data.path);
+    }
+    post("ce-carousel-add-images", { paths });
+    setStatus(`${paths.length} ${paths.length === 1 ? "imagem adicionada" : "imagens adicionadas"}. Salve a pagina para publicar.`);
+    event.target.value = "";
   }
 
   async function uploadBackgroundImage(event) {
@@ -417,7 +446,7 @@ export default function EditorPage() {
 
             {panel === "navigator" ? <div className="navigator-wrap"><div className="tool-title">Estrutura da pagina</div>{tree.length ? <TreeNodes nodes={tree} selectedId={selected?.id} onSelect={(id) => post("ce-select-id", { id })} /> : <p className="panel-help">A estrutura aparecera quando a pagina carregar.</p>}</div> : null}
 
-            {panel === "edit" && selected ? <ElementEditor selected={selected} settingsTab={settingsTab} setSettingsTab={setSettingsTab} updateStyle={updateStyle} updateStyles={updateStyles} updateAttr={updateAttr} setSelected={setSelected} post={post} uploadImage={uploadImage} uploadBackgroundImage={uploadBackgroundImage} uploadBackgroundVideo={uploadBackgroundVideo} aplicarVideoUrl={aplicarVideoUrl} removerVideoFundo={removerVideoFundo} setContainerLayout={setContainerLayout} addWidget={addWidget} /> : null}
+            {panel === "edit" && selected ? <ElementEditor key={selected.id} selected={selected} settingsTab={settingsTab} setSettingsTab={setSettingsTab} updateStyle={updateStyle} updateStyles={updateStyles} updateAttr={updateAttr} setSelected={setSelected} post={post} uploadImage={uploadImage} uploadCarouselImages={uploadCarouselImages} uploadBackgroundImage={uploadBackgroundImage} uploadBackgroundVideo={uploadBackgroundVideo} aplicarVideoUrl={aplicarVideoUrl} removerVideoFundo={removerVideoFundo} setContainerLayout={setContainerLayout} addWidget={addWidget} /> : null}
           </div>
         </aside>
 
@@ -440,7 +469,8 @@ export default function EditorPage() {
   );
 }
 
-function ElementEditor({ selected, settingsTab, setSettingsTab, updateStyle, updateStyles, updateAttr, setSelected, post, uploadImage, uploadBackgroundImage, uploadBackgroundVideo, aplicarVideoUrl, removerVideoFundo, setContainerLayout, addWidget }) {
+function ElementEditor({ selected, settingsTab, setSettingsTab, updateStyle, updateStyles, updateAttr, setSelected, post, uploadImage, uploadCarouselImages, uploadBackgroundImage, uploadBackgroundVideo, aplicarVideoUrl, removerVideoFundo, setContainerLayout, addWidget }) {
+  const [carouselUrl, setCarouselUrl] = useState("");
   const structural = selected.kind === "container" || selected.kind === "section" || selected.kind === "structure";
   const isImage = selected.tag === "img";
   const isVideo = selected.tag === "video";
@@ -458,7 +488,19 @@ function ElementEditor({ selected, settingsTab, setSettingsTab, updateStyle, upd
 
       {isImage ? <><div className="media-preview"><img src={selected.src || "/assets/logo-letra.svg"} alt="Previa da imagem" /></div><label className="field"><span>Endereco da imagem</span><input value={selected.src || ""} onChange={(event) => updateAttr("src", event.target.value)} /></label><label className="field"><span>Texto alternativo</span><input value={selected.alt || ""} placeholder="Descreva a imagem" onChange={(event) => updateAttr("alt", event.target.value)} /></label><label className="field"><span>Ajuste da imagem</span><select value={selected.objectFit || ""} onChange={(event) => updateStyle("objectFit", event.target.value)}><option value="">Automatico</option><option value="cover">Preencher e cortar</option><option value="contain">Mostrar inteira</option><option value="fill">Esticar</option></select></label><div className="field-row"><label className="field"><span>Proporcao (largura/altura)</span><input value={selected.aspectRatio || ""} placeholder="Ex.: 4/3, 1/1, 16/9" onChange={(event) => updateStyle("aspectRatio", event.target.value)} /></label><label className="field"><span>Altura fixa</span><input value={selected.height || ""} placeholder="Ex.: 240px" onChange={(event) => updateStyle("height", event.target.value)} /></label></div><p className="field-hint">Defina uma proporcao (ou uma altura fixa) para que as fotos de uma galeria ou carrossel fiquem todas do mesmo tamanho, mesmo que os arquivos originais tenham dimensoes diferentes.</p><label className="upload-field"><IconPhoto size={18} />Enviar nova imagem<input type="file" accept="image/*" onChange={uploadImage} /></label></> : null}
 
-      {(selected.widget === "gallery" || selected.widget === "carousel") ? <div className="control-section"><div className="control-label">{selected.widget === "gallery" ? "Galeria (grade vertical)" : "Carrossel (linha horizontal)"}</div><p className="panel-help">Clique para adicionar mais uma foto — ela entra com o mesmo tamanho e proporcao das demais, sem quebrar a grade.</p><button className="btn btn-primary" onClick={() => post("ce-add-photo")}><IconPhoto size={17} />Adicionar foto</button></div> : null}
+      {selected.widget === "gallery" ? <div className="control-section"><div className="control-label">Galeria (grade vertical)</div><p className="panel-help">Adicione novas fotos sem limite. Cada foto entra com o mesmo tamanho e proporcao das demais.</p><button className="btn btn-primary" onClick={() => post("ce-add-photo")}><IconPhoto size={17} />Adicionar foto</button></div> : null}
+
+      {selected.widget === "carousel" ? <div className="control-section carousel-manager">
+        <div className="carousel-manager-head"><div><div className="control-label">Imagens do carrossel</div><strong>{selected.images?.length || 0} {(selected.images?.length || 0) === 1 ? "imagem" : "imagens"}</strong></div><span>Sem limite</span></div>
+        <p className="panel-help">Selecione varias imagens de uma vez. Use as setas para definir a ordem em que elas aparecem.</p>
+        <label className="upload-field carousel-upload"><IconPhoto size={18} />Selecionar imagens<input type="file" accept="image/*" multiple onChange={uploadCarouselImages} /></label>
+        <div className="carousel-url-add"><input value={carouselUrl} onChange={(event) => setCarouselUrl(event.target.value)} placeholder="Ou cole o endereco de uma imagem" /><button className="btn" disabled={!carouselUrl.trim()} onClick={() => { post("ce-carousel-add-images", { paths: [carouselUrl.trim()] }); setCarouselUrl(""); }}>Adicionar</button></div>
+        {selected.images?.length ? <div className="carousel-image-list">{selected.images.map((image, index) => <article className="carousel-image-item" key={`carousel-image-${index}`}>
+          <img src={image.src || "/assets/logo-letra.svg"} alt="" />
+          <div className="carousel-image-info"><strong>Imagem {index + 1}</strong><input aria-label={`Endereco da imagem ${index + 1}`} value={image.src || ""} onChange={(event) => post("ce-carousel-update-image", { index, name: "src", value: event.target.value })} /><input aria-label={`Texto alternativo da imagem ${index + 1}`} value={image.alt || ""} placeholder="Descricao da imagem" onChange={(event) => post("ce-carousel-update-image", { index, name: "alt", value: event.target.value })} /></div>
+          <div className="carousel-image-actions"><button disabled={index === 0} onClick={() => post("ce-carousel-move-image", { index, direction: -1 })} title="Mover para a esquerda"><IconArrowUp size={16} /></button><button disabled={index === selected.images.length - 1} onClick={() => post("ce-carousel-move-image", { index, direction: 1 })} title="Mover para a direita"><IconArrowDown size={16} /></button><button className="danger" onClick={() => post("ce-carousel-remove-image", { index })} title="Remover imagem"><IconTrash size={16} /></button></div>
+        </article>)}</div> : <div className="carousel-empty"><IconPhoto size={25} /><span>Nenhuma imagem cadastrada</span></div>}
+      </div> : null}
 
       {isVideo || isAudio ? <><div className="media-status"><IconPlayerPlay size={26} /><div><strong>{isVideo ? "Arquivo de video" : "Arquivo de audio"}</strong><span>{selected.src || "Nenhum arquivo selecionado"}</span></div></div><label className="field"><span>Endereco do arquivo</span><input value={selected.src || ""} placeholder="https://... ou arquivo enviado" onChange={(event) => updateAttr("src", event.target.value)} /></label>{isVideo ? <label className="field"><span>Imagem de capa</span><input value={selected.poster || ""} placeholder="/uploads/capa.jpg" onChange={(event) => updateAttr("poster", event.target.value)} /></label> : null}<div className="media-toggles"><label><input type="checkbox" checked={Boolean(selected.controls)} onChange={(event) => updateAttr("controls", event.target.checked ? "controls" : "")} />Mostrar controles</label><label><input type="checkbox" checked={Boolean(selected.autoplay)} onChange={(event) => updateAttr("autoplay", event.target.checked ? "autoplay" : "")} />Reproducao automatica</label><label><input type="checkbox" checked={Boolean(selected.loop)} onChange={(event) => updateAttr("loop", event.target.checked ? "loop" : "")} />Repetir</label>{isVideo ? <label><input type="checkbox" checked={Boolean(selected.muted)} onChange={(event) => updateAttr("muted", event.target.checked ? "muted" : "")} />Sem som</label> : null}</div><label className="upload-field"><IconPlayerPlay size={18} />Enviar {isVideo ? "video" : "audio"}<input type="file" accept={isVideo ? "video/*" : "audio/*"} onChange={uploadImage} /></label></> : null}
 
@@ -584,14 +626,15 @@ function withEditorBridge(html) {
 
   function isUi(element) { return !element || element.closest?.("[data-ce-ui]"); }
   function editableElements() { return Array.from(document.querySelectorAll("body *")).filter((element) => !ignoredTags.has(element.tagName) && !isUi(element)); }
-  function assignIds() { editableElements().forEach((element) => { if (!element.dataset.ceId) element.dataset.ceId = String(counter++); }); }
+  function assignIds() { editableElements().forEach((element) => { if (!element.dataset.ceId) element.dataset.ceId = String(counter++); if(!element.dataset.ceWidget&&element.matches(".carousel-track,.inst-track,.insp-track,.gal-track")){element.dataset.ceWidget="carousel";element.dataset.ceLabel="Carrossel de imagens";} }); }
   function kindOf(element) { if (element.dataset.ceKind) return element.dataset.ceKind; if (structuralTags.has(element.tagName)) return element.tagName === "SECTION" ? "section" : "structure"; if (element.dataset.ceWidget) return "widget"; if (["DIV","UL","OL","FORM"].includes(element.tagName) && element.children.length) return "container"; return "widget"; }
   function labelOf(element) { if (element.dataset.ceLabel) return element.dataset.ceLabel; if (element.dataset.ceWidget) return element.dataset.ceWidget.replace(/-/g," ").replace(/^./,(letter) => letter.toUpperCase()); const names = { MAIN:"Conteudo principal",HEADER:"Cabecalho",FOOTER:"Rodape",NAV:"Navegacao",SECTION:"Secao",DIV:"Container",H1:"Titulo H1",H2:"Titulo H2",H3:"Titulo H3",P:"Texto",A:"Link / Botao",IMG:"Imagem",UL:"Lista",OL:"Lista",FORM:"Formulario",IFRAME:"Mapa / quadro",VIDEO:"Video",AUDIO:"Audio",BLOCKQUOTE:"Citacao",HR:"Divisor" }; return names[element.tagName] || element.tagName.toLowerCase(); }
   function canContain(element) { return ["BODY","MAIN","HEADER","FOOTER","NAV","SECTION","ARTICLE","DIV","LI","FORM"].includes(element.tagName); }
   function pathOf(element) { const path = []; let current = element; while (current && current !== document.body) { if (!isUi(current)) path.unshift({ id:current.dataset.ceId,label:labelOf(current),kind:kindOf(current) }); current = current.parentElement; } return path.slice(-6); }
   function inlineOrComputed(element, name) { return element.style[name] || window.getComputedStyle(element)[name] || ""; }
+  function carouselItems(element) { return Array.from(element.children).filter((child)=>!isUi(child)&&!child.hasAttribute("data-ce-bg-video")).map((node)=>({node,image:node.tagName==="IMG"?node:node.querySelector("img")})).filter((item)=>item.image); }
   function info(element) { const style = window.getComputedStyle(element); const classNames = typeof element.className === "string" ? element.className.split(/\\s+/) : []; const iconName = classNames.find((name) => name.startsWith("ti-") && name !== "ti") || ""; return { id:element.dataset.ceId,tag:element.tagName.toLowerCase(),kind:kindOf(element),label:labelOf(element),customLabel:element.dataset.ceLabel || "",path:pathOf(element),isContainer:canContain(element),className:typeof element.className === "string" ? element.className : "",html:element.innerHTML || "",href:element.getAttribute("href") || "",src:element.getAttribute("src") || element.querySelector("source")?.getAttribute("src") || "",alt:element.getAttribute("alt") || "",poster:element.getAttribute("poster") || "",controls:element.hasAttribute("controls"),autoplay:element.hasAttribute("autoplay"),loop:element.hasAttribute("loop"),muted:element.hasAttribute("muted"),iconName,color:rgbToHex(style.color,"#222222"),backgroundColor:rgbToHex(style.backgroundColor,""),bgVideo:(()=>{const c=element.querySelector(":scope > [data-ce-bg-video]");if(!c)return "";const f=c.querySelector("iframe");return f?f.getAttribute("src")||"":(c.querySelector("video")?.getAttribute("src")||"");})(),bgVideoTipo:element.querySelector(":scope > [data-ce-bg-video]")?.getAttribute("data-ce-bg-video")||"",backgroundImage:element.style.backgroundImage||(style.backgroundImage!=="none"?style.backgroundImage:"")||"",backgroundSize:element.style.backgroundSize||"",backgroundPosition:element.style.backgroundPosition||"",backgroundRepeat:element.style.backgroundRepeat||"",fontSize:inlineOrComputed(element,"fontSize"),fontWeight:inlineOrComputed(element,"fontWeight"),lineHeight:inlineOrComputed(element,"lineHeight"),letterSpacing:inlineOrComputed(element,"letterSpacing"),fontFamily:element.style.fontFamily || "",textAlign:inlineOrComputed(element,"textAlign"),display:inlineOrComputed(element,"display"),flexDirection:inlineOrComputed(element,"flexDirection"),flexWrap:inlineOrComputed(element,"flexWrap"),gridTemplateColumns:inlineOrComputed(element,"gridTemplateColumns"),justifyContent:inlineOrComputed(element,"justifyContent"),alignItems:inlineOrComputed(element,"alignItems"),gap:inlineOrComputed(element,"gap"),width:element.style.width || "",maxWidth:element.style.maxWidth || "",minHeight:element.style.minHeight || "",height:element.style.height || "",aspectRatio:element.style.aspectRatio || "",objectFit:element.style.objectFit || "",widget:element.dataset.ceWidget || "",rotate:(element.style.transform.match(/rotate\(([-\d.]+)deg\)/)||[])[1] || "0",padding:element.style.padding || "",margin:element.style.margin || "",borderWidth:element.style.borderWidth || "",borderColor:rgbToHex(style.borderColor,"#222222"),borderRadius:element.style.borderRadius || "",position:element.style.position || "",zIndex:element.style.zIndex || "",opacity:element.style.opacity || "1" }; }
-  function select(element) { if (!element || ignoredTags.has(element.tagName) || isUi(element)) return; if (selected) selected.removeAttribute("data-ce-selected"); selected = element; selected.dataset.ceSelected = "true"; positionSelectionUi(); window.parent.postMessage({type:"ce-selected",element:info(selected)},"*"); }
+  function select(element) { if (!element || ignoredTags.has(element.tagName) || isUi(element)) return; if (selected) selected.removeAttribute("data-ce-selected"); selected = element; selected.dataset.ceSelected = "true"; positionSelectionUi(); window.parent.postMessage({type:"ce-selected",element:info(selected)},"*"); if(selected.dataset.ceWidget==="carousel")window.parent.postMessage({type:"ce-carousel-images",id:selected.dataset.ceId,images:carouselItems(selected).map((item)=>({src:item.image.getAttribute("src")||"",alt:item.image.getAttribute("alt")||""}))},"*"); }
   function positionSelectionUi() { if (!selected || !document.contains(selected)) { selectionBar.style.display="none"; quickWrap.style.display="none"; return; } const rect=selected.getBoundingClientRect(); const left=Math.max(2,rect.left+window.scrollX); const top=Math.max(window.scrollY,rect.top+window.scrollY-28); selectionBar.style.display="flex"; selectionBar.style.left=left+"px"; selectionBar.style.top=top+"px"; selectionBar.querySelector(".ce-name").textContent=labelOf(selected); if (canContain(selected) || kindOf(selected)==="section") { quickWrap.style.display="block"; quickWrap.style.left=(rect.left+window.scrollX+rect.width/2)+"px"; quickWrap.style.top=(rect.bottom+window.scrollY)+"px"; } else quickWrap.style.display="none"; }
   function treeNode(element,depth) { const children=depth<6 ? Array.from(element.children).filter((child)=>!isUi(child)&&!ignoredTags.has(child.tagName)).map((child)=>treeNode(child,depth+1)).filter(Boolean) : []; const meaningful=structuralTags.has(element.tagName)||element.dataset.ceKind||element.dataset.ceWidget||["H1","H2","H3","P","A","IMG","DIV","UL","OL","FORM","IFRAME","VIDEO","BLOCKQUOTE"].includes(element.tagName); if(!meaningful&&!children.length)return null; return {id:element.dataset.ceId,label:labelOf(element),kind:kindOf(element),children}; }
   function sendTree(){const roots=Array.from(document.body.children).filter((element)=>!isUi(element)&&!ignoredTags.has(element.tagName)).map((element)=>treeNode(element,0)).filter(Boolean);window.parent.postMessage({type:"ce-tree",tree:roots},"*");}
@@ -651,6 +694,34 @@ function withEditorBridge(html) {
   document.addEventListener("drop",(event)=>{event.preventDefault();const type=event.dataTransfer.getData("text/casa-estampa-widget")||window.parent.__CE_DRAG_WIDGET||"container";insertWidget(type,dropState||resolveDrop(event));window.parent.__CE_DRAG_WIDGET=null;});
   window.addEventListener("scroll",positionSelectionUi,{passive:true});window.addEventListener("resize",positionSelectionUi);
   window.addEventListener("message",(event)=>{const data=event.data||{};if(data.type==="ce-request-html")window.parent.postMessage({type:"ce-html",html:serialize()},"*");if(data.type==="ce-add-widget")insertWidget(data.widget,{target:currentTarget(),position:canContain(currentTarget())?"inside":"after"});if(data.type==="ce-add-photo"&&selected){let node;if(selected.lastElementChild){node=selected.lastElementChild.cloneNode(true);node.removeAttribute("data-ce-id");node.querySelectorAll("[data-ce-id]").forEach((child)=>child.removeAttribute("data-ce-id"));}else{node=makeWidget("image");}selected.appendChild(node);changed();node.scrollIntoView({behavior:"smooth",block:"center",inline:"end"});}if(data.type==="ce-select-id")select(document.querySelector('[data-ce-id="'+data.id+'"]'));if(!selected)return;if(data.type==="ce-select-parent"&&selected.parentElement!==document.body)select(selected.parentElement);if(data.type==="ce-html-content"){selected.innerHTML=data.value||"";changed();select(selected);}if(data.type==="ce-icon"){Array.from(selected.classList).filter((name)=>name.startsWith("ti-")).forEach((name)=>selected.classList.remove(name));selected.classList.add("ti",data.iconName);changed(false);select(selected);}if(data.type==="ce-attr"){if(data.name==="src"&&["VIDEO","AUDIO"].includes(selected.tagName)){let source=selected.querySelector("source");if(!source){source=document.createElement("source");selected.appendChild(source);}source.setAttribute("src",data.value||"");selected.load?.();}else if(data.value)selected.setAttribute(data.name,data.value);else selected.removeAttribute(data.name);changed();select(selected);}if(data.type==="ce-style"){selected.style[data.name]=normalizeStyleValue(data.name,data.value);if(data.name==="backgroundImage"&&data.value&&data.value!=="none")stripPlaceholders(selected);changed(false);}if(data.type==="ce-styles"){Object.entries(data.styles||{}).forEach(([name,value])=>{selected.style[name]=normalizeStyleValue(name,value);});if(data.styles?.backgroundImage&&data.styles.backgroundImage!=="none")stripPlaceholders(selected);changed(false);}if(data.type==="ce-bg-video"){setBgVideo(selected,data.tipo,data.src);changed(false);select(selected);}if(data.type==="ce-bg-video-remove"){removeBgVideo(selected);changed(false);select(selected);}if(data.type==="ce-delete")deleteSelected();if(data.type==="ce-duplicate")duplicateSelected();});
+  window.addEventListener("message",(event)=>{
+    const data=event.data||{};
+    if(!selected||selected.dataset.ceWidget!=="carousel")return;
+    if(data.type==="ce-carousel-add-images"){
+      const sample=carouselItems(selected).at(-1);
+      (data.paths||[]).forEach((src)=>{
+        const node=sample?sample.node.cloneNode(true):makeWidget("image");
+        node.removeAttribute("data-ce-id");node.querySelectorAll("[data-ce-id]").forEach((child)=>child.removeAttribute("data-ce-id"));
+        const image=node.tagName==="IMG"?node:node.querySelector("img");
+        if(!sample)image.style.cssText="display:block;flex:0 0 min(320px,80vw);width:min(320px,80vw);aspect-ratio:4/3;object-fit:cover;";
+        image.setAttribute("src",src);
+        image.setAttribute("alt","");
+        selected.appendChild(node);
+      });
+      changed();select(selected);
+    }
+    if(data.type==="ce-carousel-update-image"){
+      const image=carouselItems(selected)[data.index]?.image;
+      if(image&&["src","alt"].includes(data.name)){image.setAttribute(data.name,data.value||"");changed(false);select(selected);}
+    }
+    if(data.type==="ce-carousel-remove-image"){
+      carouselItems(selected)[data.index]?.node.remove();changed();select(selected);
+    }
+    if(data.type==="ce-carousel-move-image"){
+      const items=carouselItems(selected);const item=items[data.index]?.node;const target=items[data.index+data.direction]?.node;
+      if(item&&target){if(data.direction<0)selected.insertBefore(item,target);else selected.insertBefore(target,item);changed();select(selected);}
+    }
+  });
 })();
 </script>`;
   return html.includes("</body>") ? html.replace("</body>", `${bridge}\n</body>`) : `${html}\n${bridge}`;

@@ -1094,6 +1094,129 @@ button {
   object-fit: contain;
 }
 
+.carousel-manager-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.carousel-manager-head > div {
+  display: grid;
+  gap: 4px;
+}
+
+.carousel-manager-head strong {
+  color: var(--admin-text);
+  font-size: 15px;
+}
+
+.carousel-manager-head > span {
+  padding: 4px 7px;
+  color: var(--admin-gold);
+  border: 1px solid var(--admin-line);
+  border-radius: 4px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.carousel-upload {
+  min-height: 48px;
+  color: #171109;
+  background: var(--admin-gold);
+  border-color: var(--admin-gold);
+  font-weight: 700;
+}
+
+.carousel-url-add {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 7px;
+}
+
+.carousel-url-add input {
+  min-width: 0;
+}
+
+.carousel-image-list {
+  display: grid;
+  gap: 8px;
+  max-height: 390px;
+  overflow-y: auto;
+}
+
+.carousel-image-item {
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr) 30px;
+  gap: 8px;
+  align-items: start;
+  padding: 8px;
+  background: #16120c;
+  border: 1px solid var(--admin-line);
+  border-radius: 5px;
+}
+
+.carousel-image-item > img {
+  width: 62px;
+  height: 62px;
+  object-fit: cover;
+  border: 1px solid var(--admin-line);
+}
+
+.carousel-image-info {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+.carousel-image-info strong {
+  color: var(--admin-text);
+  font-size: 11px;
+}
+
+.carousel-image-info input {
+  width: 100%;
+  min-width: 0;
+  height: 29px;
+  padding: 5px 7px;
+  font-size: 10px;
+}
+
+.carousel-image-actions {
+  display: grid;
+  gap: 4px;
+}
+
+.carousel-image-actions button {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  color: var(--admin-text);
+  background: var(--admin-panel-2);
+  border: 1px solid var(--admin-line);
+  border-radius: 4px;
+}
+
+.carousel-image-actions button:disabled {
+  opacity: .3;
+}
+
+.carousel-image-actions button.danger {
+  color: #f09b8e;
+}
+
+.carousel-empty {
+  display: grid;
+  place-items: center;
+  gap: 6px;
+  min-height: 100px;
+  color: var(--admin-muted);
+  border: 1px dashed var(--admin-line);
+  font-size: 11px;
+}
+
 .media-status {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
