@@ -200,6 +200,7 @@ export default function EditorPage() {
   const selectedIdRef = useRef(null);
   const [page, setPage] = useState(null);
   const [html, setHtml] = useState("");
+  const [previewCss, setPreviewCss] = useState("");
   const [selected, setSelected] = useState(null);
   const [tree, setTree] = useState([]);
   const [panel, setPanel] = useState("elements");
@@ -240,10 +241,17 @@ export default function EditorPage() {
 
   async function loadPage() {
     setError("");
-    const response = await fetch(`/api/pages/${slug}`);
+    const [response, settingsResponse] = await Promise.all([
+      fetch(`/api/pages/${slug}`, { cache: "no-store" }),
+      fetch("/api/settings", { cache: "no-store" })
+    ]);
     if (response.status === 401) { window.location.href = "/admin"; return; }
     if (!response.ok) { setError("Nao foi possivel abrir esta pagina."); return; }
     const data = await response.json();
+    if (settingsResponse.ok) {
+      const settingsData = await settingsResponse.json();
+      setPreviewCss(settingsData.preview_css || "");
+    }
     if (data.page.page_type?.startsWith("global_")) {
       window.location.replace("/admin/pages");
       return;
@@ -256,7 +264,7 @@ export default function EditorPage() {
     setStatus("");
   }
 
-  const iframeHtml = useMemo(() => withEditorBridge(html), [html]);
+  const iframeHtml = useMemo(() => withEditorBridge(withPublicPreviewCss(html, previewCss)), [html, previewCss]);
   const visibleGroups = useMemo(() => {
     const query = widgetSearch.trim().toLowerCase();
     if (!query) return widgetGroups;
@@ -579,6 +587,12 @@ function TreeNodes({ nodes, selectedId, onSelect, depth = 0 }) {
   return <div className="tree-list">{nodes.map((node) => <div key={node.id}><button className={`tree-node ${selectedId === node.id ? "active" : ""}`} style={{ "--depth": depth }} onClick={() => onSelect(node.id)}><IconChevronDown size={14} className={node.children?.length ? "" : "tree-spacer"} /><span className={`tree-kind tree-kind-${node.kind}`}>{node.kind.slice(0, 1).toUpperCase()}</span><span>{node.label}</span></button>{node.children?.length ? <TreeNodes nodes={node.children} selectedId={selectedId} onSelect={onSelect} depth={depth + 1} /> : null}</div>)}</div>;
 }
 
+function withPublicPreviewCss(html, css) {
+  if (!css?.trim()) return html;
+  const style = `<style id="ce-public-preview-style">${css.replace(/<\/style/gi, "<\\/style")}</style>`;
+  return /<\/head>/i.test(html) ? html.replace(/<\/head>/i, `${style}</head>`) : `${style}${html}`;
+}
+
 function withEditorBridge(html) {
   const templates = JSON.stringify(widgetTemplates).replace(/</g, "\\u003c");
   const bridge = `
@@ -680,7 +694,7 @@ function withEditorBridge(html) {
   function deleteSelected(){if(!selected)return;const next=selected.parentElement;selected.remove();selected=null;changed();if(next&&!ignoredTags.has(next.tagName))select(next);}
   function duplicateSelected(){if(!selected)return;const copy=selected.cloneNode(true);copy.removeAttribute("data-ce-selected");copy.querySelectorAll("[data-ce-id]").forEach((node)=>node.removeAttribute("data-ce-id"));copy.removeAttribute("data-ce-id");selected.after(copy);changed();select(copy);}
   function runAction(action){contextMenu.style.display="none";if(action==="edit")select(selected);if(action==="parent"&&selected?.parentElement!==document.body)select(selected.parentElement);if(action==="duplicate")duplicateSelected();if(action==="delete")deleteSelected();if(action==="before")insertWidget("container",{target:selected,position:"before"});if(action==="after")insertWidget("container",{target:selected,position:"after"});}
-  function serialize(){const clone=document.documentElement.cloneNode(true);clone.querySelectorAll("[data-ce-id],[data-ce-selected],[data-ce-hover],[data-ce-drop-inside]").forEach((node)=>{node.removeAttribute("data-ce-id");node.removeAttribute("data-ce-selected");node.removeAttribute("data-ce-hover");node.removeAttribute("data-ce-drop-inside");});clone.querySelectorAll("[data-ce-ui],#ce-editor-style,#ce-editor-bridge").forEach((node)=>node.remove());return "<!DOCTYPE html>\\n"+clone.outerHTML;}
+  function serialize(){const clone=document.documentElement.cloneNode(true);clone.querySelectorAll("[data-ce-id],[data-ce-selected],[data-ce-hover],[data-ce-drop-inside]").forEach((node)=>{node.removeAttribute("data-ce-id");node.removeAttribute("data-ce-selected");node.removeAttribute("data-ce-hover");node.removeAttribute("data-ce-drop-inside");});clone.querySelectorAll("[data-ce-ui],#ce-editor-style,#ce-editor-bridge,#ce-public-preview-style").forEach((node)=>node.remove());return "<!DOCTYPE html>\\n"+clone.outerHTML;}
   function rgbToHex(value,fallback){const match=String(value).match(/rgba?\\((\\d+),\\s*(\\d+),\\s*(\\d+)(?:,\\s*([\\d.]+))?/);if(!match||Number(match[4])===0)return fallback;return"#"+[match[1],match[2],match[3]].map((part)=>Number(part).toString(16).padStart(2,"0")).join("");}
   function normalizeStyleValue(name,value){const raw=String(value??"").trim();const pixelProperties=new Set(["fontSize","letterSpacing","borderWidth","borderRadius","width","maxWidth","minHeight","height","gap","padding","margin","top","right","bottom","left"]);return raw&&pixelProperties.has(name)?raw.replace(/(^|\\s)(-?\\d+(?:\\.\\d+)?)(?=\\s|$)/g,"$1$2px"):raw;}
 

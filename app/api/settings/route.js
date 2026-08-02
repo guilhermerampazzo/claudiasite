@@ -1,12 +1,13 @@
 import { NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/auth";
-import { dbQuery, getSettings } from "@/lib/db";
+import { buildGlobalCss, dbQuery, getSettings } from "@/lib/db";
 import { mergeSiteSettings } from "@/lib/site-settings";
 
 export async function GET(request) {
   const denied = requireAdmin(request);
   if (denied) return denied;
-  return NextResponse.json({ settings: await getSettings() });
+  const settings = await getSettings();
+  return NextResponse.json({ settings, preview_css: buildGlobalCss(settings) });
 }
 
 export async function PUT(request) {
