@@ -728,17 +728,46 @@ body { background: var(--dark); color: var(--text-light); font-family: var(--fon
   <span class="block-label">Instalações</span>
   <h2 class="block-title">Projetos que<br><em>entregamos</em></h2>
   <div class="inst-tabs">
-    <button class="inst-tab active">Laminado</button>
-    <button class="inst-tab">Vinílico</button>
-    <button class="inst-tab">Carpete</button>
-    <button class="inst-tab">Madeira Maciça</button>
+    <button class="inst-tab active" data-inst-tab="laminado">Laminado</button>
+    <button class="inst-tab" data-inst-tab="vinilico">Vinílico</button>
+    <button class="inst-tab" data-inst-tab="carpete">Carpete</button>
+    <button class="inst-tab" data-inst-tab="madeira">Madeira Maciça</button>
   </div>
-  <div class="inst-grid">
-    <div class="inst-foto"><img src="/assets/scraped/pisos-laminados/CARVALHO-CANELA.jpg" alt="Instalação de piso" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
-    <div class="inst-foto"><img src="/assets/scraped/pisos-laminados/ANDORRA.jpg" alt="Instalação de piso" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
-    <div class="inst-foto"><img src="/assets/scraped/pisos-laminados/CACAU-MARFIM.jpg" alt="Instalação de piso" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+  <div class="inst-grid" data-inst-panel="laminado">
+    <div class="inst-foto"><img src="/assets/scraped/pisos-laminados/CARVALHO-CANELA.jpg" alt="Piso laminado instalado" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+    <div class="inst-foto"><img src="/assets/scraped/pisos-laminados/ANDORRA.jpg" alt="Piso laminado instalado" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+    <div class="inst-foto"><img src="/assets/scraped/pisos-laminados/CACAU-MARFIM.jpg" alt="Piso laminado instalado" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+  </div>
+  <div class="inst-grid" data-inst-panel="vinilico" hidden>
+    <div class="inst-foto"><img src="/assets/scraped/pisos-vinilicos/Home-Piso-Vinilico-01-Durafloor-Nativa-Belem.jpg" alt="Piso vinílico instalado" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+    <div class="inst-foto"><i class="ti ti-photo" aria-hidden="true"></i></div>
+    <div class="inst-foto"><i class="ti ti-photo" aria-hidden="true"></i></div>
+  </div>
+  <div class="inst-grid" data-inst-panel="carpete" hidden>
+    <div class="inst-foto"><i class="ti ti-photo" aria-hidden="true"></i></div>
+    <div class="inst-foto"><i class="ti ti-photo" aria-hidden="true"></i></div>
+    <div class="inst-foto"><i class="ti ti-photo" aria-hidden="true"></i></div>
+  </div>
+  <div class="inst-grid" data-inst-panel="madeira" hidden>
+    <div class="inst-foto"><i class="ti ti-photo" aria-hidden="true"></i></div>
+    <div class="inst-foto"><i class="ti ti-photo" aria-hidden="true"></i></div>
+    <div class="inst-foto"><i class="ti ti-photo" aria-hidden="true"></i></div>
   </div>
 </section>
+
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.inst-tab');
+  var panels = document.querySelectorAll('[data-inst-panel]');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var target = tab.getAttribute('data-inst-tab');
+      tabs.forEach(function (t) { t.classList.toggle('active', t === tab); });
+      panels.forEach(function (panel) { panel.hidden = panel.getAttribute('data-inst-panel') !== target; });
+    });
+  });
+})();
+</script>
 
 <!-- CTA FINAL -->
 <section class="cta-final">
@@ -779,6 +808,11 @@ body { background: var(--dark); color: var(--text-light); font-family: var(--fon
   </div>
   <span class="footer-copy">© 2026 Casa Estampa Interiores</span>
 </footer>
+
+<!-- ══ WA FLOAT ══ -->
+<a href="https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Estou vendo pisos no site e quero ajuda." class="wa-float" aria-label="Falar pelo WhatsApp">
+  <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+</a>
 
 </body>
 </html>
