@@ -19,6 +19,11 @@ export async function PUT(request) {
     label: String(item?.label || "").trim().slice(0, 60),
     href: String(item?.href || "").trim().slice(0, 500)
   })).filter((item) => item.label && item.href);
+  settings.social = {
+    instagram: String(settings.social?.instagram || "").trim().slice(0, 500),
+    facebook: String(settings.social?.facebook || "").trim().slice(0, 500),
+    pinterest: String(settings.social?.pinterest || "").trim().slice(0, 500)
+  };
   await dbQuery(
     `INSERT INTO settings (key, value, updated_at)
      VALUES ('global', $1::jsonb, now())

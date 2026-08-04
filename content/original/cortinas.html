@@ -214,12 +214,15 @@ h2.section-title em { font-style: italic; font-weight: 400; }
 /* ── MOTORIZADAS ── */
 .motorizadas { background: var(--dark); padding: 80px var(--pad); }
 .mot-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-top: 40px; }
+.mot-videos { display: flex; flex-direction: column; gap: 16px; }
 .mot-video {
   background: var(--off-dark); aspect-ratio: 16/9;
   display: flex; align-items: center; justify-content: center;
   border: 1px solid rgba(194,165,122,0.1);
+  position: relative; overflow: hidden;
 }
 .mot-video i { font-size: 48px; color: rgba(194,165,122,0.2); }
+.mot-video-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(194,165,122,0.35); margin-top: 12px; }
 .mot-features { display: flex; flex-direction: column; gap: 24px; }
 .mot-feature { display: flex; gap: 16px; align-items: flex-start; }
 .mot-icon {
@@ -592,10 +595,24 @@ h2.section-title em { font-style: italic; font-weight: 400; }
   <p style="font-size:14px;color:var(--text-muted);font-weight:300;margin-top:16px;max-width:600px;">Automatize sua rotina e transforme seu ambiente com mais praticidade, sofisticação e controle.</p>
 
   <div class="mot-layout">
-    <div class="mot-video">
-      <div style="text-align:center;">
-        <i class="ti ti-player-play" style="font-size:48px;color:rgba(194,165,122,0.2);" aria-hidden="true"></i>
-        <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(194,165,122,0.2);margin-top:12px;">Inserir vídeo</div>
+    <div class="mot-videos">
+      <div class="mot-video" data-video-slot="1">
+        <div style="text-align:center;">
+          <i class="ti ti-player-play" style="font-size:48px;color:rgba(194,165,122,0.2);" aria-hidden="true"></i>
+          <div class="mot-video-label">Vídeo 1 — Demonstração do motor</div>
+        </div>
+      </div>
+      <div class="mot-video" data-video-slot="2">
+        <div style="text-align:center;">
+          <i class="ti ti-player-play" style="font-size:48px;color:rgba(194,165,122,0.2);" aria-hidden="true"></i>
+          <div class="mot-video-label">Vídeo 2 — Instalação passo a passo</div>
+        </div>
+      </div>
+      <div class="mot-video" data-video-slot="3">
+        <div style="text-align:center;">
+          <i class="ti ti-player-play" style="font-size:48px;color:rgba(194,165,122,0.2);" aria-hidden="true"></i>
+          <div class="mot-video-label">Vídeo 3 — Cliente usando controle remoto</div>
+        </div>
       </div>
     </div>
 

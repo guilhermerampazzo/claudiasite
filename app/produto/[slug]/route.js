@@ -8,5 +8,6 @@ export async function GET(_request, { params }) {
   if (!product) return new Response("Produto não encontrado.", { status: 404 });
   const [home, settings, globalHeaderHtml] = await Promise.all([getHomePage(), getSettings(), getHomeHeaderHtml()]);
   const html = buildCatalogDocument({ homeHtml: home.html, title: product.name, content: renderProductPage(product) });
-  return new Response(renderHtml(html, settings, { globalHeaderHtml }), { headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" } });
+  const description = (product.short_description || product.description || `${product.name} disponível na Casa Estampa Interiores. Consulte disponibilidade, medição e instalação.`).slice(0, 300);
+  return new Response(renderHtml(html, settings, { globalHeaderHtml, seo: { path: `/produto/${slug}`, title: `${product.name} - Casa Estampa`, description, image: product.images?.[0]?.src } }), { headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" } });
 }

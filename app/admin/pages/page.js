@@ -106,6 +106,10 @@ export default function PagesDashboard() {
     setSettings((current) => ({ ...current, footer: { ...current.footer, [name]: value } }));
   }
 
+  function updateSocial(name, value) {
+    setSettings((current) => ({ ...current, social: { ...current.social, [name]: value } }));
+  }
+
   function updateMenuItem(index, name, value) {
     setSettings((current) => ({ ...current, menu: current.menu.map((item, itemIndex) => itemIndex === index ? { ...item, [name]: value } : item) }));
   }
@@ -172,6 +176,8 @@ export default function PagesDashboard() {
             {activeChromeTab === "header" ? <div className="chrome-panel">
               <div className="chrome-preview header-preview"><div className="header-brand-preview"><img src={settings.header.iconSrc} alt="" /><img src={settings.header.logoSrc} alt="Previa da logo" /></div><span>{settings.header.ctaLabel}</span></div>
               <div className="chrome-fields"><label className="field"><span>Icone da marca</span><input value={settings.header.iconSrc} onChange={(event) => updateHeader("iconSrc", event.target.value)} /></label><label className="field"><span>Logo escrita</span><input value={settings.header.logoSrc} onChange={(event) => updateHeader("logoSrc", event.target.value)} /></label><label className="upload-field"><IconPhoto size={18} />Enviar logo escrita<input type="file" accept="image/*,.svg" onChange={uploadLogo} /></label><label className="field"><span>Link da logo</span><input value={settings.header.logoHref} onChange={(event) => updateHeader("logoHref", event.target.value)} /></label><label className="field"><span>Texto do botao</span><input value={settings.header.ctaLabel} onChange={(event) => updateHeader("ctaLabel", event.target.value)} /></label><label className="field chrome-field-wide"><span>Link do botao</span><input value={settings.header.ctaHref} onChange={(event) => updateHeader("ctaHref", event.target.value)} /></label></div>
+              <p className="panel-help">Redes sociais exibidas no topo do cabecalho no celular.</p>
+              <div className="chrome-fields"><label className="field"><span>Instagram</span><input value={settings.social.instagram} onChange={(event) => updateSocial("instagram", event.target.value)} /></label><label className="field"><span>Facebook</span><input value={settings.social.facebook} onChange={(event) => updateSocial("facebook", event.target.value)} /></label><label className="field"><span>Pinterest</span><input value={settings.social.pinterest} onChange={(event) => updateSocial("pinterest", event.target.value)} /></label></div>
             </div> : null}
 
             {activeChromeTab === "menu" ? <div className="chrome-panel"><div className="menu-editor-list">
