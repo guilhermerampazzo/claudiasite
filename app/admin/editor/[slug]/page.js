@@ -275,9 +275,12 @@ export default function EditorPage() {
       const section = catalogSection
         .replace(/<section\b/i, '<section data-ce-dynamic-catalog="true"')
         .replace(/<style\b/i, '<style data-ce-dynamic-catalog="true"');
-      // Mesma regra do servidor: se a página define onde o catálogo fica
-      // (marcador <!-- ce-catalog-embed -->), injetar ali — senão, antes do </body>.
-      if (base.includes("<!-- ce-catalog-embed -->")) {
+      // Mesma regra do servidor: se a página desativa o catálogo
+      // (<!-- ce-catalog-none -->), não exibir; se define onde ele fica
+      // (<!-- ce-catalog-embed -->), injetar ali — senão, antes do </body>.
+      if (base.includes("<!-- ce-catalog-none -->")) {
+        // catálogo desativado nesta página
+      } else if (base.includes("<!-- ce-catalog-embed -->")) {
         base = base.replace("<!-- ce-catalog-embed -->", section);
       } else {
         base = base.includes("</body>") ? base.replace(/<\/body>/i, `${section}\n</body>`) : `${base}\n${section}`;
