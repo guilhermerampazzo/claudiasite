@@ -275,7 +275,13 @@ export default function EditorPage() {
       const section = catalogSection
         .replace(/<section\b/i, '<section data-ce-dynamic-catalog="true"')
         .replace(/<style\b/i, '<style data-ce-dynamic-catalog="true"');
-      base = base.includes("</body>") ? base.replace(/<\/body>/i, `${section}\n</body>`) : `${base}\n${section}`;
+      // Mesma regra do servidor: se a página define onde o catálogo fica
+      // (marcador <!-- ce-catalog-embed -->), injetar ali — senão, antes do </body>.
+      if (base.includes("<!-- ce-catalog-embed -->")) {
+        base = base.replace("<!-- ce-catalog-embed -->", section);
+      } else {
+        base = base.includes("</body>") ? base.replace(/<\/body>/i, `${section}\n</body>`) : `${base}\n${section}`;
+      }
     }
     return withEditorBridge(base);
   }, [html, previewCss, catalogSection]);
@@ -730,7 +736,7 @@ function withEditorBridge(html) {
   }
   function stripPlaceholders(element){if(!element)return;element.querySelectorAll('[class*="placeholder" i]').forEach((node)=>node.remove());const remaining=Array.from(element.children).filter((child)=>!isUi(child));if(remaining.length===1&&remaining[0].tagName==="I"&&Array.from(remaining[0].classList).some((name)=>name.startsWith("ti-")))remaining[0].remove();}
   function deleteSelected(){if(!selected)return;const next=selected.parentElement;selected.remove();selected=null;changed();if(next&&!ignoredTags.has(next.tagName))select(next);}
-  function duplicateSelected(){if(!selected)return;const copy=selected.cloneNode(true);copy.removeAttribute("data-ce-selected");copy.querySelectorAll("[data-ce-id]").forEach((node)=>node.removeAttribute("data-ce-id"));copy.removeAttribute("data-ce-id");selected.after(copy);changed();select(copy);}
+  function duplicateSelected(){if(!selected)return;let node=selected;const track=node.closest?.('[data-ce-widget="carousel"]');if(track&&track!==node){let slide=node;while(slide.parentElement&&slide.parentElement!==track)slide=slide.parentElement;if(slide.parentElement===track)node=slide;}const copy=node.cloneNode(true);copy.removeAttribute("data-ce-selected");copy.querySelectorAll("[data-ce-id]").forEach((child)=>child.removeAttribute("data-ce-id"));copy.removeAttribute("data-ce-id");node.after(copy);changed();select(copy);}
   function runAction(action){contextMenu.style.display="none";if(action==="edit")select(selected);if(action==="parent"&&selected?.parentElement!==document.body)select(selected.parentElement);if(action==="duplicate")duplicateSelected();if(action==="delete")deleteSelected();if(action==="before")insertWidget("container",{target:selected,position:"before"});if(action==="after")insertWidget("container",{target:selected,position:"after"});}
   function serialize(){const clone=document.documentElement.cloneNode(true);clone.querySelectorAll("[data-ce-id],[data-ce-selected],[data-ce-hover],[data-ce-drop-inside],[data-ce-editor-carousel],[data-ce-editable-text],[data-ce-editor-placeholder-host],[data-ce-editor-placeholder-hidden],[data-ce-editor-placeholder-widget]").forEach((node)=>{node.removeAttribute("data-ce-id");node.removeAttribute("data-ce-selected");node.removeAttribute("data-ce-hover");node.removeAttribute("data-ce-drop-inside");node.removeAttribute("data-ce-editor-carousel");node.removeAttribute("data-ce-editable-text");node.removeAttribute("data-ce-editor-placeholder-host");node.removeAttribute("data-ce-editor-placeholder-hidden");node.removeAttribute("data-ce-editor-placeholder-widget");});clone.querySelectorAll("[data-ce-ui],[data-ce-dynamic-catalog],#ce-editor-style,#ce-editor-bridge,#ce-public-preview-style").forEach((node)=>node.remove());return "<!DOCTYPE html>\\n"+clone.outerHTML;}
   function rgbToHex(value,fallback){const match=String(value).match(/rgba?\\((\\d+),\\s*(\\d+),\\s*(\\d+)(?:,\\s*([\\d.]+))?/);if(!match||Number(match[4])===0)return fallback;return"#"+[match[1],match[2],match[3]].map((part)=>Number(part).toString(16).padStart(2,"0")).join("");}
