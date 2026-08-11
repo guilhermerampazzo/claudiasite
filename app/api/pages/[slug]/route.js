@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/auth";
 import { dbQuery, getPageBySlug, setHomePage } from "@/lib/db";
+import { getCatalogSectionCategories } from "@/lib/catalog";
+import { renderCatalogSection } from "@/lib/catalog-html";
 
 export async function GET(request, { params }) {
   const denied = requireAdmin(request);
@@ -8,7 +10,23 @@ export async function GET(request, { params }) {
   const { slug } = await params;
   const page = await getPageBySlug(slug);
   if (!page) return NextResponse.json({ error: "Pagina nao encontrada." }, { status: 404 });
-  return NextResponse.json({ page });
+
+  // Mesma seção dinâmica de catálogo que o site público injeta — para o
+  // editor drag-and-drop exibi-la no preview (marcada como dinâmica e
+  // descartada no save, evitando duplicação no banco).
+  let catalogSection = "";
+  try {
+    const categories = await getCatalogSectionCategories(page.slug);
+    if (categories?.length) {
+      catalogSection = renderCatalogSection(categories, page.slug === "home"
+        ? { title: "Coleções para todos os ambientes", limit: 8 }
+        : { title: page.slug === "papeis-de-parede" ? "Álbuns e coleções" : page.slug === "pisos" ? "Marcas e coleções" : "Conheça nossas linhas", limit: 16 });
+    }
+  } catch {
+    // catálogo indisponível não deve travar o editor
+  }
+
+  return NextResponse.json({ page, catalogSection });
 }
 
 export async function PUT(request, { params }) {

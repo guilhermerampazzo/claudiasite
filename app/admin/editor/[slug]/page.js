@@ -201,6 +201,7 @@ export default function EditorPage() {
   const [page, setPage] = useState(null);
   const [html, setHtml] = useState("");
   const [previewCss, setPreviewCss] = useState("");
+  const [catalogSection, setCatalogSection] = useState("");
   const [selected, setSelected] = useState(null);
   const [tree, setTree] = useState([]);
   const [panel, setPanel] = useState("elements");
@@ -258,13 +259,26 @@ export default function EditorPage() {
     }
     setPage(data.page);
     setHtml(data.page.html);
+    setCatalogSection(data.catalogSection || "");
     setSelected(null);
     selectedIdRef.current = null;
     setPanel("elements");
     setStatus("");
   }
 
-  const iframeHtml = useMemo(() => withEditorBridge(withPublicPreviewCss(html, previewCss)), [html, previewCss]);
+  const iframeHtml = useMemo(() => {
+    let base = withPublicPreviewCss(html, previewCss);
+    // Seção dinâmica de catálogo: exibida no preview (como no site público),
+    // mas marcada para ser descartada no save — o catálogo é sempre
+    // regenerado pelo servidor, nunca gravado no banco.
+    if (catalogSection) {
+      const section = catalogSection
+        .replace(/<section\b/i, '<section data-ce-dynamic-catalog="true"')
+        .replace(/<style\b/i, '<style data-ce-dynamic-catalog="true"');
+      base = base.includes("</body>") ? base.replace(/<\/body>/i, `${section}\n</body>`) : `${base}\n${section}`;
+    }
+    return withEditorBridge(base);
+  }, [html, previewCss, catalogSection]);
   const visibleGroups = useMemo(() => {
     const query = widgetSearch.trim().toLowerCase();
     if (!query) return widgetGroups;
@@ -718,7 +732,7 @@ function withEditorBridge(html) {
   function deleteSelected(){if(!selected)return;const next=selected.parentElement;selected.remove();selected=null;changed();if(next&&!ignoredTags.has(next.tagName))select(next);}
   function duplicateSelected(){if(!selected)return;const copy=selected.cloneNode(true);copy.removeAttribute("data-ce-selected");copy.querySelectorAll("[data-ce-id]").forEach((node)=>node.removeAttribute("data-ce-id"));copy.removeAttribute("data-ce-id");selected.after(copy);changed();select(copy);}
   function runAction(action){contextMenu.style.display="none";if(action==="edit")select(selected);if(action==="parent"&&selected?.parentElement!==document.body)select(selected.parentElement);if(action==="duplicate")duplicateSelected();if(action==="delete")deleteSelected();if(action==="before")insertWidget("container",{target:selected,position:"before"});if(action==="after")insertWidget("container",{target:selected,position:"after"});}
-  function serialize(){const clone=document.documentElement.cloneNode(true);clone.querySelectorAll("[data-ce-id],[data-ce-selected],[data-ce-hover],[data-ce-drop-inside],[data-ce-editor-carousel],[data-ce-editable-text],[data-ce-editor-placeholder-host],[data-ce-editor-placeholder-hidden],[data-ce-editor-placeholder-widget]").forEach((node)=>{node.removeAttribute("data-ce-id");node.removeAttribute("data-ce-selected");node.removeAttribute("data-ce-hover");node.removeAttribute("data-ce-drop-inside");node.removeAttribute("data-ce-editor-carousel");node.removeAttribute("data-ce-editable-text");node.removeAttribute("data-ce-editor-placeholder-host");node.removeAttribute("data-ce-editor-placeholder-hidden");node.removeAttribute("data-ce-editor-placeholder-widget");});clone.querySelectorAll("[data-ce-ui],#ce-editor-style,#ce-editor-bridge,#ce-public-preview-style").forEach((node)=>node.remove());return "<!DOCTYPE html>\\n"+clone.outerHTML;}
+  function serialize(){const clone=document.documentElement.cloneNode(true);clone.querySelectorAll("[data-ce-id],[data-ce-selected],[data-ce-hover],[data-ce-drop-inside],[data-ce-editor-carousel],[data-ce-editable-text],[data-ce-editor-placeholder-host],[data-ce-editor-placeholder-hidden],[data-ce-editor-placeholder-widget]").forEach((node)=>{node.removeAttribute("data-ce-id");node.removeAttribute("data-ce-selected");node.removeAttribute("data-ce-hover");node.removeAttribute("data-ce-drop-inside");node.removeAttribute("data-ce-editor-carousel");node.removeAttribute("data-ce-editable-text");node.removeAttribute("data-ce-editor-placeholder-host");node.removeAttribute("data-ce-editor-placeholder-hidden");node.removeAttribute("data-ce-editor-placeholder-widget");});clone.querySelectorAll("[data-ce-ui],[data-ce-dynamic-catalog],#ce-editor-style,#ce-editor-bridge,#ce-public-preview-style").forEach((node)=>node.remove());return "<!DOCTYPE html>\\n"+clone.outerHTML;}
   function rgbToHex(value,fallback){const match=String(value).match(/rgba?\\((\\d+),\\s*(\\d+),\\s*(\\d+)(?:,\\s*([\\d.]+))?/);if(!match||Number(match[4])===0)return fallback;return"#"+[match[1],match[2],match[3]].map((part)=>Number(part).toString(16).padStart(2,"0")).join("");}
   function normalizeStyleValue(name,value){const raw=String(value??"").trim();const pixelProperties=new Set(["fontSize","letterSpacing","borderWidth","borderRadius","width","maxWidth","minHeight","height","gap","padding","margin","top","right","bottom","left"]);return raw&&pixelProperties.has(name)?raw.replace(/(^|\\s)(-?\\d+(?:\\.\\d+)?)(?=\\s|$)/g,"$1$2px"):raw;}
 
