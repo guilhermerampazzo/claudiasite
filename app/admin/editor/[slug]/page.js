@@ -300,14 +300,22 @@ export default function EditorPage() {
     return new Promise((resolve) => {
       saveResolver.current = resolve;
       post("ce-request-html");
-      setTimeout(() => { if (saveResolver.current) { saveResolver.current = null; resolve(html); } }, 1200);
+      // Páginas grandes (galerias, vídeos, centenas de elementos) demoram
+      // para serializar. Timeout generoso; se o iframe não responder,
+      // NÃO salva o HTML antigo — resolve com null para o save abortar.
+      setTimeout(() => { if (saveResolver.current) { saveResolver.current = null; resolve(null); } }, 8000);
     });
   }
 
   async function save() {
     setStatus("Salvando...");
     setError("");
-    const nextHtml = mode === "visual" ? await requestHtmlFromFrame() : html;
+    let nextHtml = mode === "visual" ? await requestHtmlFromFrame() : html;
+    if (mode === "visual" && !nextHtml) {
+      setStatus("");
+      setError("O preview nao respondeu. Nada foi salvo — recarregue e tente novamente.");
+      return;
+    }
     const response = await fetch(`/api/pages/${slug}`, { method: "PUT", headers: { "content-type": "application/json" }, body: JSON.stringify({ html: nextHtml, title: page?.title }) });
     if (!response.ok) { setStatus(""); setError("Nao foi possivel salvar."); return; }
     const data = await response.json();
