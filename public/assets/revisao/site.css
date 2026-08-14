@@ -2182,7 +2182,7 @@
 }
 .ce-exact-page.ce-exact-page.ce-exact-page .cat-badge.new { background: var(--mustard); color: #fff; border-color: var(--mustard); }
 
-.ce-exact-page.ce-exact-page.ce-exact-page .album-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; }
+.ce-exact-page.ce-exact-page.ce-exact-page .album-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
 .ce-exact-page.ce-exact-page.ce-exact-page .album-card {
   background: var(--charcoal2); overflow: hidden;
   border: 1px solid rgba(194,165,122,0.06); transition: border-color 0.25s;
