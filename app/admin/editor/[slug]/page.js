@@ -13,7 +13,9 @@ import {
   IconChevronDown,
   IconCode,
   IconCopy,
+  IconDeviceDesktop,
   IconDeviceFloppy,
+  IconDeviceMobile,
   IconExternalLink,
   IconHeading,
   IconLayoutColumns,
@@ -25,11 +27,13 @@ import {
   IconPlayerPlay,
   IconQuote,
   IconRefresh,
+  IconResize,
   IconSearch,
   IconTrash,
   IconTypography
 } from "@tabler/icons-react";
 import { GOOGLE_FONTS, TABLER_ICONS } from "@/lib/editor-options";
+import { normalizeIconFont } from "@/lib/html-utils";
 
 const widgetGroups = [
   {
@@ -196,6 +200,7 @@ const widgetTemplates = {
 export default function EditorPage() {
   const { slug } = useParams();
   const iframeRef = useRef(null);
+  const frameWrapRef = useRef(null);
   const saveResolver = useRef(null);
   const selectedIdRef = useRef(null);
   const [page, setPage] = useState(null);
@@ -208,11 +213,24 @@ export default function EditorPage() {
   const [settingsTab, setSettingsTab] = useState("content");
   const [widgetSearch, setWidgetSearch] = useState("");
   const [mode, setMode] = useState("visual");
+  const [device, setDevice] = useState("fit");
+  const [frameBox, setFrameBox] = useState({ width: 0, height: 0 });
   const [status, setStatus] = useState("");
   const [error, setError] = useState("");
   const isGlobalPart = page?.page_type?.startsWith("global_");
 
   useEffect(() => { loadPage(); }, [slug]);
+
+  useEffect(() => {
+    const element = frameWrapRef.current;
+    if (!element || typeof ResizeObserver === "undefined") return;
+    const observer = new ResizeObserver((entries) => {
+      const rect = entries[0]?.contentRect;
+      if (rect) setFrameBox({ width: rect.width, height: rect.height });
+    });
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     function onMessage(event) {
@@ -267,19 +285,12 @@ export default function EditorPage() {
   }
 
   const iframeHtml = useMemo(() => {
-    let base = withPublicPreviewCss(html, previewCss);
-    // Seção dinâmica de catálogo: exibida no preview (como no site público),
-    // mas marcada para ser descartada no save — o catálogo é sempre
-    // regenerado pelo servidor, nunca gravado no banco.
+    let base = normalizeIconFont(withPublicPreviewCss(html, previewCss));
     if (catalogSection) {
       const section = catalogSection
         .replace(/<section\b/i, '<section data-ce-dynamic-catalog="true"')
         .replace(/<style\b/i, '<style data-ce-dynamic-catalog="true"');
-      // Mesma regra do servidor: se a página desativa o catálogo
-      // (<!-- ce-catalog-none -->), não exibir; se define onde ele fica
-      // (<!-- ce-catalog-embed -->), injetar ali — senão, antes do </body>.
       if (base.includes("<!-- ce-catalog-none -->")) {
-        // catálogo desativado nesta página
       } else if (base.includes("<!-- ce-catalog-embed -->")) {
         base = base.replace("<!-- ce-catalog-embed -->", section);
       } else {
@@ -294,15 +305,18 @@ export default function EditorPage() {
     return widgetGroups.map((group) => ({ ...group, items: group.items.filter((item) => item.label.toLowerCase().includes(query)) })).filter((group) => group.items.length);
   }, [widgetSearch]);
 
+  const deviceWidth = device === "mobile" ? 390 : 1280;
+  const deviceScale = device === "fit" ? 1 : Math.min(1, Math.max(0.2, ((frameBox.width || deviceWidth) - 8) / deviceWidth));
+
   function post(type, payload = {}) { iframeRef.current?.contentWindow?.postMessage({ type, ...payload }, "*"); }
 
   function requestHtmlFromFrame() {
     return new Promise((resolve) => {
       saveResolver.current = resolve;
       post("ce-request-html");
-      // Páginas grandes (galerias, vídeos, centenas de elementos) demoram
-      // para serializar. Timeout generoso; se o iframe não responder,
-      // NÃO salva o HTML antigo — resolve com null para o save abortar.
+      // PÃ¡ginas grandes (galerias, vÃ­deos, centenas de elementos) demoram
+      // para serializar. Timeout generoso; se o iframe nÃ£o responder,
+      // NÃƒO salva o HTML antigo â€” resolve com null para o save abortar.
       setTimeout(() => { if (saveResolver.current) { saveResolver.current = null; resolve(null); } }, 8000);
     });
   }
@@ -313,7 +327,7 @@ export default function EditorPage() {
     let nextHtml = mode === "visual" ? await requestHtmlFromFrame() : html;
     if (mode === "visual" && !nextHtml) {
       setStatus("");
-      setError("O preview nao respondeu. Nada foi salvo — recarregue e tente novamente.");
+      setError("O preview nao respondeu. Nada foi salvo â€” recarregue e tente novamente.");
       return;
     }
     const response = await fetch(`/api/pages/${slug}`, { method: "PUT", headers: { "content-type": "application/json" }, body: JSON.stringify({ html: nextHtml, title: page?.title }) });
@@ -408,6 +422,39 @@ export default function EditorPage() {
     event.target.value = "";
   }
 
+  async function uploadVideoSlot(event) {
+    const file = event.target.files?.[0];
+    if (!file) return;
+    if (file.size > 80 * 1024 * 1024) {
+      setError("Video muito grande. O limite e 80 MB.");
+      event.target.value = "";
+      return;
+    }
+    setStatus("Enviando video...");
+    const form = new FormData();
+    form.append("file", file);
+    const response = await fetch("/api/uploads", { method: "POST", body: form });
+    if (!response.ok) { setStatus(""); setError("Upload do video nao concluido."); return; }
+    const data = await response.json();
+    setStatus("");
+    post("ce-video-slot-set", { src: data.path, poster: "" });
+    // atualiza preview local
+    setSelected((current) => current ? { ...current, src: data.path, html: `<video controls src="${data.path}" style="display:block;width:100%;height:100%;object-fit:contain;"></video>` } : current);
+    event.target.value = "";
+  }
+
+  function aplicarVideoSlotUrl(url) {
+    const limpo = String(url || "").trim();
+    if (!limpo) return;
+    post("ce-video-slot-set", { src: limpo, poster: "" });
+    setSelected((current) => current ? { ...current, src: limpo } : current);
+  }
+
+  function removerVideoSlot() {
+    post("ce-video-slot-remove");
+    setSelected((current) => current ? { ...current, src: "" } : current);
+  }
+
   function aplicarVideoUrl(url) {
     const limpo = String(url || "").trim();
     if (!limpo) return;
@@ -485,7 +532,7 @@ export default function EditorPage() {
 
             {panel === "navigator" ? <div className="navigator-wrap"><div className="tool-title">Estrutura da pagina</div>{tree.length ? <TreeNodes nodes={tree} selectedId={selected?.id} onSelect={(id) => post("ce-select-id", { id })} /> : <p className="panel-help">A estrutura aparecera quando a pagina carregar.</p>}</div> : null}
 
-            {panel === "edit" && selected ? <ElementEditor key={selected.id} selected={selected} settingsTab={settingsTab} setSettingsTab={setSettingsTab} updateStyle={updateStyle} updateStyles={updateStyles} updateAttr={updateAttr} setSelected={setSelected} post={post} uploadImage={uploadImage} uploadCarouselImages={uploadCarouselImages} uploadBackgroundImage={uploadBackgroundImage} uploadBackgroundVideo={uploadBackgroundVideo} aplicarVideoUrl={aplicarVideoUrl} removerVideoFundo={removerVideoFundo} setContainerLayout={setContainerLayout} addWidget={addWidget} /> : null}
+            {panel === "edit" && selected ? <ElementEditor key={selected.id} selected={selected} settingsTab={settingsTab} setSettingsTab={setSettingsTab} updateStyle={updateStyle} updateStyles={updateStyles} updateAttr={updateAttr} setSelected={setSelected} post={post} uploadImage={uploadImage} uploadCarouselImages={uploadCarouselImages} uploadBackgroundImage={uploadBackgroundImage} uploadBackgroundVideo={uploadBackgroundVideo} aplicarVideoUrl={aplicarVideoUrl} removerVideoFundo={removerVideoFundo} setContainerLayout={setContainerLayout} addWidget={addWidget} uploadVideoSlot={uploadVideoSlot} aplicarVideoSlotUrl={aplicarVideoSlotUrl} removerVideoSlot={removerVideoSlot} /> : null}
           </div>
         </aside>
 
@@ -494,28 +541,46 @@ export default function EditorPage() {
             <div className="editor-page-name"><h1>{page?.title || "Editor"}</h1><span>{isGlobalPart ? "Area compartilhada em todas as paginas" : page?.is_home ? "/ (pagina inicial)" : `/${slug}`}</span></div>
             <div className="editor-toolbar-actions">
               <div className="view-toggle"><button className={mode === "visual" ? "active" : ""} onClick={() => setMode("visual")} title="Editor visual"><IconPlayerPlay size={17} /> Visual</button><button className={mode === "html" ? "active" : ""} onClick={() => setMode("html")} title="Codigo HTML"><IconCode size={17} /> HTML</button></div>
+              {mode === "visual" ? <div className="view-toggle device-toggle" role="group" aria-label="Largura do preview"><button className={device === "fit" ? "active" : ""} onClick={() => setDevice("fit")} title="Largura do painel"><IconResize size={16} /> Ajustado</button><button className={device === "desktop" ? "active" : ""} onClick={() => setDevice("desktop")} title="Largura de computador (1280px) - mesmo layout do site publicado no desktop"><IconDeviceDesktop size={16} /> Computador</button><button className={device === "mobile" ? "active" : ""} onClick={() => setDevice("mobile")} title="Largura de celular (390px) - mesmo layout do site publicado no celular"><IconDeviceMobile size={16} /> Celular</button></div> : null}
               <button className="btn btn-icon" onClick={loadPage} title="Recarregar"><IconRefresh size={18} /></button>
               <button className="btn btn-icon" onClick={resetOriginal} title="Restaurar original"><IconArrowBackUp size={18} /></button>
               <a className="btn btn-icon" href={isGlobalPart || page?.is_home ? "/" : `/${slug}`} target="_blank" title="Ver publicada"><IconExternalLink size={18} /></a>
               <button className="btn btn-primary" onClick={save}><IconDeviceFloppy size={18} /> Salvar</button>
             </div>
           </div>
-          <div className="editor-notice-row"><div className="canvas-breadcrumb">{selected?.path?.length ? selected.path.map((item, index) => <span key={`${item.id}-${index}`}>{item.label}</span>) : <span>Selecione um elemento para editar</span>}</div><span>{status || "Arraste um widget ou use os botoes + na pagina."}</span>{error ? <span className="editor-error">{error}</span> : null}</div>
-          <div className="editor-frame-wrap">{mode === "visual" ? <iframe ref={iframeRef} className="editor-frame" srcDoc={iframeHtml} title="Preview editavel" /> : <textarea className="raw-html" value={html} onChange={(event) => setHtml(event.target.value)} spellCheck={false} />}</div>
+          <div className="editor-notice-row"><div className="canvas-breadcrumb">{selected?.path?.length ? selected.path.map((item, index) => <span key={`${item.id}-${index}`}>{item.label}</span>) : <span>Selecione um elemento para editar</span>}</div><span>{status || "Arraste um widget ou use os botoes + na pagina. Dica: dê dois cliques em um texto para digitar direto na página."}</span>{error ? <span className="editor-error">{error}</span> : null}</div>
+          <div className="editor-notice-row" style={{ color: "var(--admin-muted, #98938a)", fontSize: 12 }}>Header, menu e rodapé são globais (aparecem em todas as páginas): edite em <a href="/admin/pages" style={{ textDecoration: "underline" }}>Páginas → Configurações do site</a>, abas Header / Menu / Footer.</div>
+          <div className="editor-frame-wrap" ref={frameWrapRef}>
+            {mode === "visual" ? (
+              device === "fit" ? (
+                <iframe ref={iframeRef} className="editor-frame" srcDoc={iframeHtml} title="Preview editavel" />
+              ) : (
+                <div className={`editor-frame-stage${device === "mobile" ? " is-mobile" : ""}`}>
+                  <div className="editor-frame-device" style={{ width: Math.round(deviceWidth * deviceScale), height: frameBox.height || undefined }}>
+                    <iframe ref={iframeRef} className="editor-frame" srcDoc={iframeHtml} title="Preview editavel" style={{ width: deviceWidth, height: Math.round((frameBox.height || 640) / deviceScale), minHeight: 0, border: "0", boxShadow: "none", transform: `scale(${deviceScale})`, transformOrigin: "top left" }} />
+                  </div>
+                </div>
+              )
+            ) : (
+              <textarea className="raw-html" value={html} onChange={(event) => setHtml(event.target.value)} spellCheck={false} />
+            )}
+          </div>
         </main>
       </div>
     </div>
   );
 }
 
-function ElementEditor({ selected, settingsTab, setSettingsTab, updateStyle, updateStyles, updateAttr, setSelected, post, uploadImage, uploadCarouselImages, uploadBackgroundImage, uploadBackgroundVideo, aplicarVideoUrl, removerVideoFundo, setContainerLayout, addWidget }) {
+function ElementEditor({ selected, settingsTab, setSettingsTab, updateStyle, updateStyles, updateAttr, setSelected, post, uploadImage, uploadCarouselImages, uploadBackgroundImage, uploadBackgroundVideo, aplicarVideoUrl, removerVideoFundo, setContainerLayout, addWidget, uploadVideoSlot, aplicarVideoSlotUrl, removerVideoSlot }) {
   const [carouselUrl, setCarouselUrl] = useState("");
+  const [slotVideoUrl, setSlotVideoUrl] = useState("");
   const structural = selected.kind === "container" || selected.kind === "section" || selected.kind === "structure";
   const isImage = selected.tag === "img";
   const isVideo = selected.tag === "video";
   const isAudio = selected.tag === "audio";
   const isFormField = ["input", "textarea"].includes(selected.tag);
   const isIcon = selected.tag === "i" || selected.iconName;
+  const isVideoSlot = Boolean(selected.isVideoSlot);
   const hasVisualMediaEditor = isImage || isVideo || isAudio;
   return <div className="element-editor">
     <div className="selected-path">{selected.path?.map((item) => item.label).join(" / ")}</div>
@@ -543,6 +608,17 @@ function ElementEditor({ selected, settingsTab, setSettingsTab, updateStyle, upd
       </div> : null}
 
       {isVideo || isAudio ? <><div className="media-status"><IconPlayerPlay size={26} /><div><strong>{isVideo ? "Arquivo de video" : "Arquivo de audio"}</strong><span>{selected.src || "Nenhum arquivo selecionado"}</span></div></div><label className="field"><span>Endereco do arquivo</span><input value={selected.src || ""} placeholder="https://... ou arquivo enviado" onChange={(event) => updateAttr("src", event.target.value)} /></label>{isVideo ? <label className="field"><span>Imagem de capa</span><input value={selected.poster || ""} placeholder="/uploads/capa.jpg" onChange={(event) => updateAttr("poster", event.target.value)} /></label> : null}<div className="media-toggles"><label><input type="checkbox" checked={Boolean(selected.controls)} onChange={(event) => updateAttr("controls", event.target.checked ? "controls" : "")} />Mostrar controles</label><label><input type="checkbox" checked={Boolean(selected.autoplay)} onChange={(event) => updateAttr("autoplay", event.target.checked ? "autoplay" : "")} />Reproducao automatica</label><label><input type="checkbox" checked={Boolean(selected.loop)} onChange={(event) => updateAttr("loop", event.target.checked ? "loop" : "")} />Repetir</label>{isVideo ? <label><input type="checkbox" checked={Boolean(selected.muted)} onChange={(event) => updateAttr("muted", event.target.checked ? "muted" : "")} />Sem som</label> : null}</div><label className="upload-field"><IconPlayerPlay size={18} />Enviar {isVideo ? "video" : "audio"}<input type="file" accept={isVideo ? "video/*" : "audio/*"} onChange={uploadImage} /></label></> : null}
+
+      {isVideoSlot ? <div className="control-section">
+        <div className="control-label">Video do slot (Motorizada)</div>
+        <p className="panel-help">Este bloco Ã© um placeholder de video. Envie um arquivo <strong>mp4/webm</strong> ou cole URL do YouTube. O video substitui o Ã­cone â€œInserir videoâ€ e aparece tanto no site quanto no app.</p>
+        {selected.src ? <div className="media-status"><IconPlayerPlay size={22} /><div><strong>{selected.src.includes("youtube") || selected.src.includes("youtu.be") ? "YouTube" : "Arquivo de video"}</strong><span>{String(selected.src).slice(0, 54)}</span></div></div> : <div className="media-preview" style={{ minHeight: 96, display: "grid", placeItems: "center", background: "#16120c" }}><IconPlayerPlay size={28} style={{ color: "var(--admin-muted)" }} /><span style={{ color: "var(--admin-muted)", fontSize: 11 }}>Nenhum video â€” placeholder â€œInserir videoâ€</span></div>}
+        <label className="upload-field carousel-upload"><IconPlayerPlay size={18} />Enviar video (mp4/webm)<input type="file" accept="video/*" onChange={uploadVideoSlot} /></label>
+        <p className="field-hint">AtÃ© 80 MB. Recomendado mp4 H.264.</p>
+        <div className="carousel-url-add"><input value={slotVideoUrl} onChange={(event) => setSlotVideoUrl(event.target.value)} placeholder="Ou cole link do YouTube / mp4" /><button className="btn" disabled={!slotVideoUrl.trim()} onClick={() => { aplicarVideoSlotUrl(slotVideoUrl.trim()); setSlotVideoUrl(""); }}>Aplicar</button></div>
+        {selected.src ? <button className="text-action" onClick={removerVideoSlot} style={{ marginTop: 8 }}>Remover video (voltar ao placeholder)</button> : null}
+        <p className="panel-help">Dica: selecione tambÃ©m o prÃ³prio &lt;video&gt; depois de inserir para ajustar controles, autoplay, loop e capa.</p>
+      </div> : null}
 
       {isFormField ? <><label className="field"><span>Texto do campo</span><input value={selected.value || ""} onChange={(event) => updateAttr("value", event.target.value)} /></label><label className="field"><span>Texto de exemplo</span><input value={selected.placeholder || ""} onChange={(event) => updateAttr("placeholder", event.target.value)} /></label></> : null}
       {!structural && !isIcon && !hasVisualMediaEditor && !isFormField ? <label className="field"><span>Texto / conteudo HTML</span><textarea value={selected.html || ""} onChange={(event) => { setSelected((current) => ({ ...current, html: event.target.value })); post("ce-html-content", { value: event.target.value }); }} /></label> : null}
@@ -605,7 +681,7 @@ function ElementEditor({ selected, settingsTab, setSettingsTab, updateStyle, upd
       {selected.isContainer ? <div className="control-section"><div className="control-label">Alinhamento do container</div><label className="field"><span>Horizontal</span><select value={selected.justifyContent || ""} onChange={(event) => updateStyle("justifyContent", event.target.value)}><option value="">Padrao</option><option value="flex-start">Inicio</option><option value="center">Centro</option><option value="flex-end">Fim</option><option value="space-between">Espaco entre</option><option value="space-around">Distribuido</option></select></label><label className="field"><span>Vertical</span><select value={selected.alignItems || ""} onChange={(event) => updateStyle("alignItems", event.target.value)}><option value="">Padrao</option><option value="stretch">Esticar</option><option value="flex-start">Inicio</option><option value="center">Centro</option><option value="flex-end">Fim</option></select></label></div> : null}
     </div> : null}
 
-    {settingsTab === "advanced" ? <div className="settings-body"><div className="control-section"><div className="control-label">Inclinacao</div><label className="field"><span>Rotacao (graus) — use 0 para desfazer um elemento torto</span><div className="range-control"><input type="range" min="-45" max="45" step="1" value={selected.rotate || "0"} onChange={(event) => updateStyle("transform", event.target.value === "0" ? "" : `rotate(${event.target.value}deg)`)} /><input type="number" aria-label="Graus de rotacao" min="-180" max="180" value={selected.rotate || "0"} onChange={(event) => updateStyle("transform", event.target.value === "0" ? "" : `rotate(${event.target.value}deg)`)} /></div></label></div><div className="control-section"><div className="control-label">Espacamento</div><label className="field"><span>Margem externa</span><input placeholder="Ex.: 0 auto 24px" value={selected.margin || ""} onChange={(event) => updateStyle("margin", event.target.value)} /></label><label className="field"><span>Preenchimento interno</span><input placeholder="Ex.: 40px 24px" value={selected.padding || ""} onChange={(event) => updateStyle("padding", event.target.value)} /></label></div><div className="control-section"><div className="control-label">Posicionamento</div><div className="field-row"><label className="field"><span>Posicao</span><select value={selected.position || ""} onChange={(event) => updateStyle("position", event.target.value)}><option value="">Padrao</option><option value="relative">Relativa</option><option value="absolute">Absoluta</option><option value="sticky">Fixa ao rolar</option></select></label><label className="field"><span>Camada (z-index)</span><input value={selected.zIndex || ""} placeholder="1" onChange={(event) => updateStyle("zIndex", event.target.value)} /></label></div><label className="field"><span>Opacidade</span><div className="range-control"><input type="range" min="0" max="1" step="0.05" value={selected.opacity || "1"} onChange={(event) => updateStyle("opacity", event.target.value)} /><input type="number" aria-label="Valor da opacidade" min="0" max="1" step="0.05" value={selected.opacity || "1"} onChange={(event) => updateStyle("opacity", event.target.value)} /></div></label></div><div className="control-section"><div className="control-label">Identificacao</div><label className="field"><span>Classe CSS</span><input value={selected.className || ""} onChange={(event) => updateAttr("class", event.target.value)} /></label></div></div> : null}
+    {settingsTab === "advanced" ? <div className="settings-body"><div className="control-section"><div className="control-label">Inclinacao</div><label className="field"><span>Rotacao (graus) â€” use 0 para desfazer um elemento torto</span><div className="range-control"><input type="range" min="-45" max="45" step="1" value={selected.rotate || "0"} onChange={(event) => updateStyle("transform", event.target.value === "0" ? "" : `rotate(${event.target.value}deg)`)} /><input type="number" aria-label="Graus de rotacao" min="-180" max="180" value={selected.rotate || "0"} onChange={(event) => updateStyle("transform", event.target.value === "0" ? "" : `rotate(${event.target.value}deg)`)} /></div></label></div><div className="control-section"><div className="control-label">Espacamento</div><label className="field"><span>Margem externa</span><input placeholder="Ex.: 0 auto 24px" value={selected.margin || ""} onChange={(event) => updateStyle("margin", event.target.value)} /></label><label className="field"><span>Preenchimento interno</span><input placeholder="Ex.: 40px 24px" value={selected.padding || ""} onChange={(event) => updateStyle("padding", event.target.value)} /></label></div><div className="control-section"><div className="control-label">Posicionamento</div><div className="field-row"><label className="field"><span>Posicao</span><select value={selected.position || ""} onChange={(event) => updateStyle("position", event.target.value)}><option value="">Padrao</option><option value="relative">Relativa</option><option value="absolute">Absoluta</option><option value="sticky">Fixa ao rolar</option></select></label><label className="field"><span>Camada (z-index)</span><input value={selected.zIndex || ""} placeholder="1" onChange={(event) => updateStyle("zIndex", event.target.value)} /></label></div><label className="field"><span>Opacidade</span><div className="range-control"><input type="range" min="0" max="1" step="0.05" value={selected.opacity || "1"} onChange={(event) => updateStyle("opacity", event.target.value)} /><input type="number" aria-label="Valor da opacidade" min="0" max="1" step="0.05" value={selected.opacity || "1"} onChange={(event) => updateStyle("opacity", event.target.value)} /></div></label></div><div className="control-section"><div className="control-label">Identificacao</div><label className="field"><span>Classe CSS</span><input value={selected.className || ""} onChange={(event) => updateAttr("class", event.target.value)} /></label></div></div> : null}
 
     <div className="element-actions"><button className="btn" onClick={() => post("ce-select-parent")}><IconArrowBackUp size={17} />Pai</button><button className="btn" onClick={() => post("ce-duplicate")}><IconCopy size={17} />Duplicar</button><button className="btn btn-danger" onClick={() => post("ce-delete")}><IconTrash size={17} />Apagar</button></div>
   </div>;
@@ -623,6 +699,7 @@ function TreeNodes({ nodes, selectedId, onSelect, depth = 0 }) {
 function withPublicPreviewCss(html, css) {
   if (!css?.trim()) return html;
   const style = `<style id="ce-public-preview-style">${css.replace(/<\/style/gi, "<\\/style")}</style>`;
+  if (/<\/body>/i.test(html)) return html.replace(/<\/body>/i, `${style}</body>`);
   return /<\/head>/i.test(html) ? html.replace(/<\/head>/i, `${style}</head>`) : `${style}${html}`;
 }
 
@@ -634,6 +711,7 @@ function withEditorBridge(html) {
   [data-ce-hover="true"] { outline: 1px dashed #1689e8 !important; outline-offset: 1px !important; }
   [data-ce-kind="section"], [data-ce-kind="container"] { min-height: 56px; }
   [data-ce-editable-text="true"] { cursor:text !important; }
+  [data-ce-editing="true"] { outline: 2px solid #1689e8 !important; outline-offset: 2px !important; cursor: text !important; }
   [data-ce-editor-placeholder-host="true"] { position:relative !important; overflow:hidden !important; }
   [data-ce-editor-placeholder-hidden="true"] { display:none !important; }
   [data-ce-editor-placeholder-widget="true"] { display:block !important; position:absolute !important; inset:0 !important; width:100% !important; height:100% !important; max-width:none !important; margin:0 !important; padding:0 !important; font-size:0 !important; line-height:0 !important; z-index:0 !important; }
@@ -677,7 +755,7 @@ function withEditorBridge(html) {
   const ui = document.createElement("div");
   ui.dataset.ceUi = "true";
   ui.innerHTML = '<div id="ce-drop-line" data-ce-ui="true"></div><div id="ce-drop-label" data-ce-ui="true"></div><div id="ce-selection-bar" data-ce-ui="true"><span class="ce-name"></span><button data-action="parent" title="Selecionar pai">&#8593;</button><button data-action="duplicate" title="Duplicar">&#9635;</button><button data-action="delete" title="Apagar">&#215;</button></div><div id="ce-quick-wrap" data-ce-ui="true"><button id="ce-quick-button" title="Adicionar aqui">+</button><div id="ce-quick-menu"><button data-widget="section">Secao</button><button data-widget="container">Container</button><button data-widget="columns">2 colunas</button><button data-widget="columns3">3 colunas</button><button data-widget="title">Titulo</button><button data-widget="text">Texto</button></div></div><div id="ce-context-menu" data-ce-ui="true"><button data-action="edit">Editar elemento</button><button data-action="parent">Selecionar pai</button><button data-action="duplicate">Duplicar</button><button data-action="before">Inserir container antes</button><button data-action="after">Inserir container depois</button><button class="danger" data-action="delete">Apagar</button></div>';
-  document.body.appendChild(ui);
+  if(document.body)document.body.appendChild(ui);else document.addEventListener("DOMContentLoaded",()=>document.body.appendChild(ui));
   const dropLine = ui.querySelector("#ce-drop-line");
   const dropLabel = ui.querySelector("#ce-drop-label");
   const selectionBar = ui.querySelector("#ce-selection-bar");
@@ -689,7 +767,7 @@ function withEditorBridge(html) {
   function hasOwnEditableContent(element){return textTags.has(element.tagName)&&(element.matches("input,textarea")||Array.from(element.childNodes).some((node)=>node.nodeType===3&&node.textContent.trim()));}
   function assignIds() { editableElements().forEach((element) => { if (!element.dataset.ceId) element.dataset.ceId = String(counter++); if(hasOwnEditableContent(element))element.dataset.ceEditableText="true";if(!element.dataset.ceWidget&&element.matches(".carousel-track,.inst-track,.insp-track,.gal-track")&&!element.querySelector('[data-ce-widget="carousel"]')){element.dataset.ceWidget="carousel";element.dataset.ceLabel="Carrossel de imagens";} }); }
   function findPlaceholderHost(widget){let element=widget.parentElement;for(let depth=0;element&&element!==document.body&&depth<9;depth+=1,element=element.parentElement){const rect=element.getBoundingClientRect();if(rect.width>=96&&rect.height>=80)return element;}return null;}
-  function ensureEditorPlaceholderImages(){document.querySelectorAll('.ce-exact-icon img,.elementor-widget-icon img').forEach((image)=>{const widget=image.closest('.ce-exact-icon,.elementor-widget-icon');if(!widget)return;const host=findPlaceholderHost(widget);if(!host)return;if(window.getComputedStyle(host).backgroundImage.includes('url(')){widget.dataset.ceEditorPlaceholderHidden='true';return;}host.dataset.ceEditorPlaceholderHost='true';widget.dataset.ceEditorPlaceholderWidget='true';});}
+  function ensureEditorPlaceholderImages(){document.querySelectorAll('.ce-exact-icon img,.ce-exact-icon i.ti,.elementor-widget-icon img,.elementor-widget-icon i.ti').forEach((image)=>{const widget=image.closest('.ce-exact-icon,.elementor-widget-icon');if(!widget)return;const host=findPlaceholderHost(widget);if(!host)return;if(window.getComputedStyle(host).backgroundImage.includes('url(')){widget.dataset.ceEditorPlaceholderHidden='true';return;}const hasSiblingPhoto=Array.from(host.querySelectorAll('img,video,iframe')).some((node)=>node!==image&&node.getBoundingClientRect().height>40);if(hasSiblingPhoto){widget.dataset.ceEditorPlaceholderHidden='true';return;}host.dataset.ceEditorPlaceholderHost='true';widget.dataset.ceEditorPlaceholderWidget='true';});}
   function editableTargetAtPoint(x,y,fallback){const candidates=editableElements().filter(hasOwnEditableContent).filter((element)=>{const rect=element.getBoundingClientRect();const style=window.getComputedStyle(element);return rect.width>2&&rect.height>2&&x>=rect.left&&x<=rect.right&&y>=rect.top&&y<=rect.bottom&&style.display!=="none"&&style.visibility!=="hidden"&&Number(style.opacity)!==0;});candidates.sort((a,b)=>{const ar=a.getBoundingClientRect(),br=b.getBoundingClientRect();return ar.width*ar.height-br.width*br.height;});return candidates[0]||fallback;}
   function carouselElements(){const selector='.carousel-track,.inst-track,.insp-track,.gal-track';const resolved=Array.from(document.querySelectorAll('[data-ce-widget="carousel"],'+selector)).filter((element)=>!isUi(element)).map((element)=>element.closest(selector)||element);return Array.from(new Set(resolved));}
   function carouselScrollTarget(element){return [element,...element.querySelectorAll('*')].filter((node)=>!isUi(node)&&node.clientWidth>0&&node.scrollWidth>node.clientWidth+2).sort((a,b)=>(b.scrollWidth-b.clientWidth)-(a.scrollWidth-a.clientWidth))[0]||element;}
@@ -697,13 +775,13 @@ function withEditorBridge(html) {
   function ensureEditorCarouselControls(){carouselElements().forEach((track)=>{if(!track.dataset.ceId)track.dataset.ceId=String(counter++);track.dataset.ceEditorCarousel='true';['-1','1'].forEach((direction)=>{if(document.querySelector('.ce-editor-carousel-button[data-ce-carousel-id="'+track.dataset.ceId+'"][data-ce-carousel-control="'+direction+'"]'))return;const button=document.createElement('button');button.type='button';button.className='ce-editor-carousel-button';button.dataset.ceUi='true';button.dataset.ceCarouselId=track.dataset.ceId;button.dataset.ceCarouselControl=direction;button.title=direction==='-1'?'Voltar imagens':'Avancar imagens';button.setAttribute('aria-label',button.title);button.innerHTML=direction==='-1'?'&#8249;':'&#8250;';document.body.appendChild(button);});});updateCarouselControls();}
   function scrollEditorCarousel(button){const track=document.querySelector('[data-ce-id="'+button.dataset.ceCarouselId+'"]');if(!track)return;const target=carouselScrollTarget(track);const amount=Math.max(240,target.clientWidth*.8);target.scrollBy({left:Number(button.dataset.ceCarouselControl)*amount,behavior:'smooth'});}
   function kindOf(element) { if (element.dataset.ceKind) return element.dataset.ceKind; if (structuralTags.has(element.tagName)) return element.tagName === "SECTION" ? "section" : "structure"; if (element.dataset.ceWidget) return "widget"; if (["DIV","UL","OL","FORM"].includes(element.tagName) && element.children.length) return "container"; return "widget"; }
-  function labelOf(element) { if (element.dataset.ceLabel) return element.dataset.ceLabel; if (element.dataset.ceWidget) return element.dataset.ceWidget.replace(/-/g," ").replace(/^./,(letter) => letter.toUpperCase()); const names = { MAIN:"Conteudo principal",HEADER:"Cabecalho",FOOTER:"Rodape",NAV:"Navegacao",SECTION:"Secao",DIV:"Container",H1:"Titulo H1",H2:"Titulo H2",H3:"Titulo H3",P:"Texto",A:"Link / Botao",IMG:"Imagem",UL:"Lista",OL:"Lista",FORM:"Formulario",IFRAME:"Mapa / quadro",VIDEO:"Video",AUDIO:"Audio",BLOCKQUOTE:"Citacao",HR:"Divisor" }; return names[element.tagName] || element.tagName.toLowerCase(); }
+  function labelOf(element) { if (element.dataset.ceLabel) return element.dataset.ceLabel; if (element.closest?.('.mot-video-ph,.mot-video,[data-video-slot]')) return "VÃ­deo motorizada (slot)"; if (element.dataset.ceWidget) return element.dataset.ceWidget.replace(/-/g," ").replace(/^./,(letter) => letter.toUpperCase()); const names = { MAIN:"Conteudo principal",HEADER:"Cabecalho",FOOTER:"Rodape",NAV:"Navegacao",SECTION:"Secao",DIV:"Container",H1:"Titulo H1",H2:"Titulo H2",H3:"Titulo H3",P:"Texto",A:"Link / Botao",IMG:"Imagem",UL:"Lista",OL:"Lista",FORM:"Formulario",IFRAME:"Mapa / quadro",VIDEO:"Video",AUDIO:"Audio",BLOCKQUOTE:"Citacao",HR:"Divisor" }; return names[element.tagName] || element.tagName.toLowerCase(); }
   function canContain(element) { return ["BODY","MAIN","HEADER","FOOTER","NAV","SECTION","ARTICLE","DIV","LI","FORM"].includes(element.tagName); }
   function pathOf(element) { const path = []; let current = element; while (current && current !== document.body) { if (!isUi(current)) path.unshift({ id:current.dataset.ceId,label:labelOf(current),kind:kindOf(current) }); current = current.parentElement; } return path.slice(-6); }
   function inlineOrComputed(element, name) { return element.style[name] || window.getComputedStyle(element)[name] || ""; }
   function carouselItems(element) { return Array.from(element.children).filter((child)=>!isUi(child)&&!child.hasAttribute("data-ce-bg-video")).map((node)=>({node,image:node.tagName==="IMG"?node:node.querySelector("img")})).filter((item)=>item.image); }
-  function info(element) { const style = window.getComputedStyle(element); const classNames = typeof element.className === "string" ? element.className.split(/\\s+/) : []; const iconName = classNames.find((name) => name.startsWith("ti-") && name !== "ti") || ""; return { id:element.dataset.ceId,tag:element.tagName.toLowerCase(),kind:kindOf(element),label:labelOf(element),customLabel:element.dataset.ceLabel || "",path:pathOf(element),isContainer:canContain(element),className:typeof element.className === "string" ? element.className : "",html:element.innerHTML || "",value:"value" in element?element.value||"":"",placeholder:element.getAttribute("placeholder")||"",href:element.getAttribute("href") || "",src:element.getAttribute("src") || element.querySelector("source")?.getAttribute("src") || "",alt:element.getAttribute("alt") || "",poster:element.getAttribute("poster") || "",controls:element.hasAttribute("controls"),autoplay:element.hasAttribute("autoplay"),loop:element.hasAttribute("loop"),muted:element.hasAttribute("muted"),iconName,color:rgbToHex(style.color,"#222222"),backgroundColor:rgbToHex(style.backgroundColor,""),bgVideo:(()=>{const c=element.querySelector(":scope > [data-ce-bg-video]");if(!c)return "";const f=c.querySelector("iframe");return f?f.getAttribute("src")||"":(c.querySelector("video")?.getAttribute("src")||"");})(),bgVideoTipo:element.querySelector(":scope > [data-ce-bg-video]")?.getAttribute("data-ce-bg-video")||"",backgroundImage:element.style.backgroundImage||(style.backgroundImage!=="none"?style.backgroundImage:"")||"",backgroundSize:element.style.backgroundSize||"",backgroundPosition:element.style.backgroundPosition||"",backgroundRepeat:element.style.backgroundRepeat||"",fontSize:inlineOrComputed(element,"fontSize"),fontWeight:inlineOrComputed(element,"fontWeight"),lineHeight:inlineOrComputed(element,"lineHeight"),letterSpacing:inlineOrComputed(element,"letterSpacing"),fontFamily:element.style.fontFamily || "",textAlign:inlineOrComputed(element,"textAlign"),display:inlineOrComputed(element,"display"),flexDirection:inlineOrComputed(element,"flexDirection"),flexWrap:inlineOrComputed(element,"flexWrap"),gridTemplateColumns:inlineOrComputed(element,"gridTemplateColumns"),justifyContent:inlineOrComputed(element,"justifyContent"),alignItems:inlineOrComputed(element,"alignItems"),gap:inlineOrComputed(element,"gap"),width:element.style.width || "",maxWidth:element.style.maxWidth || "",minHeight:element.style.minHeight || "",height:element.style.height || "",aspectRatio:element.style.aspectRatio || "",objectFit:element.style.objectFit || "",widget:element.dataset.ceWidget || "",rotate:(element.style.transform.match(/rotate\(([-\d.]+)deg\)/)||[])[1] || "0",padding:element.style.padding || "",margin:element.style.margin || "",borderWidth:element.style.borderWidth || "",borderColor:rgbToHex(style.borderColor,"#222222"),borderRadius:element.style.borderRadius || "",position:element.style.position || "",zIndex:element.style.zIndex || "",opacity:element.style.opacity || "1" }; }
-  function select(element) { if (!element || ignoredTags.has(element.tagName) || isUi(element)) return; if (selected) selected.removeAttribute("data-ce-selected"); selected = element; selected.dataset.ceSelected = "true"; positionSelectionUi(); window.parent.postMessage({type:"ce-selected",element:info(selected)},"*"); if(selected.dataset.ceWidget==="carousel")window.parent.postMessage({type:"ce-carousel-images",id:selected.dataset.ceId,images:carouselItems(selected).map((item)=>({src:item.image.getAttribute("src")||"",alt:item.image.getAttribute("alt")||""}))},"*"); }
+  function info(element) { const style = window.getComputedStyle(element); const classNames = typeof element.className === "string" ? element.className.split(/\\s+/) : []; const iconName = classNames.find((name) => name.startsWith("ti-") && name !== "ti") || ""; const closestSlot = element.closest ? element.closest('.mot-video-ph,.mot-video,[data-video-slot]') : null; const slotForInfo = closestSlot || element; return { id:element.dataset.ceId,tag:element.tagName.toLowerCase(),kind:kindOf(element),label:labelOf(element),customLabel:element.dataset.ceLabel || "",path:pathOf(element),isContainer:canContain(element),className:typeof element.className === "string" ? element.className : "",html:element.innerHTML || "",value:"value" in element?element.value||"":"",placeholder:element.getAttribute("placeholder")||"",href:element.getAttribute("href") || "",src:element.getAttribute("src") || element.querySelector("video")?.getAttribute("src") || element.querySelector("video source")?.getAttribute("src") || element.querySelector("source")?.getAttribute("src") || element.querySelector("iframe")?.getAttribute("src") || slotForInfo.querySelector?.("video")?.getAttribute("src") || slotForInfo.querySelector?.("video source")?.getAttribute("src") || slotForInfo.querySelector?.("iframe")?.getAttribute("src") || "",alt:element.getAttribute("alt") || "",poster:element.getAttribute("poster") || "",controls:element.hasAttribute("controls"),autoplay:element.hasAttribute("autoplay"),loop:element.hasAttribute("loop"),muted:element.hasAttribute("muted"),iconName,isVideoSlot:(()=>{try{return !!element.closest('.mot-video-ph,.mot-video,[data-video-slot]');}catch(e){return false;}})(),color:rgbToHex(style.color,"#222222"),backgroundColor:rgbToHex(style.backgroundColor,""),bgVideo:(()=>{const c=element.querySelector(":scope > [data-ce-bg-video]");if(!c)return "";const f=c.querySelector("iframe");return f?f.getAttribute("src")||"":(c.querySelector("video")?.getAttribute("src")||"");})(),bgVideoTipo:element.querySelector(":scope > [data-ce-bg-video]")?.getAttribute("data-ce-bg-video")||"",backgroundImage:element.style.backgroundImage||(style.backgroundImage!=="none"?style.backgroundImage:"")||"",backgroundSize:element.style.backgroundSize||"",backgroundPosition:element.style.backgroundPosition||"",backgroundRepeat:element.style.backgroundRepeat||"",fontSize:inlineOrComputed(element,"fontSize"),fontWeight:inlineOrComputed(element,"fontWeight"),lineHeight:inlineOrComputed(element,"lineHeight"),letterSpacing:inlineOrComputed(element,"letterSpacing"),fontFamily:element.style.fontFamily || "",textAlign:inlineOrComputed(element,"textAlign"),display:inlineOrComputed(element,"display"),flexDirection:inlineOrComputed(element,"flexDirection"),flexWrap:inlineOrComputed(element,"flexWrap"),gridTemplateColumns:inlineOrComputed(element,"gridTemplateColumns"),justifyContent:inlineOrComputed(element,"justifyContent"),alignItems:inlineOrComputed(element,"alignItems"),gap:inlineOrComputed(element,"gap"),width:element.style.width || "",maxWidth:element.style.maxWidth || "",minHeight:element.style.minHeight || "",height:element.style.height || "",aspectRatio:element.style.aspectRatio || "",objectFit:element.style.objectFit || "",widget:element.dataset.ceWidget || "",rotate:(element.style.transform.match(/rotate\(([-\d.]+)deg\)/)||[])[1] || "0",padding:element.style.padding || "",margin:element.style.margin || "",borderWidth:element.style.borderWidth || "",borderColor:rgbToHex(style.borderColor,"#222222"),borderRadius:element.style.borderRadius || "",position:element.style.position || "",zIndex:element.style.zIndex || "",opacity:element.style.opacity || "1" }; }
+  function select(element) { if (!element || ignoredTags.has(element.tagName) || isUi(element)) return; const slot = element.closest?.('.mot-video-ph,.mot-video,[data-video-slot]'); if (slot && slot !== element && !slot.querySelector('video') && !slot.querySelector('iframe')) element = slot; if (selected) selected.removeAttribute("data-ce-selected"); selected = element; selected.dataset.ceSelected = "true"; positionSelectionUi(); window.parent.postMessage({type:"ce-selected",element:info(selected)},"*"); if(selected.dataset.ceWidget==="carousel")window.parent.postMessage({type:"ce-carousel-images",id:selected.dataset.ceId,images:carouselItems(selected).map((item)=>({src:item.image.getAttribute("src")||"",alt:item.image.getAttribute("alt")||""}))},"*"); }
   function positionSelectionUi() { if (!selected || !document.contains(selected)) { selectionBar.style.display="none"; quickWrap.style.display="none"; return; } const rect=selected.getBoundingClientRect(); const left=Math.max(2,rect.left+window.scrollX); const top=Math.max(window.scrollY,rect.top+window.scrollY-28); selectionBar.style.display="flex"; selectionBar.style.left=left+"px"; selectionBar.style.top=top+"px"; selectionBar.querySelector(".ce-name").textContent=labelOf(selected); if (canContain(selected) || kindOf(selected)==="section") { quickWrap.style.display="block"; quickWrap.style.left=(rect.left+window.scrollX+rect.width/2)+"px"; quickWrap.style.top=(rect.bottom+window.scrollY)+"px"; } else quickWrap.style.display="none"; }
   function treeNode(element,depth) { const children=depth<24 ? Array.from(element.children).filter((child)=>!isUi(child)&&!ignoredTags.has(child.tagName)).map((child)=>treeNode(child,depth+1)).filter(Boolean) : []; const meaningful=structuralTags.has(element.tagName)||element.dataset.ceKind||element.dataset.ceWidget||textTags.has(element.tagName)||["IMG","DIV","UL","OL","FORM","IFRAME","VIDEO"].includes(element.tagName); if(!meaningful&&!children.length)return null; return {id:element.dataset.ceId,label:labelOf(element),kind:kindOf(element),children}; }
   function sendTree(){const roots=Array.from(document.body.children).filter((element)=>!isUi(element)&&!ignoredTags.has(element.tagName)).map((element)=>treeNode(element,0)).filter(Boolean);window.parent.postMessage({type:"ce-tree",tree:roots},"*");}
@@ -749,12 +827,17 @@ function withEditorBridge(html) {
   function deleteSelected(){if(!selected)return;const next=selected.parentElement;selected.remove();selected=null;changed();if(next&&!ignoredTags.has(next.tagName))select(next);}
   function duplicateSelected(){if(!selected)return;let node=selected;const track=node.closest?.('[data-ce-widget="carousel"]');if(track&&track!==node){let slide=node;while(slide.parentElement&&slide.parentElement!==track)slide=slide.parentElement;if(slide.parentElement===track)node=slide;}const copy=node.cloneNode(true);copy.removeAttribute("data-ce-selected");copy.querySelectorAll("[data-ce-id]").forEach((child)=>child.removeAttribute("data-ce-id"));copy.removeAttribute("data-ce-id");node.after(copy);changed();select(copy);}
   function runAction(action){contextMenu.style.display="none";if(action==="edit")select(selected);if(action==="parent"&&selected?.parentElement!==document.body)select(selected.parentElement);if(action==="duplicate")duplicateSelected();if(action==="delete")deleteSelected();if(action==="before")insertWidget("container",{target:selected,position:"before"});if(action==="after")insertWidget("container",{target:selected,position:"after"});}
-  function serialize(){const clone=document.documentElement.cloneNode(true);clone.querySelectorAll("[data-ce-id],[data-ce-selected],[data-ce-hover],[data-ce-drop-inside],[data-ce-editor-carousel],[data-ce-editable-text],[data-ce-editor-placeholder-host],[data-ce-editor-placeholder-hidden],[data-ce-editor-placeholder-widget]").forEach((node)=>{node.removeAttribute("data-ce-id");node.removeAttribute("data-ce-selected");node.removeAttribute("data-ce-hover");node.removeAttribute("data-ce-drop-inside");node.removeAttribute("data-ce-editor-carousel");node.removeAttribute("data-ce-editable-text");node.removeAttribute("data-ce-editor-placeholder-host");node.removeAttribute("data-ce-editor-placeholder-hidden");node.removeAttribute("data-ce-editor-placeholder-widget");});clone.querySelectorAll("[data-ce-ui],[data-ce-dynamic-catalog],#ce-editor-style,#ce-editor-bridge,#ce-public-preview-style").forEach((node)=>node.remove());return "<!DOCTYPE html>\\n"+clone.outerHTML;}
+  function serialize(){const clone=document.documentElement.cloneNode(true);clone.querySelectorAll("[data-ce-id],[data-ce-selected],[data-ce-hover],[data-ce-drop-inside],[data-ce-editor-carousel],[data-ce-editable-text],[data-ce-editor-placeholder-host],[data-ce-editor-placeholder-hidden],[data-ce-editor-placeholder-widget]").forEach((node)=>{node.removeAttribute("contenteditable");node.removeAttribute("data-ce-editing");node.removeAttribute("data-ce-id");node.removeAttribute("data-ce-selected");node.removeAttribute("data-ce-hover");node.removeAttribute("data-ce-drop-inside");node.removeAttribute("data-ce-editor-carousel");node.removeAttribute("data-ce-editable-text");node.removeAttribute("data-ce-editor-placeholder-host");node.removeAttribute("data-ce-editor-placeholder-hidden");node.removeAttribute("data-ce-editor-placeholder-widget");});clone.querySelectorAll("[data-ce-ui],[data-ce-dynamic-catalog],#ce-editor-style,#ce-editor-bridge,#ce-public-preview-style").forEach((node)=>node.remove());return "<!DOCTYPE html>\\n"+clone.outerHTML;}
   function rgbToHex(value,fallback){const match=String(value).match(/rgba?\\((\\d+),\\s*(\\d+),\\s*(\\d+)(?:,\\s*([\\d.]+))?/);if(!match||Number(match[4])===0)return fallback;return"#"+[match[1],match[2],match[3]].map((part)=>Number(part).toString(16).padStart(2,"0")).join("");}
   function normalizeStyleValue(name,value){const raw=String(value??"").trim();const pixelProperties=new Set(["fontSize","letterSpacing","borderWidth","borderRadius","width","maxWidth","minHeight","height","gap","padding","margin","top","right","bottom","left"]);return raw&&pixelProperties.has(name)?raw.replace(/(^|\\s)(-?\\d+(?:\\.\\d+)?)(?=\\s|$)/g,"$1$2px"):raw;}
+  function editingElement(){return document.querySelector('[data-ce-editing="true"]');}
+  function startInlineEdit(element){const current=editingElement();if(current===element)return;if(current)finishInlineEdit();element.setAttribute("contenteditable","true");element.dataset.ceEditing="true";element.focus();}
+  function finishInlineEdit(){const element=editingElement();if(!element)return;element.removeAttribute("contenteditable");delete element.dataset.ceEditing;changed();select(element);}
+  document.addEventListener("dblclick",(event)=>{if(isUi(event.target))return;const target=editableTargetAtPoint(event.clientX,event.clientY,null)||event.target.closest?.('[data-ce-editable-text="true"]');if(!target||target.dataset.ceEditableText!=="true")return;event.preventDefault();event.stopPropagation();startInlineEdit(target);},true);
+  document.addEventListener("focusout",(event)=>{if(event.target?.dataset?.ceEditing==="true")setTimeout(()=>{const element=editingElement();if(element&&!element.contains(document.activeElement))finishInlineEdit();},0);},true);
 
-  assignIds();ensureEditorPlaceholderImages();ensureEditorCarouselControls();sendTree();
-  document.addEventListener("click",(event)=>{const carouselButton=event.target.closest?.("[data-ce-carousel-control]");if(carouselButton&&isUi(carouselButton)){event.preventDefault();event.stopPropagation();scrollEditorCarousel(carouselButton);return;}const action=event.target.closest?.("[data-action]")?.dataset.action;if(action&&isUi(event.target)){event.preventDefault();event.stopPropagation();runAction(action);return;}const widget=event.target.closest?.("[data-widget]")?.dataset.widget;if(widget&&isUi(event.target)){event.preventDefault();event.stopPropagation();insertWidget(widget,{target:selected||currentTarget(),position:canContain(selected||currentTarget())?"inside":"after"});return;}if(event.target.closest?.("#ce-quick-button")){event.preventDefault();event.stopPropagation();quickWrap.classList.toggle("open");return;}contextMenu.style.display="none";quickWrap.classList.remove("open");const fallback=event.target.closest?.("[data-ce-id]");if(!fallback)return;const target=editableTargetAtPoint(event.clientX,event.clientY,fallback);event.preventDefault();event.stopPropagation();select(target);},true);
+  function initBridgeData(){assignIds();ensureEditorPlaceholderImages();ensureEditorCarouselControls();sendTree();}if(document.body)initBridgeData();else document.addEventListener("DOMContentLoaded",initBridgeData);
+  document.addEventListener("click",(event)=>{if(editingElement())return;const carouselButton=event.target.closest?.("[data-ce-carousel-control]");if(carouselButton&&isUi(carouselButton)){event.preventDefault();event.stopPropagation();scrollEditorCarousel(carouselButton);return;}const action=event.target.closest?.("[data-action]")?.dataset.action;if(action&&isUi(event.target)){event.preventDefault();event.stopPropagation();runAction(action);return;}const widget=event.target.closest?.("[data-widget]")?.dataset.widget;if(widget&&isUi(event.target)){event.preventDefault();event.stopPropagation();insertWidget(widget,{target:selected||currentTarget(),position:canContain(selected||currentTarget())?"inside":"after"});return;}if(event.target.closest?.("#ce-quick-button")){event.preventDefault();event.stopPropagation();quickWrap.classList.toggle("open");return;}contextMenu.style.display="none";quickWrap.classList.remove("open");const fallback=event.target.closest?.("[data-ce-id]");if(!fallback)return;const target=editableTargetAtPoint(event.clientX,event.clientY,fallback);event.preventDefault();event.stopPropagation();select(target);},true);
   document.addEventListener("contextmenu",(event)=>{const fallback=event.target.closest?.("[data-ce-id]");if(!fallback||isUi(fallback))return;const target=editableTargetAtPoint(event.clientX,event.clientY,fallback);event.preventDefault();select(target);contextMenu.style.display="block";contextMenu.style.left=Math.min(event.clientX,window.innerWidth-205)+"px";contextMenu.style.top=Math.min(event.clientY,window.innerHeight-240)+"px";},true);
   document.addEventListener("mouseover",(event)=>{const target=event.target.closest?.("[data-ce-id]");if(target&&target!==selected&&!isUi(target))target.dataset.ceHover="true";},true);
   document.addEventListener("mouseout",(event)=>{const target=event.target.closest?.("[data-ce-id]");if(target)target.removeAttribute("data-ce-hover");},true);
@@ -789,6 +872,51 @@ function withEditorBridge(html) {
     if(data.type==="ce-carousel-move-image"){
       const items=carouselItems(selected);const item=items[data.index]?.node;const target=items[data.index+data.direction]?.node;
       if(item&&target){if(data.direction<0)selected.insertBefore(item,target);else selected.insertBefore(target,item);changed();select(selected);}
+    }
+  });
+  window.addEventListener("message",(event)=>{
+    const data=event.data||{};
+    if(!selected) return;
+    const isSlot = (()=>{try{return selected.matches('.mot-video-ph,.mot-video,[data-video-slot]') || (!selected.querySelector('video') && !selected.querySelector('iframe') && /ti-player-play/.test(selected.innerHTML) && selected.tagName==='DIV');}catch(e){return false;}})();
+    const isActiveSlot = isSlot || selected.isVideoSlot;
+    if(!isActiveSlot && !selected.matches('.mot-video-ph,.mot-video,[data-video-slot]')) return;
+    function youtubeIdLocal(url){const m=String(url).match(/(?:youtu\\.be\\/|v=|\\/embed\\/|\\/shorts\\/)([A-Za-z0-9_-]{6,})/);return m?m[1]:"";}
+    if(data.type==="ce-video-slot-set"){
+      const src = String(data.src||"").trim();
+      if(!src) return;
+      const isYT = !!youtubeIdLocal(src);
+      let media = null;
+      if(isYT){
+        const id=youtubeIdLocal(src);
+        media=document.createElement('iframe');
+        media.src="https://www.youtube.com/embed/"+id+"?rel=0&modestbranding=1&playsinline=1";
+        media.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+        media.setAttribute('allowfullscreen','');
+        media.style.cssText="display:block;width:100%;height:100%;border:0;";
+      } else {
+        media=document.createElement('video');
+        media.setAttribute('controls','');
+        media.setAttribute('playsinline','');
+        media.style.cssText="display:block;width:100%;height:100%;object-fit:contain;background:#000;";
+        const source=document.createElement('source');
+        source.src=src;
+        source.type=src.endsWith('.webm')?'video/webm':'video/mp4';
+        media.appendChild(source);
+        media.src=src;
+      }
+      // limpa placeholder (icone + texto) mas preserva classe e estilos do slot
+      selected.innerHTML="";
+      selected.style.display="block";
+      selected.style.aspectRatio="16/9";
+      selected.style.minHeight="200px";
+      if(!selected.style.background) selected.style.background="#0e0a06";
+      selected.appendChild(media);
+      changed();select(selected);
+    }
+    if(data.type==="ce-video-slot-remove"){
+      selected.innerHTML='<i class="ti ti-player-play" style="font-size:36px;color:rgba(194,165,122,0.18);" aria-hidden="true"></i><span style="font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(194,165,122,0.2);">Video</span>';
+      selected.style.aspectRatio="";
+      changed();select(selected);
     }
   });
 })();

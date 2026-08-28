@@ -3,3 +3,8 @@ node_modules
 npm-debug.log
 .env
 .git
+.backups
+backups
+.claude
+.playwright-mcp
+videos

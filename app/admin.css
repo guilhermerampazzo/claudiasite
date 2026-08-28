@@ -952,6 +952,37 @@ button {
   background: white;
 }
 
+.device-toggle {
+  margin-left: 6px;
+}
+
+.editor-frame-stage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.editor-frame-device {
+  position: relative;
+  flex: 0 0 auto;
+  overflow: hidden;
+  background: white;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+}
+
+.editor-frame-device .editor-frame {
+  border: 0;
+  box-shadow: none;
+}
+
+.editor-frame-stage.is-mobile .editor-frame-device {
+  border-radius: 16px;
+}
+
 .tool-group {
   display: grid;
   gap: 10px;
