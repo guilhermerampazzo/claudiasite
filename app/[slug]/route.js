@@ -3,8 +3,15 @@ import { getCatalogSectionCategories } from "@/lib/catalog";
 import { injectCatalogSection, renderCatalogSection } from "@/lib/catalog-html";
 import { getPageSeoDescription } from "@/lib/seo";
 
+const REDIRECTS = {
+  "area-do-arquiteto": "arquitetos-designers"
+};
+
 export async function GET(_request, { params }) {
   const { slug } = await params;
+  if (REDIRECTS[slug]) {
+    return new Response(null, { status: 302, headers: { location: `/${REDIRECTS[slug]}` } });
+  }
   const page = await getPageBySlug(slug);
 
   if (!page || page.page_type !== "page") {
