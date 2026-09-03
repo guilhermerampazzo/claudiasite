@@ -3094,7 +3094,7 @@ body.elementor-page-26152 #simInline[style*="flex"] {
     min-height: 74px !important;
     padding-top: 16px !important;
     padding-bottom: 16px !important;
-    overflow-x: auto !important;
+    overflow: visible !important;
   }
   body.elementor-page-26152 .navbar-logo img {
     height: 44px !important;
@@ -3153,7 +3153,7 @@ body.elementor-page-26152 #simInline[style*="flex"] {
     min-height: 74px !important;
     padding-top: 16px !important;
     padding-bottom: 16px !important;
-    overflow-x: auto !important;
+    overflow: visible !important;
   }
   .ce-exact-page.ce-exact-papeis .navbar-logo img {
     height: 44px !important;
