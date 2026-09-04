@@ -7,3 +7,6 @@ npm-debug.log*
 backups/
 paginasnovas/
 .backups/
+AGENTS.md
+AGENT.md
+agent.md
