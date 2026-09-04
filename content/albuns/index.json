@@ -346,5 +346,11 @@
     "name": "Yoyo 2",
     "count": 63,
     "cover": "/assets/albuns/album-yoyo-2/IMG_1381-300x300.jpg"
+  },
+  {
+    "slug": "album-camargue",
+    "name": "Camargue",
+    "count": 39,
+    "cover": "/assets/scraped/album-covers/Captura-de-tela-2026-08-24-211544-300x300.png"
   }
 ]
