@@ -14,13 +14,17 @@ export async function GET(request, { params }) {
   // Mesma seção dinâmica de catálogo que o site público injeta — para o
   // editor drag-and-drop exibi-la no preview (marcada como dinâmica e
   // descartada no save, evitando duplicação no banco).
+  // Home não exibe mais a seção ("Coleções para todos os ambientes",
+  // removida a pedido da cliente) — preview do editor acompanha o público.
   let catalogSection = "";
   try {
-    const categories = await getCatalogSectionCategories(page.slug);
-    if (categories?.length) {
-      catalogSection = renderCatalogSection(categories, page.slug === "home"
-        ? { title: "Coleções para todos os ambientes", limit: 8 }
-        : { title: page.slug === "papeis-de-parede" ? "Álbuns e coleções" : page.slug === "pisos" ? "Marcas e coleções" : "Conheça nossas linhas", limit: 16 });
+    if (page.slug === "home") {
+      catalogSection = "";
+    } else {
+      const categories = await getCatalogSectionCategories(page.slug);
+      if (categories?.length) {
+        catalogSection = renderCatalogSection(categories, { title: page.slug === "papeis-de-parede" ? "Álbuns e coleções" : page.slug === "pisos" ? "Marcas e coleções" : "Conheça nossas linhas", limit: 16 });
+      }
     }
   } catch {
     // catálogo indisponível não deve travar o editor
