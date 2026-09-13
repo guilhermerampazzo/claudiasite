@@ -18,14 +18,19 @@ export async function GET(_request, { params }) {
     return new Response("Pagina nao encontrada.", { status: 404 });
   }
 
-  const [settings, globalHeaderHtml, catalogCategories] = await Promise.all([
+  const [settings, globalHeaderHtml] = await Promise.all([
     getSettings(),
     getHomeHeaderHtml(),
-    getCatalogSectionCategories(page.slug)
   ]);
 
-  const catalogSection = renderCatalogSection(catalogCategories, { title: slug === "papeis-de-parede" ? "Álbuns e coleções" : slug === "pisos" ? "Marcas e coleções" : "Conheça nossas linhas", limit: 16 });
-  const html = injectCatalogSection(page.html, catalogSection);
+  // Papéis de Parede não exibe mais a seção de catálogo ("Álbuns e coleções",
+  // removida a pedido da cliente); demais páginas mantêm sua injeção própria.
+  let html = page.html;
+  if (slug !== "papeis-de-parede") {
+    const catalogCategories = await getCatalogSectionCategories(page.slug);
+    const catalogSection = renderCatalogSection(catalogCategories, { title: slug === "pisos" ? "Marcas e coleções" : "Conheça nossas linhas", limit: 16 });
+    html = injectCatalogSection(page.html, catalogSection);
+  }
   return new Response(renderHtml(html, settings, { globalHeaderHtml, seo: { path: `/${slug}`, title: page.title, description: getPageSeoDescription(slug) } }), {
     headers: {
       "content-type": "text/html; charset=utf-8",

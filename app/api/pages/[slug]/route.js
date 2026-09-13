@@ -14,11 +14,11 @@ export async function GET(request, { params }) {
   // Mesma seção dinâmica de catálogo que o site público injeta — para o
   // editor drag-and-drop exibi-la no preview (marcada como dinâmica e
   // descartada no save, evitando duplicação no banco).
-  // Home não exibe mais a seção ("Coleções para todos os ambientes",
-  // removida a pedido da cliente) — preview do editor acompanha o público.
+  // Home e Papéis de Parede não exibem mais a seção de catálogo
+  // (removidas a pedido da cliente) — preview do editor acompanha o público.
   let catalogSection = "";
   try {
-    if (page.slug === "home") {
+    if (page.slug === "home" || page.slug === "papeis-de-parede") {
       catalogSection = "";
     } else {
       const categories = await getCatalogSectionCategories(page.slug);
