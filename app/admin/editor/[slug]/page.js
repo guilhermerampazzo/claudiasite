@@ -289,7 +289,7 @@ export default function EditorPage() {
     // Paridade com o público: renderHtml marca o <body> com ce-slug-* —
     // replica aqui para regras escopadas por página valerem no preview.
     const slugCls = `ce-slug-${String(slug || "home").toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
-    if (!base.includes(slugCls)) {
+    if (!/<body\b[^>]*ce-slug-/i.test(base)) {
       if (/<body\b[^>]*\bclass="/i.test(base)) base = base.replace(/<body\b([^>]*)\bclass="/i, `<body$1class="${slugCls} `);
       else base = base.replace(/<body\b/i, `<body class="${slugCls}"`);
     }
