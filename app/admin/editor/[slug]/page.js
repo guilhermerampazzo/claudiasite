@@ -286,6 +286,13 @@ export default function EditorPage() {
 
   const iframeHtml = useMemo(() => {
     let base = normalizeIconFont(withPublicPreviewCss(html, previewCss));
+    // Paridade com o público: renderHtml marca o <body> com ce-slug-* —
+    // replica aqui para regras escopadas por página valerem no preview.
+    const slugCls = `ce-slug-${String(slug || "home").toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+    if (!base.includes(slugCls)) {
+      if (/<body\b[^>]*\bclass="/i.test(base)) base = base.replace(/<body\b([^>]*)\bclass="/i, `<body$1class="${slugCls} `);
+      else base = base.replace(/<body\b/i, `<body class="${slugCls}"`);
+    }
     if (catalogSection) {
       const section = catalogSection
         .replace(/<section\b/i, '<section data-ce-dynamic-catalog="true"')
@@ -298,7 +305,7 @@ export default function EditorPage() {
       }
     }
     return withEditorBridge(base);
-  }, [html, previewCss, catalogSection]);
+  }, [html, previewCss, catalogSection, slug]);
   const visibleGroups = useMemo(() => {
     const query = widgetSearch.trim().toLowerCase();
     if (!query) return widgetGroups;
