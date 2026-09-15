@@ -1,3 +1,12 @@
+# Onde paramos — 15/09/2026 (capas novas nos heroes — 7 páginas)
+
+## Capas 15/09 (sem commit de código; só arquivos + UPDATE no banco)
+- Cliente enviou 7 capas em `capasnovas/` → subidas p/ volume `uploads/capas/*.jpg` (HTTP 200 todas).
+- Heroes trocados (URL antiga → nova, 1 ocorrência cada, backup da linha em `/www/backup/pages_<slug>_antes_capas_20260915.html`):
+  home→`capas/home.jpg`, papeis→`capas/papel-parede.jpg`, cortinas→`capas/cortinas.jpg`, persianas→`capas/persiana.jpg`, pisos→`capas/pisos.jpg`, corporativo→`capas/corporativo.jpg`, arquitetos→`capas/arquiteto-design.jpg`.
+- Botões dos heroes mantidos (só a foto trocou). Sem rebuild (render é dinâmico); 200 nas 7 rotas com a capa no HTML.
+- Atenção: capa da home já estava no ar desde o lote anterior — celular da cliente mostrava cache antigo (fechar/reabrir o Safari resolve).
+
 # Onde paramos — 15/09/2026 (lote cliente: carrossel papéis + FAQ cortinas/persianas + vídeos persianas)
 
 ## Lote 15/09-2 — passos + logos (commit local `a028dc4` / VPS `874808a`, deploy só `web` 15/09)
