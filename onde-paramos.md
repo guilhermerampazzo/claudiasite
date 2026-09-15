@@ -1,5 +1,12 @@
 # Onde paramos — 15/09/2026 (lote cliente: carrossel papéis + FAQ cortinas/persianas + vídeos persianas)
 
+## Lote 15/09-2 — passos + logos (commit local `a028dc4` / VPS `874808a`, deploy só `web` 15/09)
+1. **Persianas "Como funciona" com letras juntas + corporativo "passo a passo correndo pro lado"** — causa: regras 09/09 forçavam 5-col/scroll horizontal no mobile. Fix: mobile empilha 1 passo por linha (número em cima, título 17px, texto 14px); **exceção: papéis mantém os 5 lado a lado** (regra escopada `body.ce-slug-papeis-de-parede`, pedido anterior mantido).
+2. **Logos corporativo apagadas** — Pio XI (branca) sumia no chip creme. Fix: chip escuro `#1d150c` (vence inline `background:#fff`), logos maiores (58-64px), `filter:none`.
+3. **Vídeo corporativo com capa errada (sala de aula)** — é o 1º frame do `.mov` de 178MB (`uploads/2026-08-27/ajuste-03...mov`); **pendente a cliente enviar qual imagem usar de capa** (poster editável no editor) — nada alterado no vídeo.
+- Sem backup novo (último da sessão `20260915_154449` ainda válido — só mudou `lib/db.js`); db e `casaestampadocker-*` intactos; 200 em persianas/corporativo/pisos/papeis/cortinas com novas regras.
+- **Pendente:** `git push origin main` (sem credencial GitHub).
+
 ## Lote 15/09 — 4 pedidos (commit local `faec96c` / VPS `c425275`, deploy só `web` em 15/09)
 1. **Papéis, carrossel "Veja como fica na prática" com laterais escuras + fotos pequenas** — causa: gradientes em `.insp-carousel-wrap::before/::after` (nunca anulados; regra antiga só limpava o slide). Fix `lib/db.js`: wrap `display:none`, mobile 1 foto 100% `min-height:430px`, desktop 220×300 (wide 340).
 2. **FAQ cortinas/persianas: "+" não abre e 2 símbolos juntos** — markup real `h3.elementor-tab-title > icon(closed/opened > .ce-faq-icon) + a.elementor-toggle-title` com conteúdo inline `display:block`. Fix: CSS nuclear esconde TUDO dentro do ícone (1 "+" via `::after`, sem `:has`) + `buildFaqToggleScript` reescrito com delegação no document (clique no h3, no link interno ou no ícone; fecha os outros; remove inline display no boot). Comportamento provado com teste do script real em mini-DOM.
