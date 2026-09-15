@@ -1,5 +1,8 @@
 # Onde paramos — 15/09/2026 (capas novas nos heroes — 7 páginas)
 
+## Heroes 15/09-2 — botoes mais para baixo nas 7 paginas (margin-top 26vh/240px no bloco de botoes; deploy so web, 200 nas 7 rotas)
+- Botões dos heroes mais para baixo nas 7 páginas:  no bloco de botões ( e  do 1º top-section). Deploy só , 200 nas 7 rotas com a regra.
+
 ## Capas 15/09 (sem commit de código; só arquivos + UPDATE no banco)
 - Cliente enviou 7 capas em `capasnovas/` → subidas p/ volume `uploads/capas/*.jpg` (HTTP 200 todas).
 - Heroes trocados (URL antiga → nova, 1 ocorrência cada, backup da linha em `/www/backup/pages_<slug>_antes_capas_20260915.html`):
