@@ -1,6 +1,8 @@
 # Onde paramos — 15/09/2026 (capas novas nos heroes — 7 páginas)
 
-## Heroes 15/09-2 — botoes mais para baixo nas 7 paginas (margin-top 26vh/240px no bloco de botoes; deploy so web, 200 nas 7 rotas)
+## Persianas 15/09-3 — videos inteiros + cards iguais (commit `fix(persianas): videos inteiros a prova de cache` / VPS `4c9e64a`, deploy so web)
+- Videos ainda cortados no celular da cliente mesmo com CSS novo: markup reescrito no banco — 4 colunas `.mot-video-ph` (wrapper absoluto 16/9) viraram `.ce-video-natural` com video em fluxo normal (script `fixmot.py`, backup em `/www/backup/pages_persianas_antes_motnatural_20260915.html`). Classe nova sem regra legada = funciona com qualquer cache.
+- Cards Amorim/Rio/Gabriel/Coimbra: botoes VER MODELOS alinhados na base via absolute + padding-bottom nos 4 cards.
 - Botões dos heroes mais para baixo nas 7 páginas:  no bloco de botões ( e  do 1º top-section). Deploy só , 200 nas 7 rotas com a regra.
 
 ## Capas 15/09 (sem commit de código; só arquivos + UPDATE no banco)
