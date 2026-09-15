@@ -3,7 +3,7 @@
 ## Lote 15/09-2 — passos + logos (commit local `a028dc4` / VPS `874808a`, deploy só `web` 15/09)
 1. **Persianas "Como funciona" com letras juntas + corporativo "passo a passo correndo pro lado"** — causa: regras 09/09 forçavam 5-col/scroll horizontal no mobile. Fix: mobile empilha 1 passo por linha (número em cima, título 17px, texto 14px); **exceção: papéis mantém os 5 lado a lado** (regra escopada `body.ce-slug-papeis-de-parede`, pedido anterior mantido).
 2. **Logos corporativo apagadas** — Pio XI (branca) sumia no chip creme. Fix: chip escuro `#1d150c` (vence inline `background:#fff`), logos maiores (58-64px), `filter:none`.
-3. **Vídeo corporativo com capa errada (sala de aula)** — é o 1º frame do `.mov` de 178MB (`uploads/2026-08-27/ajuste-03...mov`); **pendente a cliente enviar qual imagem usar de capa** (poster editável no editor) — nada alterado no vídeo.
+3. **Vídeo corporativo com capa errada (sala de aula) — RESOLVIDO 15/09**: a capa era um `poster` antigo (`/assets/revisao/img/WhatsApp-Image-2026-07-20...jpeg`). Extraídos frames do `.mov` (1080×1920, 59s) com ffmpeg na VPS; escolhido t=5s (Cláudia apresentando no hotel) → `/uploads/2026-09-15/fairmont-capa.jpg` (178KB, HTTP 200) aplicado via `UPDATE pages ... poster=... WHERE slug='corporativo'` (backup da linha em `/www/backup/pages_corporativo_antes_capa_20260915.html`; sem rebuild — render é dinâmico; verificado `poster=` no HTML ao vivo).
 - Sem backup novo (último da sessão `20260915_154449` ainda válido — só mudou `lib/db.js`); db e `casaestampadocker-*` intactos; 200 em persianas/corporativo/pisos/papeis/cortinas com novas regras.
 - **Pendente:** `git push origin main` (sem credencial GitHub).
 
