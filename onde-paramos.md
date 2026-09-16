@@ -1,8 +1,12 @@
 # Onde paramos — 15/09/2026 (capas novas nos heroes — 7 páginas)
 
 ## Persianas 15/09-3 — videos inteiros + cards iguais (commit `fix(persianas): videos inteiros a prova de cache` / VPS `4c9e64a`, deploy so web)
-- Videos ainda cortados no celular da cliente mesmo com CSS novo: markup reescrito no banco — 4 colunas `.mot-video-ph` (wrapper absoluto 16/9) viraram `.ce-video-natural` com video em fluxo normal (script `fixmot.py`, backup em `/www/backup/pages_persianas_antes_motnatural_20260915.html`). Classe nova sem regra legada = funciona com qualquer cache.
+- Videos ainda cortados no celular mesmo com CSS novo: markup reescrito no banco — 4 colunas `.mot-video-ph` (wrapper absoluto 16/9) viraram `.ce-video-natural` com video em fluxo normal (script `fixmot.py`, backup `/www/backup/pages_persianas_antes_motnatural_20260915.html`). Classe nova sem regra legada = funciona com qualquer cache.
 - Cards Amorim/Rio/Gabriel/Coimbra: botoes VER MODELOS alinhados na base via absolute + padding-bottom nos 4 cards.
+
+## Heroes 15/09-4 — revertCRLFfixo + textos do hero via banco (VPS `reverte regra global`)
+- A regra `.elementor > section:first-of-type` apagou textos do SITE INTEIRO (papéis/cortinas/persianas) — `:first-of-type` casa por tipo entre irmãos. REVERTIDA no `lib/db.js`.
+- Textos dos heroes Elementor ocultos via classe `ce-hero-hide` marcada no banco (script `markhero.py`: heading+text widgets antes do 2o botão do 1o top-section; pap 5, cor 5, per 4) + CSS `.ce-hero-hide`. Verificado: hero esconde, resto (álbuns, passos, FAQ, botões) visível.
 - Botões dos heroes mais para baixo nas 7 páginas:  no bloco de botões ( e  do 1º top-section). Deploy só , 200 nas 7 rotas com a regra.
 
 ## Capas 15/09 (sem commit de código; só arquivos + UPDATE no banco)
