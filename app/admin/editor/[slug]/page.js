@@ -964,6 +964,19 @@ function withEditorBridge(html) {
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", unwrapMotVideos, { once: true });
   else unwrapMotVideos();
+  function equalizeFab() {
+    document.querySelectorAll(".fab-grid").forEach((grid) => {
+      const cards = Array.from(grid.querySelectorAll(".fab-card"));
+      if (cards.length < 2) return;
+      cards.forEach((card) => { card.style.removeProperty("min-height"); });
+      let max = 0;
+      cards.forEach((card) => { max = Math.max(max, card.getBoundingClientRect().height); });
+      if (max > 0) cards.forEach((card) => { card.style.setProperty("min-height", max + "px", "important"); });
+    });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", equalizeFab, { once: true });
+  else equalizeFab();
+  window.addEventListener("load", equalizeFab);
 })();
 </script>`;
   return html.includes("</body>") ? html.replace("</body>", `${bridge}\n</body>`) : `${html}\n${bridge}`;
