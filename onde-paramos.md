@@ -12,6 +12,7 @@
 - `buildFabEqualScript`: equaliza altura dos 4 `.fab-card` e cola botões na base (load/resize/fontes); espelho no preview do editor.
 - Fairmont: classe `caso-logo-claro` no banco + placa bege grande (`#eedcab→#d3a95f`, logo 72-84px).
 - Capa corporativo trocada pela imagem alinhada enviada pela cliente (`capas/corporativo.jpg`, 189KB).
+- MedSenior: mesma placa bege grande da Fairmont (classe `caso-logo-claro` no banco; backup `pages_corporativo_antes_medsnior_20260916.html`). Sem rebuild (CSS já no ar).
 - Botões dos heroes mais para baixo nas 7 páginas:  no bloco de botões ( e  do 1º top-section). Deploy só , 200 nas 7 rotas com a regra.
 
 ## Capas 15/09 (sem commit de código; só arquivos + UPDATE no banco)
