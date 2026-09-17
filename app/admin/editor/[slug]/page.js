@@ -949,21 +949,33 @@ function withEditorBridge(html) {
     if (title.classList && title.classList.contains("elementor-tab-title")) { event.preventDefault(); toggleElementorTitle(title); }
   });
   function unwrapMotVideos() {
-    document.querySelectorAll(".mot-video-ph [data-ce-bg-video],.mot-video [data-ce-bg-video]").forEach((wrap) => {
+    document.querySelectorAll(".mot-video-ph [data-ce-bg-video],.mot-video [data-ce-bg-video],.ce-video-natural").forEach((wrap) => {
       try {
-        wrap.style.setProperty("position", "relative", "important");
-        wrap.style.setProperty("inset", "auto", "important");
-        wrap.style.setProperty("height", "auto", "important");
-        wrap.style.setProperty("overflow", "visible", "important");
-        const video = wrap.querySelector("video");
+        const video = wrap.querySelector("video") || (wrap.tagName === "VIDEO" ? wrap : null);
+        const slot = wrap.closest(".mot-video-ph,.mot-video,.ce-video-natural") || wrap;
         if (video) { video.style.setProperty("height", "auto", "important"); video.style.setProperty("object-fit", "contain", "important"); }
-        const slot = wrap.closest(".mot-video-ph,.mot-video");
-        if (slot) { slot.style.setProperty("height", "auto", "important"); slot.style.setProperty("aspect-ratio", "auto", "important"); }
+        slot.style.setProperty("height", "auto", "important");
+        slot.style.setProperty("aspect-ratio", "auto", "important");
+        const slotH = slot.getBoundingClientRect().height || 0;
+        let p = slot.parentElement, depth = 0;
+        while (p && p !== document.body && depth < 8) {
+          depth += 1;
+          if (p.tagName === "SECTION" && slotH > 0) {
+            const ph = p.getBoundingClientRect().height || 0;
+            if (ph > 0 && ph < slotH) {
+              p.style.setProperty("height", "auto", "important");
+              p.style.setProperty("min-height", "0px", "important");
+              p.style.setProperty("overflow", "visible", "important");
+            }
+          }
+          p = p.parentElement;
+        }
       } catch (e) {}
     });
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", unwrapMotVideos, { once: true });
   else unwrapMotVideos();
+  window.addEventListener("load", unwrapMotVideos);
   function equalizeFab() {
     document.querySelectorAll(".fab-grid").forEach((grid) => {
       const cards = Array.from(grid.querySelectorAll(".fab-card"));
