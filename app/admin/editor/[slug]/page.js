@@ -997,38 +997,6 @@ function withEditorBridge(html) {
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", equalizeFab, { once: true });
   else equalizeFab();
   window.addEventListener("load", equalizeFab);
-  function redesignFab() {
-    const SUPPLIERS = [
-      { match: "amorim", name: "Amorim", count: 302, cover: "/catalog-media/produto/13397" },
-      { match: "rio-flex", name: "Rio Flex", count: 140, cover: "/catalog-media/produto/14349" },
-      { match: "gabriel", name: "Gabriel Persianas", count: 159, cover: "/catalog-media/produto/23983" },
-      { match: "coimbra", name: "Coimbra", count: 107, cover: "/catalog-media/produto/24207" }
-    ];
-    document.querySelectorAll(".fab-grid .fab-card:not(.fab-new)").forEach((card) => {
-      const link = card.querySelector('a[href*="categoria-produto"]');
-      if (!link) return;
-      const href = link.getAttribute("href") || "";
-      const sup = SUPPLIERS.find((s) => href.toLowerCase().includes(s.match));
-      if (!sup) return;
-      const wrap = card.querySelector(":scope > .elementor-widget-wrap") || card;
-      const body = document.createElement("div");
-      body.className = "fab-new-body";
-      body.setAttribute("data-ce-ui", "true");
-      body.innerHTML = '<span class="fab-new-photo"><span class="fab-new-arrow">↗</span></span>'
-        + '<span class="fab-new-meta"><span class="fab-new-count">' + sup.count + ' PRODUTOS</span>'
-        + '<span class="fab-new-name">' + sup.name + '</span></span>';
-      const photo = body.querySelector(".fab-new-photo");
-      if (photo) {
-        photo.style.backgroundImage = "url(" + sup.cover + ")";
-        photo.style.backgroundSize = "cover";
-        photo.style.backgroundPosition = "center";
-      }
-      wrap.insertBefore(body, wrap.firstChild);
-      card.classList.add("fab-new");
-    });
-  }
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", redesignFab, { once: true });
-  else redesignFab();
 })();
 </script>`;
   return html.includes("</body>") ? html.replace("</body>", `${bridge}\n</body>`) : `${html}\n${bridge}`;
