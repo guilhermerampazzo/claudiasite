@@ -969,9 +969,17 @@ function withEditorBridge(html) {
       const cards = Array.from(grid.querySelectorAll(".fab-card"));
       if (cards.length < 2) return;
       cards.forEach((card) => { card.style.removeProperty("min-height"); });
-      let max = 0;
-      cards.forEach((card) => { max = Math.max(max, card.getBoundingClientRect().height); });
-      if (max > 0) cards.forEach((card) => { card.style.setProperty("min-height", max + "px", "important"); });
+      const rows = {};
+      cards.forEach((card) => {
+        const key = Math.round(card.getBoundingClientRect().top / 10);
+        (rows[key] = rows[key] || []).push(card);
+      });
+      Object.values(rows).forEach((group) => {
+        if (group.length < 2) return;
+        let max = 0;
+        group.forEach((card) => { max = Math.max(max, card.getBoundingClientRect().height); });
+        if (max > 0) group.forEach((card) => { card.style.setProperty("min-height", max + "px", "important"); });
+      });
     });
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", equalizeFab, { once: true });
