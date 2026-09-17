@@ -2,6 +2,10 @@
 
 ## Videos 15/09-6 — sections de 195px soltadas via JS (publico + editor)
 
+## Fornecedores 15/09-7 — revert persianas + cards escuros nos albuns (VPS `081afcc`)
+- Persianas voltou ao modelo texto+botao (redesign removido); equalizador por fileira mantido.
+- Paginas de categoria/album (`lib/catalog-html.js`): cards escuros — foto 4/3 + `N PRODUTOS` dourado + titulo branco + seta em circulo (mockup cliente). Vale p/ categorias e produtos, mobile e desktop.
+
 ## Persianas 15/09-3 — videos inteiros + cards iguais (commit `fix(persianas): videos inteiros a prova de cache` / VPS `4c9e64a`, deploy so web)
 - Videos ainda cortados no celular mesmo com CSS novo: markup reescrito no banco — 4 colunas `.mot-video-ph` (wrapper absoluto 16/9) viraram `.ce-video-natural` com video em fluxo normal (script `fixmot.py`, backup `/www/backup/pages_persianas_antes_motnatural_20260915.html`). Classe nova sem regra legada = funciona com qualquer cache.
 - Cards Amorim/Rio/Gabriel/Coimbra: botoes VER MODELOS alinhados na base via absolute + padding-bottom nos 4 cards.
