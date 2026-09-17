@@ -9,10 +9,10 @@
 - Textos dos heroes Elementor ocultos via `ce-hero-hide` no banco (pap 5, cor 5, per 4 widgets). Verificado: resto visível.
 
 ## Lote 15/09-5 — cards iguais via JS + Fairmont bege + capa corporativo alinhada (VPS `22fa337`)
-- `buildFabEqualScript`: equaliza altura dos 4 `.fab-card` e cola botões na base (load/resize/fontes); espelho no preview do editor.
-- Fairmont: classe `caso-logo-claro` no banco + placa bege grande (`#eedcab→#d3a95f`, logo 72-84px).
-- Capa corporativo trocada pela imagem alinhada enviada pela cliente (`capas/corporativo.jpg`, 189KB).
-- MedSenior: mesma placa bege grande da Fairmont (classe `caso-logo-claro` no banco; backup `pages_corporativo_antes_medsnior_20260916.html`). Sem rebuild (CSS já no ar).
+- `buildFabEqualScript`: equaliza altura dos 4 `.fab-card` POR FILEIRA (1o deploy igualou as 2 fileiras juntas e esticou — corrigido com agrupamento por offsetTop, testado em mini-DOM) e cola botões na base.
+- Fairmont/MedSenior: classe `caso-logo-claro` no banco + placa bege; bege venceu chip aninhado com `body .caso-logo .caso-logo-img.caso-logo-claro` (0,4,1); Fairmont reduzida p/ 52px mobile, demais logos 68px.
+- Capas: corporativo alinhada (e3de9c8e) e depois centralizada (de2208eb) em `capas/corporativo.jpg`.
+- Diagnóstico importante: `.ce-hero-hide` e regras novas SEMPRE estiveram no ar — screenshots que mostravam o contrário eram cache do celular; validação real via Playwright (getComputedStyle + prints em `Área de Trabalho/print/`).
 - Botões dos heroes mais para baixo nas 7 páginas:  no bloco de botões ( e  do 1º top-section). Deploy só , 200 nas 7 rotas com a regra.
 
 ## Capas 15/09 (sem commit de código; só arquivos + UPDATE no banco)
