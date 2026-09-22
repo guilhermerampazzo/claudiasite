@@ -1,0 +1,27 @@
+{
+  "tasteLearning": true,
+  "permissions": {
+    "allow": [
+      "Shell(curl -s https://claudia.codermaster.com.br/papeis-de-parede -o %COMMANDCODE_SCRATCHPAD%\\papeis.html)",
+      "Shell(for:*)",
+      "Shell(find /c /v \"\" ^< \"%COMMANDCODE_SCRATCHPAD%\\papeis.html\":*)",
+      "Shell(do:*)",
+      "Shell(agent-browser:*)",
+      "Shell(node -e \"const fs=require('fs');const s=fs.readFileSync(process.env.COMMANDCODE_SCRATCHPAD+'/papeis.html','utf8');const line=s.split('\\n')[63];const rules=line.match(/[^{}]*proc[^{}]*\\{[^}]*\\}/g)||[];console.log(rules.join('\\n'));\")",
+      "Shell(node -e \"const fs=require('fs');const s=fs.readFileSync(process.env.COMMANDCODE_SCRATCHPAD+'/papeis.html','utf8');const idx=[];let i=-1;while((i=s.indexOf('proc-steps',i+1))!==-1)idx.push(i);for(const j of idx){console.log('--- @'+j);console.log(s.slice(Math.max(0,j-300),j+400).replace(/\\n/g,' | '));}\")",
+      "Shell(node -e \"const fs=require('fs');const s=fs.readFileSync(process.env.COMMANDCODE_SCRATCHPAD+'/papeis.html','utf8');for(const id of ['cfe97e3','3d15f89','28fdc98','99bbdfe','ff1bfa5']){const re=new RegExp('[^{}]*elementor-element-'+id+'[^{},]*\\\\\\\\{[^}]*\\\\\\\\}\\\\\\\\s*(@media[^{]*\\\\\\\\{[^}]*\\\\\\\\})?','g');const m=s.match(re)||[];console.log('== '+id);for(const r of m.slice(0,6))console.log(r.slice(0,400));}\")",
+      "Shell(node -e \"const fs=require('fs');const s=fs.readFileSync(process.env.COMMANDCODE_SCRATCHPAD+'/papeis.html','utf8');function ctx(needle){let i=-1,n=0;while((i=s.indexOf(needle,i+1))!==-1&&n<8){const seg=s.slice(i,i+300);if(seg.includes('{')){console.log('--- '+needle+' @'+i);console.log(seg.replace(/\\n/g,' '));n++;}else{const seg2=s.slice(Math.max(0,i-300),i);if(seg2.includes('{')){console.log('--- '+needle+' @'+i+' (antes)');console.log(seg2.replace(/\\n/g,' '));}}} }for(const id of ['cfe97e3','3d15f89','99bbdfe'])ctx('.elementor-element-'+id);\")",
+      "Shell(node -e \"const fs=require('fs');const s=fs.readFileSync(process.env.COMMANDCODE_SCRATCHPAD+'/papeis.html','utf8');let i=-1;while((i=s.indexOf('proc-step',i+1))!==-1){const before=s.slice(Math.max(0,i-60),i);if(!before.includes('class='))console.log('@'+i+' :: '+s.slice(Math.max(0,i-80),i+250).replace(/\\n/g,'|'));}\")",
+      "Shell(node -e \"const fs=require('fs');const s=fs.readFileSync(process.env.COMMANDCODE_SCRATCHPAD+'/papeis.html','utf8');console.log(s.slice(287900,290200));\")",
+      "Shell(node -e \"const fs=require('fs');const s=fs.readFileSync(process.env.COMMANDCODE_SCRATCHPAD+'/papeis.html','utf8');console.log('tem complicado? ', s.includes('complicado'));console.log('tem display:grid proc? ', /proc-steps\\s*\\{[^}]*grid/.test(s));const i=s.indexOf('complicado');if(i>0)console.log(s.slice(i-300,i+100));\")",
+      "Shell(node -e \"const fs=require('fs');const s=fs.readFileSync(process.env.COMMANDCODE_SCRATCHPAD+'/papeis.html','utf8');const re=/\\.proc-[a-z]+[^{]*\\{[^}]*\\}/g;let m;while((m=re.exec(s)))console.log(m[0].replace(/\\n/g,' '));\")",
+      "Shell(node -e \"const fs=require('fs');const s=fs.readFileSync(process.env.COMMANDCODE_SCRATCHPAD+'/papeis.html','utf8');const head=s.slice(0,s.indexOf('<body'));const links=head.match(/<link[^>]*stylesheet[^>]*>/g)||[];console.log(links.join('\\n'));console.log('--- style blocks na head:',(head.match(/<style/g)||[]).length);\")",
+      "Shell(node -e \"const fs=require('fs');const s=fs.readFileSync('public/assets/revisao/site.css','utf8');const re=/\\.proc-[a-z-]*(?:::[a-z]+)?[^{]*\\{[^}]*\\}/g;let m;while((m=re.exec(s))){console.log(m[0].replace(/\\s+/g,' '));const at=s.lastIndexOf('@media',m.index);const seg=at>-1&&at<m.index?s.slice(at,at+40):'';if(seg.startsWith('@media')&&m.index-s.indexOf('{',at)<200&&s.slice(at,m.index).includes('@media'))console.log(' ^dentro de',s.slice(at,s.indexOf('{',at)));}\")",
+      "Shell(dir:*)",
+      "Shell(node --check lib/db.js)",
+      "Shell(node --input-type=module -e import { buildGlobalCss } from './lib/db.js'; const css = buildGlobalCss({}); const line = css.split('\\n').find(l => l.includes('proc-steps')); console.log(line ? 'OK: ' + line.slice(0,120) + '...' : 'FALTANDO');)"
+    ],
+    "deny": [],
+    "defaultMode": "default"
+  }
+}

@@ -1,3 +1,36 @@
+# Onde paramos — 21/09/2026 (novo editor v2 + 7 páginas com fidelidade 0px)
+
+## Objetivo
+Substituir o editor próprio (que quebrava mobile/PC) por um editor Puck, com
+fidelidade 100% ao site no ar em celular (390) e computador (1280).
+
+## Como está
+- **Backup:** tag git `pre-puck-20260921` + `.backups/20260921-pre-puck/`
+  (`dirty.patch` + `worktree.tgz`). Nada do site no ar foi alterado.
+- **Editor novo:** `/admin/v2` (índice) e `/admin/v2/<slug>`.
+  - `home` e `pisos`: blocos React (Puck) com campos editáveis (texto/imagem/link/ordem).
+  - `papeis-de-parede`, `cortinas`, `persianas`, `arquitetos-designers`, `corporativo`:
+    "congeladas" — cada seção é o markup original, injetado no DOM (mesmas tags →
+    mesmo CSS). Editor por seção (rótulo + HTML).
+- **Preview/publicação v2:** `/v2-home`, `/v2-pisos` e `/v2/<slug>` (recompõe
+  `head + seções + tail`, idêntico ao ar).
+- **Fidelidade medida** (Playwright, altura de cada seção, live vs v2):
+  **0px em 1280 e 390 nas 7 páginas**; 0 recursos faltando (mídias espelhadas).
+
+## Arquivos-chave
+- `app/admin/v2/` (editor), `app/v2-home/`, `app/v2-pisos/`, `app/v2/[slug]/route.js`.
+- `lib/puck/`: `config.js` (home), `pisos.js`+`library.js` (pisos), `frozen.js`
+  (seções congeladas), `registry.js`, `initial-*.json`.
+- `public/puck/`: `global.css` (gerado do `buildGlobalCss`), `blocks.css` (home),
+  `pisos.css` (pisos), `pages/<slug>.{css,json,head.html,tail.html}` (congeladas).
+- `app/admin/layout.js` — `admin.css` agora é só do admin (antes vazava para o site:
+  era a causa das "páginas diferentes").
+
+## Importante
+- `.env` local: `UPLOAD_DIR` aponta para a pasta `uploads/` do repo (gitignored);
+  na VPS permanece `/app/uploads`. Mídias espelhadas (~330MB) NÃO vão no git.
+- Nada foi publicado na VPS; o site no ar e o editor antigo seguem funcionando.
+
 # Onde paramos — 15/09/2026 (capas novas nos heroes — 7 páginas)
 
 ## Videos 15/09-6 — sections de 195px soltadas via JS (publico + editor)

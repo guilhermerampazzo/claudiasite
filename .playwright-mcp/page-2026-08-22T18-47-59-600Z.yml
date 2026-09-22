@@ -1,0 +1,248 @@
+- generic [active] [ref=f9e1]:
+  - navigation [ref=f9e2]:
+    - text: 
+    - link [ref=f9e3] [cursor=pointer]:
+      - /url: /
+      - img "Casa Estampa" [ref=f9e4]
+    - list [ref=f9e5]:
+      - listitem [ref=f9e6]:
+        - link "Início" [ref=f9e7] [cursor=pointer]:
+          - /url: /
+      - listitem [ref=f9e8]:
+        - link "Papéis de Parede" [ref=f9e9] [cursor=pointer]:
+          - /url: /papeis-de-parede
+      - listitem [ref=f9e10]:
+        - link "Cortinas" [ref=f9e11] [cursor=pointer]:
+          - /url: /cortinas
+      - listitem [ref=f9e12]:
+        - link "Persianas" [ref=f9e13] [cursor=pointer]:
+          - /url: /persianas
+      - listitem [ref=f9e14]:
+        - link "Pisos" [ref=f9e15] [cursor=pointer]:
+          - /url: /pisos
+      - listitem [ref=f9e16]:
+        - link "Arquitetos" [ref=f9e17] [cursor=pointer]:
+          - /url: /area-do-arquiteto
+      - listitem [ref=f9e18]:
+        - link "Corporativo" [ref=f9e19] [cursor=pointer]:
+          - /url: /corporativo
+    - generic [ref=f9e20]:
+      - button "Buscar no site" [ref=f9e21] [cursor=pointer]:
+        - generic [ref=f9e22]: 
+      - search [ref=f9e23]:
+        - searchbox "Buscar produtos" [ref=f9e24]
+    - link "Falar agora" [ref=f9e25] [cursor=pointer]:
+      - /url: https://api.whatsapp.com/send?phone=5521999886842
+      - generic [ref=f9e26]: 
+      - text: Falar agora
+  - generic [ref=f9e31]:
+    - generic [ref=f9e35]:
+      - link "Início" [ref=f9e38] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Ola%21%20Quero%20saber%20mais%20sobre%20In%C3%ADcio.
+      - generic [ref=f9e39]: /
+      - link "Persianas" [ref=f9e43] [cursor=pointer]:
+        - /url: /persianas
+      - generic [ref=f9e44]: /
+      - link "Amorim" [ref=f9e48] [cursor=pointer]:
+        - /url: /amorim
+      - generic [ref=f9e49]: /
+      - generic [ref=f9e51]: Tela Solar
+    - generic [ref=f9e56]:
+      - generic [ref=f9e60]:
+        - generic [ref=f9e61]: Amorim
+        - heading "Tela Solar" [level=1] [ref=f9e68]
+      - generic [ref=f9e75]:
+        - generic [ref=f9e76]:
+          - text: 
+          - generic [ref=f9e77]: 
+        - generic [ref=f9e81]: 50 produtos
+    - generic [ref=f9e85]:
+      - generic [ref=f9e86]: "Filtrar:"
+      - link "Todos" [ref=f9e91] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Ola%21%20Quero%20saber%20mais%20sobre%20Todos.
+      - link "1%" [ref=f9e97] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Ola%21%20Quero%20saber%20mais%20sobre%201%25.
+      - link "3%" [ref=f9e103] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Ola%21%20Quero%20saber%20mais%20sobre%203%25.
+      - link "5%" [ref=f9e109] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Ola%21%20Quero%20saber%20mais%20sobre%205%25.
+      - link "Tons claros" [ref=f9e115] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Ola%21%20Quero%20saber%20mais%20sobre%20Tons%20claros.
+      - link "Tons escuros" [ref=f9e121] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Ola%21%20Quero%20saber%20mais%20sobre%20Tons%20escuros.
+    - generic [ref=f9e131]:
+      - generic [ref=f9e135] [cursor=pointer]:
+        - generic [ref=f9e143]:
+          - generic [ref=f9e144]:
+            - text: 
+            - generic [ref=f9e145]: 
+          - generic [ref=f9e149]: Foto
+        - generic [ref=f9e154]:
+          - generic [ref=f9e155]: Amorim Tela Solar 01
+          - generic [ref=f9e160]: Tela Solar 1%
+      - generic [ref=f9e165] [cursor=pointer]:
+        - generic [ref=f9e173]:
+          - generic [ref=f9e174]:
+            - text: 
+            - generic [ref=f9e175]: 
+          - generic [ref=f9e179]: Foto
+        - generic [ref=f9e184]:
+          - generic [ref=f9e185]: Amorim Tela Solar 02
+          - generic [ref=f9e190]: Tela Solar 1%
+      - generic [ref=f9e195] [cursor=pointer]:
+        - generic [ref=f9e203]:
+          - generic [ref=f9e204]:
+            - text: 
+            - generic [ref=f9e205]: 
+          - generic [ref=f9e209]: Foto
+        - generic [ref=f9e214]:
+          - generic [ref=f9e215]: Amorim Tela Solar 03
+          - generic [ref=f9e220]: Tela Solar 3%
+      - generic [ref=f9e225] [cursor=pointer]:
+        - generic [ref=f9e233]:
+          - generic [ref=f9e234]:
+            - text: 
+            - generic [ref=f9e235]: 
+          - generic [ref=f9e239]: Foto
+        - generic [ref=f9e244]:
+          - generic [ref=f9e245]: Amorim Tela Solar 04
+          - generic [ref=f9e250]: Tela Solar 3%
+      - generic [ref=f9e255] [cursor=pointer]:
+        - generic [ref=f9e263]:
+          - generic [ref=f9e264]:
+            - text: 
+            - generic [ref=f9e265]: 
+          - generic [ref=f9e269]: Foto
+        - generic [ref=f9e274]:
+          - generic [ref=f9e275]: Amorim Tela Solar 05
+          - generic [ref=f9e280]: Tela Solar 5%
+      - generic [ref=f9e285] [cursor=pointer]:
+        - generic [ref=f9e293]:
+          - generic [ref=f9e294]:
+            - text: 
+            - generic [ref=f9e295]: 
+          - generic [ref=f9e299]: Foto
+        - generic [ref=f9e304]:
+          - generic [ref=f9e305]: Amorim Tela Solar 06
+          - generic [ref=f9e310]: Tela Solar 5%
+    - link [ref=f9e315] [cursor=pointer]:
+      - /url: /categoria-produto/persianas/amorim-persianas-e-cortinas/
+      - generic [ref=f9e316]: 
+    - generic [ref=f9e320]:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - link:
+                          - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Ola%21%20Quero%20saber%20mais%20sobre%20os%20produtos%20da%20Casa%20Estampa.
+                          - generic: 
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - text: 
+                                    - generic: 
+                                  - generic: Foto do tecido
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Referência
+                          - generic: Nome do Tecido
+                          - generic: Categoria
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic:
+                                          - generic: Abertura
+                                          - generic: —
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic:
+                                          - generic: Cor
+                                          - generic: —
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic:
+                                          - generic: Fabricante
+                                          - generic: Amorim
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - link "Anterior":
+                                          - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Ola%21%20Quero%20saber%20mais%20sobre%20Anterior.
+                                          - generic:
+                                            - generic: 
+                                            - generic: Anterior
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - link "Próximo":
+                                          - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Ola%21%20Quero%20saber%20mais%20sobre%20Pr%C3%B3ximo.
+                                          - generic:
+                                            - generic: 
+                                            - generic: Próximo
+                          - generic:
+                            - generic:
+                              - generic:
+                                - link "Tenho interesse neste tecido":
+                                  - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Ola%21%20Quero%20saber%20mais%20sobre%20Tenho%20interesse%20neste%20tecido.
+                                  - generic:
+                                    - generic: 
+                                    - generic: Tenho interesse neste tecido
+  - contentinfo [ref=f9e321]:
+    - generic [ref=f9e322]:
+      - link "Página inicial Casa Estampa" [ref=f9e324] [cursor=pointer]:
+        - /url: /
+        - img "Casa Estampa Interiores" [ref=f9e325]
+      - navigation "Navegação do rodapé" [ref=f9e326]:
+        - strong [ref=f9e327]: Explore
+        - generic [ref=f9e328]:
+          - link "Início" [ref=f9e329] [cursor=pointer]:
+            - /url: /
+          - link "Papéis de Parede" [ref=f9e330] [cursor=pointer]:
+            - /url: /papeis-de-parede
+          - link "Cortinas" [ref=f9e331] [cursor=pointer]:
+            - /url: /cortinas
+          - link "Persianas" [ref=f9e332] [cursor=pointer]:
+            - /url: /persianas
+          - link "Pisos" [ref=f9e333] [cursor=pointer]:
+            - /url: /pisos
+          - link "Arquitetos" [ref=f9e334] [cursor=pointer]:
+            - /url: /area-do-arquiteto
+          - link "Corporativo" [ref=f9e335] [cursor=pointer]:
+            - /url: /corporativo
+      - generic [ref=f9e336]:
+        - strong [ref=f9e337]: Atendimento
+        - link "Rio de Janeiro · (21) 99988-6842" [ref=f9e338] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?phone=5521999886842
+          - generic [ref=f9e339]: 
+          - text: Rio de Janeiro · (21) 99988-6842
+        - generic [ref=f9e340]: casaestampa.com
+        - generic [ref=f9e341]: Rio de Janeiro
+    - generic [ref=f9e342]:
+      - generic [ref=f9e343]: © 2026 Casa Estampa. Todos os direitos reservados.
+      - link "Falar com a Casa Estampa" [ref=f9e344] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842
+        - text: Falar com a Casa Estampa
+        - generic [ref=f9e345]: 

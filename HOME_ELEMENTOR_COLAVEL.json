@@ -1,0 +1,1285 @@
+[
+  {
+    "id": "000000000001",
+    "elType": "section",
+    "isInner": false,
+    "settings": {
+      "background_background": "classic",
+      "background_color": "#1c1810",
+      "padding": {
+        "unit": "px",
+        "top": "120",
+        "right": "32",
+        "bottom": "120",
+        "left": "32",
+        "isLinked": false
+      },
+      "content_width": "boxed"
+    },
+    "elements": [
+      {
+        "id": "000000000002",
+        "elType": "column",
+        "isInner": false,
+        "settings": {
+          "_column_size": 100,
+          "_inline_size": null
+        },
+        "elements": [
+          {
+            "id": "000000000003",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Casa Estampa Interiores",
+              "header_size": "h1",
+              "align": "center",
+              "title_color": "#f5f0e8",
+              "typography_typography": "custom",
+              "typography_font_family": "Playfair Display",
+              "typography_font_size": {
+                "unit": "px",
+                "size": 64
+              },
+              "typography_font_weight": "500"
+            },
+            "elements": []
+          },
+          {
+            "id": "000000000004",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Transformamos seus ambientes em experiências memoráveis",
+              "header_size": "h2",
+              "align": "center",
+              "title_color": "#c2a57a",
+              "typography_typography": "custom",
+              "typography_font_family": "Playfair Display",
+              "typography_font_size": {
+                "unit": "px",
+                "size": 32
+              },
+              "typography_font_weight": "400"
+            },
+            "elements": []
+          },
+          {
+            "id": "000000000005",
+            "elType": "widget",
+            "widgetType": "text-editor",
+            "settings": {
+              "editor": "<p>Papéis de parede, cortinas, persianas e pisos que elevam o design da sua casa. Com medição e instalação profissional.</p>",
+              "align": "center",
+              "text_color": "#d8c9aa",
+              "typography_typography": "custom",
+              "typography_font_family": "Montserrat",
+              "typography_font_size": {
+                "unit": "px",
+                "size": 18
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "000000000006",
+            "elType": "widget",
+            "widgetType": "button",
+            "settings": {
+              "text": "Ver inspirações",
+              "link": {
+                "url": "#categorias",
+                "is_external": "",
+                "nofollow": ""
+              },
+              "align": "center",
+              "button_text_color": "#1c1810",
+              "button_background_color": "#c2a57a",
+              "typography_typography": "custom",
+              "typography_font_family": "Montserrat",
+              "typography_font_weight": "600"
+            },
+            "elements": []
+          },
+          {
+            "id": "000000000007",
+            "elType": "widget",
+            "widgetType": "button",
+            "settings": {
+              "text": "Pedir orçamento",
+              "link": {
+                "url": "https://api.whatsapp.com/send?phone=5521999886842",
+                "is_external": "true",
+                "nofollow": ""
+              },
+              "align": "center",
+              "button_text_color": "#c2a57a",
+              "button_background_color": "#1c1810",
+              "border_border": "solid",
+              "border_width": {
+                "unit": "px",
+                "top": "1",
+                "right": "1",
+                "bottom": "1",
+                "left": "1",
+                "isLinked": true
+              },
+              "border_color": "#c2a57a",
+              "typography_typography": "custom",
+              "typography_font_family": "Montserrat",
+              "typography_font_weight": "600"
+            },
+            "elements": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "000000000008",
+    "elType": "section",
+    "isInner": false,
+    "settings": {
+      "_element_id": "categorias",
+      "background_background": "classic",
+      "background_color": "#181510",
+      "padding": {
+        "unit": "px",
+        "top": "96",
+        "right": "32",
+        "bottom": "96",
+        "left": "32",
+        "isLinked": false
+      },
+      "content_width": "full"
+    },
+    "elements": [
+      {
+        "id": "000000000009",
+        "elType": "column",
+        "isInner": false,
+        "settings": {
+          "_column_size": 100,
+          "_inline_size": null
+        },
+        "elements": [
+          {
+            "id": "00000000000a",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "O que você precisa",
+              "header_size": "h5",
+              "align": "center",
+              "title_color": "#c2a57a",
+              "typography_typography": "custom",
+              "typography_font_family": "Montserrat",
+              "typography_font_size": {
+                "unit": "px",
+                "size": 13
+              },
+              "typography_text_transform": "uppercase",
+              "typography_letter_spacing": {
+                "unit": "px",
+                "size": 2
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "00000000000b",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Escolha o que transforma seu espaço",
+              "header_size": "h2",
+              "align": "center",
+              "title_color": "#f5f0e8",
+              "typography_typography": "custom",
+              "typography_font_family": "Playfair Display",
+              "typography_font_size": {
+                "unit": "px",
+                "size": 42
+              },
+              "typography_font_weight": "500"
+            },
+            "elements": []
+          }
+        ]
+      },
+      {
+        "id": "00000000000c",
+        "elType": "column",
+        "isInner": false,
+        "settings": {
+          "_column_size": 20,
+          "_inline_size": 20
+        },
+        "elements": [
+          {
+            "id": "00000000000d",
+            "elType": "widget",
+            "widgetType": "image",
+            "settings": {
+              "image": {
+                "url": "/assets/scraped/papeis-de-parede/Papel-de-Parede-Cimento-Queimado.jpg"
+              },
+              "image_size": "full",
+              "image_stretch": "yes"
+            },
+            "elements": []
+          },
+          {
+            "id": "00000000000e",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Papéis de Parede",
+              "header_size": "h3",
+              "title_color": "#f5f0e8",
+              "typography_typography": "custom",
+              "typography_font_family": "Playfair Display",
+              "typography_font_size": {
+                "unit": "px",
+                "size": 24
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "00000000000f",
+            "elType": "widget",
+            "widgetType": "text-editor",
+            "settings": {
+              "editor": "<p>Nacionais e importados. Design exclusivo para cada ambiente.</p>",
+              "text_color": "#b8a88a",
+              "typography_typography": "custom",
+              "typography_font_family": "Montserrat",
+              "typography_font_size": {
+                "unit": "px",
+                "size": 14
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "000000000010",
+            "elType": "widget",
+            "widgetType": "button",
+            "settings": {
+              "text": "Ver catálogos",
+              "link": {
+                "url": "/papeis-de-parede",
+                "is_external": "",
+                "nofollow": ""
+              },
+              "button_text_color": "#c2a57a",
+              "button_background_color": "#181510",
+              "border_border": "solid",
+              "border_width": {
+                "unit": "px",
+                "top": "1",
+                "right": "1",
+                "bottom": "1",
+                "left": "1",
+                "isLinked": true
+              },
+              "border_color": "#c2a57a"
+            },
+            "elements": []
+          }
+        ]
+      },
+      {
+        "id": "000000000011",
+        "elType": "column",
+        "isInner": false,
+        "settings": {
+          "_column_size": 20,
+          "_inline_size": 20
+        },
+        "elements": [
+          {
+            "id": "000000000012",
+            "elType": "widget",
+            "widgetType": "image",
+            "settings": {
+              "image": {
+                "url": "/assets/scraped/home/Cortina-Trilo-Duplo-Linho-e-Blackout.jpg"
+              },
+              "image_size": "full",
+              "image_stretch": "yes"
+            },
+            "elements": []
+          },
+          {
+            "id": "000000000013",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Cortinas",
+              "header_size": "h3",
+              "title_color": "#f5f0e8",
+              "typography_typography": "custom",
+              "typography_font_family": "Playfair Display",
+              "typography_font_size": {
+                "unit": "px",
+                "size": 24
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "000000000014",
+            "elType": "widget",
+            "widgetType": "text-editor",
+            "settings": {
+              "editor": "<p>Tecidos selecionados, trilhos e motorização sob medida.</p>",
+              "text_color": "#b8a88a",
+              "typography_typography": "custom",
+              "typography_font_family": "Montserrat",
+              "typography_font_size": {
+                "unit": "px",
+                "size": 14
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "000000000015",
+            "elType": "widget",
+            "widgetType": "button",
+            "settings": {
+              "text": "Explorar modelos",
+              "link": {
+                "url": "/cortinas",
+                "is_external": "",
+                "nofollow": ""
+              },
+              "button_text_color": "#c2a57a",
+              "button_background_color": "#181510",
+              "border_border": "solid",
+              "border_width": {
+                "unit": "px",
+                "top": "1",
+                "right": "1",
+                "bottom": "1",
+                "left": "1",
+                "isLinked": true
+              },
+              "border_color": "#c2a57a"
+            },
+            "elements": []
+          }
+        ]
+      },
+      {
+        "id": "000000000016",
+        "elType": "column",
+        "isInner": false,
+        "settings": {
+          "_column_size": 20,
+          "_inline_size": 20
+        },
+        "elements": [
+          {
+            "id": "000000000017",
+            "elType": "widget",
+            "widgetType": "image",
+            "settings": {
+              "image": {
+                "url": "/assets/scraped/persianas/Persiana-Painel-Romana.jpg"
+              },
+              "image_size": "full",
+              "image_stretch": "yes"
+            },
+            "elements": []
+          },
+          {
+            "id": "000000000018",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Persianas",
+              "header_size": "h3",
+              "title_color": "#f5f0e8",
+              "typography_typography": "custom",
+              "typography_font_family": "Playfair Display",
+              "typography_font_size": {
+                "unit": "px",
+                "size": 24
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "000000000019",
+            "elType": "widget",
+            "widgetType": "text-editor",
+            "settings": {
+              "editor": "<p>Controle de luz e privacidade com elegância e praticidade.</p>",
+              "text_color": "#b8a88a",
+              "typography_typography": "custom",
+              "typography_font_family": "Montserrat",
+              "typography_font_size": {
+                "unit": "px",
+                "size": 14
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "00000000001a",
+            "elType": "widget",
+            "widgetType": "button",
+            "settings": {
+              "text": "Explorar modelos",
+              "link": {
+                "url": "/persianas",
+                "is_external": "",
+                "nofollow": ""
+              },
+              "button_text_color": "#c2a57a",
+              "button_background_color": "#181510",
+              "border_border": "solid",
+              "border_width": {
+                "unit": "px",
+                "top": "1",
+                "right": "1",
+                "bottom": "1",
+                "left": "1",
+                "isLinked": true
+              },
+              "border_color": "#c2a57a"
+            },
+            "elements": []
+          }
+        ]
+      },
+      {
+        "id": "00000000001b",
+        "elType": "column",
+        "isInner": false,
+        "settings": {
+          "_column_size": 20,
+          "_inline_size": 20
+        },
+        "elements": [
+          {
+            "id": "00000000001c",
+            "elType": "widget",
+            "widgetType": "image",
+            "settings": {
+              "image": {
+                "url": "/assets/scraped/home/ALPI-BIANCO-2MM_.jpg"
+              },
+              "image_size": "full",
+              "image_stretch": "yes"
+            },
+            "elements": []
+          },
+          {
+            "id": "00000000001d",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Pisos Laminados",
+              "header_size": "h3",
+              "title_color": "#f5f0e8",
+              "typography_typography": "custom",
+              "typography_font_family": "Playfair Display",
+              "typography_font_size": {
+                "unit": "px",
+                "size": 24
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "00000000001e",
+            "elType": "widget",
+            "widgetType": "text-editor",
+            "settings": {
+              "editor": "<p>Aconchego natural com excelente custo-benefício.</p>",
+              "text_color": "#b8a88a",
+              "typography_typography": "custom",
+              "typography_font_family": "Montserrat",
+              "typography_font_size": {
+                "unit": "px",
+                "size": 14
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "00000000001f",
+            "elType": "widget",
+            "widgetType": "button",
+            "settings": {
+              "text": "Ver opções",
+              "link": {
+                "url": "/pisos",
+                "is_external": "",
+                "nofollow": ""
+              },
+              "button_text_color": "#c2a57a",
+              "button_background_color": "#181510",
+              "border_border": "solid",
+              "border_width": {
+                "unit": "px",
+                "top": "1",
+                "right": "1",
+                "bottom": "1",
+                "left": "1",
+                "isLinked": true
+              },
+              "border_color": "#c2a57a"
+            },
+            "elements": []
+          }
+        ]
+      },
+      {
+        "id": "000000000020",
+        "elType": "column",
+        "isInner": false,
+        "settings": {
+          "_column_size": 20,
+          "_inline_size": 20
+        },
+        "elements": [
+          {
+            "id": "000000000021",
+            "elType": "widget",
+            "widgetType": "image",
+            "settings": {
+              "image": {
+                "url": "/assets/scraped/pisos-vinilicos/Home-Piso-Vinilico-01-Durafloor-Nativa-Belem.jpg"
+              },
+              "image_size": "full",
+              "image_stretch": "yes"
+            },
+            "elements": []
+          },
+          {
+            "id": "000000000022",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Pisos Vinílicos",
+              "header_size": "h3",
+              "title_color": "#f5f0e8",
+              "typography_typography": "custom",
+              "typography_font_family": "Playfair Display",
+              "typography_font_size": {
+                "unit": "px",
+                "size": 24
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "000000000023",
+            "elType": "widget",
+            "widgetType": "text-editor",
+            "settings": {
+              "editor": "<p>Alta resistência, fácil limpeza e design sofisticado.</p>",
+              "text_color": "#b8a88a",
+              "typography_typography": "custom",
+              "typography_font_family": "Montserrat",
+              "typography_font_size": {
+                "unit": "px",
+                "size": 14
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "000000000024",
+            "elType": "widget",
+            "widgetType": "button",
+            "settings": {
+              "text": "Ver opções",
+              "link": {
+                "url": "/pisos",
+                "is_external": "",
+                "nofollow": ""
+              },
+              "button_text_color": "#c2a57a",
+              "button_background_color": "#181510",
+              "border_border": "solid",
+              "border_width": {
+                "unit": "px",
+                "top": "1",
+                "right": "1",
+                "bottom": "1",
+                "left": "1",
+                "isLinked": true
+              },
+              "border_color": "#c2a57a"
+            },
+            "elements": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "000000000025",
+    "elType": "section",
+    "isInner": false,
+    "settings": {
+      "background_background": "classic",
+      "background_color": "#c2a57a",
+      "padding": {
+        "unit": "px",
+        "top": "28",
+        "right": "32",
+        "bottom": "28",
+        "left": "32",
+        "isLinked": false
+      }
+    },
+    "elements": [
+      {
+        "id": "000000000026",
+        "elType": "column",
+        "isInner": false,
+        "settings": {
+          "_column_size": 100,
+          "_inline_size": null
+        },
+        "elements": [
+          {
+            "id": "000000000027",
+            "elType": "widget",
+            "widgetType": "text-editor",
+            "settings": {
+              "editor": "<p>Atendemos clientes particulares, arquitetos e corporativos.</p>",
+              "align": "center",
+              "text_color": "#1c1810",
+              "typography_typography": "custom",
+              "typography_font_family": "Montserrat",
+              "typography_font_weight": "600",
+              "typography_font_size": {
+                "unit": "px",
+                "size": 16
+              }
+            },
+            "elements": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "000000000028",
+    "elType": "section",
+    "isInner": false,
+    "settings": {
+      "background_background": "classic",
+      "background_color": "#1c1810",
+      "padding": {
+        "unit": "px",
+        "top": "96",
+        "right": "32",
+        "bottom": "96",
+        "left": "32",
+        "isLinked": false
+      }
+    },
+    "elements": [
+      {
+        "id": "000000000029",
+        "elType": "column",
+        "isInner": false,
+        "settings": {
+          "_column_size": 100,
+          "_inline_size": null
+        },
+        "elements": [
+          {
+            "id": "00000000002a",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Instalações próprias",
+              "header_size": "h5",
+              "align": "center",
+              "title_color": "#c2a57a",
+              "typography_typography": "custom",
+              "typography_font_family": "Montserrat",
+              "typography_text_transform": "uppercase",
+              "typography_letter_spacing": {
+                "unit": "px",
+                "size": 2
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "00000000002b",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Por que escolher a Casa Estampa",
+              "header_size": "h2",
+              "align": "center",
+              "title_color": "#f5f0e8",
+              "typography_typography": "custom",
+              "typography_font_family": "Playfair Display",
+              "typography_font_size": {
+                "unit": "px",
+                "size": 42
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "00000000002c",
+            "elType": "widget",
+            "widgetType": "icon-box",
+            "settings": {
+              "selected_icon": {
+                "value": "fas fa-user-check",
+                "library": "fa-solid"
+              },
+              "title": "Atendimento personalizado",
+              "description": "Cada projeto é único. Ouvimos, entendemos e criamos soluções sob medida para o seu espaço.",
+              "title_size": "h3",
+              "title_color": "#f5f0e8",
+              "description_color": "#b8a88a",
+              "icon_color": "#c2a57a",
+              "icon_primary_color": "#c2a57a",
+              "icon_secondary_color": "#1c1810"
+            },
+            "elements": []
+          },
+          {
+            "id": "00000000002d",
+            "elType": "widget",
+            "widgetType": "icon-box",
+            "settings": {
+              "selected_icon": {
+                "value": "fas fa-ruler-combined",
+                "library": "fa-solid"
+              },
+              "title": "Medição profissional",
+              "description": "Nossa equipe visita o local e garante precisão em cada detalhe antes da execução.",
+              "title_size": "h3",
+              "title_color": "#f5f0e8",
+              "description_color": "#b8a88a",
+              "icon_color": "#c2a57a",
+              "icon_primary_color": "#c2a57a",
+              "icon_secondary_color": "#1c1810"
+            },
+            "elements": []
+          },
+          {
+            "id": "00000000002e",
+            "elType": "widget",
+            "widgetType": "icon-box",
+            "settings": {
+              "selected_icon": {
+                "value": "fas fa-tools",
+                "library": "fa-solid"
+              },
+              "title": "Instalação especializada",
+              "description": "Acabamento impecável. Instaladores treinados para cada tipo de produto.",
+              "title_size": "h3",
+              "title_color": "#f5f0e8",
+              "description_color": "#b8a88a",
+              "icon_color": "#c2a57a",
+              "icon_primary_color": "#c2a57a",
+              "icon_secondary_color": "#1c1810"
+            },
+            "elements": []
+          },
+          {
+            "id": "00000000002f",
+            "elType": "widget",
+            "widgetType": "icon-box",
+            "settings": {
+              "selected_icon": {
+                "value": "fas fa-globe-americas",
+                "library": "fa-solid"
+              },
+              "title": "Opções nacionais e importadas",
+              "description": "Curadoria de marcas de excelência para atender todos os estilos e orçamentos.",
+              "title_size": "h3",
+              "title_color": "#f5f0e8",
+              "description_color": "#b8a88a",
+              "icon_color": "#c2a57a",
+              "icon_primary_color": "#c2a57a",
+              "icon_secondary_color": "#1c1810"
+            },
+            "elements": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "000000000030",
+    "elType": "section",
+    "isInner": false,
+    "settings": {
+      "background_background": "classic",
+      "background_color": "#181510",
+      "padding": {
+        "unit": "px",
+        "top": "96",
+        "right": "32",
+        "bottom": "96",
+        "left": "32",
+        "isLinked": false
+      }
+    },
+    "elements": [
+      {
+        "id": "000000000031",
+        "elType": "column",
+        "isInner": false,
+        "settings": {
+          "_column_size": 100,
+          "_inline_size": null
+        },
+        "elements": [
+          {
+            "id": "000000000032",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Dúvidas frequentes",
+              "header_size": "h5",
+              "align": "center",
+              "title_color": "#c2a57a",
+              "typography_typography": "custom",
+              "typography_font_family": "Montserrat",
+              "typography_text_transform": "uppercase",
+              "typography_letter_spacing": {
+                "unit": "px",
+                "size": 2
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "000000000033",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Antes de decidir",
+              "header_size": "h2",
+              "align": "center",
+              "title_color": "#f5f0e8",
+              "typography_typography": "custom",
+              "typography_font_family": "Playfair Display",
+              "typography_font_size": {
+                "unit": "px",
+                "size": 42
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "000000000034",
+            "elType": "widget",
+            "widgetType": "text-editor",
+            "settings": {
+              "editor": "<p>Respondemos as dúvidas mais comuns para que você tome a melhor decisão com segurança.</p>",
+              "align": "center",
+              "text_color": "#b8a88a",
+              "typography_typography": "custom",
+              "typography_font_family": "Montserrat"
+            },
+            "elements": []
+          },
+          {
+            "id": "000000000035",
+            "elType": "widget",
+            "widgetType": "accordion",
+            "settings": {
+              "tabs": [
+                {
+                  "_id": "000000000036",
+                  "tab_title": "Minha parede tem azulejo, posso aplicar papel de parede?",
+                  "tab_content": "Não. É necessário antes emassar a parede e passar seladora para garantir boa aderência e acabamento perfeito."
+                },
+                {
+                  "_id": "000000000037",
+                  "tab_title": "Vocês trabalham com adesivos?",
+                  "tab_content": "Não, trabalhamos apenas com papel de parede."
+                },
+                {
+                  "_id": "000000000038",
+                  "tab_title": "Fazem papel de parede personalizado?",
+                  "tab_content": "Sim! Fazemos personalizado com a imagem de sua preferência em papel de textura de linho."
+                },
+                {
+                  "_id": "000000000039",
+                  "tab_title": "Têm papéis de parede à pronta entrega?",
+                  "tab_content": "Sim, grande parte dos nossos álbuns está disponível para pronta entrega"
+                }
+              ],
+              "active_item": "",
+              "title_color": "#f5f0e8",
+              "content_color": "#b8a88a",
+              "icon_color": "#c2a57a",
+              "border_color": "#4a4030"
+            },
+            "elements": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "00000000003a",
+    "elType": "section",
+    "isInner": false,
+    "settings": {
+      "background_background": "classic",
+      "background_color": "#c2a57a",
+      "padding": {
+        "unit": "px",
+        "top": "96",
+        "right": "32",
+        "bottom": "96",
+        "left": "32",
+        "isLinked": false
+      }
+    },
+    "elements": [
+      {
+        "id": "00000000003b",
+        "elType": "column",
+        "isInner": false,
+        "settings": {
+          "_column_size": 100,
+          "_inline_size": null
+        },
+        "elements": [
+          {
+            "id": "00000000003c",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Pronto para transformar seu ambiente?",
+              "header_size": "h2",
+              "align": "center",
+              "title_color": "#1c1810",
+              "typography_typography": "custom",
+              "typography_font_family": "Playfair Display",
+              "typography_font_size": {
+                "unit": "px",
+                "size": 46
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "00000000003d",
+            "elType": "widget",
+            "widgetType": "text-editor",
+            "settings": {
+              "editor": "<p>Fale com nossos especialistas e receba um orçamento personalizado hoje mesmo — sem compromisso.</p>",
+              "align": "center",
+              "text_color": "#1c1810",
+              "typography_typography": "custom",
+              "typography_font_family": "Montserrat",
+              "typography_font_size": {
+                "unit": "px",
+                "size": 18
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "00000000003e",
+            "elType": "widget",
+            "widgetType": "button",
+            "settings": {
+              "text": "Quero orçamento",
+              "link": {
+                "url": "https://api.whatsapp.com/send?phone=5521999886842",
+                "is_external": "true",
+                "nofollow": ""
+              },
+              "align": "center",
+              "button_text_color": "#f5f0e8",
+              "button_background_color": "#1c1810",
+              "typography_typography": "custom",
+              "typography_font_family": "Montserrat",
+              "typography_font_weight": "600"
+            },
+            "elements": []
+          },
+          {
+            "id": "00000000003f",
+            "elType": "widget",
+            "widgetType": "button",
+            "settings": {
+              "text": "Ver inspirações",
+              "link": {
+                "url": "#categorias",
+                "is_external": "",
+                "nofollow": ""
+              },
+              "align": "center",
+              "button_text_color": "#1c1810",
+              "button_background_color": "#c2a57a",
+              "border_border": "solid",
+              "border_width": {
+                "unit": "px",
+                "top": "1",
+                "right": "1",
+                "bottom": "1",
+                "left": "1",
+                "isLinked": true
+              },
+              "border_color": "#1c1810",
+              "typography_typography": "custom",
+              "typography_font_family": "Montserrat",
+              "typography_font_weight": "600"
+            },
+            "elements": []
+          },
+          {
+            "id": "000000000040",
+            "elType": "widget",
+            "widgetType": "text-editor",
+            "settings": {
+              "editor": "<p>Instalação no Rio de Janeiro</p><p>Entrega em todo o Brasil</p><p>Atendimento rápido - Resposta via WhatsApp em minutos</p><p>Parcele em até 10x - No cartão de crédito</p><p>Programa para arquitetos - Comissão, pontuação e bônus</p>",
+              "align": "center",
+              "text_color": "#1c1810",
+              "typography_typography": "custom",
+              "typography_font_family": "Montserrat",
+              "typography_font_size": {
+                "unit": "px",
+                "size": 14
+              }
+            },
+            "elements": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "000000000041",
+    "elType": "section",
+    "isInner": false,
+    "settings": {
+      "background_background": "classic",
+      "background_color": "#181510",
+      "padding": {
+        "unit": "px",
+        "top": "96",
+        "right": "32",
+        "bottom": "96",
+        "left": "32",
+        "isLinked": false
+      }
+    },
+    "elements": [
+      {
+        "id": "000000000042",
+        "elType": "column",
+        "isInner": false,
+        "settings": {
+          "_column_size": 100,
+          "_inline_size": null
+        },
+        "elements": [
+          {
+            "id": "000000000043",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Avaliações no Google",
+              "header_size": "h5",
+              "align": "center",
+              "title_color": "#c2a57a",
+              "typography_typography": "custom",
+              "typography_font_family": "Montserrat",
+              "typography_text_transform": "uppercase",
+              "typography_letter_spacing": {
+                "unit": "px",
+                "size": 2
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "000000000044",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Clientes que amaram suas escolhas",
+              "header_size": "h2",
+              "align": "center",
+              "title_color": "#f5f0e8",
+              "typography_typography": "custom",
+              "typography_font_family": "Playfair Display",
+              "typography_font_size": {
+                "unit": "px",
+                "size": 42
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "000000000045",
+            "elType": "section",
+            "isInner": true,
+            "settings": {
+              "layout": "full_width",
+              "gap": "extended",
+              "background_background": "classic",
+              "background_color": "#181510"
+            },
+            "elements": [
+              {
+                "id": "000000000046",
+                "elType": "column",
+                "isInner": true,
+                "settings": {
+                  "_column_size": 33,
+                  "_inline_size": 33
+                },
+                "elements": [
+                  {
+                    "id": "000000000047",
+                    "elType": "widget",
+                    "widgetType": "text-editor",
+                    "settings": {
+                      "editor": "<p>★★★★★</p><p>\"No mesmo dia vieram fazer o orçamento. Na data marcada, fizeram um serviço perfeito.\" - Lucia Carqueja</p>",
+                      "text_color": "#f5f0e8",
+                      "typography_typography": "custom",
+                      "typography_font_family": "Montserrat"
+                    },
+                    "elements": []
+                  }
+                ]
+              },
+              {
+                "id": "000000000048",
+                "elType": "column",
+                "isInner": true,
+                "settings": {
+                  "_column_size": 33,
+                  "_inline_size": 33
+                },
+                "elements": [
+                  {
+                    "id": "000000000049",
+                    "elType": "widget",
+                    "widgetType": "text-editor",
+                    "settings": {
+                      "editor": "<p>★★★★★</p><p>\"Excelente atendimento e empresa. Aplicação feita com muito cuidado e profissionalismo.\" - Naty Henriques</p>",
+                      "text_color": "#f5f0e8",
+                      "typography_typography": "custom",
+                      "typography_font_family": "Montserrat"
+                    },
+                    "elements": []
+                  }
+                ]
+              },
+              {
+                "id": "00000000004a",
+                "elType": "column",
+                "isInner": true,
+                "settings": {
+                  "_column_size": 34,
+                  "_inline_size": 34
+                },
+                "elements": [
+                  {
+                    "id": "00000000004b",
+                    "elType": "widget",
+                    "widgetType": "text-editor",
+                    "settings": {
+                      "editor": "<p>★★★★★</p><p>\"Atendimento, preço e qualidade. Desde a venda até a instalação, serviço impecável.\" - Bruno Ribeiro</p>",
+                      "text_color": "#f5f0e8",
+                      "typography_typography": "custom",
+                      "typography_font_family": "Montserrat"
+                    },
+                    "elements": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "00000000004c",
+    "elType": "section",
+    "isInner": false,
+    "settings": {
+      "background_background": "classic",
+      "background_color": "#1c1810",
+      "padding": {
+        "unit": "px",
+        "top": "96",
+        "right": "32",
+        "bottom": "96",
+        "left": "32",
+        "isLinked": false
+      }
+    },
+    "elements": [
+      {
+        "id": "00000000004d",
+        "elType": "column",
+        "isInner": false,
+        "settings": {
+          "_column_size": 100,
+          "_inline_size": null
+        },
+        "elements": [
+          {
+            "id": "00000000004e",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Alguns de nossos clientes corporativos",
+              "header_size": "h5",
+              "align": "center",
+              "title_color": "#c2a57a",
+              "typography_typography": "custom",
+              "typography_font_family": "Montserrat",
+              "typography_text_transform": "uppercase",
+              "typography_letter_spacing": {
+                "unit": "px",
+                "size": 2
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "00000000004f",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Quem confia na Casa Estampa",
+              "header_size": "h2",
+              "align": "center",
+              "title_color": "#f5f0e8",
+              "typography_typography": "custom",
+              "typography_font_family": "Playfair Display",
+              "typography_font_size": {
+                "unit": "px",
+                "size": 42
+              }
+            },
+            "elements": []
+          }
+        ]
+      }
+    ]
+  }
+]

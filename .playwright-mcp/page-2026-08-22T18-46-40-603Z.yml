@@ -1,0 +1,319 @@
+- generic [active] [ref=f6e1]:
+  - navigation [ref=f6e2]:
+    - text: 
+    - link [ref=f6e3] [cursor=pointer]:
+      - /url: /
+      - img "Casa Estampa" [ref=f6e4]
+    - list [ref=f6e5]:
+      - listitem [ref=f6e6]:
+        - link "Início" [ref=f6e7] [cursor=pointer]:
+          - /url: /
+      - listitem [ref=f6e8]:
+        - link "Papéis de Parede" [ref=f6e9] [cursor=pointer]:
+          - /url: /papeis-de-parede
+      - listitem [ref=f6e10]:
+        - link "Cortinas" [ref=f6e11] [cursor=pointer]:
+          - /url: /cortinas
+      - listitem [ref=f6e12]:
+        - link "Persianas" [ref=f6e13] [cursor=pointer]:
+          - /url: /persianas
+      - listitem [ref=f6e14]:
+        - link "Pisos" [ref=f6e15] [cursor=pointer]:
+          - /url: /pisos
+      - listitem [ref=f6e16]:
+        - link "Arquitetos" [ref=f6e17] [cursor=pointer]:
+          - /url: /area-do-arquiteto
+      - listitem [ref=f6e18]:
+        - link "Corporativo" [ref=f6e19] [cursor=pointer]:
+          - /url: /corporativo
+    - button "Buscar no site" [ref=f6e21] [cursor=pointer]:
+      - generic [ref=f6e22]: 
+    - link "Falar agora" [ref=f6e23] [cursor=pointer]:
+      - /url: https://api.whatsapp.com/send?phone=5521999886842
+      - generic [ref=f6e24]: 
+      - text: Falar agora
+  - link "Ir para o conteúdo" [ref=f6e25] [cursor=pointer]:
+    - /url: "#content"
+  - main [ref=f6e30]:
+    - article [ref=f6e31]:
+      - generic [ref=f6e33]:
+        - generic [ref=f6e40]:
+          - generic: CORPORATIVO
+          - generic [ref=f6e41]: Casa Estampa · Atendimento Corporativo
+          - heading "Corporativo" [level=1] [ref=f6e42]
+          - paragraph [ref=f6e43]: Transformamos ambientes com qualidade, agilidade e excelência.
+          - paragraph [ref=f6e44]: Atendemos hotéis, hospitais, clínicas, construtoras, escritórios e áreas comuns com soluções completas em revestimentos, cortinas, persianas, pisos e películas arquitetônicas.
+          - generic [ref=f6e45]:
+            - link "Solicitar atendimento" [ref=f6e46] [cursor=pointer]:
+              - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá, quero solicitar atendimento corporativo.
+            - link "Ver projetos" [ref=f6e47] [cursor=pointer]:
+              - /url: "#casos"
+        - generic [ref=f6e55]:
+          - generic [ref=f6e56]:
+            - paragraph [ref=f6e57]:
+              - text: A Casa Estampa possui
+              - strong [ref=f6e58]: ampla experiência
+              - text: no atendimento de projetos corporativos de diferentes portes, de pequenas reformas a
+              - strong [ref=f6e59]: grandes implantações
+              - text: .
+            - paragraph [ref=f6e60]:
+              - text: Nossa equipe oferece suporte técnico completo, acompanhamento em obra e soluções personalizadas para cada segmento e
+              - strong [ref=f6e61]: compromisso real de prazo
+              - text: .
+          - generic [ref=f6e62]:
+            - generic [ref=f6e63]: Segmentos Atendidos
+            - generic [ref=f6e64]:
+              - link "Hospitais e clínicas" [ref=f6e65] [cursor=pointer]:
+                - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá, Casa Estampa! Gostaria de atendimento corporativo para Hospitais e clínicas.
+              - link "Hotéis e hospedagem" [ref=f6e66] [cursor=pointer]:
+                - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá, Casa Estampa! Gostaria de atendimento corporativo para Hotéis e hospedagem.
+              - link "Escritórios corporativos" [ref=f6e67] [cursor=pointer]:
+                - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá, Casa Estampa! Gostaria de atendimento corporativo para Escritórios corporativos.
+              - link "Construtoras e incorporadoras" [ref=f6e68] [cursor=pointer]:
+                - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá, Casa Estampa! Gostaria de atendimento corporativo para Construtoras e incorporadoras.
+              - link "Áreas comuns de condomínios" [ref=f6e69] [cursor=pointer]:
+                - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá, Casa Estampa! Gostaria de atendimento corporativo para Áreas comuns de condomínios.
+              - link "Restaurantes e espaços comerciais" [ref=f6e70] [cursor=pointer]:
+                - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá, Casa Estampa! Gostaria de atendimento corporativo para Restaurantes e espaços comerciais.
+        - generic [ref=f6e76]:
+          - generic [ref=f6e77]: Cases e Clientes
+          - heading [level=2] [ref=f6e78]:
+            - text: Projetos que
+            - emphasis [ref=f6e79]: entregamos
+          - paragraph [ref=f6e80]: Referências que comprovam capacidade de execução em diferentes segmentos e escalas.
+        - generic [ref=f6e88]:
+          - img "Med Senior" [ref=f6e91]
+          - generic [ref=f6e92]:
+            - generic [ref=f6e93]: Hospital Med Senior
+            - generic [ref=f6e94]: Saúde · Hospitalar
+        - generic [ref=f6e95]: Barra da Tijuca
+        - generic [ref=f6e105]:
+          - figure "Med Senior · Barra da Tijuca – Papel de Parede" [ref=f6e110]
+          - figure "Med Senior · Barra da Tijuca – Papel de Parede" [ref=f6e116]
+          - figure "Med Senior · Barra da Tijuca – Carpete" [ref=f6e122]
+        - generic [ref=f6e125]:
+          - figure "Med Senior · Barra da Tijuca – Persiana" [ref=f6e130]
+          - figure "Med Senior · Barra da Tijuca – Persiana" [ref=f6e136]
+          - figure "Med Senior · Pelicula" [ref=f6e142]
+        - generic [ref=f6e144]: Campo Grande
+        - generic [ref=f6e154]:
+          - figure "Med Senior · Campo Grande – Papel de Parede" [ref=f6e159]
+          - figure "Med Senior · Campo Grande – Persiana" [ref=f6e165]
+          - figure "Med Senior · Campo Grande – Película" [ref=f6e171]
+        - generic [ref=f6e173]: Botafogo
+        - generic [ref=f6e183]:
+          - figure "Med Senior · Botafogo – Papel de Parede" [ref=f6e188]
+          - figure "Med Senior · Botafogo – Papel de Parede" [ref=f6e194]
+          - figure "Med Senior · Botafogo – Papel de Parede" [ref=f6e200]
+        - generic [ref=f6e208]:
+          - img "Mozak" [ref=f6e211]
+          - generic [ref=f6e212]:
+            - generic [ref=f6e213]: Construtora Mozak
+            - generic [ref=f6e214]: Construção · Incorporação
+        - generic [ref=f6e215]: Empreendimento Essência – Leblon - Papéis de Parede
+        - generic [ref=f6e225]:
+          - figure "Mozak · Essência – Papel de Parede" [ref=f6e230]
+          - figure "Mozak · Essência – Papel de Parede" [ref=f6e236]
+          - figure "Mozak · Essência – Papel de Parede" [ref=f6e242]
+        - generic [ref=f6e244]: Empreendimento Essência – Leblon - Cortinas
+        - generic [ref=f6e254]:
+          - figure "Mozak · Essência – Cortina" [ref=f6e259]
+          - figure "Mozak · Essência – Cortina" [ref=f6e265]
+          - figure [ref=f6e271]
+        - generic [ref=f6e274]:
+          - generic [ref=f6e276]:
+            - generic [ref=f6e277]: Empreendimento Nove - Ipanema
+            - figure "Mozak · Nove – Papel de Parede Personalizado" [ref=f6e284]
+          - generic [ref=f6e287]:
+            - generic [ref=f6e288]: Empreendimento Era - Botafogo
+            - figure "Mozak · Era Botafogo – Papel de Parede" [ref=f6e295]
+        - generic [ref=f6e303]:
+          - img "Fairmont" [ref=f6e306]
+          - generic [ref=f6e307]:
+            - generic [ref=f6e308]: Hotel Fairmont Copacabana
+            - generic [ref=f6e309]: Hotelaria · Alto Padrão
+        - generic [ref=f6e311]:
+          - figure "Hotel Fairmont – Papel de Parede" [ref=f6e316]
+          - figure "Hotel Fairmont – Papel de Parede" [ref=f6e322]
+          - figure "Hotel Fairmont – Papel de Parede" [ref=f6e328]
+        - generic [ref=f6e331]:
+          - figure "Hotel Fairmont – Papel de Parede" [ref=f6e336]
+          - figure "Hotel Fairmont – Papel de Parede" [ref=f6e342]
+          - figure "Hotel Fairmont – Papel de Parede" [ref=f6e348]
+        - generic [ref=f6e351]:
+          - figure "Hotel Fairmont – Papel de Parede" [ref=f6e356]
+          - figure "Hotel Fairmont – Papel de Parede" [ref=f6e362]
+        - generic [ref=f6e370]:
+          - generic [ref=f6e373]:
+            - img "Fairmont" [ref=f6e376]
+            - generic [ref=f6e377]:
+              - generic [ref=f6e378]: Academia Companhia Atletica - Cond. Ocean Drive
+              - generic [ref=f6e379]: Condomínio · Alto Padrão
+          - generic [ref=f6e380]: Barra da Tijuca
+        - generic [ref=f6e386]:
+          - figure "Academia Companhia Atlética – Piso Emborrachado" [ref=f6e391]
+          - figure "Academia Companhia Atlética – Piso Vinílico" [ref=f6e397]
+          - figure "Academia Companhia Atlética – Piso Vinílico" [ref=f6e403]
+        - generic [ref=f6e411]:
+          - img "Fairmont" [ref=f6e414]
+          - generic [ref=f6e415]:
+            - generic [ref=f6e416]: Maternidade Perinatal
+            - generic [ref=f6e417]: Saúde - Hospitalar
+        - generic [ref=f6e419]:
+          - figure "Papel de Parede" [ref=f6e424]
+          - figure "Papel de Parede" [ref=f6e430]
+          - figure "Papel de Parede" [ref=f6e436]
+        - generic [ref=f6e444]:
+          - img "Fairmont" [ref=f6e447]
+          - generic [ref=f6e448]:
+            - generic [ref=f6e449]: Colégio Pio XI - Teatro
+            - generic [ref=f6e450]: Educacional
+        - generic [ref=f6e452]:
+          - figure "Colégio Pio XI · Teatro – Cortina Motorizada" [ref=f6e457]
+          - figure "Colégio Pio XI · Teatro – Cortina Motorizada" [ref=f6e463]
+          - figure "Colégio Pio XI · Teatro – Cortina Motorizada" [ref=f6e469]
+        - generic [ref=f6e477]:
+          - generic [ref=f6e478]: O que entregamos
+          - heading [level=2] [ref=f6e479]:
+            - text: Nossas
+            - emphasis [ref=f6e480]: soluções
+          - paragraph [ref=f6e481]: Produtos e instalação alinhados ao uso real do espaço, prazo da obra e padrão de acabamento esperado.
+          - generic [ref=f6e483]:
+            - generic [ref=f6e484]:
+              - generic [ref=f6e485]: 
+              - generic [ref=f6e486]: "01"
+              - generic [ref=f6e487]: Papéis de Parede Corporativos
+              - paragraph [ref=f6e488]: Alta durabilidade e excelente acabamento para ambientes de grande circulação.
+            - generic [ref=f6e489]:
+              - generic [ref=f6e490]: 
+              - generic [ref=f6e491]: "02"
+              - generic [ref=f6e492]: Cortinas e Persianas
+              - paragraph [ref=f6e493]: Soluções funcionais e sofisticadas para hotéis, clínicas, escritórios e áreas comuns.
+            - generic [ref=f6e494]:
+              - generic [ref=f6e495]: 
+              - generic [ref=f6e496]: "03"
+              - generic [ref=f6e497]: Películas Arquitetônicas
+              - paragraph [ref=f6e498]: Controle solar, privacidade e redução térmica para fachadas e áreas envidraçadas.
+            - generic [ref=f6e499]:
+              - generic [ref=f6e500]: 
+              - generic [ref=f6e501]: "04"
+              - generic [ref=f6e502]: Pisos Laminados e Vinílicos
+              - paragraph [ref=f6e503]: Praticidade, conforto e rápida instalação para ambientes corporativos.
+        - generic [ref=f6e510]:
+          - generic [ref=f6e511]: Por que a Casa Estampa
+          - heading [level=2] [ref=f6e512]:
+            - text: Diferenciais que
+            - emphasis [ref=f6e513]: importam
+          - paragraph [ref=f6e514]: O que garante segurança na escolha e tranquilidade na execução do seu projeto.
+          - generic [ref=f6e516]:
+            - generic [ref=f6e517]:
+              - generic [ref=f6e518]: "01"
+              - generic [ref=f6e519]: Atendimento técnico especializado
+              - paragraph [ref=f6e520]: Suporte completo para especificação, viabilidade e acompanhamento do projeto do início ao fim.
+            - generic [ref=f6e521]:
+              - generic [ref=f6e522]: "02"
+              - generic [ref=f6e523]: Equipe própria de instalação
+              - paragraph [ref=f6e524]: Instalação feita por equipe treinada para acabamento e padrão de obra, sem terceirizações.
+            - generic [ref=f6e525]:
+              - generic [ref=f6e526]: "03"
+              - generic [ref=f6e527]: Cronograma alinhado à obra
+              - paragraph [ref=f6e528]: Planejamento integrado para reduzir retrabalho, atrasos e imprevistos na entrega.
+            - generic [ref=f6e529]:
+              - generic [ref=f6e530]: "04"
+              - generic [ref=f6e531]: Produtos nacionais e importados
+              - paragraph [ref=f6e532]: Curadoria de linhas para diferentes padrões técnicos e estéticos de projeto.
+            - generic [ref=f6e533]:
+              - generic [ref=f6e534]: "05"
+              - generic [ref=f6e535]: Capacidade para qualquer porte
+              - paragraph [ref=f6e536]: Atendemos obras de pequeno, médio e grande porte com a mesma atenção ao detalhe.
+            - generic [ref=f6e537]:
+              - generic [ref=f6e538]: "06"
+              - generic [ref=f6e539]: Compromisso com qualidade e prazo
+              - paragraph [ref=f6e540]: Execução cuidadosa, comunicação clara e entrega responsável em cada projeto.
+        - generic [ref=f6e547]:
+          - generic [ref=f6e548]: Como trabalhamos
+          - heading [level=2] [ref=f6e549]:
+            - text: Seu projeto, passo a
+            - emphasis [ref=f6e550]: passo
+          - paragraph [ref=f6e551]: Do primeiro contato à entrega, um fluxo claro e sem surpresas.
+          - generic [ref=f6e553]:
+            - generic [ref=f6e554]:
+              - generic [ref=f6e555]: "01"
+              - generic [ref=f6e557]: Entendimento
+              - paragraph [ref=f6e558]: Levantamento de demanda, escopo, prazo e padrão de acabamento desejado.
+            - generic [ref=f6e559]:
+              - generic [ref=f6e560]: "02"
+              - generic [ref=f6e562]: Indicação técnica
+              - paragraph [ref=f6e563]: Materiais e soluções adequados ao uso real do espaço.
+            - generic [ref=f6e564]:
+              - generic [ref=f6e565]: "03"
+              - generic [ref=f6e567]: Orçamento e medição
+              - paragraph [ref=f6e568]: Medição in loco, orçamento detalhado e alinhamento com o cronograma da obra.
+            - generic [ref=f6e569]:
+              - generic [ref=f6e570]: "04"
+              - generic [ref=f6e572]: Instalação e entrega
+              - paragraph [ref=f6e573]: Acabamento profissional e comunicação ativa do início ao fim.
+        - generic [ref=f6e580]:
+          - generic [ref=f6e581]:
+            - generic [ref=f6e582]: Execução em vídeo
+            - heading [level=2] [ref=f6e583]:
+              - text: Hotel Fairmont
+              - emphasis [ref=f6e584]: Copacabana
+            - paragraph [ref=f6e585]: Veja na prática como conduzimos projetos de hotelaria de alto padrão.
+          - generic [ref=f6e587]: Hotel Fairmont · Copacabana
+        - generic [ref=f6e596]:
+          - generic: CE
+          - generic [ref=f6e597]:
+            - generic [ref=f6e598]: Pronto para começar
+            - heading [level=2] [ref=f6e599]:
+              - text: Sua empresa tem um projeto
+              - emphasis [ref=f6e600]: em andamento?
+            - paragraph [ref=f6e601]: Nossa equipe está preparada para atender desde pequenas intervenções até grandes implantações corporativas.
+          - generic [ref=f6e602]:
+            - generic [ref=f6e603]:
+              - generic [ref=f6e604]: ◆ Hotéis
+              - generic [ref=f6e605]: ◆ Hospitais
+              - generic [ref=f6e606]: ◆ Construtoras
+              - generic [ref=f6e607]: ◆ Escritórios
+            - link "Solicitar atendimento corporativo" [ref=f6e608] [cursor=pointer]:
+              - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá, Casa Estampa. Quero solicitar atendimento corporativo.
+            - paragraph [ref=f6e609]: (21) 99988-6842 · WhatsApp
+        - generic [ref=f6e616]:
+          - generic [ref=f6e617]:
+            - link "Página inicial Casa Estampa" [ref=f6e619] [cursor=pointer]:
+              - /url: /
+              - img "Casa Estampa Interiores" [ref=f6e620]
+            - navigation "Navegação do rodapé" [ref=f6e621]:
+              - strong [ref=f6e622]: Explore
+              - generic [ref=f6e623]:
+                - link "Início" [ref=f6e624] [cursor=pointer]:
+                  - /url: /
+                - link "Papéis de Parede" [ref=f6e625] [cursor=pointer]:
+                  - /url: /papeis-de-parede
+                - link "Cortinas" [ref=f6e626] [cursor=pointer]:
+                  - /url: /cortinas
+                - link "Persianas" [ref=f6e627] [cursor=pointer]:
+                  - /url: /persianas
+                - link "Pisos" [ref=f6e628] [cursor=pointer]:
+                  - /url: /pisos
+                - link "Arquitetos" [ref=f6e629] [cursor=pointer]:
+                  - /url: /area-do-arquiteto
+                - link "Corporativo" [ref=f6e630] [cursor=pointer]:
+                  - /url: /corporativo
+            - generic [ref=f6e631]:
+              - strong [ref=f6e632]: Atendimento
+              - link "Rio de Janeiro · (21) 99988-6842" [ref=f6e633] [cursor=pointer]:
+                - /url: https://api.whatsapp.com/send?phone=5521999886842
+                - generic [ref=f6e634]: 
+                - text: Rio de Janeiro · (21) 99988-6842
+              - generic [ref=f6e635]: casaestampa.com
+              - generic [ref=f6e636]: Rio de Janeiro
+          - generic [ref=f6e637]:
+            - generic [ref=f6e638]: © 2026 Casa Estampa. Todos os direitos reservados.
+            - link "Falar com a Casa Estampa" [ref=f6e639] [cursor=pointer]:
+              - /url: https://api.whatsapp.com/send?phone=5521999886842
+              - text: Falar com a Casa Estampa
+              - generic [ref=f6e640]: 
+  - link "Falar pelo WhatsApp" [ref=f6e641] [cursor=pointer]:
+    - /url: https://api.whatsapp.com/send?phone=5521999886842
+    - generic [ref=f6e642]: 

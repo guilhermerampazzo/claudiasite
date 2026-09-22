@@ -1,0 +1,259 @@
+- generic [active] [ref=f4e1]:
+  - navigation [ref=f4e2]:
+    - text: 
+    - link [ref=f4e3] [cursor=pointer]:
+      - /url: /
+      - img "Casa Estampa" [ref=f4e4]
+    - button "Buscar no site" [ref=f4e6] [cursor=pointer]:
+      - generic [ref=f4e7]: 
+    - button "Abrir menu" [ref=f4e8] [cursor=pointer]
+    - link "Falar agora" [ref=f4e12] [cursor=pointer]:
+      - /url: https://api.whatsapp.com/send?phone=5521999886842
+      - generic [ref=f4e13]: 
+      - text: Falar agora
+  - generic [ref=f4e16]:
+    - img "Casa Estampa Interiores" [ref=f4e17]
+    - paragraph [ref=f4e18]: Transformamos seus ambientes em experiências memoráveis
+    - paragraph [ref=f4e19]: Papéis de parede, cortinas, persianas e pisos que elevam o design da sua casa. Com medição e instalação profissional.
+    - generic [ref=f4e20]:
+      - link " Ver inspirações" [ref=f4e21] [cursor=pointer]:
+        - /url: "#categorias"
+        - generic [ref=f4e22]: 
+        - text: Ver inspirações
+      - link " Pedir orçamento" [ref=f4e23] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842
+        - generic [ref=f4e24]: 
+        - text: Pedir orçamento
+  - generic [ref=f4e25]:
+    - generic [ref=f4e26]:
+      - generic [ref=f4e27]: O que você precisa
+      - heading [level=2] [ref=f4e28]:
+        - text: Escolha o que
+        - emphasis [ref=f4e29]: transforma seu espaço
+    - generic [ref=f4e30]:
+      - link " Papéis de Parede Nacionais e importados. Design exclusivo para cada ambiente. Ver catálogos " [ref=f4e31] [cursor=pointer]:
+        - /url: /papeis-de-parede
+        - generic [ref=f4e32]:
+          - generic [ref=f4e33]: 
+          - generic [ref=f4e34]: Papéis de Parede
+          - paragraph [ref=f4e35]: Nacionais e importados. Design exclusivo para cada ambiente.
+          - generic [ref=f4e36]:
+            - text: Ver catálogos
+            - generic [ref=f4e37]: 
+      - link " Cortinas Tecidos selecionados, trilhos e motorização sob medida. Explorar modelos " [ref=f4e38] [cursor=pointer]:
+        - /url: /cortinas
+        - generic [ref=f4e39]:
+          - generic [ref=f4e40]: 
+          - generic [ref=f4e41]: Cortinas
+          - paragraph [ref=f4e42]: Tecidos selecionados, trilhos e motorização sob medida.
+          - generic [ref=f4e43]:
+            - text: Explorar modelos
+            - generic [ref=f4e44]: 
+      - link " Persianas Controle de luz e privacidade com elegância e praticidade. Explorar modelos " [ref=f4e45] [cursor=pointer]:
+        - /url: /persianas
+        - generic [ref=f4e46]:
+          - generic [ref=f4e47]: 
+          - generic [ref=f4e48]: Persianas
+          - paragraph [ref=f4e49]: Controle de luz e privacidade com elegância e praticidade.
+          - generic [ref=f4e50]:
+            - text: Explorar modelos
+            - generic [ref=f4e51]: 
+      - link " Pisos Laminados Aconchego natural com excelente custo-benefício. Ver opções " [ref=f4e52] [cursor=pointer]:
+        - /url: /pisos
+        - generic [ref=f4e53]:
+          - generic [ref=f4e54]: 
+          - generic [ref=f4e55]: Pisos Laminados
+          - paragraph [ref=f4e56]: Aconchego natural com excelente custo-benefício.
+          - generic [ref=f4e57]:
+            - text: Ver opções
+            - generic [ref=f4e58]: 
+      - link "ﰒ Pisos Vinílicos Alta resistência, fácil limpeza e design sofisticado. Ver opções " [ref=f4e59] [cursor=pointer]:
+        - /url: /pisos
+        - generic [ref=f4e60]:
+          - generic [ref=f4e61]: ﰒ
+          - generic [ref=f4e62]: Pisos Vinílicos
+          - paragraph [ref=f4e63]: Alta resistência, fácil limpeza e design sofisticado.
+          - generic [ref=f4e64]:
+            - text: Ver opções
+            - generic [ref=f4e65]: 
+  - paragraph [ref=f4e67]: Atendemos clientes particulares, arquitetos e corporativos.
+  - generic [ref=f4e68]:
+    - generic [ref=f4e69]:
+      - generic [ref=f4e70]: Instalações próprias
+      - generic [ref=f4e71]:  
+    - generic [ref=f4e82]:
+      - generic [ref=f4e83]: Por que nos escolher
+      - heading [level=2] [ref=f4e84]:
+        - text: Por que escolhera
+        - emphasis [ref=f4e85]: Casa Estampa
+      - generic [ref=f4e86]:
+        - generic [ref=f4e87]:
+          - generic [ref=f4e88]: 
+          - generic [ref=f4e90]:
+            - generic [ref=f4e91]: Atendimento personalizado
+            - generic [ref=f4e92]: Cada projeto é único. Ouvimos, entendemos e criamos soluções sob medida para o seu espaço.
+        - generic [ref=f4e93]:
+          - generic [ref=f4e94]: 
+          - generic [ref=f4e96]:
+            - generic [ref=f4e97]: Medição profissional
+            - generic [ref=f4e98]: Nossa equipe visita o local e garante precisão em cada detalhe antes da execução.
+        - generic [ref=f4e99]:
+          - generic [ref=f4e100]: 
+          - generic [ref=f4e102]:
+            - generic [ref=f4e103]: Instalação especializada
+            - generic [ref=f4e104]: Acabamento impecável. Instaladores treinados para cada tipo de produto.
+        - generic [ref=f4e105]:
+          - generic [ref=f4e106]: 
+          - generic [ref=f4e108]:
+            - generic [ref=f4e109]: Opções nacionais e importadas
+            - generic [ref=f4e110]: Curadoria de marcas de excelência para atender todos os estilos e orçamentos.
+  - generic [ref=f4e111]:
+    - generic [ref=f4e112]:
+      - generic [ref=f4e113]: Dúvidas frequentes
+      - heading [level=2] [ref=f4e114]:
+        - text: Antes de
+        - emphasis [ref=f4e115]: decidir
+      - paragraph [ref=f4e116]: Respondemos as dúvidas mais comuns para que você tome a melhor decisão com segurança.
+    - generic [ref=f4e117]:
+      - generic [ref=f4e118]:
+        - button "Minha parede tem azulejo, posso aplicar papel de parede?" [expanded] [ref=f4e119] [cursor=pointer]: Minha parede tem azulejo, posso aplicar papel de parede? 
+        - generic [ref=f4e120]: Não. É necessário antes emassar a parede e passar seladora para garantir boa aderência e acabamento perfeito.
+      - generic [ref=f4e121]:
+        - button "Vocês trabalham com adesivos?" [expanded] [ref=f4e122] [cursor=pointer]: Vocês trabalham com adesivos? 
+        - generic [ref=f4e123]: Não, trabalhamos apenas com papel de parede.
+      - generic [ref=f4e124]:
+        - button "Fazem papel de parede personalizado?" [expanded] [ref=f4e125] [cursor=pointer]: Fazem papel de parede personalizado? 
+        - generic [ref=f4e126]: Sim! Fazemos personalizado com a imagem de sua preferência em papel de textura de linho.
+      - generic [ref=f4e127]:
+        - button "Têm papéis de parede à pronta entrega?" [expanded] [ref=f4e128] [cursor=pointer]: Têm papéis de parede à pronta entrega? 
+        - generic [ref=f4e129]: Sim, grande parte dos nossos álbuns está disponível para pronta entrega.
+      - generic [ref=f4e130]:
+        - button "Entrega e instalação em quais regiões?" [expanded] [ref=f4e131] [cursor=pointer]: Entrega e instalação em quais regiões? 
+        - generic [ref=f4e132]: Entregamos em todo o Brasil. Instalações são realizadas apenas no estado do Rio de Janeiro.
+      - generic [ref=f4e133]:
+        - button "Posso parcelar no cartão?" [expanded] [ref=f4e134] [cursor=pointer]: Posso parcelar no cartão? 
+        - generic [ref=f4e135]: Sim, parcelamos em até 10x no cartão de crédito.
+      - generic [ref=f4e136]:
+        - button "Atendem arquitetos e designers de interiores?" [expanded] [ref=f4e137] [cursor=pointer]: Atendem arquitetos e designers de interiores? 
+        - generic [ref=f4e138]: Sim! Temos programas de parceria com comissão, pontuação e bônus para profissionais de design e arquitetura.
+      - generic [ref=f4e139]:
+        - button "Atendem corporativo e grandes empresas?" [expanded] [ref=f4e140] [cursor=pointer]: Atendem corporativo e grandes empresas? 
+        - generic [ref=f4e141]: Sim! Entre nossos clientes estão Hospital Med Senior, Construtora Mozak, Hotel Fairmont e outros.
+  - generic [ref=f4e142]:
+    - generic: Casa
+    - generic [ref=f4e143]:
+      - generic [ref=f4e144]: Vamos começar
+      - heading [level=2] [ref=f4e145]:
+        - text: Pronto para
+        - emphasis [ref=f4e146]: transformar
+        - text: seu ambiente?
+      - paragraph [ref=f4e147]: Fale com nossos especialistas e receba um orçamento personalizado hoje mesmo — sem compromisso.
+      - generic [ref=f4e148]:
+        - link " Quero orçamento" [ref=f4e149] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?phone=5521999886842
+          - generic [ref=f4e150]: 
+          - text: Quero orçamento
+        - link " Ver inspirações" [ref=f4e151] [cursor=pointer]:
+          - /url: "#categorias"
+          - generic [ref=f4e152]: 
+          - text: Ver inspirações
+    - generic [ref=f4e153]:
+      - generic [ref=f4e154]:
+        - generic [ref=f4e155]: 
+        - generic [ref=f4e156]:
+          - generic [ref=f4e157]: Instalação no Rio de Janeiro
+          - generic [ref=f4e158]: Entrega em todo o Brasil
+      - generic [ref=f4e159]:
+        - generic [ref=f4e160]: 
+        - generic [ref=f4e161]:
+          - generic [ref=f4e162]: Atendimento rápido
+          - generic [ref=f4e163]: Resposta via WhatsApp em minutos
+      - generic [ref=f4e164]:
+        - generic [ref=f4e165]: 
+        - generic [ref=f4e166]:
+          - generic [ref=f4e167]: Parcele em até 10x
+          - generic [ref=f4e168]: No cartão de crédito
+      - generic [ref=f4e169]:
+        - generic [ref=f4e170]: 
+        - generic [ref=f4e171]:
+          - generic [ref=f4e172]: Programa para arquitetos
+          - generic [ref=f4e173]: Comissão, pontuação e bônus
+  - generic [ref=f4e174]:
+    - generic [ref=f4e175]: Avaliações no Google
+    - heading [level=2] [ref=f4e176]:
+      - text: Clientes que
+      - emphasis [ref=f4e177]: amaram suas escolhas
+    - generic [ref=f4e178]:
+      - generic [ref=f4e179]:
+        - generic [ref=f4e180]: ★★★★★
+        - paragraph [ref=f4e181]: "\"No mesmo dia vieram fazer o orçamento. Na data marcada, fizeram um serviço perfeito.\""
+        - generic [ref=f4e182]:
+          - generic [ref=f4e183]: Lucia Carqueja
+          - generic [ref=f4e184]: Avaliação Google · 5 estrelas
+          - generic [ref=f4e185]: Google
+      - generic [ref=f4e191]:
+        - generic [ref=f4e192]: ★★★★★
+        - paragraph [ref=f4e193]: "\"Excelente atendimento e empresa. Aplicação feita com muito cuidado e profissionalismo.\""
+        - generic [ref=f4e194]:
+          - generic [ref=f4e195]: Naty Henriques
+          - generic [ref=f4e196]: Avaliação Google · 5 estrelas
+          - generic [ref=f4e197]: Google
+      - generic [ref=f4e203]:
+        - generic [ref=f4e204]: ★★★★★
+        - paragraph [ref=f4e205]: "\"Atendimento, preço e qualidade. Desde a venda até a instalação, serviço impecável.\""
+        - generic [ref=f4e206]:
+          - generic [ref=f4e207]: Bruno Ribeiro
+          - generic [ref=f4e208]: Avaliação Google · 5 estrelas
+          - generic [ref=f4e209]: Google
+  - generic [ref=f4e215]:
+    - generic [ref=f4e216]:
+      - generic [ref=f4e217]: Alguns de nossos clientes corporativos
+      - heading [level=2] [ref=f4e218]:
+        - text: Quem confia na
+        - emphasis [ref=f4e219]: Casa Estampa
+    - generic [ref=f4e220]:
+      - img "Perinatal" [ref=f4e221]
+      - img "Mozak" [ref=f4e222]
+      - img "Gafisa" [ref=f4e223]
+      - img "Cachoeiras" [ref=f4e224]
+      - img "Med Senior" [ref=f4e225]
+      - img "Fairmont" [ref=f4e226]
+  - contentinfo [ref=f4e227]:
+    - generic [ref=f4e228]:
+      - link "Página inicial Casa Estampa" [ref=f4e230] [cursor=pointer]:
+        - /url: /
+        - img "Casa Estampa Interiores" [ref=f4e231]
+      - navigation "Navegação do rodapé" [ref=f4e232]:
+        - strong [ref=f4e233]: Explore
+        - generic [ref=f4e234]:
+          - link "Início" [ref=f4e235] [cursor=pointer]:
+            - /url: /
+          - link "Papéis de Parede" [ref=f4e236] [cursor=pointer]:
+            - /url: /papeis-de-parede
+          - link "Cortinas" [ref=f4e237] [cursor=pointer]:
+            - /url: /cortinas
+          - link "Persianas" [ref=f4e238] [cursor=pointer]:
+            - /url: /persianas
+          - link "Pisos" [ref=f4e239] [cursor=pointer]:
+            - /url: /pisos
+          - link "Arquitetos" [ref=f4e240] [cursor=pointer]:
+            - /url: /area-do-arquiteto
+          - link "Corporativo" [ref=f4e241] [cursor=pointer]:
+            - /url: /corporativo
+      - generic [ref=f4e242]:
+        - strong [ref=f4e243]: Atendimento
+        - link "Rio de Janeiro · (21) 99988-6842" [ref=f4e244] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?phone=5521999886842
+          - generic [ref=f4e245]: 
+          - text: Rio de Janeiro · (21) 99988-6842
+        - generic [ref=f4e246]: casaestampa.com
+        - generic [ref=f4e247]: Rio de Janeiro
+    - generic [ref=f4e248]:
+      - generic [ref=f4e249]: © 2026 Casa Estampa. Todos os direitos reservados.
+      - link "Falar com a Casa Estampa" [ref=f4e250] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842
+        - text: Falar com a Casa Estampa
+        - generic [ref=f4e251]: 
+  - link "Falar pelo WhatsApp" [ref=f4e252] [cursor=pointer]:
+    - /url: https://api.whatsapp.com/send?phone=5521999886842
+    - generic [ref=f4e253]: 

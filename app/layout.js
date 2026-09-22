@@ -1,4 +1,3 @@
-import "./admin.css";
 import { googleFontsStylesheet } from "@/lib/editor-options";
 
 export const metadata = {

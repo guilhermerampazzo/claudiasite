@@ -1,0 +1,336 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - text: 
+    - link [ref=e3] [cursor=pointer]:
+      - /url: /
+      - img "Casa Estampa" [ref=e4]
+    - button "Buscar no site" [ref=e6] [cursor=pointer]:
+      - generic [ref=e7]: 
+    - button "Abrir menu" [ref=e8] [cursor=pointer]
+    - link "Falar agora" [ref=e12] [cursor=pointer]:
+      - /url: https://api.whatsapp.com/send?phone=5521999886842
+      - generic [ref=e13]: 
+      - text: Falar agora
+  - generic [ref=e14]:
+    - generic: Pisos
+    - generic [ref=e15]: Revestimentos de Alto Padr├úo
+    - heading [level=1] [ref=e16]:
+      - text: Pisos que transformamseu
+      - emphasis [ref=e17]: ambiente
+    - paragraph [ref=e18]: Do aconchego ├á sofistica├º├úo absoluta ÔÇö laminados, vin├¡licos, carpetes e madeira maci├ºa com instala├º├úo profissional.
+    - generic [ref=e19]:
+      - link "ﲤ Ver por tipo" [ref=e20] [cursor=pointer]:
+        - /url: "#tipos"
+        - generic [ref=e21]: ﲤ
+        - text: Ver por tipo
+      - link " Pedir or├ºamento" [ref=e22] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842
+        - generic [ref=e23]: 
+        - text: Pedir or├ºamento
+  - generic [ref=e24]:
+    - generic [ref=e25]:
+      - generic [ref=e26]: Por que Casa Estampa
+      - heading [level=2] [ref=e27]:
+        - text: Seu piso ideal
+        - emphasis [ref=e28]: come├ºa aqui
+      - paragraph [ref=e30]: Mais de uma d├®cada de expertise em revestimentos. Combinamos curadoria t├®cnica, design e instala├º├úo impec├ível em cada projeto.
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - generic [ref=e33]: "01"
+        - generic [ref=e34]:
+          - generic [ref=e35]: Materiais selecionados
+          - generic [ref=e36]: Rigor t├®cnico e est├®tico na escolha de cada produto. S├│ trabalhamos com marcas que entregam o que prometem.
+      - generic [ref=e37]:
+        - generic [ref=e38]: "02"
+        - generic [ref=e39]:
+          - generic [ref=e40]: Residencial e Comercial
+          - generic [ref=e41]: Solu├º├Áes para ambientes de todos os perfis... do quarto ao lobby corporativo, do home cinema ao escrit├│rio de alto padr├úo.
+      - generic [ref=e42]:
+        - generic [ref=e43]: "03"
+        - generic [ref=e44]:
+          - generic [ref=e45]: Instala├º├úo profissional
+          - generic [ref=e46]: Acabamento impec├ível ├® o que transforma um bom piso em um ambiente perfeito. Nossa equipe t├®cnica garante isso.
+      - generic [ref=e47]:
+        - generic [ref=e48]: "04"
+        - generic [ref=e49]:
+          - generic [ref=e50]: Atendimento consultivo
+          - generic [ref=e51]: Do primeiro contato ├á entrega, acompanhamos cada etapa. Voc├¬ escolhe com seguran├ºa, n├│s executamos com precis├úo.
+  - generic [ref=e52]:
+    - generic [ref=e53]: Qual piso combina com seu estilo
+    - heading [level=2] [ref=e54]:
+      - text: Encontre o piso
+      - emphasis [ref=e55]: perfeito
+      - text: para voc├¬
+    - generic [ref=e56]:
+      - generic [ref=e57]:
+        - generic [ref=e58]: 
+        - generic [ref=e60]: Piso Laminado
+        - heading "Aconchego Natural" [level=3] [ref=e61]
+        - paragraph [ref=e62]: Apar├¬ncia natural com toque aconchegante. Excelente custo-benef├¡cio para salas e quartos.
+        - generic [ref=e63]: Laminado
+      - generic [ref=e64]:
+        - generic [ref=e65]: ﰒ
+        - generic [ref=e67]: Piso Vin├¡lico
+        - heading "Alta Resist├¬ncia" [level=3] [ref=e68]
+        - paragraph [ref=e69]: Alta resist├¬ncia ├á ├ígua, limpeza pr├ítica e conforto ac├║stico. Ideal para ├íreas ├║midas e cozinhas.
+        - generic [ref=e70]: Vin├¡lico
+      - generic [ref=e71]:
+        - generic [ref=e72]: 
+        - generic [ref=e74]: Carpete
+        - heading "Conforto Extremo" [level=3] [ref=e75]
+        - paragraph [ref=e76]: Ac├║stica superior e sensa├º├úo acolhedora. Ideal para home cinema, quartos e ambientes sofisticados.
+        - generic [ref=e77]: Carpete
+      - generic [ref=e78]:
+        - generic [ref=e79]: 
+        - generic [ref=e81]: Madeira Maci├ºa
+        - heading "Eleg├óncia Atemporal" [level=3] [ref=e82]
+        - paragraph [ref=e83]: Valoriza├º├úo patrimonial e acabamento nobre. Exclusivo para projetos de alto padr├úo que atravessam gera├º├Áes.
+        - generic [ref=e84]: Premium
+  - generic [ref=e85]:
+    - generic [ref=e86]: Comparativo
+    - heading [level=2] [ref=e87]:
+      - text: Escolha com
+      - emphasis [ref=e88]: seguran├ºa
+    - table [ref=e89]:
+      - rowgroup [ref=e90]:
+        - row [ref=e91]:
+          - columnheader "Tipo" [ref=e92]
+          - columnheader "Resist├¬ncia ├á ├ügua" [ref=e93]
+          - columnheader "Conforto Ac├║stico" [ref=e94]
+          - columnheader "Sofistica├º├úo" [ref=e95]
+          - columnheader "Ideal para" [ref=e96]
+      - rowgroup [ref=e97]:
+        - row [ref=e98]:
+          - cell "Laminado" [ref=e99]
+          - cell "M├®dia" [ref=e100]
+          - cell "Boa" [ref=e102]
+          - cell "Alta" [ref=e104]
+          - cell "Salas e quartos" [ref=e106]
+        - row [ref=e107]:
+          - cell "Vin├¡lico" [ref=e108]
+          - cell "Alta" [ref=e109]
+          - cell "Boa" [ref=e111]
+          - cell "Alta" [ref=e113]
+          - cell "Salas, quartos, cozinhas e ├íreas ├║midas" [ref=e115]
+        - row [ref=e116]:
+          - cell "Carpete" [ref=e117]
+          - cell "Baixa" [ref=e118]
+          - cell "Alt├¡ssimo" [ref=e120]
+          - cell "M├íxima" [ref=e122]
+          - cell "Cinema, quarto e corporativo" [ref=e124]
+        - row [ref=e125]:
+          - cell "Madeira Maci├ºa" [ref=e126]
+          - cell "M├®dia" [ref=e127]
+          - cell "Boa" [ref=e129]
+          - cell "M├íxima" [ref=e131]
+          - cell "Projetos premium e alto padr├úo" [ref=e133]
+  - generic [ref=e134]:
+    - generic [ref=e135]:
+      - generic [ref=e136]: Mostru├írios
+      - heading "Pisos Laminados" [level=2] [ref=e137]:
+        - text: Pisos Laminados
+        - emphasis
+      - paragraph [ref=e139]: Trabalhamos com as principais marcas do mercado. Visite nossa loja e veja os mostru├írios de perto ÔÇö textura, espessura e acabamento fazem toda a diferen├ºa na escolha certa.
+      - generic [ref=e140]:
+        - generic [ref=e141]:
+          - generic [ref=e142]: Eucafloor
+          - link " Ver mostru├írio" [ref=e145] [cursor=pointer]:
+            - /url: /categoria-produto/pisos-laminados/eucafloor
+            - generic [ref=e146]: 
+            - text: Ver mostru├írio
+        - generic [ref=e147]:
+          - generic [ref=e148]: Durafloor
+          - link " Ver mostru├írio" [ref=e151] [cursor=pointer]:
+            - /url: /categoria-produto/pisos-laminados/durafloor-laminado
+            - generic [ref=e152]: 
+            - text: Ver mostru├írio
+        - generic [ref=e153]:
+          - generic [ref=e154]: Quick-Step
+          - link " Ver mostru├írio" [ref=e157] [cursor=pointer]:
+            - /url: /categoria-produto/pisos-laminados/quick-step
+            - generic [ref=e158]: 
+            - text: Ver mostru├írio
+      - link "Solicitar Or├ºamento" [ref=e160] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842
+    - generic [ref=e161]:
+      - generic [ref=e162]:
+        - generic [ref=e163]: 
+        - generic [ref=e166]: Acompanhe o processo de instala├º├úo do piso laminado no v├¡deo
+      - generic [ref=e167]:
+        - img "Piso laminado instalado" [ref=e169]
+        - img "Piso laminado instalado" [ref=e171]
+  - generic [ref=e172]:
+    - generic [ref=e173]:
+      - generic [ref=e174]: Mostru├írios
+      - heading "Pisos Vin├¡licos" [level=2] [ref=e175]:
+        - text: Pisos Vin├¡licos
+        - emphasis
+      - paragraph [ref=e177]: Tecnologia de ponta em resist├¬ncia e design. Os pisos vin├¡licos evolu├¡ram ÔÇö hoje oferecem est├®tica de madeira e pedra com praticidade incompar├ível.
+      - generic [ref=e178]:
+        - generic [ref=e179]:
+          - generic [ref=e180]: Ecomex
+          - link " Ver mostruário" [ref=e183] [cursor=pointer]:
+            - /url: /categoria-produto/pisos-vinilicos
+            - generic [ref=e184]: 
+            - text: Ver mostruário
+        - generic [ref=e185]:
+          - generic [ref=e186]: Tarkett
+          - link " Ver mostruário" [ref=e189] [cursor=pointer]:
+            - /url: /categoria-produto/pisos-vinilicos/tarket
+            - generic [ref=e190]: 
+            - text: Ver mostruário
+        - generic [ref=e191]:
+          - generic [ref=e192]: Biancogres
+          - link " Ver mostruário" [ref=e195] [cursor=pointer]:
+            - /url: /categoria-produto/pisos-vinilicos/biancogres
+            - generic [ref=e196]: 
+            - text: Ver mostruário
+        - generic [ref=e197]:
+          - generic [ref=e198]: Finotatto
+          - link " Ver mostruário" [ref=e201] [cursor=pointer]:
+            - /url: /categoria-produto/pisos-vinilicos/finotatato
+            - generic [ref=e202]: 
+            - text: Ver mostruário
+        - generic [ref=e203]:
+          - generic [ref=e204]: Durafloor
+          - link " Ver mostruário" [ref=e207] [cursor=pointer]:
+            - /url: /categoria-produto/pisos-vinilicos/durafloor-vinilico
+            - generic [ref=e208]: 
+            - text: Ver mostruário
+      - link "Solicitar Or├ºamento" [ref=e210] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842
+    - generic [ref=e211]:
+      - generic [ref=e212]: Acompanhe o processo de instala├º├úo do piso vin├¡lico no v├¡deo
+      - generic [ref=e215]:
+        - img "Piso vin├¡lico instalado" [ref=e217]
+        - img "Piso vin├¡lico instalado" [ref=e219]
+  - generic [ref=e220]:
+    - generic [ref=e221]:
+      - generic [ref=e222]: Mostru├írios
+      - heading "Carpete" [level=2] [ref=e223]:
+        - text: Carpete
+        - emphasis
+      - paragraph [ref=e225]: Os carpetes unem conforto t├®rmico, ac├║stica e sofistica├º├úo visual, criando ambientes acolhedores e elegantes. Perfeito para home cinema, master suites e lounges.
+      - generic [ref=e226]:
+        - generic [ref=e227]: Belgotex
+        - generic [ref=e231]: Beaulieu
+        - generic [ref=e235]: Linha Premium
+      - link "Solicitar Or├ºamento" [ref=e240] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842
+    - generic [ref=e241]: Acompanhe o processo de instala├º├úo do carpete no v├¡deo
+  - generic [ref=e248]:
+    - generic [ref=e249]:
+      - generic [ref=e250]: Mostru├írios
+      - heading "Madeira Maci├ºa" [level=2] [ref=e251]
+      - paragraph [ref=e253]: A madeira maci├ºa ├® um revestimento nobre que agrega valor e personalidade ao ambiente. Cada pe├ºa possui desenho natural ├║nico e acabamento sofisticado, sem igual no mercado.
+      - link "Solicitar Or├ºamento" [ref=e255] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842
+    - generic [ref=e256]: Acompanhe o processo de instala├º├úo do piso de madeira maci├ºa no v├¡deo
+  - generic [ref=e263]:
+    - generic [ref=e264]: Como trabalhamos
+    - heading [level=2] [ref=e265]:
+      - text: Seu projeto,
+      - emphasis [ref=e266]: passo a passo
+    - paragraph [ref=e267]: Do primeiro contato ├á entrega, um fluxo claro e sem surpresas.
+    - generic [ref=e268]:
+      - generic [ref=e269]:
+        - generic [ref=e270]: "01"
+        - heading "Voc├¬ escolhe o estilo" [level=3] [ref=e271]
+        - paragraph [ref=e272]: Visite nossa loja ou fale conosco e descubra qual piso combina com o seu projeto.
+      - generic [ref=e273]:
+        - generic [ref=e274]: "02"
+        - heading "Consultoria t├®cnica" [level=3] [ref=e275]
+        - paragraph [ref=e276]: Nossa equipe analisa o ambiente, o uso e suas prefer├¬ncias para recomendar a melhor op├º├úo.
+      - generic [ref=e277]:
+        - generic [ref=e278]: "03"
+        - heading "Medi├º├úo" [level=3] [ref=e279]
+        - paragraph [ref=e280]: Visita t├®cnica para medi├º├úo precisa do espa├ºo e avalia├º├úo do estado do piso atual.
+      - generic [ref=e281]:
+        - generic [ref=e282]: "04"
+        - heading "Or├ºamento" [level=3] [ref=e283]
+        - paragraph [ref=e284]: Proposta detalhada com materiais, m├úo de obra e prazo ÔÇö sem surpresas na entrega.
+      - generic [ref=e285]:
+        - generic [ref=e286]: "05"
+        - heading "Instala├º├úo profissional" [level=3] [ref=e287]
+        - paragraph [ref=e288]: Equipe especializada executa com cuidado e entrega o ambiente transformado.
+  - generic [ref=e289]:
+    - generic [ref=e290]: Instala├º├Áes
+    - heading [level=2] [ref=e291]:
+      - text: Projetos que
+      - emphasis [ref=e292]: entregamos
+    - generic [ref=e293]:
+      - button "Laminado" [ref=e294] [cursor=pointer]
+      - button "Vin├¡lico" [ref=e295] [cursor=pointer]
+      - button "Carpete" [ref=e296] [cursor=pointer]
+      - button "Madeira Maci├ºa" [ref=e297] [cursor=pointer]
+    - generic [ref=e298]:
+      - img "Piso laminado instalado" [ref=e300]
+      - img "Piso laminado instalado" [ref=e302]
+      - img "Piso laminado instalado" [ref=e304]
+      - img "Piso laminado instalado" [ref=e306]
+    - text:          
+  - generic [ref=e307]:
+    - generic: Pisos
+    - generic [ref=e308]:
+      - generic [ref=e309]: Pronto para come├ºar
+      - heading [level=2] [ref=e310]:
+        - text: Seu piso idealest├í a um
+        - emphasis [ref=e311]: passo.
+      - paragraph [ref=e312]: Fale com um especialista e receba um or├ºamento sob medida. Sem compromisso, sem surpresas.
+      - generic [ref=e313]:
+        - link " Quero or├ºamento" [ref=e314] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?phone=5521999886842
+          - generic [ref=e315]: 
+          - text: Quero or├ºamento
+        - link "Agendar visita t├®cnica" [ref=e316] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?phone=5521999886842
+    - generic [ref=e317]:
+      - generic [ref=e318]:
+        - generic [ref=e319]: ÔÇó Piso Laminado
+        - generic [ref=e320]: ÔÇó Piso Vin├¡lico
+        - generic [ref=e321]: ÔÇó Carpetes
+        - generic [ref=e322]: ÔÇó Madeira Maci├ºa
+        - generic [ref=e323]: ÔÇó Residencial
+        - generic [ref=e324]: ÔÇó Corporativo
+      - paragraph [ref=e325]:
+        - generic [ref=e326]: 
+        - text: (21) 99988-6842 ┬À WhatsApp
+  - contentinfo [ref=e327]:
+    - generic [ref=e328]:
+      - link "Página inicial Casa Estampa" [ref=e330] [cursor=pointer]:
+        - /url: /
+        - img "Casa Estampa Interiores" [ref=e331]
+      - navigation "Navegação do rodapé" [ref=e332]:
+        - strong [ref=e333]: Explore
+        - generic [ref=e334]:
+          - link "Início" [ref=e335] [cursor=pointer]:
+            - /url: /
+          - link "Papéis de Parede" [ref=e336] [cursor=pointer]:
+            - /url: /papeis-de-parede
+          - link "Cortinas" [ref=e337] [cursor=pointer]:
+            - /url: /cortinas
+          - link "Persianas" [ref=e338] [cursor=pointer]:
+            - /url: /persianas
+          - link "Pisos" [ref=e339] [cursor=pointer]:
+            - /url: /pisos
+          - link "Arquitetos" [ref=e340] [cursor=pointer]:
+            - /url: /area-do-arquiteto
+          - link "Corporativo" [ref=e341] [cursor=pointer]:
+            - /url: /corporativo
+      - generic [ref=e342]:
+        - strong [ref=e343]: Atendimento
+        - link "Rio de Janeiro · (21) 99988-6842" [ref=e344] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?phone=5521999886842
+          - generic [ref=e345]: 
+          - text: Rio de Janeiro · (21) 99988-6842
+        - generic [ref=e346]: casaestampa.com
+        - generic [ref=e347]: Rio de Janeiro
+    - generic [ref=e348]:
+      - generic [ref=e349]: © 2026 Casa Estampa. Todos os direitos reservados.
+      - link "Falar com a Casa Estampa" [ref=e350] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842
+        - text: Falar com a Casa Estampa
+        - generic [ref=e351]: 
+  - link "Falar pelo WhatsApp" [ref=e352] [cursor=pointer]:
+    - /url: https://api.whatsapp.com/send?phone=5521999886842
+    - generic [ref=e353]: 

@@ -1,0 +1,1181 @@
+- generic [active] [ref=f38e1]:
+  - navigation [ref=f38e2]:
+    - generic [ref=f38e3]:
+      - link "Instagram" [ref=f38e4] [cursor=pointer]:
+        - /url: https://www.instagram.com/casaestampa/
+        - generic [aria-hidden] [ref=f38e5]: 
+      - link "Facebook" [ref=f38e6] [cursor=pointer]:
+        - /url: https://www.facebook.com/casaestampainteriores
+        - generic [aria-hidden] [ref=f38e7]: 
+      - link "Pinterest" [ref=f38e8] [cursor=pointer]:
+        - /url: https://br.pinterest.com/casaestampa/
+        - generic [aria-hidden] [ref=f38e9]: 
+    - link [ref=f38e10] [cursor=pointer]:
+      - /url: /
+      - img "Casa Estampa" [ref=f38e11]
+    - generic [ref=f38e12]:
+      - button "Buscar no site" [ref=f38e13] [cursor=pointer]:
+        - generic [aria-hidden] [ref=f38e14]: 
+      - search [ref=f38e15]:
+        - searchbox "Buscar produtos" [ref=f38e16]
+    - button "Abrir menu" [ref=f38e17] [cursor=pointer]
+    - text: 
+  - generic [ref=f38e25]:
+    - generic [ref=f38e29]:
+      - generic [ref=f38e30]: PAPEL
+      - generic [ref=f38e35]:
+        - generic [ref=f38e36]: Mais de 1.500 opções
+        - heading "Papéis de Parede" [level=1] [ref=f38e43]
+        - generic:
+          - generic:
+            - paragraph
+        - paragraph [ref=f38e47]: Curadoria de marcas nacionais e internacionais, com medição e instalação profissional incluída. Suporte do início ao fim.
+        - generic [ref=f38e51]:
+          - link "Falar com especialista" [ref=f38e55] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Quero%20ajuda%20para%20escolher%20um%20papel%20de%20parede.
+            - generic [ref=f38e56]:
+              - generic [aria-hidden] [ref=f38e58]: 
+              - generic [ref=f38e59]: Falar com especialista
+          - link "Ver catálogos ↓" [ref=f38e63] [cursor=pointer]:
+            - /url: "#catalogos"
+        - form "Busca de catalogos" [ref=f38e68]:
+          - generic [ref=f38e69]:
+            - textbox "Buscar álbum ou estilo..." [ref=f38e71]
+            - button "Enviar" [ref=f38e73] [cursor=pointer]:
+              - generic [ref=f38e75]:
+                - generic [aria-hidden] [ref=f38e76]: 
+                - generic [ref=f38e77]: Enviar
+    - generic [ref=f38e81]:
+      - generic [ref=f38e85]:
+        - generic [ref=f38e89]:
+          - generic [ref=f38e90]: Quero inspiração
+          - generic [ref=f38e92]: Instalações próprias
+        - heading [level=2] [ref=f38e96]:
+          - text: Veja como fica
+          - emphasis [ref=f38e97]: na prática
+        - paragraph [ref=f38e103]: Todos os ambientes abaixo foram instalados pela nossa equipe. Arraste para ver mais →
+      - generic [ref=f38e105]:
+        - region "Galeria de imagens" [ref=f38e110]:
+          - generic [ref=f38e111]:
+            - generic [ref=f38e113]:
+              - generic [ref=f38e114]: Sala
+              - generic [ref=f38e121]: Quarto
+              - generic [ref=f38e128]: Quarto
+              - generic [ref=f38e135]: Quarto - Cabeceira
+              - generic [ref=f38e142]: Quarto - Cabeceira
+              - generic [ref=f38e149]: Quarto
+              - generic [ref=f38e156]: Cabeceira
+              - generic [ref=f38e163]: Quarto
+              - generic [ref=f38e170]: Infantil
+              - generic [ref=f38e177]: Cabeceira
+              - generic [ref=f38e184]: Sala de estar
+              - generic [ref=f38e191]: Quarto
+              - generic [ref=f38e198]: Quarto
+              - generic [ref=f38e205]: Quarto
+            - generic [ref=f38e213]:
+              - generic [ref=f38e214]: Sala
+              - generic [ref=f38e221]: Lavabo
+              - generic [ref=f38e228]: Lavabo
+              - generic [ref=f38e235]: Lavabo
+            - generic [ref=f38e242]: Infantil
+            - generic [ref=f38e252]:
+              - generic [ref=f38e253]: Cabeceira
+              - generic [ref=f38e263]: Corredor Linho
+            - generic [ref=f38e270]: QUARTO CABECEIRA
+            - generic [ref=f38e279]: Cabeceira
+            - generic [ref=f38e289]:
+              - generic [ref=f38e290]: Lavabo
+              - generic [ref=f38e297]: Lavabo
+              - generic [ref=f38e304]: Adega
+            - generic [ref=f38e312]:
+              - generic [ref=f38e313]: Escritório
+              - generic [ref=f38e320]: Escritório
+              - generic [ref=f38e327]: Quarto
+              - generic [ref=f38e334]: Corredor - Linho
+            - generic [ref=f38e342]:
+              - generic [ref=f38e343]: Lavabo
+              - generic [ref=f38e350]: Lavabo
+              - generic [ref=f38e357]: Quarto
+              - generic [ref=f38e364]: Quarto
+              - generic [ref=f38e371]: Sala
+              - generic [ref=f38e378]: Infantil
+              - generic [ref=f38e385]: Lavabo
+              - generic [ref=f38e392]: Lavabo
+              - generic [ref=f38e399]: Sala
+              - generic [ref=f38e406]: Quarto
+              - generic [ref=f38e413]: Corredor
+              - generic [ref=f38e420]: Lavabo
+              - generic [ref=f38e427]: Banheiro
+              - generic [ref=f38e434]: Lavabo
+            - generic [ref=f38e445]:
+              - generic [ref=f38e447]:
+                - generic [ref=f38e449]:
+                  - generic [ref=f38e451]: 
+                  - generic [ref=f38e454]: 
+                  - generic [ref=f38e457]: 
+                - generic [ref=f38e460]: Quarto - Cabeceira
+              - generic [ref=f38e465]: Sala
+              - generic [ref=f38e473]:
+                - generic [ref=f38e474]: 
+                - generic [ref=f38e479]: Sala
+              - generic [ref=f38e484]: Sala
+              - generic [ref=f38e491]: Quarto
+              - generic [ref=f38e498]: Quarto
+              - generic [ref=f38e505]: Sala
+            - generic [ref=f38e513]:
+              - generic [ref=f38e515]:
+                - generic [ref=f38e516]: 
+                - generic [ref=f38e522]: Quarto - Cabeceira
+              - generic [ref=f38e527]: Sala
+              - generic [ref=f38e535]:
+                - generic [ref=f38e536]: 
+                - generic [ref=f38e541]: Sala
+              - generic [ref=f38e546]: Sala
+              - generic [ref=f38e553]: Quarto
+              - generic [ref=f38e560]: Quarto
+              - generic [ref=f38e567]: Infantil
+            - generic [ref=f38e574]: sala
+            - generic [ref=f38e584]:
+              - generic [ref=f38e585]: Quarto
+              - generic [ref=f38e592]: Sala
+              - generic [ref=f38e600]:
+                - generic [ref=f38e601]: 
+                - generic [ref=f38e606]: Quarto
+              - generic [ref=f38e611]: Corredor
+              - generic [ref=f38e621]: Quarto
+              - generic [ref=f38e631]: Sala
+              - generic [ref=f38e638]: Lavabo
+              - generic [ref=f38e645]: Sala
+              - generic [ref=f38e652]: Quarto
+        - generic "Navegacao do carrossel" [ref=f38e659]:
+          - button "Imagem anterior" [ref=f38e660] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f38e661]: 
+          - button "Proxima imagem" [ref=f38e663] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f38e664]: 
+      - generic [ref=f38e668]:
+        - link "Pedir orçamento agora" [ref=f38e672] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Vi%20fotos%20no%20site%20e%20quero%20um%20orçamento%20de%20papel%20de%20parede.
+          - generic [ref=f38e673]:
+            - generic [aria-hidden] [ref=f38e675]: 
+            - generic [ref=f38e676]: Pedir orçamento agora
+        - link "Escolher meu papel →" [ref=f38e680] [cursor=pointer]:
+          - /url: "#catalogos"
+    - generic [ref=f38e686]:
+      - generic [ref=f38e687]: Por que Casa Estampa
+      - heading [level=2] [ref=f38e694]:
+        - text: Transformar com papel de parede
+        - emphasis [ref=f38e695]: não precisa ser complicado
+      - paragraph [ref=f38e701]: Como funciona — Simples, sem erro e sem desperdício
+      - generic [ref=f38e705]:
+        - generic [ref=f38e709]:
+          - generic [ref=f38e710]: "1"
+          - generic [ref=f38e715]: Você escolhe os modelos
+          - paragraph [ref=f38e722]: Navega pelo catálogo e manda os favoritos pelo WhatsApp
+        - generic [ref=f38e726]:
+          - generic [ref=f38e727]: "2"
+          - generic [ref=f38e732]: Envia as medidas
+          - paragraph [ref=f38e739]: Quantidade de rolos ou a medida de cada parede
+        - generic [ref=f38e743]:
+          - generic [ref=f38e744]: "3"
+          - generic [ref=f38e749]: Calculamos os rolos
+          - paragraph [ref=f38e756]: Nossa equipe faz o cálculo exato para você, sem erro
+        - generic [ref=f38e760]:
+          - generic [ref=f38e761]: "4"
+          - generic [ref=f38e766]: Recebe o orçamento
+          - paragraph [ref=f38e773]: Rápido e sem burocracia, direto no WhatsApp
+        - generic [ref=f38e777]:
+          - generic [ref=f38e778]: "5"
+          - generic [ref=f38e783]: Pedido + instalação
+          - paragraph [ref=f38e790]: Cuidamos de tudo após a aprovação, do início ao fim
+    - generic [ref=f38e794]:
+      - generic [ref=f38e795]: Ver catálogos
+      - heading [level=2] [ref=f38e802]:
+        - text: Escolha o papel
+        - emphasis [ref=f38e803]: ideal
+      - paragraph [ref=f38e806]: Clique em qualquer álbum para ver os modelos e peça seu orçamento direto no WhatsApp.
+      - generic [ref=f38e813]:
+        - button "Todos" [ref=f38e817] [cursor=pointer]
+        - button "⚡ Pronta Entrega" [ref=f38e823] [cursor=pointer]
+        - button "✨ Lançamentos" [ref=f38e829] [cursor=pointer]
+        - button "Adulto" [ref=f38e835] [cursor=pointer]
+        - button "Infantil" [ref=f38e841] [cursor=pointer]
+        - button "🎨 Painéis Personalizados" [ref=f38e847] [cursor=pointer]
+      - generic [ref=f38e853]:
+        - generic [ref=f38e857]:
+          - generic [ref=f38e858]: Pronta Entrega
+          - generic [ref=f38e863]: 18 álbuns
+        - generic [ref=f38e871]:
+          - generic [ref=f38e875] [cursor=pointer]:
+            - generic [ref=f38e880]:
+              - text: 
+              - link [ref=f38e883]:
+                - /url: /album-whisper
+                - img "Album Whisper" [ref=f38e884]
+            - generic [ref=f38e888]:
+              - generic [ref=f38e889]: Whisper
+              - generic [ref=f38e894]: 79 produtos
+            - text: 
+          - generic [ref=f38e902] [cursor=pointer]:
+            - generic [ref=f38e907]:
+              - text: 
+              - link [ref=f38e910]:
+                - /url: /album-botanica
+                - img "Album Botânica" [ref=f38e911]
+            - generic [ref=f38e915]:
+              - generic [ref=f38e916]: Botânica
+              - generic [ref=f38e921]: 54 produtos
+            - text: 
+          - generic [ref=f38e929] [cursor=pointer]:
+            - generic [ref=f38e934]:
+              - text: 
+              - link [ref=f38e937]:
+                - /url: /album-vintage
+                - img "Album Vintage" [ref=f38e938]
+            - generic [ref=f38e942]:
+              - generic [ref=f38e943]: Vintage
+              - generic [ref=f38e948]: 40 produtos
+            - text: 
+          - generic [ref=f38e956] [cursor=pointer]:
+            - generic [ref=f38e961]:
+              - text: 
+              - link [ref=f38e964]:
+                - /url: /album-spirit
+                - img "Album Spirit" [ref=f38e965]
+            - generic [ref=f38e969]:
+              - generic [ref=f38e970]: Spirit
+              - generic [ref=f38e975]: 50 produtos
+            - text: 
+          - generic [ref=f38e983] [cursor=pointer]:
+            - generic [ref=f38e988]:
+              - text: 
+              - link [ref=f38e991]:
+                - /url: /album-avalon
+                - img "Album Avalon" [ref=f38e992]
+            - generic [ref=f38e996]:
+              - generic [ref=f38e997]: Avalon
+              - generic [ref=f38e1002]: 47 produtos
+            - text: 
+          - generic [ref=f38e1010] [cursor=pointer]:
+            - generic [ref=f38e1015]:
+              - text: 
+              - link [ref=f38e1018]:
+                - /url: /album-loft
+                - img "Album Loft" [ref=f38e1019]
+            - generic [ref=f38e1023]:
+              - generic [ref=f38e1024]: Loft
+              - generic [ref=f38e1029]: 48 produtos
+            - text: 
+          - generic [ref=f38e1037] [cursor=pointer]:
+            - generic [ref=f38e1042]:
+              - text: 
+              - link [ref=f38e1045]:
+                - /url: /album-modernista
+                - img "Album Modernista" [ref=f38e1046]
+            - generic [ref=f38e1050]:
+              - generic [ref=f38e1051]: Modernista
+              - generic [ref=f38e1056]: 47 produtos
+            - text: 
+          - generic [ref=f38e1064] [cursor=pointer]:
+            - generic [ref=f38e1069]:
+              - text: 
+              - link [ref=f38e1072]:
+                - /url: /album-unique
+                - img "Album Unique" [ref=f38e1073]
+            - generic [ref=f38e1077]:
+              - generic [ref=f38e1078]: Unique
+              - generic [ref=f38e1083]: 92 produtos
+            - text: 
+          - generic [ref=f38e1091] [cursor=pointer]:
+            - generic [ref=f38e1096]:
+              - text: 
+              - link [ref=f38e1099]:
+                - /url: /album-new-modern
+                - img "Album New Modern" [ref=f38e1100]
+            - generic [ref=f38e1104]:
+              - generic [ref=f38e1105]: New Modern
+              - generic [ref=f38e1110]: 53 produtos
+            - text: 
+          - generic [ref=f38e1118] [cursor=pointer]:
+            - generic [ref=f38e1123]:
+              - text: 
+              - generic [ref=f38e1125]:
+                - generic [aria-hidden] [ref=f38e1127]: 
+                - link [ref=f38e1128]:
+                  - /url: /album-sheilas
+                  - img "Álbum Sheilas" [ref=f38e1129]
+            - generic [ref=f38e1133]:
+              - generic [ref=f38e1134]: Sheilas
+              - generic [ref=f38e1139]: 84 produtos
+            - text: 
+          - generic [ref=f38e1147] [cursor=pointer]:
+            - generic [ref=f38e1152]:
+              - text: 
+              - generic [ref=f38e1154]:
+                - generic [aria-hidden] [ref=f38e1156]: 
+                - link [ref=f38e1157]:
+                  - /url: /album-travertino
+                  - img "Álbum Travertino" [ref=f38e1158]
+            - generic [ref=f38e1162]:
+              - generic [ref=f38e1163]: Travertino
+              - generic [ref=f38e1168]: 102 produtos
+            - text: 
+          - generic [ref=f38e1176] [cursor=pointer]:
+            - generic [ref=f38e1181]:
+              - text: 
+              - generic [ref=f38e1183]:
+                - generic [aria-hidden] [ref=f38e1185]: 
+                - link [ref=f38e1186]:
+                  - /url: /album-mini-marburg
+                  - img "Álbum Mini Marburg" [ref=f38e1187]
+            - generic [ref=f38e1191]:
+              - generic [ref=f38e1192]: Mini Marburg
+              - generic [ref=f38e1197]: 51 produtos
+            - text: 
+          - generic [ref=f38e1205] [cursor=pointer]:
+            - generic [ref=f38e1210]:
+              - text: 
+              - generic [ref=f38e1212]:
+                - generic [aria-hidden] [ref=f38e1214]: 
+                - link [ref=f38e1215]:
+                  - /url: /album-new-texture
+                  - img "Álbum New Texture" [ref=f38e1216]
+            - generic [ref=f38e1220]:
+              - generic [ref=f38e1221]: New Texture
+              - generic [ref=f38e1226]: 139 produtos
+            - text: 
+          - generic [ref=f38e1234] [cursor=pointer]:
+            - generic [ref=f38e1239]:
+              - text: 
+              - generic [ref=f38e1241]:
+                - generic [aria-hidden] [ref=f38e1243]: 
+                - link [ref=f38e1244]:
+                  - /url: /album-city-romance
+                  - img "Álbum City Romance" [ref=f38e1245]
+            - generic [ref=f38e1249]:
+              - generic [ref=f38e1250]: City Romance
+              - generic [ref=f38e1255]: 116 produtos
+            - text: 
+          - generic [ref=f38e1263] [cursor=pointer]:
+            - generic [ref=f38e1268]:
+              - text: 
+              - link [ref=f38e1271]:
+                - /url: /album-boho
+                - img "Album Boho" [ref=f38e1272]
+            - generic [ref=f38e1276]:
+              - generic [ref=f38e1277]: Boho
+              - generic [ref=f38e1282]: 37 produtos
+            - text: 
+          - generic [ref=f38e1290] [cursor=pointer]:
+            - generic [ref=f38e1295]:
+              - text: 
+              - generic [ref=f38e1297]:
+                - generic [aria-hidden] [ref=f38e1299]: 
+                - img "Álbum Up to Date" [ref=f38e1300]
+            - generic [ref=f38e1304]:
+              - generic [ref=f38e1305]: Up to Date
+              - generic [ref=f38e1310]: 58 produtos
+            - text: 
+          - generic [ref=f38e1318] [cursor=pointer]:
+            - generic [ref=f38e1323]:
+              - text: 
+              - generic [ref=f38e1325]:
+                - generic [aria-hidden] [ref=f38e1327]: 
+                - link [ref=f38e1328]:
+                  - /url: /album-terra
+                  - img "Álbum Terra" [ref=f38e1329]
+            - generic [ref=f38e1333]:
+              - generic [ref=f38e1334]: Terra
+              - generic [ref=f38e1339]: 11 produtos
+            - text: 
+          - generic [ref=f38e1347] [cursor=pointer]:
+            - generic [ref=f38e1352]:
+              - text: 
+              - link [ref=f38e1355]:
+                - /url: /album-camargue
+                - img "Álbum Camargue" [ref=f38e1356]
+            - generic [ref=f38e1360]:
+              - generic [ref=f38e1361]: Camargue
+              - generic [ref=f38e1366]: 39 produtos
+            - text: 
+      - generic [ref=f38e1374]:
+        - generic [ref=f38e1378]:
+          - generic [ref=f38e1379]: Lançamentos
+          - generic [ref=f38e1384]: Novidades
+        - generic [ref=f38e1392]:
+          - generic [ref=f38e1396] [cursor=pointer]:
+            - generic [ref=f38e1401]:
+              - text: 
+              - generic [ref=f38e1403]:
+                - generic [aria-hidden] [ref=f38e1405]: 
+                - img "Álbum Stories of Life" [ref=f38e1406]
+            - generic [ref=f38e1410]:
+              - generic [ref=f38e1411]: Stories of Life
+              - generic [ref=f38e1416]: 75 produtos
+            - text: 
+          - generic [ref=f38e1424] [cursor=pointer]:
+            - generic [ref=f38e1429]:
+              - text: 
+              - generic [ref=f38e1431]:
+                - generic [aria-hidden] [ref=f38e1433]: 
+                - link [ref=f38e1434]:
+                  - /url: /album-city-romance
+                  - img "Álbum City Romance" [ref=f38e1435]
+            - generic [ref=f38e1439]:
+              - generic [ref=f38e1440]: City Romance
+              - generic [ref=f38e1445]: 116 produtos
+            - text: 
+          - generic [ref=f38e1453] [cursor=pointer]:
+            - generic [ref=f38e1458]:
+              - text: 
+              - generic [ref=f38e1460]:
+                - generic [aria-hidden] [ref=f38e1462]: 
+                - link [ref=f38e1463]:
+                  - /url: /album-terra
+                  - img "Álbum Terra" [ref=f38e1464]
+            - generic [ref=f38e1468]:
+              - generic [ref=f38e1469]: Terra
+              - generic [ref=f38e1474]: 11 produtos
+            - text: 
+          - generic [ref=f38e1482] [cursor=pointer]:
+            - generic [ref=f38e1487]:
+              - text: 
+              - link [ref=f38e1490]:
+                - /url: /album-camargue
+                - img "Álbum Camargue" [ref=f38e1491]
+            - generic [ref=f38e1495]:
+              - generic [ref=f38e1496]: Camargue
+              - generic [ref=f38e1501]: 39 produtos
+            - text: 
+      - generic [ref=f38e1509]:
+        - generic [ref=f38e1513]:
+          - generic [ref=f38e1514]: Adulto
+          - generic [ref=f38e1519]: 31 álbuns
+        - generic [ref=f38e1527]:
+          - generic [ref=f38e1531] [cursor=pointer]:
+            - generic [ref=f38e1536]:
+              - text: 
+              - link [ref=f38e1539]:
+                - /url: /album-gramado
+                - img "Foto instalada" [ref=f38e1540]
+            - generic [ref=f38e1544]:
+              - generic [ref=f38e1545]: Gramado
+              - generic [ref=f38e1550]: 58 produtos
+            - text: 
+          - generic [ref=f38e1558] [cursor=pointer]:
+            - generic [ref=f38e1563]:
+              - text: 
+              - link [ref=f38e1566]:
+                - /url: /album-holambra
+                - img "Foto instalada" [ref=f38e1567]
+            - generic [ref=f38e1571]:
+              - generic [ref=f38e1572]: Holambra
+              - generic [ref=f38e1577]: 65 produtos
+            - text: 
+          - generic [ref=f38e1585] [cursor=pointer]:
+            - generic [ref=f38e1590]:
+              - text: 
+              - link [ref=f38e1593]:
+                - /url: /album-monte-verde
+                - img "Foto instalada" [ref=f38e1594]
+            - generic [ref=f38e1598]:
+              - generic [ref=f38e1599]: Monte Verde
+              - generic [ref=f38e1604]: 54 produtos
+            - text: 
+          - generic [ref=f38e1612] [cursor=pointer]:
+            - generic [ref=f38e1617]:
+              - text: 
+              - link [ref=f38e1620]:
+                - /url: /album-campos-de-jordao
+                - img "Foto instalada" [ref=f38e1621]
+            - generic [ref=f38e1625]:
+              - generic [ref=f38e1626]: Campos de Jordão
+              - generic [ref=f38e1631]: 47 produtos
+            - text: 
+          - generic [ref=f38e1639] [cursor=pointer]:
+            - generic [ref=f38e1644]:
+              - text: 
+              - link [ref=f38e1647]:
+                - /url: /album-trend-wall-2
+                - img "Foto instalada" [ref=f38e1648]
+            - generic [ref=f38e1652]:
+              - generic [ref=f38e1653]: Trend Wall 2
+              - generic [ref=f38e1658]: 95 produtos
+            - text: 
+          - generic [ref=f38e1666] [cursor=pointer]:
+            - generic [ref=f38e1671]:
+              - text: 
+              - link [ref=f38e1674]:
+                - /url: /album-my-home-my-spa
+                - img "Foto instalada" [ref=f38e1675]
+            - generic [ref=f38e1679]:
+              - generic [ref=f38e1680]: My Home My Spa
+              - generic [ref=f38e1685]: 85 produtos
+            - text: 
+          - generic [ref=f38e1693] [cursor=pointer]:
+            - generic [ref=f38e1698]:
+              - text: 
+              - link [ref=f38e1701]:
+                - /url: /album-metropolis-4
+                - img "Foto instalada" [ref=f38e1702]
+            - generic [ref=f38e1706]:
+              - generic [ref=f38e1707]: Metropolis 4
+              - generic [ref=f38e1712]: 53 produtos
+            - text: 
+          - generic [ref=f38e1720] [cursor=pointer]:
+            - generic [ref=f38e1725]:
+              - text: 
+              - link [ref=f38e1728]:
+                - /url: /album-santorini
+                - img "Foto instalada" [ref=f38e1729]
+            - generic [ref=f38e1733]:
+              - generic [ref=f38e1734]: Santorini
+              - generic [ref=f38e1739]: 68 produtos
+            - text: 
+          - generic [ref=f38e1747] [cursor=pointer]:
+            - generic [ref=f38e1752]:
+              - text: 
+              - link [ref=f38e1755]:
+                - /url: /album-neo-geometric
+                - img "Foto instalada" [ref=f38e1756]
+            - generic [ref=f38e1760]:
+              - generic [ref=f38e1761]: Neo Geometric
+              - generic [ref=f38e1766]: 51 produtos
+            - text: 
+          - generic [ref=f38e1774] [cursor=pointer]:
+            - generic [ref=f38e1779]:
+              - text: 
+              - link [ref=f38e1782]:
+                - /url: /album-classic-stripes
+                - img "Foto instalada" [ref=f38e1783]
+            - generic [ref=f38e1787]:
+              - generic [ref=f38e1788]: Classic Stripes
+              - generic [ref=f38e1793]: 97 produtos
+            - text: 
+          - generic [ref=f38e1801] [cursor=pointer]:
+            - generic [ref=f38e1806]:
+              - text: 
+              - link [ref=f38e1809]:
+                - /url: /album-infinity
+                - img "Foto instalada" [ref=f38e1810]
+            - generic [ref=f38e1814]:
+              - generic [ref=f38e1815]: "Infinity"
+              - generic [ref=f38e1820]: 61 produtos
+            - text: 
+          - generic [ref=f38e1828] [cursor=pointer]:
+            - generic [ref=f38e1833]:
+              - text: 
+              - link [ref=f38e1836]:
+                - /url: /album-ambiance
+                - img "Foto instalada" [ref=f38e1837]
+            - generic [ref=f38e1841]:
+              - generic [ref=f38e1842]: Ambiance
+              - generic [ref=f38e1847]: 47 produtos
+            - text: 
+          - generic [ref=f38e1855] [cursor=pointer]:
+            - generic [ref=f38e1860]:
+              - text: 
+              - link [ref=f38e1863]:
+                - /url: /album-modern-rustic
+                - img "Foto instalada" [ref=f38e1864]
+            - generic [ref=f38e1868]:
+              - generic [ref=f38e1869]: Modern Rustic
+              - generic [ref=f38e1874]: 66 produtos
+            - text: 
+          - generic [ref=f38e1882] [cursor=pointer]:
+            - generic [ref=f38e1887]:
+              - text: 
+              - link [ref=f38e1890]:
+                - /url: /album-vita
+                - img "Foto instalada" [ref=f38e1891]
+            - generic [ref=f38e1895]:
+              - generic [ref=f38e1896]: Vita
+              - generic [ref=f38e1901]: 53 produtos
+            - text: 
+          - generic [ref=f38e1909] [cursor=pointer]:
+            - generic [ref=f38e1914]:
+              - text: 
+              - link [ref=f38e1917]:
+                - /url: /album-texture-world
+                - img "Foto instalada" [ref=f38e1918]
+            - generic [ref=f38e1922]:
+              - generic [ref=f38e1923]: Texture World
+              - generic [ref=f38e1928]: 122 produtos
+            - text: 
+          - generic [ref=f38e1936] [cursor=pointer]:
+            - generic [ref=f38e1941]:
+              - text: 
+              - link [ref=f38e1944]:
+                - /url: /album-bright-wall
+                - img "Foto instalada" [ref=f38e1945]
+            - generic [ref=f38e1949]:
+              - generic [ref=f38e1950]: Bright Wall
+              - generic [ref=f38e1955]: 55 produtos
+            - text: 
+          - generic [ref=f38e1963] [cursor=pointer]:
+            - generic [ref=f38e1968]:
+              - text: 
+              - link [ref=f38e1971]:
+                - /url: /album-suite
+                - img "Foto instalada" [ref=f38e1972]
+            - generic [ref=f38e1976]:
+              - generic [ref=f38e1977]: Suite
+              - generic [ref=f38e1982]: 56 produtos
+            - text: 
+          - generic [ref=f38e1990] [cursor=pointer]:
+            - generic [ref=f38e1995]:
+              - text: 
+              - link [ref=f38e1998]:
+                - /url: /album-versace-4
+                - img "Foto instalada" [ref=f38e1999]
+            - generic [ref=f38e2003]:
+              - generic [ref=f38e2004]: Versace 4
+              - generic [ref=f38e2009]: 73 produtos
+            - text: 
+          - generic [ref=f38e2017] [cursor=pointer]:
+            - generic [ref=f38e2022]:
+              - text: 
+              - link [ref=f38e2025]:
+                - /url: /album-versace-5
+                - img "Foto instalada" [ref=f38e2026]
+            - generic [ref=f38e2030]:
+              - generic [ref=f38e2031]: Versace 5
+              - generic [ref=f38e2036]: 87 produtos
+            - text: 
+          - generic [ref=f38e2044] [cursor=pointer]:
+            - generic [ref=f38e2049]:
+              - text: 
+              - link [ref=f38e2052]:
+                - /url: /album-absolutely-chic
+                - img "Foto instalada" [ref=f38e2053]
+            - generic [ref=f38e2057]:
+              - generic [ref=f38e2058]: Absolutely Chic
+              - generic [ref=f38e2063]: 49 produtos
+            - text: 
+          - generic [ref=f38e2071] [cursor=pointer]:
+            - generic [ref=f38e2076]:
+              - text: 
+              - link [ref=f38e2079]:
+                - /url: /album-arty
+                - img "Foto instalada" [ref=f38e2080]
+            - generic [ref=f38e2084]:
+              - generic [ref=f38e2085]: Arty
+              - generic [ref=f38e2090]: 52 produtos
+            - text: 
+          - generic [ref=f38e2098] [cursor=pointer]:
+            - generic [ref=f38e2103]:
+              - text: 
+              - link [ref=f38e2106]:
+                - /url: /album-bjorn
+                - img "Foto instalada" [ref=f38e2107]
+            - generic [ref=f38e2111]:
+              - generic [ref=f38e2112]: Bjorn
+              - generic [ref=f38e2117]: 49 produtos
+            - text: 
+          - generic [ref=f38e2125] [cursor=pointer]:
+            - generic [ref=f38e2130]:
+              - text: 
+              - link [ref=f38e2133]:
+                - /url: /album-flow-3
+                - img "Foto instalada" [ref=f38e2134]
+            - generic [ref=f38e2138]:
+              - generic [ref=f38e2139]: Flow 3
+              - generic [ref=f38e2144]: 72 produtos
+            - text: 
+          - generic [ref=f38e2152] [cursor=pointer]:
+            - generic [ref=f38e2157]:
+              - text: 
+              - link [ref=f38e2160]:
+                - /url: /album-metropolitan-stories-2
+                - img "Foto instalada" [ref=f38e2161]
+            - generic [ref=f38e2165]:
+              - generic [ref=f38e2166]: Metropolitan Stories 2
+              - generic [ref=f38e2171]: 87 produtos
+            - text: 
+          - generic [ref=f38e2179] [cursor=pointer]:
+            - generic [ref=f38e2184]:
+              - text: 
+              - link [ref=f38e2187]:
+                - /url: /album-metropolitan-stories-3
+                - img "Foto instalada" [ref=f38e2188]
+            - generic [ref=f38e2192]:
+              - generic [ref=f38e2193]: Metropolitan Stories 3
+              - generic [ref=f38e2198]: 101 produtos
+            - text: 
+          - generic [ref=f38e2206] [cursor=pointer]:
+            - generic [ref=f38e2211]:
+              - text: 
+              - link [ref=f38e2214]:
+                - /url: /album-nacional-atemporal
+                - img "Foto instalada" [ref=f38e2215]
+            - generic [ref=f38e2219]:
+              - generic [ref=f38e2220]: Nacional Atemporal
+              - generic [ref=f38e2225]: 43 produtos
+            - text: 
+          - generic [ref=f38e2233] [cursor=pointer]:
+            - generic [ref=f38e2238]:
+              - text: 
+              - link [ref=f38e2241]:
+                - /url: /album-nacional-contemporaneo
+                - img "Foto instalada" [ref=f38e2242]
+            - generic [ref=f38e2246]:
+              - generic [ref=f38e2247]: Nacional Contemporâneo
+              - generic [ref=f38e2252]: 74 produtos
+            - text: 
+          - generic [ref=f38e2260] [cursor=pointer]:
+            - generic [ref=f38e2265]:
+              - text: 
+              - link [ref=f38e2268]:
+                - /url: /album-nacional-texturas-2
+                - img "Foto instalada" [ref=f38e2269]
+            - generic [ref=f38e2273]:
+              - generic [ref=f38e2274]: Nacional Texturas 2
+              - generic [ref=f38e2279]: 59 produtos
+            - text: 
+          - generic [ref=f38e2287] [cursor=pointer]:
+            - generic [ref=f38e2292]:
+              - text: 
+              - link [ref=f38e2295]:
+                - /url: /album-joy
+                - img "Foto instalada" [ref=f38e2296]
+            - generic [ref=f38e2300]:
+              - generic [ref=f38e2301]: Joy
+              - generic [ref=f38e2306]: 79 produtos
+            - text: 
+          - generic [ref=f38e2314] [cursor=pointer]:
+            - generic [ref=f38e2319]:
+              - text: 
+              - link [ref=f38e2322]:
+                - /url: /album-essencial-bobinex
+                - img "Foto instalada" [ref=f38e2323]
+            - generic [ref=f38e2327]:
+              - generic [ref=f38e2328]: Essencial Bobinex
+              - generic [ref=f38e2333]: 57 produtos
+            - text: 
+          - generic [ref=f38e2341] [cursor=pointer]:
+            - generic [ref=f38e2346]:
+              - text: 
+              - link [ref=f38e2349]:
+                - /url: /album-camargue
+                - img "Álbum Camargue" [ref=f38e2350]
+            - generic [ref=f38e2354]:
+              - generic [ref=f38e2355]: Camargue
+              - generic [ref=f38e2360]: 39 produtos
+            - text: 
+      - generic [ref=f38e2368]:
+        - generic [ref=f38e2372]:
+          - generic [ref=f38e2373]: Coleção Infantil
+          - generic [ref=f38e2378]: 10 álbuns
+        - generic [ref=f38e2386]:
+          - generic [ref=f38e2390] [cursor=pointer]:
+            - generic [ref=f38e2395]:
+              - text: 
+              - link [ref=f38e2398]:
+                - /url: /album-babylandia
+                - img "Album Babylandia" [ref=f38e2399]
+            - generic [ref=f38e2403]:
+              - generic [ref=f38e2404]: Babylandia
+              - generic [ref=f38e2409]: 69 produtos
+            - text: 
+          - generic [ref=f38e2417] [cursor=pointer]:
+            - generic [ref=f38e2422]:
+              - text: 
+              - link [ref=f38e2425]:
+                - /url: /album-boys-and-girls-6
+                - img "Album Boys and Girls 6" [ref=f38e2426]
+            - generic [ref=f38e2430]:
+              - generic [ref=f38e2431]: Boys and Girls 6
+              - generic [ref=f38e2436]: 122 produtos
+            - text: 
+          - generic [ref=f38e2444] [cursor=pointer]:
+            - generic [ref=f38e2449]:
+              - text: 
+              - generic [ref=f38e2451]:
+                - generic [aria-hidden] [ref=f38e2453]: 
+                - link [ref=f38e2454]:
+                  - /url: /album-les-aventures-4
+                  - img "Álbum Les Aventures 4" [ref=f38e2455]
+            - generic [ref=f38e2459]:
+              - generic [ref=f38e2460]: Les Aventures 4
+              - generic [ref=f38e2465]: 65 produtos
+            - text: 
+          - generic [ref=f38e2473] [cursor=pointer]:
+            - generic [ref=f38e2478]:
+              - text: 
+              - generic [ref=f38e2480]:
+                - generic [aria-hidden] [ref=f38e2482]: 
+                - link [ref=f38e2483]:
+                  - /url: /album-mondo-baby
+                  - img "Álbum Mondo Baby" [ref=f38e2484]
+            - generic [ref=f38e2488]:
+              - generic [ref=f38e2489]: Mondo Baby
+              - generic [ref=f38e2494]: 80 produtos
+            - text: 
+          - generic [ref=f38e2502] [cursor=pointer]:
+            - generic [ref=f38e2507]:
+              - text: 
+              - generic [ref=f38e2509]:
+                - generic [aria-hidden] [ref=f38e2511]: 
+                - link [ref=f38e2512]:
+                  - /url: /album-ola-baby
+                  - img "Álbum Ola Baby" [ref=f38e2513]
+            - generic [ref=f38e2517]:
+              - generic [ref=f38e2518]: Ola Baby
+              - generic [ref=f38e2523]: 53 produtos
+            - text: 
+          - generic [ref=f38e2531] [cursor=pointer]:
+            - generic [ref=f38e2536]:
+              - text: 
+              - link [ref=f38e2539]:
+                - /url: /album-play
+                - img "Album Play" [ref=f38e2540]
+            - generic [ref=f38e2544]:
+              - generic [ref=f38e2545]: Play
+              - generic [ref=f38e2550]: 59 produtos
+            - text: 
+          - generic [ref=f38e2558] [cursor=pointer]:
+            - generic [ref=f38e2563]:
+              - text: 
+              - generic [ref=f38e2565]:
+                - generic [aria-hidden] [ref=f38e2567]: 
+                - link [ref=f38e2568]:
+                  - /url: /album-revoada-nacional
+                  - img "Álbum Revoada" [ref=f38e2569]
+            - generic [ref=f38e2573]:
+              - generic [ref=f38e2574]: Revoada
+              - generic [ref=f38e2579]: 59 produtos
+            - text: 
+          - generic [ref=f38e2587] [cursor=pointer]:
+            - generic [ref=f38e2592]:
+              - text: 
+              - link [ref=f38e2595]:
+                - /url: /album-sonhos-nacional
+                - img "Album Sonhos" [ref=f38e2596]
+            - generic [ref=f38e2600]:
+              - generic [ref=f38e2601]: Sonhos
+              - generic [ref=f38e2606]: 64 produtos
+            - text: 
+          - generic [ref=f38e2614] [cursor=pointer]:
+            - generic [ref=f38e2619]:
+              - text: 
+              - link [ref=f38e2622]:
+                - /url: /album-yoyo-2
+                - img "Album Yoyo 2" [ref=f38e2623]
+            - generic [ref=f38e2627]:
+              - generic [ref=f38e2628]: Yoyo 2
+              - generic [ref=f38e2633]: 63 produtos
+            - text: 
+          - generic [ref=f38e2641] [cursor=pointer]:
+            - generic [ref=f38e2646]:
+              - text: 
+              - generic [ref=f38e2648]:
+                - generic [aria-hidden] [ref=f38e2650]: 
+                - link [ref=f38e2651]:
+                  - /url: /album-painel-pack-dreams
+                  - img "Álbum Painel Pack Dreams" [ref=f38e2652]
+            - generic [ref=f38e2656]:
+              - generic [ref=f38e2657]: Painel Pack Dreams
+              - generic [ref=f38e2662]: 35 produtos
+            - text: 
+      - generic [ref=f38e2670]:
+        - generic [ref=f38e2674]:
+          - generic [ref=f38e2675]: Painel Personalizado por m²
+          - generic [ref=f38e2680]: Exclusivo
+        - generic [ref=f38e2688]:
+          - generic [ref=f38e2692] [cursor=pointer]:
+            - generic [ref=f38e2697]:
+              - text: 
+              - generic [aria-hidden] [ref=f38e2701]: 
+            - generic [ref=f38e2705]:
+              - generic [ref=f38e2706]: Paisagens & Natureza
+              - generic [ref=f38e2711]: Florestas, montanhas, mar…
+            - text: 
+          - generic [ref=f38e2719] [cursor=pointer]:
+            - generic [ref=f38e2724]:
+              - text: 
+              - generic [aria-hidden] [ref=f38e2728]: 
+            - generic [ref=f38e2732]:
+              - generic [ref=f38e2733]: Foto Personalizada
+              - generic [ref=f38e2738]: Qualquer imagem sua
+            - text: 
+          - generic [ref=f38e2746] [cursor=pointer]:
+            - generic [ref=f38e2751]:
+              - text: 
+              - generic [aria-hidden] [ref=f38e2755]: 
+            - generic [ref=f38e2759]:
+              - generic [ref=f38e2760]: Florais & Botânicos
+              - generic [ref=f38e2765]: Arte floral exclusiva
+            - text: 
+          - generic [ref=f38e2773] [cursor=pointer]:
+            - generic [ref=f38e2778]:
+              - text: 
+              - generic [aria-hidden] [ref=f38e2782]: 
+            - generic [ref=f38e2786]:
+              - generic [ref=f38e2787]: Nome & Tipografia
+              - generic [ref=f38e2792]: Seu nome na parede
+            - text: 
+          - generic [ref=f38e2800] [cursor=pointer]:
+            - generic [ref=f38e2805]:
+              - text: 
+              - generic [aria-hidden] [ref=f38e2809]: 
+            - generic [ref=f38e2813]:
+              - generic [ref=f38e2814]: Arte & Ilustração
+              - generic [ref=f38e2819]: Estilo único e exclusivo
+            - text: 
+          - generic [ref=f38e2827] [cursor=pointer]:
+            - generic [ref=f38e2832]:
+              - text: 
+              - generic [aria-hidden] [ref=f38e2836]: 
+            - generic [ref=f38e2840]:
+              - generic [ref=f38e2841]: Outra ideia?
+              - generic [ref=f38e2846]: Conta pra gente
+            - text: 
+        - generic [ref=f38e2854]:
+          - generic [ref=f38e2858]:
+            - generic [ref=f38e2859]: Criação sob medida
+            - heading [level=3] [ref=f38e2866]:
+              - text: Tem uma ideia?
+              - emphasis [ref=f38e2867]: A gente cria pra você.
+            - paragraph [ref=f38e2870]: Painéis exclusivos impressos em papel liso alemão ou textura de linho. Pode ser uma foto, uma paisagem, uma ilustração, um nome — qualquer ideia vira papel de parede.
+            - generic [ref=f38e2874]:
+              - generic [ref=f38e2877]:
+                - generic [aria-hidden] [ref=f38e2878]: 
+                - text: Fotos e paisagens
+              - generic [ref=f38e2881]:
+                - generic [aria-hidden] [ref=f38e2882]: 
+                - text: Arte e ilustração
+              - generic [ref=f38e2885]:
+                - generic [aria-hidden] [ref=f38e2886]: 
+                - text: Nome impresso
+              - generic [ref=f38e2889]:
+                - generic [aria-hidden] [ref=f38e2890]: 
+                - text: Papel liso alemão
+              - generic [ref=f38e2893]:
+                - generic [aria-hidden] [ref=f38e2894]: 
+                - text: Textura de linho
+            - link "Falar com nossa equipe" [ref=f38e2898] [cursor=pointer]:
+              - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20uma%20ideia%20para%20um%20painel%20personalizado%20e%20quero%20um%20orçamento.
+              - generic [ref=f38e2899]:
+                - generic [aria-hidden] [ref=f38e2901]: 
+                - generic [ref=f38e2902]: Falar com nossa equipe
+          - generic [ref=f38e2903]:
+            - text: 
+            - generic [aria-hidden] [ref=f38e2907]: 
+    - generic [ref=f38e2911]:
+      - generic [ref=f38e2912]: Calcular quantidade
+      - heading [level=2] [ref=f38e2919]:
+        - text: Simule quantos rolos
+        - emphasis [ref=f38e2920]: você precisa
+      - generic [ref=f38e2927]:
+        - generic [ref=f38e2931]:
+          - form "Papéis de Parede - Revisão" [ref=f38e2934]:
+            - generic [ref=f38e2935]:
+              - generic [ref=f38e2936]:
+                - generic [ref=f38e2937] [cursor=pointer]: Largura da parede (m)
+                - spinbutton "Largura da parede (m)" [ref=f38e2938]
+              - generic [ref=f38e2939]:
+                - generic [ref=f38e2940] [cursor=pointer]: Altura / Pé direito (m)
+                - spinbutton "Altura / Pé direito (m)" [ref=f38e2941]
+              - generic [ref=f38e2942]:
+                - generic [ref=f38e2943] [cursor=pointer]: Tamanho do rolo
+                - generic [ref=f38e2944]:
+                  - generic:
+                    - generic [aria-hidden]: 
+                  - combobox "Tamanho do rolo" [ref=f38e2945]:
+                    - option "Rolo de 0,53 x 10 m" [selected]
+                    - option "Rolo de 0,70 x 10 m"
+                    - option "Rolo de 1,00 x 10 m"
+            - button "Calcular quantidade de rolos" [ref=f38e2946] [cursor=pointer]
+          - generic [ref=f38e2949]: Preencha largura e altura para calcular →
+          - text: 
+        - generic [ref=f38e2957]:
+          - generic [ref=f38e2958]:
+            - text: 
+            - generic [aria-hidden] [ref=f38e2962]: 
+          - paragraph [ref=f38e2965]: Com dúvidana medição?
+          - paragraph [ref=f38e2968]: Chame a gente no WhatsApp que te ajudamos a calcular a quantidade certa de rolos, sem erro.
+          - link "Falar com nossa equipe" [ref=f38e2972] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Preciso%20de%20ajuda%20para%20calcular%20a%20quantidade%20de%20rolos%20de%20papel%20de%20parede.
+            - generic [ref=f38e2973]:
+              - generic [aria-hidden] [ref=f38e2975]: 
+              - generic [ref=f38e2976]: Falar com nossa equipe
+    - generic [ref=f38e2980]:
+      - generic [ref=f38e2981]: Materiais
+      - heading [level=2] [ref=f38e2988]:
+        - text: Tipos de
+        - emphasis [ref=f38e2989]: papel de parede
+      - generic [ref=f38e2996]:
+        - generic [ref=f38e3000]:
+          - generic [ref=f38e3001]:
+            - text: 
+            - generic [aria-hidden] [ref=f38e3005]: 
+          - generic [ref=f38e3006]: Vinílico
+          - paragraph [ref=f38e3013]: Ideal para áreas de maior uso, como salas, corredores e quartos. É lavável, resistente e tem ótima durabilidade — até 10 anos com boa conservação.
+          - generic [ref=f38e3014]: Alta resistência
+          - generic [ref=f38e3016]: Lavável
+        - generic [ref=f38e3021]:
+          - generic [ref=f38e3022]:
+            - text: 
+            - generic [aria-hidden] [ref=f38e3026]: 
+          - generic [ref=f38e3027]: TNT — Tecido Não Tecido
+          - paragraph [ref=f38e3034]: Textura mais delicada, visual sofisticado e toque aconchegante. Indicado para quartos, salas e ambientes elegantes. Fácil instalação e remoção.
+          - generic [ref=f38e3035]: Sofisticado
+          - generic [ref=f38e3037]: Fácil remoção
+    - generic [ref=f38e3046]:
+      - generic [ref=f38e3050]:
+        - generic [ref=f38e3051]: Salvar favoritos
+        - heading [level=2] [ref=f38e3058]:
+          - text: Receba sugestões
+          - emphasis [ref=f38e3059]: personalizadas
+        - paragraph [ref=f38e3065]: Cadastre-se e nossa equipe te envia sugestões de papéis de parede de acordo com o seu estilo, ambiente e orçamento — direto no WhatsApp.
+        - link "Falar com especialista" [ref=f38e3069] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Quero%20receber%20sugestões%20personalizadas%20de%20papéis%20de%20parede.
+          - generic [ref=f38e3070]:
+            - generic [aria-hidden] [ref=f38e3072]: 
+            - generic [ref=f38e3073]: Falar com especialista
+      - form "Papéis de Parede - Revisão" [ref=f38e3076]:
+        - generic [ref=f38e3077]:
+          - generic [ref=f38e3078]:
+            - generic [ref=f38e3079] [cursor=pointer]: Nome
+            - textbox "Nome" [ref=f38e3080]:
+              - /placeholder: Seu nome
+          - generic [ref=f38e3081]:
+            - generic [ref=f38e3082] [cursor=pointer]: WhatsApp
+            - textbox "WhatsApp" [ref=f38e3083]:
+              - /placeholder: (21) 00000-0000
+          - generic [ref=f38e3084]:
+            - generic [ref=f38e3085] [cursor=pointer]: E-mail
+            - textbox "E-mail" [ref=f38e3086]:
+              - /placeholder: seu@email.com
+          - generic [ref=f38e3087]:
+            - generic [ref=f38e3088] [cursor=pointer]: Ambiente
+            - generic [ref=f38e3089]:
+              - generic:
+                - generic [aria-hidden]: 
+              - combobox "Ambiente" [ref=f38e3090]:
+                - option "Qual ambiente?" [selected]
+                - option "Sala de estar"
+                - option "Quarto"
+                - option "Quarto infantil"
+                - option "Home office"
+                - option "Corredor"
+                - option "Banheiro"
+                - option "Outro"
+          - generic [ref=f38e3091]:
+            - generic [ref=f38e3092] [cursor=pointer]: Estilo preferido
+            - textbox "Estilo preferido" [ref=f38e3093]:
+              - /placeholder: "Ex: moderno, rústico, floral, minimalista..."
+          - button "Enviar e receber sugestões" [ref=f38e3095] [cursor=pointer]
+    - generic [ref=f38e3101]:
+      - generic [ref=f38e3102]: Dúvidas frequentes
+      - heading [level=2] [ref=f38e3109]:
+        - text: Perguntas
+        - emphasis [ref=f38e3110]: mais comuns
+      - generic [ref=f38e3116]:
+        - button "É normal aparecerem bolhas logo após a instalação?" [ref=f38e3118] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f38e3119]:  +
+        - button "Vejo manchas ou acúmulo de cola. É normal?" [ref=f38e3122] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f38e3123]:  +
+        - button "Qual a diferença entre papel de parede e adesivo de parede?" [ref=f38e3126] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f38e3127]:  +
+        - button "Posso limpar o papel de parede?" [ref=f38e3130] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f38e3131]:  +
+        - button "Papel de parede pode ser aplicado em banheiro?" [ref=f38e3134] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f38e3135]:  +
+        - button "Posso aplicar papel de parede sobre azulejo ou cerâmica?" [ref=f38e3138] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f38e3139]:  +
+        - button "Preciso pintar a parede antes?" [ref=f38e3142] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f38e3143]:  +
+        - button "Pode aplicar sobre outro papel de parede?" [ref=f38e3146] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f38e3147]:  +
+        - button "Pode instalar na cozinha?" [ref=f38e3150] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f38e3151]:  +
+        - button "O papel estraga a parede?" [ref=f38e3154] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f38e3155]:  +
+        - button "Quanto tempo dura o papel de parede?" [ref=f38e3158] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f38e3159]:  +
+        - button "Em quanto tempo a instalação fica pronta?" [ref=f38e3162] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f38e3163]:  +
+        - button "Qual a diferença entre papel vinílico e Non Woven (TNT)?" [ref=f38e3166] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f38e3167]:  +
+        - button "Vocês têm papéis importados à pronta entrega?" [ref=f38e3170] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f38e3171]:  +
+        - button "Papel de parede com relevo acumula poeira?" [ref=f38e3174] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f38e3175]:  +
+        - button "Se eu enjoar, é fácil trocar?" [ref=f38e3178] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f38e3179]:  +
+        - button "A instalação tem cheiro?" [ref=f38e3182] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f38e3183]:  +
+        - button "Vale mais a pena pintar ou colocar papel de parede?" [ref=f38e3186] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f38e3187]:  +
+        - button "Posso instalar atrás da cabeceira da cama?" [ref=f38e3190] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f38e3191]:  +
+        - button "Papel de parede pode mofar?" [ref=f38e3194] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f38e3195]:  +
+      - generic [ref=f38e3200]:
+        - paragraph [ref=f38e3203]: Ficou com alguma dúvida que não está aqui?
+        - link "Perguntar no WhatsApp" [ref=f38e3207] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20uma%20dúvida%20sobre%20papel%20de%20parede.
+          - generic [ref=f38e3208]:
+            - generic [aria-hidden] [ref=f38e3210]: 
+            - generic [ref=f38e3211]: Perguntar no WhatsApp
+    - generic [ref=f38e3215]:
+      - generic [ref=f38e3216]: Quer ajuda para escolher?
+      - paragraph [ref=f38e3223]: Nossa equipe te orienta desde a escolha até a instalação final.
+      - generic [ref=f38e3227]:
+        - generic [ref=f38e3231]:
+          - generic [ref=f38e3232]: Fale agora
+          - link "Falar com especialista" [ref=f38e3237] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Quero%20ajuda%20para%20escolher%20um%20papel%20de%20parede.
+            - generic [ref=f38e3238]:
+              - generic [aria-hidden] [ref=f38e3240]: 
+              - generic [ref=f38e3241]: Falar com especialista
+        - generic [ref=f38e3245]:
+          - generic [ref=f38e3246]: Agendar visita
+          - link "Agendar medição" [ref=f38e3251] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Gostaria%20de%20agendar%20uma%20medição.
+            - generic [ref=f38e3252]:
+              - generic [aria-hidden] [ref=f38e3254]: 
+              - generic [ref=f38e3255]: Agendar medição
+        - generic [ref=f38e3259]:
+          - generic [ref=f38e3260]: Ver mais
+          - link "Ver todos os catálogos" [ref=f38e3265] [cursor=pointer]:
+            - /url: "#catalogos"
+    - link [ref=f38e3271] [cursor=pointer]:
+      - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Estou%20no%20site%20e%20quero%20ajuda%20para%20escolher%20papéis%20de%20parede.
+      - generic [aria-hidden] [ref=f38e3274]: 
+  - contentinfo [ref=f38e3275]:
+    - generic [ref=f38e3276]:
+      - link "Página inicial Casa Estampa" [ref=f38e3278] [cursor=pointer]:
+        - /url: /
+        - img "Casa Estampa Interiores" [ref=f38e3279]
+      - navigation "Navegação do rodapé" [ref=f38e3280]:
+        - strong [ref=f38e3281]: Explore
+        - generic [ref=f38e3282]:
+          - link "Início" [ref=f38e3283] [cursor=pointer]:
+            - /url: /
+          - link "Papéis de Parede" [ref=f38e3284] [cursor=pointer]:
+            - /url: /papeis-de-parede
+          - link "Cortinas" [ref=f38e3285] [cursor=pointer]:
+            - /url: /cortinas
+          - link "Persianas" [ref=f38e3286] [cursor=pointer]:
+            - /url: /persianas
+          - link "Pisos" [ref=f38e3287] [cursor=pointer]:
+            - /url: /pisos
+          - link "Arquitetos" [ref=f38e3288] [cursor=pointer]:
+            - /url: /arquitetos-designers
+          - link "Corporativo" [ref=f38e3289] [cursor=pointer]:
+            - /url: /corporativo
+      - generic [ref=f38e3290]:
+        - strong [ref=f38e3291]: Atendimento
+        - link "Rio de Janeiro · (21) 99988-6842" [ref=f38e3292] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?phone=5521999886842
+          - generic [aria-hidden] [ref=f38e3293]: 
+          - text: Rio de Janeiro · (21) 99988-6842
+        - generic [ref=f38e3294]: casaestampa.com
+        - generic [ref=f38e3295]: Rio de Janeiro
+    - generic [ref=f38e3296]:
+      - generic [ref=f38e3297]: © 2026 Casa Estampa. Todos os direitos reservados.
+      - link "Falar com a Casa Estampa" [ref=f38e3298] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842
+        - text: Falar com a Casa Estampa
+        - generic [aria-hidden] [ref=f38e3299]: 

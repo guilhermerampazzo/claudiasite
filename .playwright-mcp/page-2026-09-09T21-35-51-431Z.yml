@@ -1,0 +1,278 @@
+- generic [active] [ref=f4e1]:
+  - navigation [ref=f4e2]:
+    - text: 
+    - link [ref=f4e3] [cursor=pointer]:
+      - /url: /
+      - img "Casa Estampa" [ref=f4e4]
+    - list [ref=f4e5]:
+      - listitem [ref=f4e6]:
+        - link "Início" [ref=f4e7] [cursor=pointer]:
+          - /url: /
+      - listitem [ref=f4e8]:
+        - link "Papéis de Parede" [ref=f4e9] [cursor=pointer]:
+          - /url: /papeis-de-parede
+      - listitem [ref=f4e10]:
+        - link "Cortinas" [ref=f4e11] [cursor=pointer]:
+          - /url: /cortinas
+      - listitem [ref=f4e12]:
+        - link "Persianas" [ref=f4e13] [cursor=pointer]:
+          - /url: /persianas
+      - listitem [ref=f4e14]:
+        - link "Pisos" [ref=f4e15] [cursor=pointer]:
+          - /url: /pisos
+      - listitem [ref=f4e16]:
+        - link "Arquitetos" [ref=f4e17] [cursor=pointer]:
+          - /url: /arquitetos-designers
+      - listitem [ref=f4e18]:
+        - link "Corporativo" [ref=f4e19] [cursor=pointer]:
+          - /url: /corporativo
+    - generic [ref=f4e20]:
+      - button "Buscar no site" [ref=f4e21] [cursor=pointer]:
+        - generic [aria-hidden] [ref=f4e22]: 
+      - search [ref=f4e23]:
+        - searchbox "Buscar produtos" [ref=f4e24]
+    - link "Falar agora" [ref=f4e25] [cursor=pointer]:
+      - /url: https://api.whatsapp.com/send?phone=5521999886842
+      - generic [aria-hidden] [ref=f4e26]: 
+      - text: Falar agora
+  - generic [ref=f4e27]:
+    - generic: ARQUITETOS
+    - generic [ref=f4e28]:
+      - generic [ref=f4e29]: Programa de Relacionamento Casa Estampa
+      - heading "Arquitetos & Designers" [level=1] [ref=f4e30]
+      - paragraph
+      - paragraph [ref=f4e31]: "\"Grandes projetos nascem de grandes parcerias.\""
+      - paragraph [ref=f4e32]: Atendimento personalizado, produtos exclusivos e suporte completo para arquitetos e designers de interiores.
+      - generic [ref=f4e33]:
+        - link "Quero ser parceiro" [ref=f4e34] [cursor=pointer]:
+          - /url: "#cadastro"
+        - link "Ver benefícios" [ref=f4e35] [cursor=pointer]:
+          - /url: "#beneficios"
+  - generic [ref=f4e36]:
+    - generic [ref=f4e37]: Nossa proposta
+    - generic [ref=f4e38]:
+      - heading [level=2] [ref=f4e40]:
+        - text: Seu projeto,nossa
+        - emphasis [ref=f4e41]: prioridade
+      - generic [ref=f4e43]:
+        - paragraph [ref=f4e44]:
+          - text: Na Casa Estampa, entendemos que cada projeto é único. Por isso, oferecemos
+          - strong [ref=f4e45]: suporte completo
+          - text: aos arquitetos e designers de interiores, proporcionando agilidade, atendimento personalizado e acompanhamento técnico em todas as etapas.
+        - paragraph [ref=f4e46]:
+          - text: Nosso objetivo é
+          - strong [ref=f4e47]: transformar especificações em experiências
+          - text: ", garantindo qualidade, sofisticação e excelência na entrega de cada projeto."
+    - link "Falar com consultor" [ref=f4e48] [cursor=pointer]:
+      - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá! Gostaria de conhecer o Programa de Parceria Casa Estampa para arquitetos.
+  - generic [ref=f4e49]:
+    - generic [ref=f4e50]: Exclusivo para parceiros
+    - heading [level=2] [ref=f4e51]:
+      - text: Benefícios que fazem a
+      - emphasis [ref=f4e52]: diferença
+    - paragraph [ref=f4e53]: Tudo o que você precisa para especificar com confiança e entregar com excelência.
+    - generic [ref=f4e55]:
+      - generic [ref=f4e56]:
+        - generic [aria-hidden] [ref=f4e57]: 
+        - generic [ref=f4e58]: Mostruários até o escritório ou obra
+        - paragraph [ref=f4e59]: Levamos as amostras até você, sem precisar se deslocar.
+      - generic [ref=f4e60]:
+        - generic [aria-hidden] [ref=f4e61]: 
+        - generic [ref=f4e62]: Orçamentos rápidos e personalizados
+        - paragraph [ref=f4e63]: Respostas ágeis e propostas adaptadas a cada projeto.
+      - generic [ref=f4e64]:
+        - generic [aria-hidden] [ref=f4e65]: 
+        - generic [ref=f4e66]: Visita técnica e medição especializada
+        - paragraph [ref=f4e67]: Nossa equipe vai até o local para garantir precisão na especificação.
+      - generic [ref=f4e68]:
+        - generic [aria-hidden] [ref=f4e69]: 
+        - generic [ref=f4e70]: Acompanhamento da especificação à instalação
+        - paragraph [ref=f4e71]: Suporte completo em todas as etapas do seu projeto.
+      - generic [ref=f4e72]:
+        - generic [aria-hidden] [ref=f4e73]: 
+        - generic [ref=f4e74]: Equipe própria e especializada de instalação
+        - paragraph [ref=f4e75]: Instalação feita por profissionais treinados, sem terceirizações.
+      - generic [ref=f4e76]:
+        - generic [aria-hidden] [ref=f4e77]: 
+        - generic [ref=f4e78]: Produtos exclusivos, nacionais e importados
+        - paragraph [ref=f4e79]: Curadoria especial com linhas que não estão disponíveis para o público geral.
+      - generic [ref=f4e80]:
+        - generic [aria-hidden] [ref=f4e81]: 
+        - generic [ref=f4e82]: Atendimento prioritário
+        - paragraph [ref=f4e83]: Profissionais parceiros têm prioridade no atendimento e nas entregas.
+      - generic [ref=f4e84]:
+        - generic [aria-hidden] [ref=f4e85]: 
+        - generic [ref=f4e86]: Condições comerciais diferenciadas
+        - paragraph [ref=f4e87]: Tabela exclusiva e condições especiais para parceiros do programa.
+  - generic [ref=f4e88]:
+    - text: CLUBE
+    - generic [ref=f4e89]:
+      - generic [ref=f4e90]: Programa exclusivo
+      - heading [level=2] [ref=f4e91]:
+        - text: Clube de Benefícios
+        - emphasis [ref=f4e92]: Casa Estampa
+      - paragraph [ref=f4e94]: Reconhecemos e valorizamos nossos parceiros através de um programa exclusivo de relacionamento, com benefícios comerciais diferenciados, campanhas de incentivo e premiações especiais conforme o volume de projetos realizados.
+    - generic [ref=f4e95]:
+      - generic [ref=f4e96]:
+        - generic [aria-hidden] [ref=f4e98]: 
+        - generic [ref=f4e99]: Vouchers gastronômicos
+      - generic [ref=f4e100]:
+        - generic [aria-hidden] [ref=f4e102]: 
+        - generic [ref=f4e103]: Vale-compras exclusivos
+      - generic [ref=f4e104]:
+        - generic [aria-hidden] [ref=f4e106]: 
+        - generic [ref=f4e107]: Campanhas de incentivo
+      - generic [ref=f4e108]:
+        - generic [aria-hidden] [ref=f4e110]: 
+        - generic [ref=f4e111]: Premiações especiais
+      - generic [ref=f4e112]:
+        - generic [aria-hidden] [ref=f4e114]: 
+        - generic [ref=f4e115]: Eventos e lançamentos
+      - generic [ref=f4e116]:
+        - generic [aria-hidden] [ref=f4e118]: 
+        - generic [ref=f4e119]: Treinamentos e atualizações
+  - generic [ref=f4e120]:
+    - generic [ref=f4e121]: Portfólio
+    - heading [level=2] [ref=f4e122]:
+      - text: Obras que
+      - emphasis [ref=f4e123]: inspiram
+    - paragraph [ref=f4e124]: Projetos de arquitetos parceiros.
+    - generic [ref=f4e126]:
+      - generic [ref=f4e129]:
+        - generic [ref=f4e130]: Projeto Flavio
+        - generic [ref=f4e131]: Arquiteta Patricia Machado
+      - generic [ref=f4e134]:
+        - generic [ref=f4e135]: Projeto Servi Promo
+        - generic [ref=f4e136]: Arquiteta Suellen Soares
+      - generic [ref=f4e139]:
+        - generic [ref=f4e140]: Projeto
+        - generic [ref=f4e141]: Arquiteta Liana Figueirinha
+      - generic [ref=f4e144]:
+        - generic [ref=f4e145]: Projeto
+        - generic [ref=f4e146]: Arquiteta Taciana Lessa
+  - generic [ref=f4e147]:
+    - generic [ref=f4e148]:
+      - img "Morar Mais — o chique que cabe no bolso" [ref=f4e149]
+      - generic [ref=f4e150]:
+        - generic [ref=f4e151]: Presença e Reconhecimento
+        - heading [level=2] [ref=f4e152]:
+          - text: Mostra Morar Mais
+          - emphasis [ref=f4e153]: "2025"
+    - generic [ref=f4e155]:
+      - generic [ref=f4e157]:
+        - paragraph [ref=f4e158]:
+          - text: Em 2025, a Casa Estampa foi
+          - strong [ref=f4e159]: fornecedora oficial
+          - text: da Mostra Morar Mais, um dos maiores eventos de decoração e design de interiores do Rio de Janeiro.
+        - paragraph [ref=f4e160]:
+          - text: Montamos uma loja exclusiva dentro da Mostra, onde apresentamos nossa coleção de
+          - strong [ref=f4e161]: papéis de parede a pronta entrega
+          - text: ", persianas, cortinas e revestimentos; permitindo que arquitetos, designers e o público geral experimentassem de perto o universo Casa Estampa."
+        - paragraph [ref=f4e162]: Uma oportunidade única de conectar nossos produtos diretamente com profissionais e clientes que buscam o melhor em decoração de alto padrão.
+      - generic [ref=f4e163]:
+        - generic [ref=f4e164]: Fornecedora oficial
+        - generic [ref=f4e165]: "2025"
+        - generic [ref=f4e166]: Mostra Morar Mais · Rio de Janeiro
+        - generic [ref=f4e167]: Papéis de parede a pronta entrega · Persianas · Cortinas · Revestimentos exclusivos
+    - generic [ref=f4e168]:
+      - generic [ref=f4e170]:
+        - generic [aria-hidden] [ref=f4e171]: 
+        - generic [ref=f4e172]: Inserir foto
+      - generic [ref=f4e181]:
+        - generic [ref=f4e182]:
+          - generic [aria-hidden] [ref=f4e183]: 
+          - generic [ref=f4e184]: Inserir foto
+        - generic [ref=f4e186]:
+          - generic [aria-hidden] [ref=f4e187]: 
+          - generic [ref=f4e188]: Inserir foto
+        - generic [ref=f4e190]:
+          - generic [aria-hidden] [ref=f4e191]: 
+          - generic [ref=f4e192]: Inserir foto
+        - generic [ref=f4e193]:
+          - generic [ref=f4e194]:
+            - generic [aria-hidden] [ref=f4e195]: 
+            - generic [ref=f4e196]: Inserir foto
+          - generic [ref=f4e198]:
+            - generic [aria-hidden] [ref=f4e199]: 
+            - generic [ref=f4e200]: Inserir foto
+          - generic [ref=f4e202]:
+            - generic [aria-hidden] [ref=f4e203]: 
+            - generic [ref=f4e204]: Inserir foto
+          - generic [ref=f4e206]:
+            - generic [aria-hidden] [ref=f4e207]: 
+            - generic [ref=f4e208]: Inserir foto
+  - generic [ref=f4e209]:
+    - generic [ref=f4e210]:
+      - generic [ref=f4e211]: Faça parte
+      - heading [level=2] [ref=f4e212]:
+        - text: Cadastre-se como
+        - emphasis [ref=f4e213]: parceiro
+      - paragraph [ref=f4e215]: Preencha o formulário e nossa equipe entrará em contato para apresentar todas as condições exclusivas do programa.
+    - generic [ref=f4e216]:
+      - generic [ref=f4e217]:
+        - generic [ref=f4e218]: Nome completo
+        - textbox "Seu nome" [ref=f4e219]
+      - generic [ref=f4e220]:
+        - generic [ref=f4e221]: Nome do escritório
+        - textbox "Nome do escritório" [ref=f4e222]
+      - generic [ref=f4e223]:
+        - generic [ref=f4e224]: Telefone / WhatsApp
+        - textbox "(21) 00000-0000" [ref=f4e225]
+      - generic [ref=f4e226]:
+        - generic [ref=f4e227]: E-mail
+        - textbox "seu@email.com" [ref=f4e228]
+      - generic [ref=f4e229]:
+        - generic [ref=f4e230]: Instagram
+        - textbox "@seuinstagram" [ref=f4e231]
+      - generic [ref=f4e232]:
+        - generic [ref=f4e233]: Cidade / Bairro
+        - textbox "Rio de Janeiro" [ref=f4e234]
+      - button "Enviar cadastro" [ref=f4e236] [cursor=pointer]
+  - generic [ref=f4e237]:
+    - generic [ref=f4e238]: Agende uma visita
+    - heading "Vamos até você" [level=2] [ref=f4e239]
+    - paragraph [ref=f4e240]: Agende uma visita ao seu escritório e conheça nossos mostruários exclusivos.
+    - generic [ref=f4e241]:
+      - link "Agendar visita pelo WhatsApp" [ref=f4e242] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá, Casa Estampa! Quero agendar uma visita ao meu escritório para conhecer os mostruários.
+      - link "Fazer cadastro" [ref=f4e243] [cursor=pointer]:
+        - /url: "#cadastro"
+  - link "Falar pelo WhatsApp" [ref=f4e244] [cursor=pointer]:
+    - /url: https://api.whatsapp.com/send?phone=5521999886842
+    - generic [aria-hidden] [ref=f4e245]: 
+  - contentinfo [ref=f4e246]:
+    - generic [ref=f4e247]:
+      - link "Página inicial Casa Estampa" [ref=f4e249] [cursor=pointer]:
+        - /url: /
+        - img "Casa Estampa Interiores" [ref=f4e250]
+      - navigation "Navegação do rodapé" [ref=f4e251]:
+        - strong [ref=f4e252]: Explore
+        - generic [ref=f4e253]:
+          - link "Início" [ref=f4e254] [cursor=pointer]:
+            - /url: /
+          - link "Papéis de Parede" [ref=f4e255] [cursor=pointer]:
+            - /url: /papeis-de-parede
+          - link "Cortinas" [ref=f4e256] [cursor=pointer]:
+            - /url: /cortinas
+          - link "Persianas" [ref=f4e257] [cursor=pointer]:
+            - /url: /persianas
+          - link "Pisos" [ref=f4e258] [cursor=pointer]:
+            - /url: /pisos
+          - link "Arquitetos" [ref=f4e259] [cursor=pointer]:
+            - /url: /arquitetos-designers
+          - link "Corporativo" [ref=f4e260] [cursor=pointer]:
+            - /url: /corporativo
+      - generic [ref=f4e261]:
+        - strong [ref=f4e262]: Atendimento
+        - link "Rio de Janeiro · (21) 99988-6842" [ref=f4e263] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?phone=5521999886842
+          - generic [aria-hidden] [ref=f4e264]: 
+          - text: Rio de Janeiro · (21) 99988-6842
+        - generic [ref=f4e265]: casaestampa.com
+        - generic [ref=f4e266]: Rio de Janeiro
+    - generic [ref=f4e267]:
+      - generic [ref=f4e268]: © 2026 Casa Estampa. Todos os direitos reservados.
+      - link "Falar com a Casa Estampa" [ref=f4e269] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842
+        - text: Falar com a Casa Estampa
+        - generic [aria-hidden] [ref=f4e270]: 

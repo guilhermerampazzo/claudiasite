@@ -1,0 +1,96 @@
+- generic [active] [ref=f13e1]:
+  - navigation [ref=f13e2]:
+    - generic [ref=f13e3]:
+      - link "Instagram" [ref=f13e4] [cursor=pointer]:
+        - /url: https://www.instagram.com/casaestampa/
+        - generic [ref=f13e5]: 
+      - link "Facebook" [ref=f13e6] [cursor=pointer]:
+        - /url: https://www.facebook.com/casaestampainteriores
+        - generic [ref=f13e7]: 
+      - link "Pinterest" [ref=f13e8] [cursor=pointer]:
+        - /url: https://br.pinterest.com/casaestampa/
+        - generic [ref=f13e9]: 
+    - link [ref=f13e10] [cursor=pointer]:
+      - /url: /
+      - img "Casa Estampa" [ref=f13e11]
+    - generic [ref=f13e12]:
+      - button "Buscar no site" [ref=f13e13] [cursor=pointer]:
+        - generic [ref=f13e14]: 
+      - search [ref=f13e15]:
+        - searchbox "Buscar produtos" [ref=f13e16]
+    - button "Abrir menu" [ref=f13e17] [cursor=pointer]
+    - link "Falar agora" [ref=f13e21] [cursor=pointer]:
+      - /url: https://api.whatsapp.com/send?phone=5521999886842
+      - generic [ref=f13e22]: 
+      - text: Falar agora
+  - main [ref=f13e23]:
+    - heading "Amorim Persianas e Cortinas" [level=1] [ref=f13e27]
+    - generic [ref=f13e28]:
+      - generic [ref=f13e29]:
+        - generic [ref=f13e30]: SUBCATEGORIAS E ÁLBUNS
+        - heading "Explore as coleções" [level=2] [ref=f13e31]
+      - generic [ref=f13e32]:
+        - link "Premium Atena 7 produtos Premium Atena " [ref=f13e33] [cursor=pointer]:
+          - /url: /categoria-produto/persianas/amorim-persianas-e-cortinas/premium-atena
+          - img "Premium Atena" [ref=f13e35]
+          - generic [ref=f13e36]:
+            - generic [ref=f13e37]: 7 produtos
+            - heading "Premium Atena" [level=3] [ref=f13e38]
+            - generic [ref=f13e39]: 
+        - link "Rolo Romana Painel COM Blackout 53 produtos Rolo Romana Painel COM Blackout " [ref=f13e40] [cursor=pointer]:
+          - /url: /categoria-produto/persianas/amorim-persianas-e-cortinas/rolo-romana-painel-com-blackout
+          - img "Rolo Romana Painel COM Blackout" [ref=f13e42]
+          - generic [ref=f13e43]:
+            - generic [ref=f13e44]: 53 produtos
+            - heading "Rolo Romana Painel COM Blackout" [level=3] [ref=f13e45]
+            - generic [ref=f13e46]: 
+        - link "Rolo Romana Painel SEM Blackout 37 produtos Rolo Romana Painel SEM Blackout " [ref=f13e47] [cursor=pointer]:
+          - /url: /categoria-produto/persianas/amorim-persianas-e-cortinas/rolo-romana-painel-sem-blackout
+          - img "Rolo Romana Painel SEM Blackout" [ref=f13e49]
+          - generic [ref=f13e50]:
+            - generic [ref=f13e51]: 37 produtos
+            - heading "Rolo Romana Painel SEM Blackout" [level=3] [ref=f13e52]
+            - generic [ref=f13e53]: 
+        - link "Tela Solar 50 produtos Tela Solar " [ref=f13e54] [cursor=pointer]:
+          - /url: /categoria-produto/persianas/amorim-persianas-e-cortinas/tela-solar
+          - img "Tela Solar" [ref=f13e56]
+          - generic [ref=f13e57]:
+            - generic [ref=f13e58]: 50 produtos
+            - heading "Tela Solar" [level=3] [ref=f13e59]
+            - generic [ref=f13e60]: 
+  - contentinfo [ref=f13e61]:
+    - generic [ref=f13e62]:
+      - link "Página inicial Casa Estampa" [ref=f13e64] [cursor=pointer]:
+        - /url: /
+        - img "Casa Estampa Interiores" [ref=f13e65]
+      - navigation "Navegação do rodapé" [ref=f13e66]:
+        - strong [ref=f13e67]: Explore
+        - generic [ref=f13e68]:
+          - link "Início" [ref=f13e69] [cursor=pointer]:
+            - /url: /
+          - link "Papéis de Parede" [ref=f13e70] [cursor=pointer]:
+            - /url: /papeis-de-parede
+          - link "Cortinas" [ref=f13e71] [cursor=pointer]:
+            - /url: /cortinas
+          - link "Persianas" [ref=f13e72] [cursor=pointer]:
+            - /url: /persianas
+          - link "Pisos" [ref=f13e73] [cursor=pointer]:
+            - /url: /pisos
+          - link "Arquitetos" [ref=f13e74] [cursor=pointer]:
+            - /url: /area-do-arquiteto
+          - link "Corporativo" [ref=f13e75] [cursor=pointer]:
+            - /url: /corporativo
+      - generic [ref=f13e76]:
+        - strong [ref=f13e77]: Atendimento
+        - link "Rio de Janeiro · (21) 99988-6842" [ref=f13e78] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?phone=5521999886842
+          - generic [ref=f13e79]: 
+          - text: Rio de Janeiro · (21) 99988-6842
+        - generic [ref=f13e80]: casaestampa.com
+        - generic [ref=f13e81]: Rio de Janeiro
+    - generic [ref=f13e82]:
+      - generic [ref=f13e83]: © 2026 Casa Estampa. Todos os direitos reservados.
+      - link "Falar com a Casa Estampa" [ref=f13e84] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842
+        - text: Falar com a Casa Estampa
+        - generic [ref=f13e85]: 

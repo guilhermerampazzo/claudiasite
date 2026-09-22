@@ -1,0 +1,833 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "Instagram" [ref=e4] [cursor=pointer]:
+        - /url: https://www.instagram.com/casaestampa/
+        - generic [aria-hidden] [ref=e5]: 
+      - link "Facebook" [ref=e6] [cursor=pointer]:
+        - /url: https://www.facebook.com/casaestampainteriores
+        - generic [aria-hidden] [ref=e7]: 
+      - link "Pinterest" [ref=e8] [cursor=pointer]:
+        - /url: https://br.pinterest.com/casaestampa/
+        - generic [aria-hidden] [ref=e9]: 
+    - link [ref=e10] [cursor=pointer]:
+      - /url: /
+      - img "Casa Estampa" [ref=e11]
+    - generic [ref=e12]:
+      - button "Buscar no site" [ref=e13] [cursor=pointer]:
+        - generic [aria-hidden] [ref=e14]: 
+      - search [ref=e15]:
+        - searchbox "Buscar produtos" [ref=e16]
+    - button "Abrir menu" [ref=e17] [cursor=pointer]
+    - link "Falar agora" [ref=e21] [cursor=pointer]:
+      - /url: https://api.whatsapp.com/send?phone=5521999886842
+      - generic [aria-hidden] [ref=e22]: 
+      - text: Falar agora
+  - generic [ref=e27]:
+    - generic [ref=e31]:
+      - generic [ref=e32]: PERSIANA
+      - generic [ref=e37]:
+        - generic [ref=e38]: Feitas sob medida
+        - heading "Persianas sob medida" [level=1] [ref=e45]
+        - paragraph [ref=e49]: Encontre o modelo ideal para o seu ambiente — com medição técnica, fabricação sob medida e instalação especializada.
+        - generic [ref=e53]:
+          - link "Solicitar orçamento" [ref=e57] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Quero%20solicitar%20um%20orçamento%20de%20persianas.
+            - generic [ref=e58]:
+              - generic [aria-hidden] [ref=e60]: 
+              - generic [ref=e61]: Solicitar orçamento
+          - link "Ver modelos ↓" [ref=e65] [cursor=pointer]:
+            - /url: "#modelos"
+    - generic [ref=e71]:
+      - generic [ref=e75]:
+        - generic [ref=e76]: Ambientes reais
+        - heading [level=2] [ref=e83]:
+          - text: Persianas
+          - emphasis [ref=e84]: instaladas por nós
+      - generic [ref=e89]:
+        - region "Galeria de imagens" [ref=e94]:
+          - generic [ref=e95]:
+            - generic [ref=e99]:
+              - generic [ref=e103]:
+                - generic [ref=e104]:
+                  - text: 
+                  - img "Foto instalada" [ref=e107]
+                - generic [ref=e108]: Sala
+              - generic [ref=e110]: Rolo Tela Solar
+            - generic [ref=e118]:
+              - generic [ref=e123]:
+                - text: 
+                - img "Foto instalada" [ref=e126]
+              - generic [ref=e127]: Rolo tela solar 5%
+            - generic [ref=e135]:
+              - generic [ref=e140]:
+                - text: 
+                - img "Foto instalada" [ref=e143]
+              - generic [ref=e144]: Romana Blackout
+            - generic [ref=e152]:
+              - generic [ref=e157]:
+                - text: 
+                - img "Foto instalada" [ref=e160]
+              - generic [ref=e161]: rolo tela solar 1%
+            - generic [ref=e169]:
+              - generic [ref=e174]:
+                - text: 
+                - img "Foto instalada" [ref=e177]
+              - generic [ref=e178]: Painel com Hastes Blackout
+            - generic [ref=e186]:
+              - generic [ref=e191]:
+                - text: 
+                - img "Foto instalada" [ref=e194]
+              - generic [ref=e196]: Rolo Blackout com bando
+            - generic [ref=e204]:
+              - generic [ref=e209]:
+                - text: 
+                - img "Foto instalada" [ref=e212]
+              - generic [ref=e214]: Rolo Blackout
+            - generic [ref=e222]:
+              - generic [ref=e227]:
+                - text: 
+                - img "Foto instalada" [ref=e230]
+              - generic [ref=e232]: double vision
+            - generic [ref=e240]:
+              - generic [ref=e245]:
+                - text: 
+                - img "Foto instalada" [ref=e248]
+              - generic [ref=e250]: Romana
+            - generic [ref=e258]:
+              - generic [ref=e263]:
+                - text: 
+                - img "Foto instalada" [ref=e266]
+              - generic [ref=e267]: rolo tela solar 1%
+            - generic [ref=e275]:
+              - generic [ref=e280]:
+                - text: 
+                - img "Foto instalada" [ref=e283]
+              - generic [ref=e284]: rolo tela solar 3%
+            - generic [ref=e292]:
+              - generic [ref=e297]:
+                - text: 
+                - img "Foto instalada" [ref=e300]
+              - generic [ref=e301]: Romana
+            - generic [ref=e309]:
+              - generic [ref=e314]:
+                - text: 
+                - img "Foto instalada" [ref=e317]
+              - generic [ref=e318]: rolo tela solar 3%
+            - generic [ref=e326]:
+              - generic [ref=e331]:
+                - text: 
+                - img "Foto instalada" [ref=e334]
+              - generic [ref=e335]: vertical
+            - generic [ref=e343]:
+              - generic [ref=e348]:
+                - text: 
+                - img "Foto instalada" [ref=e351]
+              - generic [ref=e352]: Persiana Horizontal de Alumínio
+            - generic [ref=e360]:
+              - generic [ref=e365]:
+                - text: 
+                - img "Foto instalada" [ref=e368]
+              - generic [ref=e369]: Rolo Tela Solar Motorizada
+            - generic [ref=e377]:
+              - generic [ref=e382]:
+                - text: 
+                - img "Foto instalada" [ref=e385]
+              - generic [ref=e386]: Rolo blackout
+            - generic [ref=e394]:
+              - generic [ref=e399]:
+                - text: 
+                - img "Foto instalada" [ref=e402]
+              - generic [ref=e403]: Rolo tela solar 3%
+            - generic [ref=e411]:
+              - generic [ref=e416]:
+                - text: 
+                - img "Foto instalada" [ref=e419]
+              - generic [ref=e420]: Painel com hastes com Blackout
+            - generic [ref=e428]:
+              - generic [ref=e432]:
+                - generic [ref=e433]:
+                  - text: 
+                  - img "Foto instalada" [ref=e436]
+                - generic [ref=e437]: Varanda
+              - generic [ref=e439]: Rolo Tela Solar 1%
+            - generic [ref=e447]:
+              - generic [ref=e451]:
+                - generic [ref=e452]:
+                  - text: 
+                  - img "Foto instalada" [ref=e455]
+                - generic [ref=e456]: Varanda
+              - generic [ref=e458]: horizontal em alumínio
+            - generic [ref=e466]:
+              - generic [ref=e471]:
+                - text: 
+                - img "Foto instalada" [ref=e474]
+              - generic [ref=e475]: painel blackout com hastes
+            - generic [ref=e483]:
+              - generic [ref=e487]:
+                - generic [ref=e488]:
+                  - text: 
+                  - img "Foto instalada" [ref=e491]
+                - generic [ref=e492]: Varanda
+              - generic [ref=e494]: Rolo blackout com bando em aluminio
+            - generic [ref=e502]:
+              - generic [ref=e506]:
+                - generic [ref=e507]:
+                  - text: 
+                  - img "Foto instalada" [ref=e510]
+                - generic [ref=e511]: Varanda
+              - generic [ref=e513]: Rolo blackout com bando em mdf
+            - generic [ref=e521]:
+              - generic [ref=e526]:
+                - text: 
+                - img "Foto instalada" [ref=e529]
+              - generic [ref=e530]: Rolo Blackout com bando em alumínio e guias laterais
+            - generic [ref=e538]:
+              - generic [ref=e543]:
+                - text: 
+                - img "Foto instalada" [ref=e546]
+              - generic [ref=e547]: horizontal em madeira sintetica
+            - generic [ref=e555]:
+              - generic [ref=e560]:
+                - text: 
+                - img "Foto instalada" [ref=e563]
+              - generic [ref=e564]: Rolo Tela Solar 1%
+            - generic [ref=e572]:
+              - generic [ref=e577]:
+                - text: 
+                - img "Foto instalada" [ref=e580]
+              - generic [ref=e581]: painel com hastes com bando
+            - generic [ref=e589]:
+              - generic [ref=e594]:
+                - text: 
+                - img "Foto instalada" [ref=e597]
+              - generic [ref=e598]: painel com hastes com bando
+            - generic [ref=e606]:
+              - generic [ref=e611]:
+                - text: 
+                - img "Foto instalada" [ref=e614]
+              - generic [ref=e615]: double vision com blackout
+            - generic [ref=e623]:
+              - generic [ref=e628]:
+                - text: 
+                - img "Foto instalada" [ref=e631]
+              - generic [ref=e632]: double vision
+            - generic [ref=e640]:
+              - generic [ref=e645]:
+                - text: 
+                - img "Foto instalada" [ref=e648]
+              - generic [ref=e649]: rolo com bando em mdf com guias laterais
+            - generic [ref=e657]:
+              - generic [ref=e662]:
+                - text: 
+                - img "Foto instalada" [ref=e665]
+              - generic [ref=e666]: rolo blackout
+            - generic [ref=e674]:
+              - generic [ref=e679]:
+                - text: 
+                - img "Foto instalada" [ref=e682]
+              - generic [ref=e683]: Horizontal de Madeira
+            - generic [ref=e691]:
+              - generic [ref=e696]:
+                - text: 
+                - img "Foto instalada" [ref=e699]
+              - generic [ref=e700]: Painel com hastes e Cortina nas laterais
+            - generic [ref=e708]:
+              - generic [ref=e713]:
+                - text: 
+                - img "Foto instalada" [ref=e716]
+              - generic [ref=e717]: Rolo Tela Solar 3%
+            - generic [ref=e725]:
+              - generic [ref=e729]:
+                - generic [ref=e730]:
+                  - text: 
+                  - img "Foto instalada" [ref=e733]
+                - generic [ref=e734]: Quarto Infantil
+              - generic [ref=e736]: Romana de Teto
+            - generic [ref=e744]:
+              - generic [ref=e749]:
+                - text: 
+                - img "Foto instalada" [ref=e752]
+              - generic [ref=e753]: Rolo Tela Solar 3%
+            - generic [ref=e761]:
+              - generic [ref=e766]:
+                - text: 
+                - img "Foto instalada" [ref=e769]
+              - generic [ref=e770]: painel com hastes blackout
+            - generic [ref=e778]:
+              - generic [ref=e783]:
+                - text: 
+                - img "Foto instalada" [ref=e786]
+              - generic [ref=e787]: painel com hastes blackout
+            - generic [ref=e795]:
+              - generic [ref=e800]:
+                - text: 
+                - img "Foto instalada" [ref=e803]
+              - generic [ref=e804]: Painel com hastes tela solar 5%
+            - generic [ref=e812]:
+              - generic [ref=e817]:
+                - text: 
+                - img "Foto instalada" [ref=e820]
+              - generic [ref=e821]: Painel com hastes tela solar 5%
+            - generic [ref=e829]:
+              - generic [ref=e834]:
+                - text: 
+                - img "Foto instalada" [ref=e837]
+              - generic [ref=e838]: Horizontal de Madeira
+            - generic [ref=e846]:
+              - generic [ref=e851]:
+                - text: 
+                - img "Foto instalada" [ref=e854]
+              - generic [ref=e855]: Rolo Tela Solar 1%
+            - generic [ref=e863]:
+              - generic [ref=e868]:
+                - text: 
+                - img "Foto instalada" [ref=e871]
+              - generic [ref=e872]: double vision
+            - generic [ref=e880]:
+              - generic [ref=e885]:
+                - text: 
+                - img "Foto instalada" [ref=e888]
+              - generic [ref=e889]: Romana Transpassada
+            - generic [ref=e897]:
+              - generic [ref=e902]:
+                - text: 
+                - img "Foto instalada" [ref=e905]
+              - generic [ref=e906]: Romana Transpassada
+            - generic [ref=e914]:
+              - generic [ref=e919]:
+                - text: 
+                - img "Foto instalada" [ref=e922]
+              - generic [ref=e923]: Romana Transpassada
+            - generic [ref=e931]:
+              - generic [ref=e936]:
+                - text: 
+                - img "Foto instalada" [ref=e939]
+              - generic [ref=e940]: Horizontal em alumínio
+            - generic [ref=e948]:
+              - generic [ref=e953]:
+                - text: 
+                - img "Foto instalada" [ref=e956]
+              - generic [ref=e957]: painel com hastes blackout com bando
+            - generic [ref=e965]:
+              - generic [ref=e970]:
+                - text: 
+                - img "Foto instalada" [ref=e973]
+              - generic [ref=e974]: painel com hastes blackout
+            - generic [ref=e982]:
+              - generic [ref=e987]:
+                - text: 
+                - img "Foto instalada" [ref=e990]
+              - generic [ref=e991]: Rolo transpassado com bando
+            - generic [ref=e999]:
+              - generic [ref=e1004]:
+                - text: 
+                - img "Foto instalada" [ref=e1007]
+              - generic [ref=e1008]: rolo tela solar 1%
+            - generic [ref=e1016]:
+              - generic [ref=e1021]:
+                - text: 
+                - img "Foto instalada" [ref=e1024]
+              - generic [ref=e1025]: double vision sem blackout com bando em aluminio
+            - generic [ref=e1033]:
+              - generic [ref=e1038]:
+                - text: 
+                - img "Foto instalada" [ref=e1041]
+              - generic [ref=e1042]: rolo blackout
+            - generic [ref=e1050]:
+              - generic [ref=e1055]:
+                - text: 
+                - img "Foto instalada" [ref=e1058]
+              - generic [ref=e1059]: rolo tela solar 1%
+            - generic [ref=e1067]:
+              - generic [ref=e1072]:
+                - text: 
+                - img "Foto instalada" [ref=e1075]
+              - generic [ref=e1076]: romana de teto
+            - generic [ref=e1084]:
+              - generic [ref=e1089]:
+                - text: 
+                - img "Foto instalada" [ref=e1092]
+              - generic [ref=e1093]: rolo tela solar 1%
+            - generic [ref=e1101]:
+              - generic [ref=e1106]:
+                - text: 
+                - img "Foto instalada" [ref=e1109]
+              - generic [ref=e1110]: rolo tela solar 3%
+            - generic [ref=e1118]:
+              - generic [ref=e1123]:
+                - text: 
+                - img "Foto instalada" [ref=e1126]
+              - generic [ref=e1127]: rolo blackout com guia lateral
+            - generic [ref=e1135]:
+              - generic [ref=e1140]:
+                - text: 
+                - img "Foto instalada" [ref=e1143]
+              - generic [ref=e1144]: rolo blackout com bando em aluminio
+            - generic [ref=e1152]:
+              - generic [ref=e1157]:
+                - text: 
+                - img "Foto instalada" [ref=e1160]
+              - generic [ref=e1161]: horizontal madeira
+            - generic [ref=e1169]:
+              - generic [ref=e1174]:
+                - text: 
+                - img "Foto instalada" [ref=e1177]
+              - generic [ref=e1178]: horizontal em alumínio
+            - generic [ref=e1186]:
+              - generic [ref=e1191]:
+                - text: 
+                - img "Foto instalada" [ref=e1194]
+              - generic [ref=e1195]: romana blackout
+            - generic [ref=e1203]:
+              - generic [ref=e1208]:
+                - text: 
+                - img "Foto instalada" [ref=e1211]
+              - generic [ref=e1212]: rolo com guias laterais e bando em aluminio
+            - generic [ref=e1220]:
+              - generic [ref=e1225]:
+                - text: 
+                - img "Foto instalada" [ref=e1228]
+              - generic [ref=e1229]: rolo blackout e rolo sem blackout no bando
+            - generic [ref=e1237]:
+              - generic [ref=e1242]:
+                - text: 
+                - img "Foto instalada" [ref=e1245]
+              - generic [ref=e1246]: double vision com bando de aluminio
+            - generic [ref=e1254]:
+              - generic [ref=e1259]:
+                - text: 
+                - img "Foto instalada" [ref=e1262]
+              - generic [ref=e1263]: painel com hastes
+            - generic [ref=e1271]:
+              - generic [ref=e1276]:
+                - text: 
+                - img "Foto instalada" [ref=e1279]
+              - generic [ref=e1280]: horizontal em alumínio
+            - generic [ref=e1288]:
+              - generic [ref=e1293]:
+                - text: 
+                - img "Foto instalada" [ref=e1296]
+              - generic [ref=e1297]: rolo telar 1%
+            - generic [ref=e1305]:
+              - generic [ref=e1310]:
+                - text: 
+                - img "Foto instalada" [ref=e1313]
+              - generic [ref=e1314]: rolo blackout transpassado no bando
+            - generic [ref=e1322]:
+              - generic [ref=e1327]:
+                - text: 
+                - img "Foto instalada" [ref=e1330]
+              - generic [ref=e1331]: rolo blackout transpassado no bando
+            - generic [ref=e1339]:
+              - generic [ref=e1344]:
+                - text: 
+                - img "Foto instalada" [ref=e1347]
+              - generic [ref=e1348]: rolo tela solar 1%
+        - generic "Navegacao do carrossel" [ref=e1353]:
+          - button "Imagem anterior" [ref=e1354] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e1355]: 
+          - button "Proxima imagem" [ref=e1357] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e1358]: 
+      - generic [ref=e1362]:
+        - link "Quero o mesmo no meu espaço" [ref=e1366] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Vi%20os%20ambientes%20no%20site%20e%20quero%20um%20orçamento%20de%20persianas.
+          - generic [ref=e1367]:
+            - generic [aria-hidden] [ref=e1369]: 
+            - generic [ref=e1370]: Quero o mesmo no meu espaço
+        - generic:  
+    - generic [ref=e1374]:
+      - generic [ref=e1375]: Modelos disponíveis
+      - heading [level=2] [ref=e1382]:
+        - text: Encontre o modelo
+        - emphasis [ref=e1383]: ideal para você
+      - paragraph [ref=e1389]: Clique em qualquer modelo para falar com nossa equipe e receber seu orçamento.
+      - generic [ref=e1393]:
+        - generic [ref=e1397]:
+          - generic [ref=e1411]:
+            - generic [ref=e1415]:
+              - generic [ref=e1416]: Persiana
+              - generic [ref=e1417]: Rolo
+            - generic [ref=e1419]: Minimalista, funcional e extremamente versátil. Adapta-se a diferentes estilos, oferecendo controle de luz, privacidade e visual limpo.
+          - link "Quero essa" [ref=e1427] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20na%20persiana%20rolo.%20Quero%20um%20orçamento.
+            - generic [ref=e1428]:
+              - generic [aria-hidden] [ref=e1430]: 
+              - generic [ref=e1431]: Quero essa
+        - generic [ref=e1435]:
+          - generic [ref=e1449]:
+            - generic [ref=e1453]:
+              - generic [ref=e1454]: Persiana
+              - generic [ref=e1455]: Romana
+            - generic [ref=e1457]: Sofisticada e acolhedora. Cria dobras suaves ao ser recolhida, trazendo textura, movimento e um toque de elegância ao espaço.
+          - link "Quero essa" [ref=e1465] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20na%20persiana%20romana.%20Quero%20um%20orçamento.
+            - generic [ref=e1466]:
+              - generic [aria-hidden] [ref=e1468]: 
+              - generic [ref=e1469]: Quero essa
+        - generic [ref=e1473]:
+          - generic [ref=e1487]:
+            - generic [ref=e1491]:
+              - generic [ref=e1492]: Painel
+              - generic [ref=e1493]: Sem hastes
+            - generic [ref=e1495]: Moderna e fluida. Ideal para grandes vãos, proporciona um visual contínuo, leve e contemporâneo, com excelente controle de luz.
+          - link "Quero essa" [ref=e1503] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20na%20persiana%20painel%20sem%20hastes.%20Quero%20um%20orçamento.
+            - generic [ref=e1504]:
+              - generic [aria-hidden] [ref=e1506]: 
+              - generic [ref=e1507]: Quero essa
+        - generic [ref=e1511]:
+          - generic [ref=e1525]:
+            - generic [ref=e1529]:
+              - generic [ref=e1530]: Painel
+              - generic [ref=e1531]: Com hastes
+            - generic [ref=e1533]: Design estruturado e imponente. Combina estética marcante com funcionalidade, sendo perfeita para ambientes amplos e projetos arquitetônicos.
+          - link "Quero essa" [ref=e1541] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20na%20persiana%20painel%20com%20hastes.%20Quero%20um%20orçamento.
+            - generic [ref=e1542]:
+              - generic [aria-hidden] [ref=e1544]: 
+              - generic [ref=e1545]: Quero essa
+        - generic [ref=e1549]:
+          - generic [ref=e1563]:
+            - generic [ref=e1567]:
+              - generic [ref=e1568]: Persiana
+              - generic [ref=e1569]: Double Vision
+            - generic [ref=e1571]: Controle total de luz e privacidade. Suas faixas alternadas permitem regular a luminosidade com precisão e muito estilo.
+          - link "Quero essa" [ref=e1579] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20na%20persiana%20double%20vision.%20Quero%20um%20orçamento.
+            - generic [ref=e1580]:
+              - generic [aria-hidden] [ref=e1582]: 
+              - generic [ref=e1583]: Quero essa
+        - generic [ref=e1587]:
+          - generic [ref=e1601]:
+            - generic [ref=e1605]:
+              - generic [ref=e1606]: Persiana
+              - generic [ref=e1607]: Tela Solar
+            - generic [ref=e1609]: Tecnologia e conforto térmico. Filtra os raios solares, reduz o calor e mantém a visão externa, sem abrir mão da proteção UV.
+          - link "Quero essa" [ref=e1617] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20na%20persiana%20tela%20solar.%20Quero%20um%20orçamento.
+            - generic [ref=e1618]:
+              - generic [aria-hidden] [ref=e1620]: 
+              - generic [ref=e1621]: Quero essa
+        - generic [ref=e1625]:
+          - generic [ref=e1639]:
+            - generic [ref=e1643]:
+              - generic [ref=e1644]: Vertical
+              - generic [ref=e1645]: Em tecido
+            - generic [ref=e1647]: Elegantes e funcionais. Ideais para portas, janelas amplas e ambientes corporativos, permitem regulagem precisa da entrada de luz.
+          - link "Quero essa" [ref=e1655] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20na%20persiana%20vertical%20em%20tecido.%20Quero%20um%20orçamento.
+            - generic [ref=e1656]:
+              - generic [aria-hidden] [ref=e1658]: 
+              - generic [ref=e1659]: Quero essa
+        - generic [ref=e1663]:
+          - generic [ref=e1677]:
+            - generic [ref=e1681]:
+              - generic [ref=e1682]: Vertical
+              - generic [ref=e1683]: Em PVC
+            - generic [ref=e1685]: Práticas, resistentes e fáceis de limpar. Uma solução eficiente para ambientes que exigem durabilidade e manutenção simplificada.
+          - link "Quero essa" [ref=e1693] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20na%20persiana%20vertical%20em%20PVC.%20Quero%20um%20orçamento.
+            - generic [ref=e1694]:
+              - generic [aria-hidden] [ref=e1696]: 
+              - generic [ref=e1697]: Quero essa
+        - generic [ref=e1701]:
+          - generic [ref=e1715]:
+            - generic [ref=e1719]:
+              - generic [ref=e1720]: Horizontal
+              - generic [ref=e1721]: Em alumínio
+            - generic [ref=e1723]: Moderna e versátil. Oferece excelente controle de luminosidade, com visual leve e contemporâneo.
+          - link "Quero essa" [ref=e1731] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20na%20persiana%20horizontal%20em%20alumínio.%20Quero%20um%20orçamento.
+            - generic [ref=e1732]:
+              - generic [aria-hidden] [ref=e1734]: 
+              - generic [ref=e1735]: Quero essa
+        - generic [ref=e1739]:
+          - generic [ref=e1753]:
+            - generic [ref=e1757]:
+              - generic [ref=e1758]: Horizontal
+              - generic [ref=e1759]: Em madeira
+            - generic [ref=e1761]: Natural, sofisticada e atemporal. A madeira traz aconchego, textura e um toque de exclusividade ao ambiente.
+          - link "Quero essa" [ref=e1769] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20na%20persiana%20horizontal%20em%20madeira.%20Quero%20um%20orçamento.
+            - generic [ref=e1770]:
+              - generic [aria-hidden] [ref=e1772]: 
+              - generic [ref=e1773]: Quero essa
+        - generic [ref=e1777]:
+          - generic [ref=e1791]:
+            - generic [ref=e1795]:
+              - generic [ref=e1796]: Cortina
+              - generic [ref=e1797]: Celular Amorim
+            - generic [ref=e1799]: Alta performance térmica e acústica. Sua estrutura em colmeia ajuda a manter a temperatura do ambiente, com visual clean e elegante.
+          - link "Quero essa" [ref=e1807] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20na%20cortina%20celular.%20Quero%20um%20orçamento.
+            - generic [ref=e1808]:
+              - generic [aria-hidden] [ref=e1810]: 
+              - generic [ref=e1811]: Quero essa
+        - generic [ref=e1815]:
+          - generic [ref=e1829]:
+            - generic [ref=e1833]:
+              - generic [ref=e1834]: Cortina
+              - generic [ref=e1835]: Plissada Amorim
+            - generic [ref=e1837]: Leve, delicada e moderna. Ideal para quem busca um efeito visual diferenciado, com controle suave da luz.
+          - link "Quero essa" [ref=e1845] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20na%20cortina%20plissada.%20Quero%20um%20orçamento.
+            - generic [ref=e1846]:
+              - generic [aria-hidden] [ref=e1848]: 
+              - generic [ref=e1849]: Quero essa
+        - generic [ref=e1853]:
+          - generic [ref=e1867]:
+            - generic [ref=e1871]:
+              - generic [ref=e1872]: CORTINA
+              - generic [ref=e1873]: Stillo Amorim
+            - generic [ref=e1875]: Contemporânea e funcional. Une design atual, praticidade e excelente controle de luminosidade.
+          - link "Quero essa" [ref=e1883] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20na%20cortina%20Rolo%20Stillo.%20Quero%20um%20orçamento.
+            - generic [ref=e1884]:
+              - generic [aria-hidden] [ref=e1886]: 
+              - generic [ref=e1887]: Quero essa
+        - generic [ref=e1891]:
+          - generic [ref=e1905]:
+            - generic [ref=e1909]:
+              - generic [ref=e1910]: Cortina
+              - generic [ref=e1911]: Passione Amorim
+            - generic [ref=e1913]: Elegância com personalidade. Pensada para quem busca impacto visual e sofisticação nos detalhes.
+          - link "Quero essa" [ref=e1921] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20na%20cortina%20Passione.%20Quero%20um%20orçamento.
+            - generic [ref=e1922]:
+              - generic [aria-hidden] [ref=e1924]: 
+              - generic [ref=e1925]: Quero essa
+        - generic [ref=e1929]:
+          - generic [ref=e1930]: Foto
+          - generic [ref=e1946]:
+            - generic [ref=e1950]:
+              - generic [ref=e1951]: Cortina
+              - generic [ref=e1952]: Illuminê Amorim
+            - generic [ref=e1954]: Leveza e luminosidade na medida certa. Ideal para criar ambientes claros, suaves e acolhedores.
+          - link "Quero essa" [ref=e1962] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20na%20cortina%20Illuminê.%20Quero%20um%20orçamento.
+            - generic [ref=e1963]:
+              - generic [aria-hidden] [ref=e1965]: 
+              - generic [ref=e1966]: Quero essa
+        - generic [ref=e1970]:
+          - generic [ref=e1984]:
+            - generic [ref=e1988]:
+              - generic [ref=e1989]: Cortina
+              - generic [ref=e1990]: Atena Amorim
+            - generic [ref=e1992]: Imponente e refinada. Um modelo que combina presença estética, movimento fluido e acabamento premium.
+          - link "Quero essa" [ref=e2000] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20na%20cortina%20Atena.%20Quero%20um%20orçamento.
+            - generic [ref=e2001]:
+              - generic [aria-hidden] [ref=e2003]: 
+              - generic [ref=e2004]: Quero essa
+      - link "Quero minha persiana sob medida" [ref=e2012] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Quero%20minha%20persiana%20sob%20medida.%20Podem%20me%20ajudar?
+        - generic [ref=e2013]:
+          - generic [aria-hidden] [ref=e2015]: 
+          - generic [ref=e2016]: Quero minha persiana sob medida
+    - generic [ref=e2020]:
+      - generic [ref=e2025]:
+        - generic [ref=e2026]: Parceiros de qualidade
+        - heading [level=2] [ref=e2029]:
+          - text: Trabalhamos com os
+          - emphasis [ref=e2030]: principais fabricantes
+          - text: do mercado
+      - generic [ref=e2034]:
+        - generic [ref=e2038]:
+          - generic [ref=e2039]: Amorim
+          - generic [ref=e2044]: Linha completa de persianas com qualidade e acabamento premium.
+        - link "Ver modelos" [ref=e2052] [cursor=pointer]:
+          - /url: /categoria-produto/persianas/amorim-persianas-e-cortinas/
+      - generic [ref=e2058]:
+        - generic [ref=e2062]:
+          - generic [ref=e2063]: Rio Flex
+          - generic [ref=e2068]: Variedade de modelos com ótimo custo-benefício e durabilidade.
+        - link "Ver modelos" [ref=e2076] [cursor=pointer]:
+          - /url: /categoria-produto/persianas/rio-flex-cortinas-e-persianas/
+      - generic [ref=e2082]:
+        - generic [ref=e2086]:
+          - generic [ref=e2087]: Gabriel Persianas
+          - generic [ref=e2092]: Especialista em persianas com foco em design e inovação.
+        - link "Ver modelos" [ref=e2100] [cursor=pointer]:
+          - /url: /categoria-produto/persianas/gabriel-persianas/
+      - generic [ref=e2106]:
+        - generic [ref=e2110]:
+          - generic [ref=e2111]: Coimbra
+          - generic [ref=e2116]: Tecnologia e qualidade em persianas para todos os ambientes.
+        - link "Ver modelos" [ref=e2124] [cursor=pointer]:
+          - /url: /categoria-produto/persianas/coimbra-persianas/
+    - generic [ref=e2130]:
+      - generic [ref=e2131]: Por que Casa Estampa
+      - heading [level=2] [ref=e2138]:
+        - text: Por que escolher
+        - emphasis [ref=e2139]: nossas persianas sob medida?
+      - generic [ref=e2146]:
+        - generic [ref=e2150]:
+          - generic [ref=e2151]:
+            - text: 
+            - generic [aria-hidden] [ref=e2155]: 
+          - generic [ref=e2156]: Medição técnica profissional
+          - paragraph [ref=e2163]: Nossa equipe vai até você para garantir medidas precisas e o caimento perfeito em cada ambiente.
+        - generic [ref=e2167]:
+          - generic [ref=e2168]:
+            - text: 
+            - generic [aria-hidden] [ref=e2172]: 
+          - generic [ref=e2173]: Fabricação sob medida
+          - paragraph [ref=e2180]: Cada persiana é produzida especialmente para o seu espaço, sem adaptações ou improvisos.
+        - generic [ref=e2184]:
+          - generic [ref=e2185]:
+            - text: 
+            - generic [aria-hidden] [ref=e2189]: 
+          - generic [ref=e2190]: Instalação especializada
+          - paragraph [ref=e2197]: Instalação feita por equipe treinada, com acabamento impecável e funcionamento garantido.
+        - generic [ref=e2201]:
+          - generic [ref=e2202]:
+            - text: 
+            - generic [aria-hidden] [ref=e2206]: 
+          - generic [ref=e2207]: Ampla variedade de tecidos
+          - paragraph [ref=e2214]: Dezenas de tecidos, cores e acabamentos para você encontrar exatamente o que combina com seu projeto.
+        - generic [ref=e2218]:
+          - generic [ref=e2219]:
+            - text: 
+            - generic [aria-hidden] [ref=e2223]: 
+          - generic [ref=e2224]: Opções motorizadas
+          - paragraph [ref=e2231]: Automatize suas persianas com controle remoto, aplicativo ou integração com automação residencial.
+        - generic [ref=e2235]:
+          - generic [aria-hidden] [ref=e2240]: 
+          - generic [ref=e2241]: Apoio para arquitetos
+          - paragraph [ref=e2248]: Agilidade em orçamentos, amostras, detalhamento técnico e execução precisa para projetos profissionais.
+    - generic [ref=e2252]:
+      - generic [ref=e2253]: Tecnologia & Conforto
+      - heading [level=2] [ref=e2260]:
+        - text: "Persianas motorizadas:"
+        - emphasis [ref=e2261]: mais conforto, mais privacidade, mais tecnologia
+      - paragraph [ref=e2283]: Com as persianas motorizadas você tem acionamento por controle remoto, aplicativo ou integração com automação residencial. Controle a entrada de luz, privacidade e conforto com apenas um toque — ou por comando de voz.
+      - link "Quero persiana motorizada" [ref=e2291] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20em%20persiana%20motorizada.%20Quero%20um%20orçamento.
+        - generic [ref=e2292]:
+          - generic [aria-hidden] [ref=e2294]: 
+          - generic [ref=e2295]: Quero persiana motorizada
+    - generic [ref=e2299]:
+      - generic [ref=e2300]: Simples assim
+      - heading [level=2] [ref=e2307]:
+        - text: Como
+        - emphasis [ref=e2308]: funciona
+      - generic [ref=e2315]:
+        - generic [ref=e2319]:
+          - generic [ref=e2320]: "1"
+          - generic [ref=e2325]: Você entra em contato
+          - paragraph [ref=e2332]: Fale com nossa equipe pelo WhatsApp — é rápido e sem compromisso.
+        - generic [ref=e2336]:
+          - generic [ref=e2337]: "2"
+          - generic [ref=e2342]: Informamos ou agendamos
+          - paragraph [ref=e2349]: Você informa as medidas ou agendamos a visita técnica no seu espaço.
+        - generic [ref=e2353]:
+          - generic [ref=e2354]: "3"
+          - generic [ref=e2359]: Modelos e orçamento
+          - paragraph [ref=e2366]: Apresentamos os modelos ideais para o seu ambiente e enviamos o orçamento.
+        - generic [ref=e2370]:
+          - generic [ref=e2371]: "4"
+          - generic [ref=e2376]: Produção sob medida
+          - paragraph [ref=e2383]: Sua persiana é fabricada exclusivamente para o seu espaço.
+        - generic [ref=e2387]:
+          - generic [ref=e2388]: "5"
+          - generic [ref=e2393]: Instalação profissional
+          - paragraph [ref=e2400]: Nossa equipe instala com precisão, cuidado e acabamento impecável.
+    - generic [ref=e2404]:
+      - generic [ref=e2405]: Dúvidas frequentes
+      - heading [level=2] [ref=e2412]:
+        - text: Perguntas
+        - emphasis [ref=e2413]: mais comuns
+      - generic [ref=e2419]:
+        - button "Qual a diferença entre persiana Rolô e Romana?" [ref=e2421] [cursor=pointer]:
+          - generic [aria-hidden] [ref=e2422]:
+            - generic [ref=e2423]: +
+            - text: +
+        - button "Tela Solar ou Blackout?" [ref=e2427] [cursor=pointer]:
+          - generic [aria-hidden] [ref=e2428]:
+            - generic [ref=e2429]: +
+            - text: +
+        - button "Qual a diferença entre Tela Solar 1%, 3% e 5%?" [ref=e2433] [cursor=pointer]:
+          - generic [aria-hidden] [ref=e2434]:
+            - generic [ref=e2435]: +
+            - text: +
+        - button "Persiana pode ser motorizada?" [ref=e2439] [cursor=pointer]:
+          - generic [aria-hidden] [ref=e2440]:
+            - generic [ref=e2441]: +
+            - text: +
+        - button "Persiana acumula muita poeira?" [ref=e2445] [cursor=pointer]:
+          - generic [aria-hidden] [ref=e2446]:
+            - generic [ref=e2447]: +
+            - text: +
+        - button "Qual a vida útil?" [ref=e2451] [cursor=pointer]:
+          - generic [aria-hidden] [ref=e2452]:
+            - generic [ref=e2453]: +
+            - text: +
+      - generic [ref=e2459]:
+        - paragraph [ref=e2462]: Ficou com alguma dúvida que não está aqui?
+        - link "Perguntar no WhatsApp" [ref=e2466] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20uma%20dúvida%20sobre%20persianas.
+          - generic [ref=e2467]:
+            - generic [aria-hidden] [ref=e2469]: 
+            - generic [ref=e2470]: Perguntar no WhatsApp
+    - generic [ref=e2474]:
+      - generic [ref=e2475]: Pronto para escolher sua persiana sob medida?
+      - paragraph [ref=e2482]: Nossa equipe te orienta desde a escolha até a instalação final.
+      - generic [ref=e2486]:
+        - generic [ref=e2490]:
+          - generic [ref=e2491]: Fale agora
+          - link "Falar no WhatsApp" [ref=e2496] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Quero%20ajuda%20para%20escolher%20persianas.
+            - generic [ref=e2497]:
+              - generic [aria-hidden] [ref=e2499]: 
+              - generic [ref=e2500]: Falar no WhatsApp
+        - generic [ref=e2504]:
+          - generic [ref=e2505]: Agendar visita
+          - link "Agendar medição" [ref=e2510] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Gostaria%20de%20agendar%20uma%20medição%20de%20persianas.
+            - generic [ref=e2511]:
+              - generic [aria-hidden] [ref=e2513]: 
+              - generic [ref=e2514]: Agendar medição
+        - generic [ref=e2518]:
+          - generic [ref=e2519]: Ver modelos
+          - link "Ver todos os modelos" [ref=e2524] [cursor=pointer]:
+            - /url: "#modelos"
+    - link [ref=e2530] [cursor=pointer]:
+      - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Estou%20no%20site%20e%20quero%20ajuda%20para%20escolher%20persianas.
+      - generic [aria-hidden] [ref=e2533]: 
+  - contentinfo [ref=e2534]:
+    - generic [ref=e2535]:
+      - link "Página inicial Casa Estampa" [ref=e2537] [cursor=pointer]:
+        - /url: /
+        - img "Casa Estampa Interiores" [ref=e2538]
+      - navigation "Navegação do rodapé" [ref=e2539]:
+        - strong [ref=e2540]: Explore
+        - generic [ref=e2541]:
+          - link "Início" [ref=e2542] [cursor=pointer]:
+            - /url: /
+          - link "Papéis de Parede" [ref=e2543] [cursor=pointer]:
+            - /url: /papeis-de-parede
+          - link "Cortinas" [ref=e2544] [cursor=pointer]:
+            - /url: /cortinas
+          - link "Persianas" [ref=e2545] [cursor=pointer]:
+            - /url: /persianas
+          - link "Pisos" [ref=e2546] [cursor=pointer]:
+            - /url: /pisos
+          - link "Arquitetos" [ref=e2547] [cursor=pointer]:
+            - /url: /arquitetos-designers
+          - link "Corporativo" [ref=e2548] [cursor=pointer]:
+            - /url: /corporativo
+      - generic [ref=e2549]:
+        - strong [ref=e2550]: Atendimento
+        - link "Rio de Janeiro · (21) 99988-6842" [ref=e2551] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?phone=5521999886842
+          - generic [aria-hidden] [ref=e2552]: 
+          - text: Rio de Janeiro · (21) 99988-6842
+        - generic [ref=e2553]: casaestampa.com
+        - generic [ref=e2554]: Rio de Janeiro
+    - generic [ref=e2555]:
+      - generic [ref=e2556]: © 2026 Casa Estampa. Todos os direitos reservados.
+      - link "Falar com a Casa Estampa" [ref=e2557] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842
+        - text: Falar com a Casa Estampa
+        - generic [aria-hidden] [ref=e2558]: 

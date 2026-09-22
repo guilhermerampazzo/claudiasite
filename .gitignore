@@ -10,3 +10,9 @@ paginasnovas/
 AGENTS.md
 AGENT.md
 agent.md
+.dev-server.log
+.build.log
+.server.log
+capasnovas/
+capasnovass/
+wp-theme-casa-estampa/

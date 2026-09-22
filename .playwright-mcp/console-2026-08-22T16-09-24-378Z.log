@@ -1,0 +1,5 @@
+[     844ms] HierarchyRequestError: Failed to execute 'insertAdjacentElement' on 'Element': Only one element on document allowed.
+    at initialize (https://claudia.codermaster.com.br/:934:12)
+    at Array.forEach (<anonymous>)
+    at HTMLDocument.boot (https://claudia.codermaster.com.br/:1045:26)
+[    1045ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://claudia.codermaster.com.br/favicon.ico:0

@@ -1,0 +1,116 @@
+- generic [active] [ref=f13e1]:
+  - navigation [ref=f13e2]:
+    - text: 
+    - link [ref=f13e3] [cursor=pointer]:
+      - /url: /
+      - img "Casa Estampa" [ref=f13e4]
+    - list [ref=f13e5]:
+      - listitem [ref=f13e6]:
+        - link "Início" [ref=f13e7] [cursor=pointer]:
+          - /url: /
+      - listitem [ref=f13e8]:
+        - link "Papéis de Parede" [ref=f13e9] [cursor=pointer]:
+          - /url: /papeis-de-parede
+      - listitem [ref=f13e10]:
+        - link "Cortinas" [ref=f13e11] [cursor=pointer]:
+          - /url: /cortinas
+      - listitem [ref=f13e12]:
+        - link "Persianas" [ref=f13e13] [cursor=pointer]:
+          - /url: /persianas
+      - listitem [ref=f13e14]:
+        - link "Pisos" [ref=f13e15] [cursor=pointer]:
+          - /url: /pisos
+      - listitem [ref=f13e16]:
+        - link "Arquitetos" [ref=f13e17] [cursor=pointer]:
+          - /url: /area-do-arquiteto
+      - listitem [ref=f13e18]:
+        - link "Corporativo" [ref=f13e19] [cursor=pointer]:
+          - /url: /corporativo
+    - button "Buscar no site" [ref=f13e21] [cursor=pointer]:
+      - generic [ref=f13e22]: 
+    - link "Falar agora" [ref=f13e23] [cursor=pointer]:
+      - /url: https://api.whatsapp.com/send?phone=5521999886842
+      - generic [ref=f13e24]: 
+      - text: Falar agora
+  - main [ref=f13e25]:
+    - generic [ref=f13e28]:
+      - navigation [ref=f13e29]:
+        - link "Catálogo" [ref=f13e30] [cursor=pointer]:
+          - /url: /catalogo
+        - generic [ref=f13e31]: /
+        - link "Persianas" [ref=f13e32] [cursor=pointer]:
+          - /url: /categoria-produto/persianas
+        - generic [ref=f13e33]: /
+        - link "Amorim Persianas E Cortinas" [ref=f13e34] [cursor=pointer]:
+          - /url: /categoria-produto/persianas/amorim-persianas-e-cortinas
+      - paragraph [ref=f13e35]: CASA ESTAMPA
+      - heading "Amorim Persianas e Cortinas" [level=1] [ref=f13e36]
+    - generic [ref=f13e37]:
+      - generic [ref=f13e38]:
+        - generic [ref=f13e39]: SUBCATEGORIAS E ÁLBUNS
+        - heading "Explore as coleções" [level=2] [ref=f13e40]
+      - generic [ref=f13e41]:
+        - link "Premium Atena 7 produtos Premium Atena " [ref=f13e42] [cursor=pointer]:
+          - /url: /categoria-produto/persianas/amorim-persianas-e-cortinas/premium-atena
+          - img "Premium Atena" [ref=f13e44]
+          - generic [ref=f13e45]:
+            - generic [ref=f13e46]: 7 produtos
+            - heading "Premium Atena" [level=3] [ref=f13e47]
+            - generic [ref=f13e48]: 
+        - link "Rolo Romana Painel COM Blackout 53 produtos Rolo Romana Painel COM Blackout " [ref=f13e49] [cursor=pointer]:
+          - /url: /categoria-produto/persianas/amorim-persianas-e-cortinas/rolo-romana-painel-com-blackout
+          - img "Rolo Romana Painel COM Blackout" [ref=f13e51]
+          - generic [ref=f13e52]:
+            - generic [ref=f13e53]: 53 produtos
+            - heading "Rolo Romana Painel COM Blackout" [level=3] [ref=f13e54]
+            - generic [ref=f13e55]: 
+        - link "Rolo Romana Painel SEM Blackout 37 produtos Rolo Romana Painel SEM Blackout " [ref=f13e56] [cursor=pointer]:
+          - /url: /categoria-produto/persianas/amorim-persianas-e-cortinas/rolo-romana-painel-sem-blackout
+          - img "Rolo Romana Painel SEM Blackout" [ref=f13e58]
+          - generic [ref=f13e59]:
+            - generic [ref=f13e60]: 37 produtos
+            - heading "Rolo Romana Painel SEM Blackout" [level=3] [ref=f13e61]
+            - generic [ref=f13e62]: 
+        - link "Tela Solar 50 produtos Tela Solar " [ref=f13e63] [cursor=pointer]:
+          - /url: /categoria-produto/persianas/amorim-persianas-e-cortinas/tela-solar
+          - img "Tela Solar" [ref=f13e65]
+          - generic [ref=f13e66]:
+            - generic [ref=f13e67]: 50 produtos
+            - heading "Tela Solar" [level=3] [ref=f13e68]
+            - generic [ref=f13e69]: 
+  - contentinfo [ref=f13e70]:
+    - generic [ref=f13e71]:
+      - link "Página inicial Casa Estampa" [ref=f13e73] [cursor=pointer]:
+        - /url: /
+        - img "Casa Estampa Interiores" [ref=f13e74]
+      - navigation "Navegação do rodapé" [ref=f13e75]:
+        - strong [ref=f13e76]: Explore
+        - generic [ref=f13e77]:
+          - link "Início" [ref=f13e78] [cursor=pointer]:
+            - /url: /
+          - link "Papéis de Parede" [ref=f13e79] [cursor=pointer]:
+            - /url: /papeis-de-parede
+          - link "Cortinas" [ref=f13e80] [cursor=pointer]:
+            - /url: /cortinas
+          - link "Persianas" [ref=f13e81] [cursor=pointer]:
+            - /url: /persianas
+          - link "Pisos" [ref=f13e82] [cursor=pointer]:
+            - /url: /pisos
+          - link "Arquitetos" [ref=f13e83] [cursor=pointer]:
+            - /url: /area-do-arquiteto
+          - link "Corporativo" [ref=f13e84] [cursor=pointer]:
+            - /url: /corporativo
+      - generic [ref=f13e85]:
+        - strong [ref=f13e86]: Atendimento
+        - link "Rio de Janeiro · (21) 99988-6842" [ref=f13e87] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?phone=5521999886842
+          - generic [ref=f13e88]: 
+          - text: Rio de Janeiro · (21) 99988-6842
+        - generic [ref=f13e89]: casaestampa.com
+        - generic [ref=f13e90]: Rio de Janeiro
+    - generic [ref=f13e91]:
+      - generic [ref=f13e92]: © 2026 Casa Estampa. Todos os direitos reservados.
+      - link "Falar com a Casa Estampa" [ref=f13e93] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842
+        - text: Falar com a Casa Estampa
+        - generic [ref=f13e94]: 

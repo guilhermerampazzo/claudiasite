@@ -1,0 +1,124 @@
+- generic [active] [ref=f5e1]:
+  - generic [ref=f5e3]:
+    - complementary [ref=f5e4]:
+      - link [ref=f5e6] [cursor=pointer]:
+        - /url: /admin/pages
+        - img "Casa Estampa" [ref=f5e7]
+      - tablist "Painel do editor" [ref=f5e8]:
+        - button "Elementos" [ref=f5e9] [cursor=pointer]
+        - button "Navegador" [ref=f5e10] [cursor=pointer]
+      - generic [ref=f5e11]:
+        - textbox [ref=f5e16]:
+          - /placeholder: Buscar entre 58 widgets
+        - paragraph [ref=f5e17]:
+          - text: "Arraste para a pagina ou clique para inserir no container selecionado. Para fotos: use"
+          - strong [ref=f5e18]: Galeria
+          - text: para uma grade vertical (varias linhas) ou
+          - strong [ref=f5e19]: Carrossel
+          - text: para uma linha horizontal com rolagem. Depois de inserir, selecione a galeria/carrossel e use o botao "Adicionar foto" para incluir quantas imagens quiser.
+        - generic [ref=f5e20]:
+          - generic [ref=f5e21]: Estrutura
+          - generic [ref=f5e22]:
+            - button "Secao" [ref=f5e23] [cursor=pointer]
+            - button "Container" [ref=f5e27] [cursor=pointer]
+            - button "2 colunas" [ref=f5e33] [cursor=pointer]
+            - button "Linha" [ref=f5e37] [cursor=pointer]
+            - button "3 colunas" [ref=f5e41] [cursor=pointer]
+            - button "4 colunas" [ref=f5e48] [cursor=pointer]
+            - button "Grade flexivel" [ref=f5e55] [cursor=pointer]
+            - button "Secao interna" [ref=f5e62] [cursor=pointer]
+        - generic [ref=f5e68]:
+          - generic [ref=f5e69]: Texto
+          - generic [ref=f5e70]:
+            - button "Titulo" [ref=f5e71] [cursor=pointer]
+            - button "Subtitulo" [ref=f5e74] [cursor=pointer]
+            - button "Texto" [ref=f5e77] [cursor=pointer]
+            - button "Citacao" [ref=f5e82] [cursor=pointer]
+            - button "Lista" [ref=f5e87] [cursor=pointer]
+            - button "Lista com icones" [ref=f5e90] [cursor=pointer]
+            - button "Etiqueta" [ref=f5e93] [cursor=pointer]
+            - button "Divisor" [ref=f5e98] [cursor=pointer]
+            - button "Espacador" [ref=f5e103] [cursor=pointer]
+            - button "Icone" [ref=f5e109] [cursor=pointer]
+        - generic [ref=f5e115]:
+          - generic [ref=f5e116]: Midia
+          - generic [ref=f5e117]:
+            - button "Imagem" [ref=f5e118] [cursor=pointer]
+            - button "Carrossel (linha horizontal)" [ref=f5e124] [cursor=pointer]
+            - button "Galeria (grade vertical)" [ref=f5e130] [cursor=pointer]
+            - button "Video" [ref=f5e137] [cursor=pointer]
+            - button "Audio" [ref=f5e141] [cursor=pointer]
+            - button "Antes e depois" [ref=f5e145] [cursor=pointer]
+        - generic [ref=f5e151]:
+          - generic [ref=f5e152]: Interativos
+          - generic [ref=f5e153]:
+            - button "Botao" [ref=f5e154] [cursor=pointer]
+            - button "Sanfona" [ref=f5e160] [cursor=pointer]
+            - button "Abas" [ref=f5e163] [cursor=pointer]
+            - button "Contador" [ref=f5e167] [cursor=pointer]
+            - button "Progresso" [ref=f5e172] [cursor=pointer]
+            - button "Depoimento" [ref=f5e178] [cursor=pointer]
+            - button "Card" [ref=f5e183] [cursor=pointer]
+            - button "Preco" [ref=f5e189] [cursor=pointer]
+            - button "Aviso" [ref=f5e195] [cursor=pointer]
+        - generic [ref=f5e201]:
+          - generic [ref=f5e202]: Contato e negocio
+          - generic [ref=f5e203]:
+            - button "Contato" [ref=f5e204] [cursor=pointer]
+            - button "WhatsApp" [ref=f5e210] [cursor=pointer]
+            - button "Telefone" [ref=f5e216] [cursor=pointer]
+            - button "Formulario" [ref=f5e222] [cursor=pointer]
+            - button "Mapa" [ref=f5e227] [cursor=pointer]
+        - generic [ref=f5e233]:
+          - generic [ref=f5e234]: Marketing
+          - generic [ref=f5e235]:
+            - button "Hero" [ref=f5e236] [cursor=pointer]
+            - button "Chamada para acao" [ref=f5e240] [cursor=pointer]
+            - button "Newsletter" [ref=f5e246] [cursor=pointer]
+            - button "Contagem regressiva" [ref=f5e251] [cursor=pointer]
+            - button "Acionador de popup" [ref=f5e257] [cursor=pointer]
+        - generic [ref=f5e263]:
+          - generic [ref=f5e264]: Conteudo avancado
+          - generic [ref=f5e265]:
+            - button "Caixa com imagem" [ref=f5e266] [cursor=pointer]
+            - button "Membro da equipe" [ref=f5e272] [cursor=pointer]
+            - button "Logos de clientes" [ref=f5e278] [cursor=pointer]
+            - button "Linha do tempo" [ref=f5e285] [cursor=pointer]
+            - button "Estatisticas" [ref=f5e288] [cursor=pointer]
+            - button "FAQ" [ref=f5e295] [cursor=pointer]
+            - button "Tabela" [ref=f5e298] [cursor=pointer]
+            - button "Comparacao" [ref=f5e305] [cursor=pointer]
+            - button "Grade de produtos" [ref=f5e309] [cursor=pointer]
+            - button "Portfolio" [ref=f5e316] [cursor=pointer]
+        - generic [ref=f5e323]:
+          - generic [ref=f5e324]: Navegacao e social
+          - generic [ref=f5e325]:
+            - button "Campo de busca" [ref=f5e326] [cursor=pointer]
+            - button "Caminho da pagina" [ref=f5e331] [cursor=pointer]
+            - button "Redes sociais" [ref=f5e337] [cursor=pointer]
+            - button "Compartilhar" [ref=f5e343] [cursor=pointer]
+            - button "Embed externo" [ref=f5e349] [cursor=pointer]
+    - main [ref=f5e355]:
+      - generic [ref=f5e356]:
+        - generic [ref=f5e357]:
+          - heading "Editor" [level=1] [ref=f5e358]
+          - generic [ref=f5e359]: /persianas
+        - generic [ref=f5e360]:
+          - generic [ref=f5e361]:
+            - button "Visual" [ref=f5e362] [cursor=pointer]
+            - button "HTML" [ref=f5e365] [cursor=pointer]
+          - group "Largura do preview" [ref=f5e370]:
+            - button "Ajustado" [ref=f5e371] [cursor=pointer]
+            - button "Computador" [ref=f5e375] [cursor=pointer]
+            - button "Celular" [ref=f5e378] [cursor=pointer]
+          - button "Recarregar" [ref=f5e381] [cursor=pointer]
+          - button "Restaurar original" [ref=f5e385] [cursor=pointer]
+          - link "Ver publicada" [ref=f5e389] [cursor=pointer]:
+            - /url: /persianas
+          - button "Salvar" [ref=f5e394] [cursor=pointer]
+      - generic [ref=f5e399]:
+        - generic [ref=f5e400]: Selecione um elemento para editar
+        - generic [ref=f5e402]: Arraste um widget ou use os botoes + na pagina.
+      - iframe [ref=f5e404]:
+        
+  - alert [ref=f5e405]

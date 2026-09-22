@@ -1,0 +1,692 @@
+- generic [active] [ref=f3e1]:
+  - navigation [ref=f3e2]:
+    - text: 
+    - link [ref=f3e3] [cursor=pointer]:
+      - /url: /
+      - img "Casa Estampa" [ref=f3e4]
+    - list [ref=f3e5]:
+      - listitem [ref=f3e6]:
+        - link "Início" [ref=f3e7] [cursor=pointer]:
+          - /url: /
+      - listitem [ref=f3e8]:
+        - link "Papéis de Parede" [ref=f3e9] [cursor=pointer]:
+          - /url: /papeis-de-parede
+      - listitem [ref=f3e10]:
+        - link "Cortinas" [ref=f3e11] [cursor=pointer]:
+          - /url: /cortinas
+      - listitem [ref=f3e12]:
+        - link "Persianas" [ref=f3e13] [cursor=pointer]:
+          - /url: /persianas
+      - listitem [ref=f3e14]:
+        - link "Pisos" [ref=f3e15] [cursor=pointer]:
+          - /url: /pisos
+      - listitem [ref=f3e16]:
+        - link "Arquitetos" [ref=f3e17] [cursor=pointer]:
+          - /url: /area-do-arquiteto
+      - listitem [ref=f3e18]:
+        - link "Corporativo" [ref=f3e19] [cursor=pointer]:
+          - /url: /corporativo
+    - generic [ref=f3e20]:
+      - button "Buscar no site" [ref=f3e21] [cursor=pointer]:
+        - generic [ref=f3e22]: 
+      - search [ref=f3e23]:
+        - searchbox "Buscar produtos" [ref=f3e24]
+    - link "Falar agora" [ref=f3e25] [cursor=pointer]:
+      - /url: https://api.whatsapp.com/send?phone=5521999886842
+      - generic [ref=f3e26]: 
+      - text: Falar agora
+  - generic [ref=f3e31]:
+    - generic [ref=f3e35]:
+      - generic [ref=f3e36]: CORTINA
+      - generic [ref=f3e41]:
+        - generic [ref=f3e42]: Feitas sob medida
+        - heading "Cortinas de tecido sob medida" [level=1] [ref=f3e49]:
+          - generic [ref=f3e50]: Cortinas de tecido
+          - text: sob medida
+        - paragraph [ref=f3e53]: Conforto, elegância e caimento perfeito para cada ambiente.
+        - paragraph [ref=f3e56]: Linho, voil, blackout, wave, prega americana e trilhos suíços — tudo feito sob medida e instalado por especialistas.
+        - generic [ref=f3e60]:
+          - link "Solicitar orçamento" [ref=f3e64] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Quero%20solicitar%20um%20orçamento%20de%20cortinas.
+            - generic [ref=f3e65]:
+              - generic [ref=f3e66]: 
+              - generic [ref=f3e68]: Solicitar orçamento
+          - link "Ver modelos ↓" [ref=f3e72] [cursor=pointer]:
+            - /url: "#tipos"
+    - generic [ref=f3e78]:
+      - generic [ref=f3e82]:
+        - generic [ref=f3e83]: Ambientes reais
+        - heading [level=2] [ref=f3e90]:
+          - text: Cortinas instaladas
+          - emphasis [ref=f3e91]: por nós
+      - generic [ref=f3e96]:
+        - region "Galeria de imagens" [ref=f3e101]:
+          - generic [ref=f3e102]:
+            - generic [ref=f3e106]:
+              - generic [ref=f3e107]: 
+              - generic [ref=f3e110]: Soft Wave
+            - generic [ref=f3e118]:
+              - generic [ref=f3e119]: 
+              - generic [ref=f3e122]: Prega Macho
+            - generic [ref=f3e130]:
+              - generic [ref=f3e131]: 
+              - generic [ref=f3e134]: Soft Wave
+            - generic [ref=f3e142]:
+              - generic [ref=f3e143]: 
+              - generic [ref=f3e146]: Prega Macho
+            - generic [ref=f3e154]:
+              - generic [ref=f3e155]: 
+              - generic [ref=f3e158]: Soft Wave
+            - generic [ref=f3e166]:
+              - generic [ref=f3e167]: 
+              - generic [ref=f3e170]: Wave
+            - generic [ref=f3e178]:
+              - generic [ref=f3e179]: 
+              - generic [ref=f3e182]: Prega Macho
+            - generic [ref=f3e190]:
+              - generic [ref=f3e191]: 
+              - generic [ref=f3e194]: Wave
+            - generic [ref=f3e202]:
+              - generic [ref=f3e203]: 
+              - generic [ref=f3e206]: Prega Macho e Blackout
+            - generic [ref=f3e214]:
+              - generic [ref=f3e215]: 
+              - generic [ref=f3e218]: Wave
+            - generic [ref=f3e226]:
+              - generic [ref=f3e227]: 
+              - generic [ref=f3e230]: Prega Macho
+            - generic [ref=f3e238]:
+              - generic [ref=f3e239]: 
+              - generic [ref=f3e242]: Prega Macho
+            - generic [ref=f3e250]:
+              - generic [ref=f3e251]: 
+              - generic [ref=f3e254]: Prega Macho
+            - generic [ref=f3e262]:
+              - generic [ref=f3e267]:
+                - text: 
+                - img "Foto instalada" [ref=f3e270]
+              - generic [ref=f3e271]: Prega Macho
+            - generic [ref=f3e279]:
+              - generic [ref=f3e284]:
+                - text: 
+                - img "Foto instalada" [ref=f3e287]
+              - generic [ref=f3e288]: Prega Macho
+            - generic [ref=f3e296]:
+              - generic [ref=f3e301]:
+                - text: 
+                - img "Foto instalada" [ref=f3e304]
+              - generic [ref=f3e305]: Soft Wave
+            - generic [ref=f3e313]:
+              - generic [ref=f3e317]:
+                - generic [ref=f3e318]:
+                  - text: 
+                  - img "Foto instalada" [ref=f3e321]
+                - generic [ref=f3e322]: Varanda
+              - generic [ref=f3e324]: Prega Macho e Blackout
+            - generic [ref=f3e332]:
+              - generic [ref=f3e336]:
+                - generic [ref=f3e337]:
+                  - text: 
+                  - img "Foto instalada" [ref=f3e340]
+                - generic [ref=f3e341]: Varanda
+              - generic [ref=f3e343]: Prega Macho e Blackout
+            - generic [ref=f3e348]: Prega Macho e Blackout
+            - generic [ref=f3e363]:
+              - generic [ref=f3e367]:
+                - generic [ref=f3e368]:
+                  - text: 
+                  - img "Foto instalada" [ref=f3e371]
+                - generic [ref=f3e372]: Quarto Infantil
+              - generic [ref=f3e374]: Soft Wave
+            - generic [ref=f3e382]:
+              - generic [ref=f3e386]:
+                - generic [ref=f3e387]:
+                  - text: 
+                  - img "Foto instalada" [ref=f3e390]
+                - generic [ref=f3e391]: Quarto Infantil
+              - generic [ref=f3e393]: Prega Americana
+            - generic [ref=f3e401]:
+              - generic [ref=f3e405]:
+                - generic [ref=f3e406]:
+                  - text: 
+                  - img "Foto instalada" [ref=f3e409]
+                - generic [ref=f3e410]: Quarto Infantil
+              - generic [ref=f3e412]: Prega Femea
+            - generic [ref=f3e420]:
+              - generic [ref=f3e424]:
+                - generic [ref=f3e425]:
+                  - text: 
+                  - img "Foto instalada" [ref=f3e428]
+                - generic [ref=f3e429]: Quarto Infantil
+              - generic [ref=f3e431]: Prega Femea
+            - generic [ref=f3e439]:
+              - generic [ref=f3e444]:
+                - text: 
+                - img "Foto instalada" [ref=f3e447]
+              - generic [ref=f3e448]: Wave
+            - generic [ref=f3e456]:
+              - generic [ref=f3e461]:
+                - text: 
+                - img "Foto instalada" [ref=f3e464]
+              - generic [ref=f3e465]: Prega Macho
+            - generic [ref=f3e473]:
+              - generic [ref=f3e478]:
+                - text: 
+                - img "Foto instalada" [ref=f3e481]
+              - generic [ref=f3e482]: Soft Wave
+            - generic [ref=f3e490]:
+              - generic [ref=f3e494]:
+                - generic [ref=f3e495]:
+                  - text: 
+                  - img "Foto instalada" [ref=f3e498]
+                - generic [ref=f3e499]: Corredor
+              - generic [ref=f3e501]: Wave e Blackout
+            - generic [ref=f3e509]:
+              - generic [ref=f3e514]:
+                - text: 
+                - img "Foto instalada" [ref=f3e517]
+              - generic [ref=f3e518]: Wave
+            - generic [ref=f3e526]:
+              - generic [ref=f3e531]:
+                - text: 
+                - img "Foto instalada" [ref=f3e534]
+              - generic [ref=f3e535]: Wave
+            - generic [ref=f3e543]:
+              - generic [ref=f3e548]:
+                - text: 
+                - img "Foto instalada" [ref=f3e551]
+              - generic [ref=f3e552]: Wave
+            - generic [ref=f3e560]:
+              - generic [ref=f3e565]:
+                - text: 
+                - img "Foto instalada" [ref=f3e568]
+              - generic [ref=f3e569]: Prega Macho
+            - generic [ref=f3e577]:
+              - generic [ref=f3e582]:
+                - text: 
+                - img "Foto instalada" [ref=f3e585]
+              - generic [ref=f3e586]: Wave
+            - generic [ref=f3e594]:
+              - generic [ref=f3e599]:
+                - text: 
+                - img "Foto instalada" [ref=f3e602]
+              - generic [ref=f3e603]: Wave
+            - generic [ref=f3e611]:
+              - generic [ref=f3e616]:
+                - text: 
+                - img "Foto instalada" [ref=f3e619]
+              - generic [ref=f3e620]: Wave
+            - generic [ref=f3e628]:
+              - generic [ref=f3e633]:
+                - text: 
+                - img "Foto instalada" [ref=f3e636]
+              - generic [ref=f3e637]: Wave
+            - generic [ref=f3e645]:
+              - generic [ref=f3e650]:
+                - text: 
+                - img "Foto instalada" [ref=f3e653]
+              - generic [ref=f3e654]: Wave
+            - generic [ref=f3e662]:
+              - generic [ref=f3e667]:
+                - text: 
+                - img "Foto instalada" [ref=f3e670]
+              - generic [ref=f3e671]: Wave
+            - generic [ref=f3e679]:
+              - generic [ref=f3e684]:
+                - text: 
+                - img "Foto instalada" [ref=f3e687]
+              - generic [ref=f3e688]: Prega Macho
+            - generic [ref=f3e696]:
+              - generic [ref=f3e701]:
+                - text: 
+                - img "Foto instalada" [ref=f3e704]
+              - generic [ref=f3e705]: Cortina Varão Ilhoes
+            - generic [ref=f3e713]:
+              - generic [ref=f3e718]:
+                - text: 
+                - img "Foto instalada" [ref=f3e721]
+              - generic [ref=f3e722]: Prega Macho
+            - generic [ref=f3e730]:
+              - generic [ref=f3e735]:
+                - text: 
+                - img "Foto instalada" [ref=f3e738]
+              - generic [ref=f3e739]: Soft Wave
+            - generic [ref=f3e747]:
+              - generic [ref=f3e752]:
+                - text: 
+                - img "Foto instalada" [ref=f3e755]
+              - generic [ref=f3e756]: Prega Macho
+            - generic [ref=f3e764]:
+              - generic [ref=f3e769]:
+                - text: 
+                - img "Foto instalada" [ref=f3e772]
+              - generic [ref=f3e773]: Prega Macho
+            - generic [ref=f3e781]:
+              - generic [ref=f3e786]:
+                - text: 
+                - img "Foto instalada" [ref=f3e789]
+              - generic [ref=f3e790]: Prega Macho
+            - generic [ref=f3e798]:
+              - generic [ref=f3e803]:
+                - text: 
+                - img "Foto instalada" [ref=f3e806]
+              - generic [ref=f3e807]: Prega Macho
+            - generic [ref=f3e815]:
+              - generic [ref=f3e820]:
+                - text: 
+                - img "Foto instalada" [ref=f3e823]
+              - generic [ref=f3e824]: Prega Macho
+            - generic [ref=f3e832]:
+              - generic [ref=f3e837]:
+                - text: 
+                - img "Foto instalada" [ref=f3e840]
+              - generic [ref=f3e841]: Prega Macho
+        - generic "Navegacao do carrossel" [ref=f3e846]:
+          - button "Imagem anterior" [ref=f3e847] [cursor=pointer]:
+            - generic [ref=f3e848]: 
+          - button "Proxima imagem" [ref=f3e859] [cursor=pointer]:
+            - generic [ref=f3e860]: 
+      - generic [ref=f3e864]:
+        - link "Quero o mesmo no meu espaço" [ref=f3e868] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Vi%20os%20ambientes%20no%20site%20e%20quero%20um%20orçamento%20de%20cortinas.
+          - generic [ref=f3e869]:
+            - generic [ref=f3e870]: 
+            - generic [ref=f3e872]: Quero o mesmo no meu espaço
+        - text:  
+    - generic [ref=f3e876]:
+      - generic [ref=f3e877]: Tipos de cortina
+      - heading [level=2] [ref=f3e884]:
+        - text: Encontre o modelo
+        - emphasis [ref=f3e885]: ideal para você
+      - paragraph [ref=f3e891]: Clique em qualquer modelo para falar com nossa equipe e receber seu orçamento.
+      - generic [ref=f3e895]:
+        - generic [ref=f3e899]:
+          - generic [ref=f3e903]:
+            - generic [ref=f3e906]:
+              - generic:
+                - text: 
+                - generic: Foto
+            - generic [ref=f3e909]:
+              - generic:
+                - text: 
+                - generic: Foto
+          - generic [ref=f3e913]:
+            - generic [ref=f3e917]:
+              - generic [ref=f3e918]: Cortina Varão
+              - generic [ref=f3e919]: Ilhões
+            - generic [ref=f3e921]: Modelo moderno e prático, com ilhós metálicos que deslizam diretamente no varão, formando ondas suaves e uniformes.
+          - link "Quero essa" [ref=f3e929] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20na%20cortina%20de%20varão%20com%20ilhões.%20Quero%20um%20orçamento.
+            - generic [ref=f3e930]:
+              - generic [ref=f3e931]: 
+              - generic [ref=f3e933]: Quero essa
+        - generic [ref=f3e937]:
+          - generic [ref=f3e941]:
+            - generic [ref=f3e944]:
+              - generic:
+                - text: 
+                - generic: Foto
+            - generic [ref=f3e947]:
+              - generic:
+                - text: 
+                - generic: Foto
+          - generic [ref=f3e951]:
+            - generic [ref=f3e955]:
+              - generic [ref=f3e956]: Cortina Varão
+              - generic [ref=f3e957]: Argolas
+            - generic [ref=f3e959]: Clássica e versátil, instalada em argolas que proporcionam um caimento elegante e um deslizamento suave no varão.
+          - link "Quero essa" [ref=f3e967] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20na%20cortina%20de%20varão%20com%20argolas.%20Quero%20um%20orçamento.
+            - generic [ref=f3e968]:
+              - generic [ref=f3e969]: 
+              - generic [ref=f3e971]: Quero essa
+        - generic [ref=f3e975]:
+          - generic [ref=f3e979]:
+            - generic [ref=f3e982]:
+              - generic:
+                - text: 
+                - generic: Foto
+            - generic [ref=f3e985]:
+              - generic:
+                - text: 
+                - generic: Foto
+          - generic [ref=f3e989]:
+            - generic [ref=f3e993]:
+              - generic [ref=f3e994]: Cortina Trilho Suíço
+              - generic [ref=f3e995]: Modelo Wave
+            - generic [ref=f3e997]: Ondas contínuas e uniformes, trazendo um design contemporâneo, leve e sofisticado.
+          - link "Quero essa" [ref=f3e1005] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20na%20cortina%20de%20trilho%20suíço%20modelo%20Wave.%20Quero%20um%20orçamento.
+            - generic [ref=f3e1006]:
+              - generic [ref=f3e1007]: 
+              - generic [ref=f3e1009]: Quero essa
+        - generic [ref=f3e1013]:
+          - generic [ref=f3e1017]:
+            - generic [ref=f3e1020]:
+              - generic:
+                - text: 
+                - generic: Foto
+            - generic [ref=f3e1023]:
+              - generic:
+                - text: 
+                - generic: Foto
+          - generic [ref=f3e1027]:
+            - generic [ref=f3e1031]:
+              - generic [ref=f3e1032]: Soft Wave
+              - generic [ref=f3e1033]: Casa Estampa
+            - generic [ref=f3e1035]: Exclusiva da Casa Estampa, desenvolvida para criar ondas mais marcadas e elegantes apenas na parte frontal, proporcionando um visual leve, sofisticado e diferenciado.
+          - link "Quero essa" [ref=f3e1043] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20no%20modelo%20exclusivo%20Soft%20Wave.%20Quero%20saber%20mais.
+            - generic [ref=f3e1044]:
+              - generic [ref=f3e1045]: 
+              - generic [ref=f3e1047]: Quero essa
+        - generic [ref=f3e1051]:
+          - generic [ref=f3e1055]:
+            - generic [ref=f3e1058]:
+              - generic:
+                - text: 
+                - generic: Foto
+            - generic [ref=f3e1061]:
+              - generic:
+                - text: 
+                - generic: Foto
+          - generic [ref=f3e1065]:
+            - generic [ref=f3e1069]:
+              - generic [ref=f3e1070]: Cortina Trilho Suíço
+              - generic [ref=f3e1071]: Prega Americana
+            - generic [ref=f3e1073]: Modelo com pregas triplas, que garantem maior volume, excelente caimento e um visual clássico.
+          - link "Quero essa" [ref=f3e1081] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20na%20cortina%20de%20prega%20americana.%20Quero%20um%20orçamento.
+            - generic [ref=f3e1082]:
+              - generic [ref=f3e1083]: 
+              - generic [ref=f3e1085]: Quero essa
+        - generic [ref=f3e1089]:
+          - generic [ref=f3e1093]:
+            - generic [ref=f3e1096]:
+              - generic:
+                - text: 
+                - generic: Foto
+            - generic [ref=f3e1099]:
+              - generic:
+                - text: 
+                - generic: Foto
+          - generic [ref=f3e1103]:
+            - generic [ref=f3e1107]:
+              - generic [ref=f3e1108]: Cortina Trilho Suíço
+              - generic [ref=f3e1109]: Prega Macho
+            - generic [ref=f3e1111]: Acabamento sofisticado com pregas voltadas para frente, criando um visual alinhado, volumoso e atemporal.
+          - link "Quero essa" [ref=f3e1119] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20na%20cortina%20de%20prega%20macho.%20Quero%20um%20orçamento.
+            - generic [ref=f3e1120]:
+              - generic [ref=f3e1121]: 
+              - generic [ref=f3e1123]: Quero essa
+        - generic [ref=f3e1127]:
+          - generic [ref=f3e1131]:
+            - generic [ref=f3e1134]:
+              - generic:
+                - text: 
+                - generic: Foto
+            - generic [ref=f3e1137]:
+              - generic:
+                - text: 
+                - generic: Foto
+          - generic [ref=f3e1141]:
+            - generic [ref=f3e1145]:
+              - generic [ref=f3e1146]: Cortina Trilho Suíço
+              - generic [ref=f3e1147]: Prega Fêmea
+            - generic [ref=f3e1149]: Pregas voltadas para dentro, proporcionando um caimento discreto, elegante e com aparência mais reta.
+          - link "Quero essa" [ref=f3e1157] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20na%20cortina%20de%20prega%20fêmea.%20Quero%20um%20orçamento.
+            - generic [ref=f3e1158]:
+              - generic [ref=f3e1159]: 
+              - generic [ref=f3e1161]: Quero essa
+        - generic [ref=f3e1165]:
+          - generic [ref=f3e1169]:
+            - generic [ref=f3e1172]:
+              - generic:
+                - text: 
+                - generic: Foto
+            - generic [ref=f3e1175]:
+              - generic:
+                - text: 
+                - generic: Foto
+          - generic [ref=f3e1179]:
+            - generic [ref=f3e1183]:
+              - generic [ref=f3e1184]: Cortina Trilho Suíço
+              - generic [ref=f3e1185]: Reta Blackout
+            - generic [ref=f3e1187]: Bloqueio total da luz externa para noites de sono perfeitas. Ideal para quartos, home theaters e ambientes que precisam de escuridão total.
+          - link "Quero essa" [ref=f3e1195] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20na%20cortina%20blackout.%20Quero%20um%20orçamento.
+            - generic [ref=f3e1196]:
+              - generic [ref=f3e1197]: 
+              - generic [ref=f3e1199]: Quero essa
+      - link "Quero minha cortina sob medida" [ref=f3e1207] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Quero%20minha%20cortina%20sob%20medida.%20Podem%20me%20ajudar?
+        - generic [ref=f3e1208]:
+          - generic [ref=f3e1209]: 
+          - generic [ref=f3e1211]: Quero minha cortina sob medida
+    - generic [ref=f3e1215]:
+      - generic [ref=f3e1216]: Exclusividade Casa Estampa
+      - heading [level=2] [ref=f3e1223]:
+        - text: "Soft Wave:"
+        - emphasis [ref=f3e1224]: o nosso modelo exclusivo
+      - paragraph [ref=f3e1230]: Um modelo desenvolvido pela Casa Estampa com ondas ainda mais suaves, caimento mais fluido e acabamento que você não encontra em lugar nenhum.
+      - generic [ref=f3e1234]:
+        - generic [ref=f3e1238]:
+          - generic [ref=f3e1242]:
+            - text: 
+            - generic [ref=f3e1243]: Foto 1
+          - generic [ref=f3e1248]:
+            - text: 
+            - generic [ref=f3e1249]: Foto 2
+          - generic [ref=f3e1254]:
+            - text: 
+            - generic [ref=f3e1255]: Foto 3
+          - generic [ref=f3e1260]:
+            - text: 
+            - generic [ref=f3e1261]: Foto 4
+        - generic [ref=f3e1266]:
+          - generic [ref=f3e1267]: Modelo exclusivo
+          - heading "Ondas mais suaves. Caimento mais elegante." [level=3] [ref=f3e1271]
+          - paragraph [ref=f3e1274]: O Soft Wave é uma evolução do Wave clássico — ondas mais abertas e fluidas, caimento mais natural. Desenvolvido exclusivamente pela Casa Estampa.
+          - generic [ref=f3e1278]:
+            - generic [ref=f3e1282]:
+              - generic [ref=f3e1283]:
+                - text: 
+                - generic [ref=f3e1284]: 
+              - generic [ref=f3e1288]: Ondulação exclusiva, mais suave que o Wave padrão
+            - generic [ref=f3e1292]:
+              - generic [ref=f3e1293]:
+                - text: 
+                - generic [ref=f3e1294]: 
+              - generic [ref=f3e1298]: Caimento perfeito do teto ao piso
+            - generic [ref=f3e1302]:
+              - generic [ref=f3e1303]:
+                - text: 
+                - generic [ref=f3e1304]: 
+              - generic [ref=f3e1308]: Disponível em linho, voil e blackout
+            - generic [ref=f3e1312]:
+              - generic [ref=f3e1313]:
+                - text: 
+                - generic [ref=f3e1314]: 
+              - generic [ref=f3e1318]: Feito sob medida para o seu espaço
+          - link "Quero conhecer o Soft Wave" [ref=f3e1322] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Quero%20saber%20mais%20sobre%20o%20modelo%20exclusivo%20Soft%20Wave.
+            - generic [ref=f3e1323]:
+              - generic [ref=f3e1324]: 
+              - generic [ref=f3e1326]: Quero conhecer o Soft Wave
+    - generic [ref=f3e1330]:
+      - generic [ref=f3e1331]: Tecnologia & Conforto
+      - heading [level=2] [ref=f3e1338]:
+        - text: "Cortinas motorizadas:"
+        - emphasis [ref=f3e1339]: conforto ao toque de um botão
+      - paragraph [ref=f3e1345]: Automatize sua rotina e transforme seu ambiente com mais praticidade, sofisticação e controle.
+      - generic [ref=f3e1349]:
+        - generic [ref=f3e1357]:
+          - generic [ref=f3e1358]:
+            - text: 
+            - generic [ref=f3e1359]: 
+          - generic [ref=f3e1363]: Inserir vídeo
+        - generic [ref=f3e1371]: 
+        - generic [ref=f3e1385]:
+          - generic: Vídeo motorizada — adicionar aqui
+          - generic [ref=f3e1390]:
+            - generic [ref=f3e1391]:
+              - text: 
+              - generic [ref=f3e1392]: 
+            - generic [ref=f3e1396]: Inserir vídeo
+        - generic [ref=f3e1404]:
+          - generic [ref=f3e1408]:
+            - generic [ref=f3e1413]:
+              - text: 
+              - generic [ref=f3e1414]: 
+            - generic [ref=f3e1421]:
+              - generic [ref=f3e1422]: Mais conforto no dia a dia
+              - paragraph [ref=f3e1429]: Abra e feche suas cortinas com controle remoto, aplicativo ou comando de voz, sem esforço, sem levantar do sofá.
+          - generic [ref=f3e1433]:
+            - generic [ref=f3e1438]:
+              - text: 
+              - generic [ref=f3e1439]: 
+            - generic [ref=f3e1446]:
+              - generic [ref=f3e1447]: Elegância sem interferência visual
+              - paragraph [ref=f3e1454]: Motores discretos, silenciosos e integrados ao projeto, sem comprometer o design do ambiente.
+          - generic [ref=f3e1458]:
+            - generic [ref=f3e1463]:
+              - text: 
+              - generic [ref=f3e1464]: 
+            - generic [ref=f3e1471]:
+              - generic [ref=f3e1472]: Perfeitas para grandes vãos
+              - paragraph [ref=f3e1479]: Ideal para janelas amplas, cortinas altas e projetos onde o acesso manual não é prático.
+          - generic [ref=f3e1483]:
+            - generic [ref=f3e1488]:
+              - text: 
+              - generic [ref=f3e1489]: 
+            - generic [ref=f3e1496]:
+              - generic [ref=f3e1497]: Integração com automação residencial
+              - paragraph [ref=f3e1504]: "Compatível com sistemas de casa inteligente: Alexa, Google Home e outros."
+          - link "Quero minha cortina motorizada" [ref=f3e1512] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20interesse%20em%20cortina%20motorizada.%20Quero%20um%20orçamento.
+            - generic [ref=f3e1513]:
+              - generic [ref=f3e1514]: 
+              - generic [ref=f3e1516]: Quero minha cortina motorizada
+    - generic [ref=f3e1520]:
+      - generic [ref=f3e1521]: Por que Casa Estampa
+      - heading [level=2] [ref=f3e1528]:
+        - text: Muito além de uma cortina.
+        - emphasis [ref=f3e1529]: Um novo ambiente.
+      - generic [ref=f3e1536]:
+        - generic [ref=f3e1540]:
+          - generic [ref=f3e1541]: 🪄
+          - generic [ref=f3e1543]: Tecidos selecionados
+          - paragraph [ref=f3e1550]: "Escolhemos tecidos que não só são bonitos, mas que transformam o ambiente: mais aconchego, mais sofisticação e uma sensação real de casa bem cuidada."
+        - generic [ref=f3e1554]:
+          - generic [ref=f3e1555]: 🌤
+          - generic [ref=f3e1557]: Controle de luz
+          - paragraph [ref=f3e1564]: Desde tecidos leves e translúcidos até opções com blackout, suas cortinas vão controlar a luminosidade do jeito que você precisa — sem perder elegância.
+        - generic [ref=f3e1568]:
+          - generic [ref=f3e1569]: 🏡
+          - generic [ref=f3e1571]: Caimento impecável
+          - paragraph [ref=f3e1578]: Nada de cortina torta, curta ou “sem vida”. Cada peça é feita sob medida para o seu pé-direito, sua janela e o seu estilo.
+        - generic [ref=f3e1582]:
+          - generic [ref=f3e1583]: 🔇
+          - generic [ref=f3e1585]: Mais conforto térmico
+          - paragraph [ref=f3e1592]: Além da estética, nossas cortinas ajudam a reduzir o calor e o excesso de luz, criando um ambiente mais calmo e acolhedor.
+        - generic [ref=f3e1596]:
+          - generic [ref=f3e1597]: ✨
+          - generic [ref=f3e1599]: Projeto personalizado
+          - paragraph [ref=f3e1606]: Aqui, cada cortina é pensada para o seu espaço, sua rotina e seu gosto. Você não escolhe um produto — você cria uma solução.
+        - generic [ref=f3e1610]:
+          - generic [ref=f3e1611]: ⚡
+          - generic [ref=f3e1613]: Tecnologia que simplifica
+          - paragraph [ref=f3e1620]: "Com a opção de motorização, suas cortinas se adaptam à sua rotina: um toque e tudo se transforma."
+      - link "Falar com especialista" [ref=f3e1628] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Quero%20falar%20com%20um%20especialista%20em%20cortinas.
+        - generic [ref=f3e1629]:
+          - generic [ref=f3e1630]: 
+          - generic [ref=f3e1632]: Falar com especialista
+    - generic [ref=f3e1636]:
+      - generic [ref=f3e1637]: Dúvidas frequentes
+      - heading [level=2] [ref=f3e1644]:
+        - text: Perguntas
+        - emphasis [ref=f3e1645]: mais comuns
+      - generic [ref=f3e1651]:
+        - button "Qual a diferença entre cortina de varão e trilho suíço?" [ref=f3e1653] [cursor=pointer]:
+          - generic [ref=f3e1654]: +
+        - button "Qual a diferença entre Wave e a Soft Wave Casa Estampa?" [ref=f3e1659] [cursor=pointer]:
+          - generic [ref=f3e1660]: +
+        - button "Cortina bloqueia totalmente a luz?" [ref=f3e1665] [cursor=pointer]:
+          - generic [ref=f3e1666]: +
+        - button "Posso lavar minha cortina?" [ref=f3e1671] [cursor=pointer]:
+          - generic [ref=f3e1672]: +
+        - button "Cortina melhora a acústica?" [ref=f3e1677] [cursor=pointer]:
+          - generic [ref=f3e1678]: +
+        - button "Quanto tempo leva para fabricar?" [ref=f3e1683] [cursor=pointer]:
+          - generic [ref=f3e1684]: +
+      - generic [ref=f3e1691]:
+        - paragraph [ref=f3e1694]: Ficou com alguma dúvida que não está aqui?
+        - link "Perguntar no WhatsApp" [ref=f3e1698] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Tenho%20uma%20dúvida%20sobre%20cortinas.
+          - generic [ref=f3e1699]:
+            - generic [ref=f3e1700]: 
+            - generic [ref=f3e1702]: Perguntar no WhatsApp
+    - generic [ref=f3e1706]:
+      - generic [ref=f3e1707]: Quer ajuda para escolher?
+      - paragraph [ref=f3e1714]: Nossa equipe te orienta desde a escolha até a instalação final.
+      - generic [ref=f3e1718]:
+        - generic [ref=f3e1722]:
+          - generic [ref=f3e1723]: Fale agora
+          - link "Falar com especialista" [ref=f3e1728] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Quero%20ajuda%20para%20escolher%20cortinas.
+            - generic [ref=f3e1729]:
+              - generic [ref=f3e1730]: 
+              - generic [ref=f3e1732]: Falar com especialista
+        - generic [ref=f3e1736]:
+          - generic [ref=f3e1737]: Agendar visita
+          - link "Agendar medição" [ref=f3e1742] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Gostaria%20de%20agendar%20uma%20medição%20de%20cortinas.
+            - generic [ref=f3e1743]:
+              - generic [ref=f3e1744]: 
+              - generic [ref=f3e1746]: Agendar medição
+        - generic [ref=f3e1750]:
+          - generic [ref=f3e1751]: Ver mais
+          - link "Ver todos os modelos" [ref=f3e1756] [cursor=pointer]:
+            - /url: "#tipos"
+    - link [ref=f3e1762] [cursor=pointer]:
+      - /url: https://api.whatsapp.com/send?phone=5521999886842&text=Olá!%20Estou%20no%20site%20e%20quero%20ajuda%20para%20escolher%20cortinas.
+      - generic [ref=f3e1763]: 
+  - contentinfo [ref=f3e1766]:
+    - generic [ref=f3e1767]:
+      - link "Página inicial Casa Estampa" [ref=f3e1769] [cursor=pointer]:
+        - /url: /
+        - img "Casa Estampa Interiores" [ref=f3e1770]
+      - navigation "Navegação do rodapé" [ref=f3e1771]:
+        - strong [ref=f3e1772]: Explore
+        - generic [ref=f3e1773]:
+          - link "Início" [ref=f3e1774] [cursor=pointer]:
+            - /url: /
+          - link "Papéis de Parede" [ref=f3e1775] [cursor=pointer]:
+            - /url: /papeis-de-parede
+          - link "Cortinas" [ref=f3e1776] [cursor=pointer]:
+            - /url: /cortinas
+          - link "Persianas" [ref=f3e1777] [cursor=pointer]:
+            - /url: /persianas
+          - link "Pisos" [ref=f3e1778] [cursor=pointer]:
+            - /url: /pisos
+          - link "Arquitetos" [ref=f3e1779] [cursor=pointer]:
+            - /url: /area-do-arquiteto
+          - link "Corporativo" [ref=f3e1780] [cursor=pointer]:
+            - /url: /corporativo
+      - generic [ref=f3e1781]:
+        - strong [ref=f3e1782]: Atendimento
+        - link "Rio de Janeiro · (21) 99988-6842" [ref=f3e1783] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?phone=5521999886842
+          - generic [ref=f3e1784]: 
+          - text: Rio de Janeiro · (21) 99988-6842
+        - generic [ref=f3e1785]: casaestampa.com
+        - generic [ref=f3e1786]: Rio de Janeiro
+    - generic [ref=f3e1787]:
+      - generic [ref=f3e1788]: © 2026 Casa Estampa. Todos os direitos reservados.
+      - link "Falar com a Casa Estampa" [ref=f3e1789] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842
+        - text: Falar com a Casa Estampa
+        - generic [ref=f3e1790]: 

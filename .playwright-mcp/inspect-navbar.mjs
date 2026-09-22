@@ -1,0 +1,13 @@
+import fs from "node:fs";
+import pg from "pg";
+const env = fs.readFileSync(".env", "utf8");
+const m = env.match(/DATABASE_URL=(.+)/);
+const pool = new pg.Pool({ connectionString: m ? m[1].trim() : "postgres://casaestampa:casaestampa@localhost:5432/casaestampa" });
+const r = await pool.query("SELECT html FROM pages WHERE slug = 'arquitetos-designers'");
+const html = r.rows[0].html;
+const i = html.search(/<nav\b/i);
+console.log("=== before nav ===");
+console.log(html.slice(Math.max(0, i - 800), i));
+console.log("=== nav ===");
+console.log(html.slice(i, i + 4000));
+await pool.end();

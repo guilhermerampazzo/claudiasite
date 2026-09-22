@@ -1,0 +1,350 @@
+- generic [active] [ref=f5e1]:
+  - navigation [ref=f5e2]:
+    - text: 
+    - link [ref=f5e3] [cursor=pointer]:
+      - /url: /
+      - img "Casa Estampa" [ref=f5e4]
+    - list [ref=f5e5]:
+      - listitem [ref=f5e6]:
+        - link "Início" [ref=f5e7] [cursor=pointer]:
+          - /url: /
+      - listitem [ref=f5e8]:
+        - link "Papéis de Parede" [ref=f5e9] [cursor=pointer]:
+          - /url: /papeis-de-parede
+      - listitem [ref=f5e10]:
+        - link "Cortinas" [ref=f5e11] [cursor=pointer]:
+          - /url: /cortinas
+      - listitem [ref=f5e12]:
+        - link "Persianas" [ref=f5e13] [cursor=pointer]:
+          - /url: /persianas
+      - listitem [ref=f5e14]:
+        - link "Pisos" [ref=f5e15] [cursor=pointer]:
+          - /url: /pisos
+      - listitem [ref=f5e16]:
+        - link "Arquitetos" [ref=f5e17] [cursor=pointer]:
+          - /url: /area-do-arquiteto
+      - listitem [ref=f5e18]:
+        - link "Corporativo" [ref=f5e19] [cursor=pointer]:
+          - /url: /corporativo
+    - button "Buscar no site" [ref=f5e21] [cursor=pointer]:
+      - generic [ref=f5e22]: 
+    - link "Falar agora" [ref=f5e23] [cursor=pointer]:
+      - /url: https://api.whatsapp.com/send?phone=5521999886842
+      - generic [ref=f5e24]: 
+      - text: Falar agora
+  - generic [ref=f5e25]:
+    - generic: Pisos
+    - generic [ref=f5e26]: Revestimentos de Alto Padrão
+    - heading [level=1] [ref=f5e27]:
+      - text: Pisos que transformamseu
+      - emphasis [ref=f5e28]: ambiente
+    - paragraph [ref=f5e29]: Do aconchego à sofisticação absoluta — laminados, vinílicos, carpetes e madeira maciça com instalação profissional.
+    - generic [ref=f5e30]:
+      - link "ﲤ Ver por tipo" [ref=f5e31] [cursor=pointer]:
+        - /url: "#tipos"
+        - generic [ref=f5e32]: ﲤ
+        - text: Ver por tipo
+      - link " Pedir orçamento" [ref=f5e33] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842
+        - generic [ref=f5e34]: 
+        - text: Pedir orçamento
+  - generic [ref=f5e35]:
+    - generic [ref=f5e36]:
+      - generic [ref=f5e37]: Por que Casa Estampa
+      - heading [level=2] [ref=f5e38]:
+        - text: Seu piso ideal
+        - emphasis [ref=f5e39]: começa aqui
+      - paragraph [ref=f5e41]: Mais de uma década de expertise em revestimentos. Combinamos curadoria técnica, design e instalação impecável em cada projeto.
+    - generic [ref=f5e42]:
+      - generic [ref=f5e43]:
+        - generic [ref=f5e44]: "01"
+        - generic [ref=f5e45]:
+          - generic [ref=f5e46]: Materiais selecionados
+          - generic [ref=f5e47]: Rigor técnico e estético na escolha de cada produto. Só trabalhamos com marcas que entregam o que prometem.
+      - generic [ref=f5e48]:
+        - generic [ref=f5e49]: "02"
+        - generic [ref=f5e50]:
+          - generic [ref=f5e51]: Residencial e Comercial
+          - generic [ref=f5e52]: Soluções para ambientes de todos os perfis... do quarto ao lobby corporativo, do home cinema ao escritório de alto padrão.
+      - generic [ref=f5e53]:
+        - generic [ref=f5e54]: "03"
+        - generic [ref=f5e55]:
+          - generic [ref=f5e56]: Instalação profissional
+          - generic [ref=f5e57]: Acabamento impecável é o que transforma um bom piso em um ambiente perfeito. Nossa equipe técnica garante isso.
+      - generic [ref=f5e58]:
+        - generic [ref=f5e59]: "04"
+        - generic [ref=f5e60]:
+          - generic [ref=f5e61]: Atendimento consultivo
+          - generic [ref=f5e62]: Do primeiro contato à entrega, acompanhamos cada etapa. Você escolhe com segurança, nós executamos com precisão.
+  - generic [ref=f5e63]:
+    - generic [ref=f5e64]: Qual piso combina com seu estilo
+    - heading [level=2] [ref=f5e65]:
+      - text: Encontre o piso
+      - emphasis [ref=f5e66]: perfeito
+      - text: para você
+    - generic [ref=f5e67]:
+      - generic [ref=f5e68]:
+        - generic [ref=f5e69]: 
+        - generic [ref=f5e71]: Piso Laminado
+        - heading "Aconchego Natural" [level=3] [ref=f5e72]
+        - paragraph [ref=f5e73]: Aparência natural com toque aconchegante. Excelente custo-benefício para salas e quartos.
+        - generic [ref=f5e74]: Laminado
+      - generic [ref=f5e75]:
+        - generic [ref=f5e76]: ﰒ
+        - generic [ref=f5e78]: Piso Vinílico
+        - heading "Alta Resistência" [level=3] [ref=f5e79]
+        - paragraph [ref=f5e80]: Alta resistência à água, limpeza prática e conforto acústico. Ideal para áreas úmidas e cozinhas.
+        - generic [ref=f5e81]: Vinílico
+      - generic [ref=f5e82]:
+        - generic [ref=f5e83]: 
+        - generic [ref=f5e85]: Carpete
+        - heading "Conforto Extremo" [level=3] [ref=f5e86]
+        - paragraph [ref=f5e87]: Acústica superior e sensação acolhedora. Ideal para home cinema, quartos e ambientes sofisticados.
+        - generic [ref=f5e88]: Carpete
+      - generic [ref=f5e89]:
+        - generic [ref=f5e90]: 
+        - generic [ref=f5e92]: Madeira Maciça
+        - heading "Elegância Atemporal" [level=3] [ref=f5e93]
+        - paragraph [ref=f5e94]: Valorização patrimonial e acabamento nobre. Exclusivo para projetos de alto padrão que atravessam gerações.
+        - generic [ref=f5e95]: Premium
+  - generic [ref=f5e96]:
+    - generic [ref=f5e97]: Comparativo
+    - heading [level=2] [ref=f5e98]:
+      - text: Escolha com
+      - emphasis [ref=f5e99]: segurança
+    - table [ref=f5e100]:
+      - rowgroup [ref=f5e101]:
+        - row [ref=f5e102]:
+          - columnheader "Tipo" [ref=f5e103]
+          - columnheader "Resistência à Água" [ref=f5e104]
+          - columnheader "Conforto Acústico" [ref=f5e105]
+          - columnheader "Sofisticação" [ref=f5e106]
+          - columnheader "Ideal para" [ref=f5e107]
+      - rowgroup [ref=f5e108]:
+        - row [ref=f5e109]:
+          - cell "Laminado" [ref=f5e110]
+          - cell "Média" [ref=f5e111]
+          - cell "Boa" [ref=f5e113]
+          - cell "Alta" [ref=f5e115]
+          - cell "Salas e quartos" [ref=f5e117]
+        - row [ref=f5e118]:
+          - cell "Vinílico" [ref=f5e119]
+          - cell "Alta" [ref=f5e120]
+          - cell "Boa" [ref=f5e122]
+          - cell "Alta" [ref=f5e124]
+          - cell "Salas, quartos, cozinhas e áreas úmidas" [ref=f5e126]
+        - row [ref=f5e127]:
+          - cell "Carpete" [ref=f5e128]
+          - cell "Baixa" [ref=f5e129]
+          - cell "Altíssimo" [ref=f5e131]
+          - cell "Máxima" [ref=f5e133]
+          - cell "Cinema, quarto e corporativo" [ref=f5e135]
+        - row [ref=f5e136]:
+          - cell "Madeira Maciça" [ref=f5e137]
+          - cell "Média" [ref=f5e138]
+          - cell "Boa" [ref=f5e140]
+          - cell "Máxima" [ref=f5e142]
+          - cell "Projetos premium e alto padrão" [ref=f5e144]
+  - generic [ref=f5e145]:
+    - generic [ref=f5e146]:
+      - generic [ref=f5e147]: Mostruários
+      - heading "Pisos Laminados" [level=2] [ref=f5e148]:
+        - text: Pisos Laminados
+        - emphasis
+      - paragraph [ref=f5e150]: Trabalhamos com as principais marcas do mercado. Visite nossa loja e veja os mostruários de perto — textura, espessura e acabamento fazem toda a diferença na escolha certa.
+      - generic [ref=f5e151]:
+        - generic [ref=f5e152]:
+          - generic [ref=f5e153]: Eucafloor
+          - link " Ver mostruário" [ref=f5e156] [cursor=pointer]:
+            - /url: /categoria-produto/pisos-laminados/eucafloor
+            - generic [ref=f5e157]: 
+            - text: Ver mostruário
+        - generic [ref=f5e158]:
+          - generic [ref=f5e159]: Durafloor
+          - link " Ver mostruário" [ref=f5e162] [cursor=pointer]:
+            - /url: /categoria-produto/pisos-laminados/durafloor-laminado
+            - generic [ref=f5e163]: 
+            - text: Ver mostruário
+        - generic [ref=f5e164]:
+          - generic [ref=f5e165]: Quick-Step
+          - link " Ver mostruário" [ref=f5e168] [cursor=pointer]:
+            - /url: /categoria-produto/pisos-laminados/quick-step
+            - generic [ref=f5e169]: 
+            - text: Ver mostruário
+      - link "Solicitar Orçamento" [ref=f5e171] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842
+    - generic [ref=f5e172]:
+      - generic [ref=f5e173]:
+        - generic [ref=f5e174]: 
+        - generic [ref=f5e177]: Acompanhe o processo de instalação do piso laminado no vídeo
+      - generic [ref=f5e178]:
+        - img "Piso laminado instalado" [ref=f5e180]
+        - img "Piso laminado instalado" [ref=f5e182]
+  - generic [ref=f5e183]:
+    - generic [ref=f5e184]:
+      - generic [ref=f5e185]: Mostruários
+      - heading "Pisos Vinílicos" [level=2] [ref=f5e186]:
+        - text: Pisos Vinílicos
+        - emphasis
+      - paragraph [ref=f5e188]: Tecnologia de ponta em resistência e design. Os pisos vinílicos evoluíram — hoje oferecem estética de madeira e pedra com praticidade incomparável.
+      - generic [ref=f5e189]:
+        - generic [ref=f5e190]:
+          - generic [ref=f5e191]: Durafloor
+          - link " Ver mostruário" [ref=f5e194] [cursor=pointer]:
+            - /url: /categoria-produto/pisos-vinilicos/durafloor-vinilico
+            - generic [ref=f5e195]: 
+            - text: Ver mostruário
+        - generic [ref=f5e196]:
+          - generic [ref=f5e197]: Tarkett
+          - link " Ver mostruário" [ref=f5e200] [cursor=pointer]:
+            - /url: /categoria-produto/pisos-vinilicos/tarket
+            - generic [ref=f5e201]: 
+            - text: Ver mostruário
+        - generic [ref=f5e202]:
+          - generic [ref=f5e203]: Vinilforte
+          - link " Ver mostruário" [ref=f5e206] [cursor=pointer]:
+            - /url: /categoria-produto/pisos-vinilicos
+            - generic [ref=f5e207]: 
+            - text: Ver mostruário
+        - generic [ref=f5e208]:
+          - generic [ref=f5e209]: Biancogres
+          - link " Ver mostruário" [ref=f5e212] [cursor=pointer]:
+            - /url: /categoria-produto/pisos-vinilicos/biancogres
+            - generic [ref=f5e213]: 
+            - text: Ver mostruário
+      - link "Solicitar Orçamento" [ref=f5e215] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842
+    - generic [ref=f5e216]:
+      - generic [ref=f5e217]: Acompanhe o processo de instalação do piso vinílico no vídeo
+      - generic [ref=f5e220]:
+        - img "Piso vinílico instalado" [ref=f5e222]
+        - img "Piso vinílico instalado" [ref=f5e224]
+  - generic [ref=f5e225]:
+    - generic [ref=f5e226]:
+      - generic [ref=f5e227]: Mostruários
+      - heading "Carpete" [level=2] [ref=f5e228]:
+        - text: Carpete
+        - emphasis
+      - paragraph [ref=f5e230]: Os carpetes unem conforto térmico, acústica e sofisticação visual, criando ambientes acolhedores e elegantes. Perfeito para home cinema, master suites e lounges.
+      - generic [ref=f5e231]:
+        - generic [ref=f5e232]: Belgotex
+        - generic [ref=f5e236]: Beaulieu
+        - generic [ref=f5e240]: Linha Premium
+      - link "Solicitar Orçamento" [ref=f5e245] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842
+    - generic [ref=f5e246]: Acompanhe o processo de instalação do carpete no vídeo
+  - generic [ref=f5e253]:
+    - generic [ref=f5e254]:
+      - generic [ref=f5e255]: Mostruários
+      - heading "Madeira Maciça" [level=2] [ref=f5e256]
+      - paragraph [ref=f5e258]: A madeira maciça é um revestimento nobre que agrega valor e personalidade ao ambiente. Cada peça possui desenho natural único e acabamento sofisticado, sem igual no mercado.
+      - link "Solicitar Orçamento" [ref=f5e260] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842
+    - generic [ref=f5e261]: Acompanhe o processo de instalação do piso de madeira maciça no vídeo
+  - generic [ref=f5e268]:
+    - generic [ref=f5e269]: Como trabalhamos
+    - heading [level=2] [ref=f5e270]:
+      - text: Seu projeto,
+      - emphasis [ref=f5e271]: passo a passo
+    - paragraph [ref=f5e272]: Do primeiro contato à entrega, um fluxo claro e sem surpresas.
+    - generic [ref=f5e273]:
+      - generic [ref=f5e274]:
+        - generic [ref=f5e275]: "01"
+        - heading "Você escolhe o estilo" [level=3] [ref=f5e276]
+        - paragraph [ref=f5e277]: Visite nossa loja ou fale conosco e descubra qual piso combina com o seu projeto.
+      - generic [ref=f5e278]:
+        - generic [ref=f5e279]: "02"
+        - heading "Consultoria técnica" [level=3] [ref=f5e280]
+        - paragraph [ref=f5e281]: Nossa equipe analisa o ambiente, o uso e suas preferências para recomendar a melhor opção.
+      - generic [ref=f5e282]:
+        - generic [ref=f5e283]: "03"
+        - heading "Medição" [level=3] [ref=f5e284]
+        - paragraph [ref=f5e285]: Visita técnica para medição precisa do espaço e avaliação do estado do piso atual.
+      - generic [ref=f5e286]:
+        - generic [ref=f5e287]: "04"
+        - heading "Orçamento" [level=3] [ref=f5e288]
+        - paragraph [ref=f5e289]: Proposta detalhada com materiais, mão de obra e prazo — sem surpresas na entrega.
+      - generic [ref=f5e290]:
+        - generic [ref=f5e291]: "05"
+        - heading "Instalação profissional" [level=3] [ref=f5e292]
+        - paragraph [ref=f5e293]: Equipe especializada executa com cuidado e entrega o ambiente transformado.
+  - generic [ref=f5e294]:
+    - generic [ref=f5e295]: Instalações
+    - heading [level=2] [ref=f5e296]:
+      - text: Projetos que
+      - emphasis [ref=f5e297]: entregamos
+    - generic [ref=f5e298]:
+      - button "Laminado" [ref=f5e299] [cursor=pointer]
+      - button "Vinílico" [ref=f5e300] [cursor=pointer]
+      - button "Carpete" [ref=f5e301] [cursor=pointer]
+      - button "Madeira Maciça" [ref=f5e302] [cursor=pointer]
+    - generic [ref=f5e303]:
+      - img "Piso laminado instalado" [ref=f5e305]
+      - img "Piso laminado instalado" [ref=f5e307]
+      - img "Piso laminado instalado" [ref=f5e309]
+    - text:        
+  - generic [ref=f5e310]:
+    - generic: Pisos
+    - generic [ref=f5e311]:
+      - generic [ref=f5e312]: Pronto para começar
+      - heading [level=2] [ref=f5e313]:
+        - text: Seu piso idealestá a um
+        - emphasis [ref=f5e314]: passo.
+      - paragraph [ref=f5e315]: Fale com um especialista e receba um orçamento sob medida. Sem compromisso, sem surpresas.
+      - generic [ref=f5e316]:
+        - link " Quero orçamento" [ref=f5e317] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?phone=5521999886842
+          - generic [ref=f5e318]: 
+          - text: Quero orçamento
+        - link "Agendar visita técnica" [ref=f5e319] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?phone=5521999886842
+    - generic [ref=f5e320]:
+      - generic [ref=f5e321]:
+        - generic [ref=f5e322]: • Piso Laminado
+        - generic [ref=f5e323]: • Piso Vinílico
+        - generic [ref=f5e324]: • Carpetes
+        - generic [ref=f5e325]: • Madeira Maciça
+        - generic [ref=f5e326]: • Residencial
+        - generic [ref=f5e327]: • Corporativo
+      - paragraph [ref=f5e328]:
+        - generic [ref=f5e329]: 
+        - text: (21) 99988-6842 · WhatsApp
+  - contentinfo [ref=f5e330]:
+    - generic [ref=f5e331]:
+      - link "Página inicial Casa Estampa" [ref=f5e333] [cursor=pointer]:
+        - /url: /
+        - img "Casa Estampa Interiores" [ref=f5e334]
+      - navigation "Navegação do rodapé" [ref=f5e335]:
+        - strong [ref=f5e336]: Explore
+        - generic [ref=f5e337]:
+          - link "Início" [ref=f5e338] [cursor=pointer]:
+            - /url: /
+          - link "Papéis de Parede" [ref=f5e339] [cursor=pointer]:
+            - /url: /papeis-de-parede
+          - link "Cortinas" [ref=f5e340] [cursor=pointer]:
+            - /url: /cortinas
+          - link "Persianas" [ref=f5e341] [cursor=pointer]:
+            - /url: /persianas
+          - link "Pisos" [ref=f5e342] [cursor=pointer]:
+            - /url: /pisos
+          - link "Arquitetos" [ref=f5e343] [cursor=pointer]:
+            - /url: /area-do-arquiteto
+          - link "Corporativo" [ref=f5e344] [cursor=pointer]:
+            - /url: /corporativo
+      - generic [ref=f5e345]:
+        - strong [ref=f5e346]: Atendimento
+        - link "Rio de Janeiro · (21) 99988-6842" [ref=f5e347] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?phone=5521999886842
+          - generic [ref=f5e348]: 
+          - text: Rio de Janeiro · (21) 99988-6842
+        - generic [ref=f5e349]: casaestampa.com
+        - generic [ref=f5e350]: Rio de Janeiro
+    - generic [ref=f5e351]:
+      - generic [ref=f5e352]: © 2026 Casa Estampa. Todos os direitos reservados.
+      - link "Falar com a Casa Estampa" [ref=f5e353] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842
+        - text: Falar com a Casa Estampa
+        - generic [ref=f5e354]: 
+  - link "Falar pelo WhatsApp" [ref=f5e355] [cursor=pointer]:
+    - /url: https://api.whatsapp.com/send?phone=5521999886842
+    - generic [ref=f5e356]: 

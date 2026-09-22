@@ -11,6 +11,7 @@
     "catalog:sync": "node scripts/sync-catalog.js"
   },
   "dependencies": {
+    "@measured/puck": "latest",
     "@tabler/icons-react": "^3.34.1",
     "next": "^16.2.11",
     "pg": "^8.16.3",

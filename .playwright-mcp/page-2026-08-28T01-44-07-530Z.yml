@@ -1,0 +1,138 @@
+- generic [ref=f3e2]:
+  - banner [ref=f3e3]:
+    - link [ref=f3e4] [cursor=pointer]:
+      - /url: /admin/pages
+      - img "Casa Estampa" [ref=f3e5]
+    - generic [ref=f3e6]:
+      - link "Catálogo" [ref=f3e7] [cursor=pointer]:
+        - /url: /admin/catalogo
+      - link "Ver site" [ref=f3e13] [cursor=pointer]:
+        - /url: /
+      - button "Sair" [ref=f3e18] [cursor=pointer]
+  - main [ref=f3e23]:
+    - generic [ref=f3e24]:
+      - generic [ref=f3e25]:
+        - paragraph [ref=f3e26]: Casa Estampa CMS
+        - heading "Paginas do site" [level=1] [ref=f3e27]
+        - paragraph [ref=f3e28]: Crie paginas, escolha a inicial e edite a estrutura compartilhada.
+      - button "Nova pagina" [ref=f3e29] [cursor=pointer]
+    - generic [ref=f3e32]:
+      - generic [ref=f3e33]:
+        - paragraph [ref=f3e34]: Conteudo
+        - heading "Paginas" [level=2] [ref=f3e35]
+      - generic [ref=f3e36]: 0 paginas
+    - generic [ref=f3e37]:
+      - generic [ref=f3e38]:
+        - generic [ref=f3e39]:
+          - paragraph [ref=f3e40]: Estrutura compartilhada
+          - heading "Header, menu e footer" [level=2] [ref=f3e41]
+        - generic [ref=f3e42]: As alteracoes aparecem em todas as paginas.
+      - tablist "Partes globais" [ref=f3e43]:
+        - tab "Header" [selected] [ref=f3e44] [cursor=pointer]
+        - tab "Menu" [ref=f3e47] [cursor=pointer]
+        - tab "Footer" [ref=f3e49] [cursor=pointer]
+      - generic [ref=f3e52]:
+        - generic [ref=f3e53]:
+          - generic [ref=f3e54]:
+            - img "Previa da logo" [ref=f3e56]
+            - generic [ref=f3e57]: Falar agora
+          - generic [ref=f3e58]:
+            - generic [ref=f3e59]:
+              - generic [ref=f3e60]: Icone da marca
+              - textbox "Icone da marca" [ref=f3e61]: /assets/logo-icone.svg
+            - generic [ref=f3e62]:
+              - generic [ref=f3e63]: Logo escrita
+              - textbox "Logo escrita" [ref=f3e64]: /assets/logo-letra.svg
+            - generic [ref=f3e65] [cursor=pointer]: Enviar logo escrita
+            - generic [ref=f3e70]:
+              - generic [ref=f3e71]: Link da logo
+              - textbox "Link da logo" [ref=f3e72]: /
+            - generic [ref=f3e73]:
+              - generic [ref=f3e74]: Texto do botao
+              - textbox "Texto do botao" [ref=f3e75]: Falar agora
+            - generic [ref=f3e76]:
+              - generic [ref=f3e77]: Link do botao
+              - textbox "Link do botao" [ref=f3e78]: https://api.whatsapp.com/send?phone=5521999886842
+          - paragraph [ref=f3e79]: Redes sociais exibidas no topo do cabecalho no celular.
+          - generic [ref=f3e80]:
+            - generic [ref=f3e81]:
+              - generic [ref=f3e82]: Instagram
+              - textbox "Instagram" [ref=f3e83]: https://www.instagram.com/casaestampa/
+            - generic [ref=f3e84]:
+              - generic [ref=f3e85]: Facebook
+              - textbox "Facebook" [ref=f3e86]: https://www.facebook.com/casaestampainteriores
+            - generic [ref=f3e87]:
+              - generic [ref=f3e88]: Pinterest
+              - textbox "Pinterest" [ref=f3e89]: https://br.pinterest.com/casaestampa/
+        - button "Salvar Header" [ref=f3e91] [cursor=pointer]
+    - generic [ref=f3e97]:
+      - generic [ref=f3e98]:
+        - generic [ref=f3e99]:
+          - paragraph [ref=f3e100]: Estilo global
+          - heading "Cores e tipografia" [level=2] [ref=f3e106]
+        - generic [ref=f3e107]: Aplicado em todo o site.
+      - generic [ref=f3e108]:
+        - generic [ref=f3e109]:
+          - generic [ref=f3e110]:
+            - generic [ref=f3e111]: Cor principal
+            - generic [ref=f3e112]:
+              - textbox "Cor principal seletor" [ref=f3e113]: "#c2a57a"
+              - textbox "Cor principal hexadecimal" [ref=f3e114]: "#c2a57a"
+          - generic [ref=f3e115]:
+            - generic [ref=f3e116]: Cor de destaque
+            - generic [ref=f3e117]:
+              - textbox "Cor de destaque seletor" [ref=f3e118]: "#c8960c"
+              - textbox "Cor de destaque hexadecimal" [ref=f3e119]: "#c8960c"
+        - generic [ref=f3e120]:
+          - generic [ref=f3e121]: Fonte global
+          - combobox "Fonte global" [ref=f3e122]:
+            - option "Abril Fatface"
+            - option "Arvo"
+            - option "Bebas Neue"
+            - option "Bitter"
+            - option "Cabin"
+            - option "Cinzel"
+            - option "Cormorant Garamond"
+            - option "Crimson Text"
+            - option "Dancing Script"
+            - option "DM Sans"
+            - option "EB Garamond"
+            - option "Fira Sans"
+            - option "Great Vibes"
+            - option "Inter"
+            - option "Italiana"
+            - option "Josefin Sans"
+            - option "Karla"
+            - option "Lato"
+            - option "Libre Baskerville"
+            - option "Lora"
+            - option "Manrope"
+            - option "Merriweather"
+            - option "Montserrat" [selected]
+            - option "Mulish"
+            - option "Noto Sans"
+            - option "Noto Serif"
+            - option "Nunito"
+            - option "Open Sans"
+            - option "Oswald"
+            - option "Playfair Display"
+            - option "Poppins"
+            - option "PT Sans"
+            - option "Quicksand"
+            - option "Raleway"
+            - option "Roboto"
+            - option "Rubik"
+            - option "Source Sans 3"
+            - option "Spectral"
+            - option "Ubuntu"
+            - option "Work Sans"
+        - generic [ref=f3e123]:
+          - strong [ref=f3e124]: Casa Estampa
+          - generic [ref=f3e125]: Interiores com personalidade.
+        - generic [ref=f3e126]:
+          - generic [ref=f3e127]: CSS extra
+          - textbox "CSS extra" [ref=f3e128]:
+            - /placeholder: ".hero-title { letter-spacing: 1px; }"
+      - generic [ref=f3e129]:
+        - button "Salvar estilo" [ref=f3e130] [cursor=pointer]
+        - button "Recarregar" [ref=f3e135] [cursor=pointer]

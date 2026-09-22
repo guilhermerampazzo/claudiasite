@@ -1,0 +1,178 @@
+- generic [active] [ref=f10e1]:
+  - navigation [ref=f10e2]:
+    - text: 
+    - link [ref=f10e3] [cursor=pointer]:
+      - /url: /
+      - img "Casa Estampa" [ref=f10e4]
+    - list [ref=f10e5]:
+      - listitem [ref=f10e6]:
+        - link "Início" [ref=f10e7] [cursor=pointer]:
+          - /url: /
+      - listitem [ref=f10e8]:
+        - link "Papéis de Parede" [ref=f10e9] [cursor=pointer]:
+          - /url: /papeis-de-parede
+      - listitem [ref=f10e10]:
+        - link "Cortinas" [ref=f10e11] [cursor=pointer]:
+          - /url: /cortinas
+      - listitem [ref=f10e12]:
+        - link "Persianas" [ref=f10e13] [cursor=pointer]:
+          - /url: /persianas
+      - listitem [ref=f10e14]:
+        - link "Pisos" [ref=f10e15] [cursor=pointer]:
+          - /url: /pisos
+      - listitem [ref=f10e16]:
+        - link "Arquitetos" [ref=f10e17] [cursor=pointer]:
+          - /url: /area-do-arquiteto
+      - listitem [ref=f10e18]:
+        - link "Corporativo" [ref=f10e19] [cursor=pointer]:
+          - /url: /corporativo
+    - button "Buscar no site" [ref=f10e21] [cursor=pointer]:
+      - generic [ref=f10e22]: 
+    - link "Falar agora" [ref=f10e23] [cursor=pointer]:
+      - /url: https://api.whatsapp.com/send?phone=5521999886842
+      - generic [ref=f10e24]: 
+      - text: Falar agora
+  - main [ref=f10e25]:
+    - generic [ref=f10e26]:
+      - paragraph [ref=f10e27]: CASA ESTAMPA INTERIORES
+      - heading "Catálogo Casa Estampa" [level=1] [ref=f10e28]
+      - generic [ref=f10e30]: Explore papéis de parede, cortinas, persianas, pisos e revestimentos organizados por coleção.
+    - generic [ref=f10e31]:
+      - generic [ref=f10e32]:
+        - generic [ref=f10e33]: COLEÇÕES
+        - heading "Encontre por categoria" [level=2] [ref=f10e34]
+      - generic [ref=f10e35]:
+        - link "Álbum Dimensões em 3D 0 produtos Álbum Dimensões em 3D " [ref=f10e36] [cursor=pointer]:
+          - /url: /categoria-produto/album-dimensoes-em-3d
+          - img "Álbum Dimensões em 3D" [ref=f10e38]
+          - generic [ref=f10e39]:
+            - generic [ref=f10e40]: 0 produtos
+            - heading "Álbum Dimensões em 3D" [level=3] [ref=f10e41]
+            - generic [ref=f10e42]: 
+        - link "Álbum Diplomata 0 produtos Álbum Diplomata " [ref=f10e43] [cursor=pointer]:
+          - /url: /categoria-produto/album-diplomata
+          - img "Álbum Diplomata" [ref=f10e45]
+          - generic [ref=f10e46]:
+            - generic [ref=f10e47]: 0 produtos
+            - heading "Álbum Diplomata" [level=3] [ref=f10e48]
+            - generic [ref=f10e49]: 
+        - link "Álbum Natural 0 produtos Álbum Natural " [ref=f10e50] [cursor=pointer]:
+          - /url: /categoria-produto/album-natural
+          - img "Álbum Natural" [ref=f10e52]
+          - generic [ref=f10e53]:
+            - generic [ref=f10e54]: 0 produtos
+            - heading "Álbum Natural" [level=3] [ref=f10e55]
+            - generic [ref=f10e56]: 
+        - link "Álbum Relevos 0 produtos Álbum Relevos " [ref=f10e57] [cursor=pointer]:
+          - /url: /categoria-produto/album-relevos
+          - img "Álbum Relevos" [ref=f10e59]
+          - generic [ref=f10e60]:
+            - generic [ref=f10e61]: 0 produtos
+            - heading "Álbum Relevos" [level=3] [ref=f10e62]
+            - generic [ref=f10e63]: 
+        - link "Álbum Sonhos 0 produtos Álbum Sonhos " [ref=f10e64] [cursor=pointer]:
+          - /url: /categoria-produto/album-sonhos
+          - img "Álbum Sonhos" [ref=f10e66]
+          - generic [ref=f10e67]:
+            - generic [ref=f10e68]: 0 produtos
+            - heading "Álbum Sonhos" [level=3] [ref=f10e69]
+            - generic [ref=f10e70]: 
+        - link "Cortinas 3 coleções Cortinas " [ref=f10e71] [cursor=pointer]:
+          - /url: /categoria-produto/cortinas
+          - img "Cortinas" [ref=f10e73]
+          - generic [ref=f10e74]:
+            - generic [ref=f10e75]: 3 coleções
+            - heading "Cortinas" [level=3] [ref=f10e76]
+            - generic [ref=f10e77]: 
+        - link "Diversos 1412 produtos Diversos " [ref=f10e78] [cursor=pointer]:
+          - /url: /categoria-produto/diversos
+          - img "Diversos" [ref=f10e80]
+          - generic [ref=f10e81]:
+            - generic [ref=f10e82]: 1412 produtos
+            - heading "Diversos" [level=3] [ref=f10e83]
+            - generic [ref=f10e84]: 
+        - link "Em Alta 6 coleções Em Alta " [ref=f10e85] [cursor=pointer]:
+          - /url: /categoria-produto/em-alta
+          - img "Em Alta" [ref=f10e87]
+          - generic [ref=f10e88]:
+            - generic [ref=f10e89]: 6 coleções
+            - heading "Em Alta" [level=3] [ref=f10e90]
+            - generic [ref=f10e91]: 
+        - link "Hotelaria 7 coleções Hotelaria " [ref=f10e92] [cursor=pointer]:
+          - /url: /categoria-produto/hotelaria
+          - img "Hotelaria" [ref=f10e94]
+          - generic [ref=f10e95]:
+            - generic [ref=f10e96]: 7 coleções
+            - heading "Hotelaria" [level=3] [ref=f10e97]
+            - generic [ref=f10e98]: 
+        - link "Papéis de Parede 2 coleções Papéis de Parede " [ref=f10e99] [cursor=pointer]:
+          - /url: /categoria-produto/papeis-de-parede
+          - img "Papéis de Parede" [ref=f10e101]
+          - generic [ref=f10e102]:
+            - generic [ref=f10e103]: 2 coleções
+            - heading "Papéis de Parede" [level=3] [ref=f10e104]
+            - generic [ref=f10e105]: 
+        - link "Persianas 4 coleções Persianas " [ref=f10e106] [cursor=pointer]:
+          - /url: /categoria-produto/persianas
+          - img "Persianas" [ref=f10e108]
+          - generic [ref=f10e109]:
+            - generic [ref=f10e110]: 4 coleções
+            - heading "Persianas" [level=3] [ref=f10e111]
+            - generic [ref=f10e112]: 
+        - link "Pisos Laminados 3 coleções Pisos Laminados " [ref=f10e113] [cursor=pointer]:
+          - /url: /categoria-produto/pisos-laminados
+          - img "Pisos Laminados" [ref=f10e115]
+          - generic [ref=f10e116]:
+            - generic [ref=f10e117]: 3 coleções
+            - heading "Pisos Laminados" [level=3] [ref=f10e118]
+            - generic [ref=f10e119]: 
+        - link "Pisos Vinílicos 4 coleções Pisos Vinílicos " [ref=f10e120] [cursor=pointer]:
+          - /url: /categoria-produto/pisos-vinilicos
+          - img "Pisos Vinílicos" [ref=f10e122]
+          - generic [ref=f10e123]:
+            - generic [ref=f10e124]: 4 coleções
+            - heading "Pisos Vinílicos" [level=3] [ref=f10e125]
+            - generic [ref=f10e126]: 
+        - link "Promoções 0 produtos Promoções " [ref=f10e127] [cursor=pointer]:
+          - /url: /categoria-produto/promocoes
+          - img "Promoções" [ref=f10e129]
+          - generic [ref=f10e130]:
+            - generic [ref=f10e131]: 0 produtos
+            - heading "Promoções" [level=3] [ref=f10e132]
+            - generic [ref=f10e133]: 
+  - contentinfo [ref=f10e134]:
+    - generic [ref=f10e135]:
+      - link "Página inicial Casa Estampa" [ref=f10e137] [cursor=pointer]:
+        - /url: /
+        - img "Casa Estampa Interiores" [ref=f10e138]
+      - navigation "Navegação do rodapé" [ref=f10e139]:
+        - strong [ref=f10e140]: Explore
+        - generic [ref=f10e141]:
+          - link "Início" [ref=f10e142] [cursor=pointer]:
+            - /url: /
+          - link "Papéis de Parede" [ref=f10e143] [cursor=pointer]:
+            - /url: /papeis-de-parede
+          - link "Cortinas" [ref=f10e144] [cursor=pointer]:
+            - /url: /cortinas
+          - link "Persianas" [ref=f10e145] [cursor=pointer]:
+            - /url: /persianas
+          - link "Pisos" [ref=f10e146] [cursor=pointer]:
+            - /url: /pisos
+          - link "Arquitetos" [ref=f10e147] [cursor=pointer]:
+            - /url: /area-do-arquiteto
+          - link "Corporativo" [ref=f10e148] [cursor=pointer]:
+            - /url: /corporativo
+      - generic [ref=f10e149]:
+        - strong [ref=f10e150]: Atendimento
+        - link "Rio de Janeiro · (21) 99988-6842" [ref=f10e151] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?phone=5521999886842
+          - generic [ref=f10e152]: 
+          - text: Rio de Janeiro · (21) 99988-6842
+        - generic [ref=f10e153]: casaestampa.com
+        - generic [ref=f10e154]: Rio de Janeiro
+    - generic [ref=f10e155]:
+      - generic [ref=f10e156]: © 2026 Casa Estampa. Todos os direitos reservados.
+      - link "Falar com a Casa Estampa" [ref=f10e157] [cursor=pointer]:
+        - /url: https://api.whatsapp.com/send?phone=5521999886842
+        - text: Falar com a Casa Estampa
+        - generic [ref=f10e158]: 

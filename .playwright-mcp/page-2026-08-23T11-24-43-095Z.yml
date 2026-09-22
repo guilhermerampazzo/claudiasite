@@ -1,0 +1,140 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e2]:
+    - banner [ref=f2e3]:
+      - link [ref=f2e4] [cursor=pointer]:
+        - /url: /admin/pages
+        - img "Casa Estampa" [ref=f2e5]
+      - generic [ref=f2e6]:
+        - link "Catálogo" [ref=f2e7] [cursor=pointer]:
+          - /url: /admin/catalogo
+        - link "Ver site" [ref=f2e13] [cursor=pointer]:
+          - /url: /
+        - button "Sair" [ref=f2e18] [cursor=pointer]
+    - main [ref=f2e23]:
+      - generic [ref=f2e24]:
+        - generic [ref=f2e25]:
+          - paragraph [ref=f2e26]: Casa Estampa CMS
+          - heading "Paginas do site" [level=1] [ref=f2e27]
+          - paragraph [ref=f2e28]: Crie paginas, escolha a inicial e edite a estrutura compartilhada.
+        - button "Nova pagina" [ref=f2e29] [cursor=pointer]
+      - generic [ref=f2e32]:
+        - generic [ref=f2e33]:
+          - paragraph [ref=f2e34]: Conteudo
+          - heading "Paginas" [level=2] [ref=f2e35]
+        - generic [ref=f2e36]: 0 paginas
+      - generic [ref=f2e37]:
+        - generic [ref=f2e38]:
+          - generic [ref=f2e39]:
+            - paragraph [ref=f2e40]: Estrutura compartilhada
+            - heading "Header, menu e footer" [level=2] [ref=f2e41]
+          - generic [ref=f2e42]: As alteracoes aparecem em todas as paginas.
+        - tablist "Partes globais" [ref=f2e43]:
+          - tab "Header" [selected] [ref=f2e44] [cursor=pointer]
+          - tab "Menu" [ref=f2e47] [cursor=pointer]
+          - tab "Footer" [ref=f2e49] [cursor=pointer]
+        - generic [ref=f2e52]:
+          - generic [ref=f2e53]:
+            - generic [ref=f2e54]:
+              - img "Previa da logo" [ref=f2e56]
+              - generic [ref=f2e57]: Falar agora
+            - generic [ref=f2e58]:
+              - generic [ref=f2e59]:
+                - generic [ref=f2e60]: Icone da marca
+                - textbox "Icone da marca" [ref=f2e61]: /assets/logo-icone.svg
+              - generic [ref=f2e62]:
+                - generic [ref=f2e63]: Logo escrita
+                - textbox "Logo escrita" [ref=f2e64]: /assets/logo-letra.svg
+              - generic [ref=f2e65] [cursor=pointer]: Enviar logo escrita
+              - generic [ref=f2e70]:
+                - generic [ref=f2e71]: Link da logo
+                - textbox "Link da logo" [ref=f2e72]: /
+              - generic [ref=f2e73]:
+                - generic [ref=f2e74]: Texto do botao
+                - textbox "Texto do botao" [ref=f2e75]: Falar agora
+              - generic [ref=f2e76]:
+                - generic [ref=f2e77]: Link do botao
+                - textbox "Link do botao" [ref=f2e78]: https://api.whatsapp.com/send?phone=5521999886842
+            - paragraph [ref=f2e79]: Redes sociais exibidas no topo do cabecalho no celular.
+            - generic [ref=f2e80]:
+              - generic [ref=f2e81]:
+                - generic [ref=f2e82]: Instagram
+                - textbox "Instagram" [ref=f2e83]: https://www.instagram.com/casaestampa/
+              - generic [ref=f2e84]:
+                - generic [ref=f2e85]: Facebook
+                - textbox "Facebook" [ref=f2e86]: https://www.facebook.com/casaestampainteriores
+              - generic [ref=f2e87]:
+                - generic [ref=f2e88]: Pinterest
+                - textbox "Pinterest" [ref=f2e89]: https://br.pinterest.com/casaestampa/
+          - button "Salvar Header" [ref=f2e91] [cursor=pointer]
+      - generic [ref=f2e97]:
+        - generic [ref=f2e98]:
+          - generic [ref=f2e99]:
+            - paragraph [ref=f2e100]: Estilo global
+            - heading "Cores e tipografia" [level=2] [ref=f2e106]
+          - generic [ref=f2e107]: Aplicado em todo o site.
+        - generic [ref=f2e108]:
+          - generic [ref=f2e109]:
+            - generic [ref=f2e110]:
+              - generic [ref=f2e111]: Cor principal
+              - generic [ref=f2e112]:
+                - textbox "Cor principal seletor" [ref=f2e113]: "#c2a57a"
+                - textbox "Cor principal hexadecimal" [ref=f2e114]: "#c2a57a"
+            - generic [ref=f2e115]:
+              - generic [ref=f2e116]: Cor de destaque
+              - generic [ref=f2e117]:
+                - textbox "Cor de destaque seletor" [ref=f2e118]: "#c8960c"
+                - textbox "Cor de destaque hexadecimal" [ref=f2e119]: "#c8960c"
+          - generic [ref=f2e120]:
+            - generic [ref=f2e121]: Fonte global
+            - combobox "Fonte global" [ref=f2e122]:
+              - option "Abril Fatface"
+              - option "Arvo"
+              - option "Bebas Neue"
+              - option "Bitter"
+              - option "Cabin"
+              - option "Cinzel"
+              - option "Cormorant Garamond"
+              - option "Crimson Text"
+              - option "Dancing Script"
+              - option "DM Sans"
+              - option "EB Garamond"
+              - option "Fira Sans"
+              - option "Great Vibes"
+              - option "Inter"
+              - option "Italiana"
+              - option "Josefin Sans"
+              - option "Karla"
+              - option "Lato"
+              - option "Libre Baskerville"
+              - option "Lora"
+              - option "Manrope"
+              - option "Merriweather"
+              - option "Montserrat" [selected]
+              - option "Mulish"
+              - option "Noto Sans"
+              - option "Noto Serif"
+              - option "Nunito"
+              - option "Open Sans"
+              - option "Oswald"
+              - option "Playfair Display"
+              - option "Poppins"
+              - option "PT Sans"
+              - option "Quicksand"
+              - option "Raleway"
+              - option "Roboto"
+              - option "Rubik"
+              - option "Source Sans 3"
+              - option "Spectral"
+              - option "Ubuntu"
+              - option "Work Sans"
+          - generic [ref=f2e123]:
+            - strong [ref=f2e124]: Casa Estampa
+            - generic [ref=f2e125]: Interiores com personalidade.
+          - generic [ref=f2e126]:
+            - generic [ref=f2e127]: CSS extra
+            - textbox "CSS extra" [ref=f2e128]:
+              - /placeholder: ".hero-title { letter-spacing: 1px; }"
+        - generic [ref=f2e129]:
+          - button "Salvar estilo" [ref=f2e130] [cursor=pointer]
+          - button "Recarregar" [ref=f2e135] [cursor=pointer]
+  - alert [ref=f2e139]

@@ -1,0 +1,18 @@
+- generic [active] [ref=f1e1]:
+  - main [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - img "Casa Estampa" [ref=f1e5]
+      - paragraph [ref=f1e6]: Painel visual
+      - heading "Entrar no editor" [level=1] [ref=f1e7]
+      - paragraph [ref=f1e8]: Acesso para editar paginas, cores globais, imagens e secoes.
+      - generic [ref=f1e9]:
+        - generic [ref=f1e10]:
+          - generic [ref=f1e11]: Usuario
+          - textbox "Usuario" [ref=f1e12]: admin
+        - generic [ref=f1e13]:
+          - generic [ref=f1e14]: Senha
+          - generic [ref=f1e15]:
+            - textbox "Senha Mostrar senha" [ref=f1e16]
+            - button "Mostrar senha" [ref=f1e17] [cursor=pointer]
+        - button "Entrar" [ref=f1e21] [cursor=pointer]
+  - alert [ref=f1e26]

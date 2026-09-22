@@ -1,0 +1,20 @@
+[     412ms] TypeError: Cannot read properties of null (reading 'appendChild')
+    at about:srcdoc:52:17
+    at about:srcdoc:216:3
+[  211428ms] TypeError: Cannot read properties of null (reading 'appendChild')
+    at about:srcdoc:52:17
+    at about:srcdoc:216:3
+[  270013ms] TypeError: Cannot read properties of null (reading 'appendChild')
+    at about:srcdoc:52:17
+    at about:srcdoc:216:3
+[  876406ms] TypeError: Cannot read properties of null (reading 'appendChild')
+    at about:srcdoc:52:17
+    at about:srcdoc:216:3
+[  990916ms] TypeError: Cannot read properties of null (reading 'appendChild')
+    at about:srcdoc:52:17
+    at about:srcdoc:216:3
+[ 1233964ms] TypeError: Cannot read properties of null (reading 'children')
+    at sendTree (about:srcdoc:81:60)
+    at about:srcdoc:133:78
+    at about:srcdoc:216:3
+[ 3617867ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://claudia.codermaster.com.br/favicon.ico:0
