@@ -1,3 +1,47 @@
+# Onde paramos — 23/09/2026 (pisos no celular: capa própria, sem "torto")
+
+## Reclamação da cliente
+"No celular a página de Pisos está ficando **torto** a imagem; veja que
+'Pisos' e o texto **não estão centralizados** (texto na imagem)."
+
+## Causa (medida na capa `uploads/capas/pisos.jpg` =1600×900)
+Com a capa **16:9** num hero **retrato**, o `cover` fica preso entre duas
+exigências **incompatíveis** em telas de360–430px:
+- o título "Pisos" ocupa ~**765px** (x457..1222) mas a janela do cover só
+  mostra **667px** da imagem (largura **invariante** com `min-height:135vw`)
+  → **título cortado** e deslocado (o `background-position:57,5%` que eu havia
+  calibrado para caber o título empurrava a janela p/ a direita ⇒ texto fora
+  do centro = o "torto" que ela viu);
+- o subtítulo termina em **~77% da altura** da foto e os botões empilhados
+  precisam de131px ⇒ exigiriam hero ≥1,18W, enquanto o título exige ≤1,10W.
+
+**Não dá para ter as duas coisas com capa16:9** — e Pisos era a **única**
+página **sem** capa retrato em `capasnovass/celular/` (as outras6 têm).
+
+## O que foi feito
+- `scripts/monta-capa-mobile.mjs` (**novo**, `npm`-style): monta capa
+ **retrato1024×1536** a partir da desktop — faixa central1024×900 (contém o
+  texto inteiro com margem) sobre fundo da mesma foto em cover+blur+véu;
+  mesma técnica das capas de papéis/persianas.
+- Gerou `uploads/capas/mobile/pisos.jpg` (1024×1536,161140B) e foi copiada
+  **também para o volume docker da VPS** (URL nova ⇒ não sofre cache immutable;
+  md5 `ffdd3d8f…` igual nos dois lados).
+- `public/puck/pisos.css` (mobile): passa a usar a capa nova +
+  `min-height:150vw` (=1024/1536 ⇒ capa inteira, **zero corte**) e
+  `background-position:center` (sai o57,5%).
+
+## Validado (dev e **produção**,360/390/414 +1366)
+- `PROBLEMAS: 0` nas duas;
+- mobile: hero = **1,5×W** exato (540/585/621), capa `1024x1536`,
+  **largVis/altVis =100%**, botões a75–78% (texto pintado termina ~65%),
+  sem transbordo;
+- desktop1366: **inalterado** (capa `1600x900`,100%, botão a81%);
+- visual conferido lado a lado (capa nova × hero390 × hero1366): título e
+  subtítulo **inteiros e centralizados**.
+- Commit `001e4e4`; conferi `mobile/pisos.jpg` **dentro do container** antes
+  da validação. Obs.: o nginx serviu o CSS velho por alguns segundos durante o
+  restart (proxy cache) — revalidar depois do restart resolve.
+
 # Onde paramos — 23/09/2026 (home: hero menor e sem sobreposição)
 
 ## Reclamação da cliente (print dela)
