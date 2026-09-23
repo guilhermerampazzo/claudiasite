@@ -1,3 +1,39 @@
+# Onde paramos — 23/09/2026 (corporativo: "Segmentos Atendidos" centralizado)
+
+## Pedido da cliente
+No módulo **"Segmentos Atendidos"** (logo abaixo do hero do Corporativo),
+deixar o **texto centralizado**.
+
+## Por que não bastava mexer no CSS da página
+O CSS desse módulo vem **inline na própria página** — o arquivo
+`public/puck/pages/corporativo.css` **nem é linkado no ar** (só `site.css`,
+tabler, `navbar.css` e `hero.css`). E havia **duas** regras
+`.intro-pill{ text-align:left !important }`:
+- uma no `<head>` (offset115645) e
+- outra **depois do `</head>`** (no corpo), no `<style id="mobile-extra">` →
+  ela vence por **ordem**, não por especificidade.
+
+(Meu primeiro `style` no `head` não pegou exatamente por isso — medi no
+navegador qual sheet estava ganhando antes de agir.)
+
+## O que foi feito
+- Bloco `<style id="ce-intro-segs-centralizado">` injetado **no fim do
+ `corporativo.tail.html`** (o tail é o **último** pedaço concatenado ⇒ decide
+ todos os empates): `.intro-segs`, `.intro-segs-title` (com a barrinha
+ dourada no meio), `.intro-pills` e `.intro-pill` → **center**.
+- Faixa **≤374px com fonte12px**: em360px a linha "Restaurantes e espaços
+  comerciais" estourava7px com13px (agora:0px de estouro).
+- Mesma regra mantida em `corporativo.css` (serve para o editor).
+- `corporativo.head.html` ficou **sem alteração** (o style saiu de lá).
+
+## Validado (dev e **produção**;360/390/414/1366 → PROBLEMAS:0)
+- `titulo: center`, `wrap: center`, todos os6 pills `text-align: center`,
+ **deslocamento máximo do texto =0px**, **zero estouro**;
+- fonte12px só ≤374px;13px em390/414 ✓;
+- os parágrafos acima continuam **alinhados à esquerda** (não mexidos);
+- style presente no HTML servido; páginas →200.
+- Commit `bcfa25e`; conferi `tail=1 / head=0` **dentro do container**.
+
 # Onde paramos — 23/09/2026 (pisos no celular: capa própria, sem "torto")
 
 ## Reclamação da cliente
