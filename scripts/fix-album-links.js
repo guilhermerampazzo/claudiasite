@@ -5,12 +5,14 @@
  *
  * 1) colapsa âncoras <a> aninhadas duplicadas (fonte do xadrez/coluna vazia);
  * 2) embrulha as capas de álbum que ficaram sem <a href> (Up to Date e
- *    Stories of Life não abriam de dentro da página de categorias).
+ *    Stories of Life não abriam de dentro da página de categorias);
+ * 3) religa os <article class="prod-card"> em <a href="/produto/..."> usando o
+ *    índice do catálogo (só se o produto existir).
  *
  * Uso (dentro do container web, que enxerga o db pelo DATABASE_URL):
- *   docker exec -i claudiasite_site_10215-web-1 node - < scripts/fix-album-links.js
+ *   docker exec -w /app claudiasite_site_10215-web-1 node scripts/fix-album-links.js
  * dry-run (não grava):
- *   docker exec -i -e FIX_DRY=1 claudiasite_site_10215-web-1 node - < scripts/fix-album-links.js
+ *   docker exec -w /app -e FIX_DRY=1 claudiasite_site_10215-web-1 node scripts/fix-album-links.js
  */
 
 const { fixAlbumHtml, buildProductIndex } = await import(new URL("../lib/html-utils.js", import.meta.url).href);
@@ -32,7 +34,7 @@ let produtos = 0;
 let produtosPulados = 0;
 
 for (const row of res.rows) {
-  const r = fixAlbumHtml(row.html, { productSlugs });
+  const r = fixAlbumHtml(row.html, { findProductHref });
   if (!r.mudou) continue;
   const detalhes = [];
   if (r.aninhadas) { detalhes.push("aninhadas"); aninhadas += 1; }
@@ -49,7 +51,7 @@ for (const row of res.rows) {
 console.log(JSON.stringify({
   dry,
   paginasLidas: res.rows.length,
-  catalogo: productSlugs.size,
+  catalogo: prods.rows.length,
   alteradas: relatorio.length,
   aninhadasCorrigidas: aninhadas,
   capasEmbrulhadas: capas,
