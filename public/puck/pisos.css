@@ -403,11 +403,17 @@ body { background: var(--dark); color: var(--text-light); font-family: var(--fon
    bloco de texto na tela. Os botões vão para embaixo, sob o subtítulo. */
 @media (max-width: 768px) {
   section.hero {
-    min-height: 135vw !important;
+    /* Capa MOBILE (retrato1024x1536) — montada por scripts/monta-capa-mobile.mjs
+       porque Pisos é a única página sem arte retrato em capasnovass/celular/.
+       Com a capa16:9 aqui dava para ter OU o título inteiro OU os botões
+       abaixo do texto (medido em360-430px): a janela do cover era de667px e
+       o título tem~765px; e o subtítulo termina em77% da altura. */
+    background-image: url('/uploads/capas/mobile/pisos.jpg') !important;
+    min-height: 150vw !important;   /*1024/1536 => capa inteira, zero corte */
     justify-content: flex-end !important;
     padding-bottom: 16px !important;
     background-size: cover !important;
-    background-position: 57.5% 50% !important;
+    background-position: center center !important;
     background-repeat: no-repeat !important;
   }
   section.hero .hero-actions { margin-top: 0 !important; }
