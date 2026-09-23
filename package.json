@@ -9,7 +9,8 @@
     "start": "next start -H 0.0.0.0",
     "db:seed": "node scripts/seed.js",
     "catalog:sync": "node scripts/sync-catalog.js",
-    "navbar:css": "node scripts/gen-navbar-css.mjs"
+    "navbar:css": "node scripts/gen-navbar-css.mjs",
+    "capa:paisagem": "node scripts/monta-capa-paisagem.mjs"
   },
   "dependencies": {
     "@measured/puck": "latest",

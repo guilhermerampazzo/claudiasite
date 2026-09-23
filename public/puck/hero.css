@@ -1,0 +1,40 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   HERO (banner de primeira seção) — DESKTOP
+   A capa é1600x900 (16:9) com o título/subtítulo PINTADOS na imagem e os
+   botões em HTML por cima. Antes o hero tinha altura fixa (720px / 520px):
+     • largura menor que1,78x a altura  → cover esticava a foto e o texto
+       pintado ficava "grande demais"/cortado (e piorava com zoom do navegador
+       ou janela estreita — o caso da cliente);
+     • largura maior                    → cortava topo/baixo e os botões HTML
+       caíam em cima do texto pintado.
+   Com a ALTURA seguindo a LARGURA na proporção da capa, o cover nunca corta
+   nada, em nenhuma largura. Os botões descem para o rodapé da capa (abaixo
+   do texto). Regra só a partir de769px — o mobile já foi calibrado antes.
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (min-width: 769px) {
+  /* capa sempre inteira (16:9) */
+  body .hero,
+  body section.hero {
+    aspect-ratio: 16 / 9 !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    /* conteúdo colado no rodapé => botão abaixo do texto pintado */
+    justify-content: flex-end !important;
+    padding-bottom: 7% !important;
+  }
+  /* sem essa margem os botões sobem para o meio do texto */
+  body .hero .hero-actions { margin-top: 0 !important; }
+
+  /* ── Home (v2): mantém o conteúdo centralizado (logo em cima, botões embaixo)
+        e encolhe o que não cabe na proporção. Os tamanhos viram %/vw para
+        escalar junto com a largura (zoom do navegador não quebra mais). ── */
+  .ce-puck-scope .hero { justify-content: center !important; padding-bottom: 0 !important; }
+  .ce-puck-scope .hero .hero-actions { margin-top: 15% !important; }
+  .ce-puck-scope .hero-content { padding: 3.5% var(--pad, 20px) !important; }
+  /* o logo vinha com min(560px,86vw) — em telas de~1000px ele ficava com560px
+     fixos e estourava a altura da capa; aqui ele acompanha a largura. */
+  .ce-puck-scope .hero-content img { width: min(560px, 41vw) !important; height: auto !important; }
+  .ce-puck-scope .hero-respiro { height: 3vw !important; }
+}
