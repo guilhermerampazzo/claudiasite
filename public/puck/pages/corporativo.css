@@ -2307,3 +2307,17 @@ body{font-family:'Montserrat',sans-serif;}
 .navbar-search-empty,.navbar-search-hint{padding:16px;font-size:11px;color:#a89370;text-align:center;}
 @media(max-width:1024px){.navbar-search-form{right:auto;left:0;}}
 @media(max-width:768px){.navbar-search-form{position:fixed;top:auto;left:12px;right:12px;width:auto;}}
+
+/* ── "Segmentos Atendidos": texto centralizado (pedido da cliente) ────────
+   O bloco vinha alinhado à esquerda (mobile trazia .intro-pill com
+   text-align:left !important e largura total). Agora: título centralizado
+   (com a barrinha dourada na frente) e cada segmento centralizado na sua
+   linha; no desktop as pills centralizam no wrap da coluna. */
+.intro-segs { text-align: center !important; }
+.intro-segs-title { justify-content: center !important; text-align: center !important; }
+.intro-pills { justify-content: center !important; }
+.intro-pill { text-align: center !important; }
+@media (max-width: 768px) {
+  .intro-segs-title { justify-content: center !important; }
+  .intro-pill { text-align: center !important; }
+}

@@ -631,6 +631,27 @@ img[src*="pio-xi-placeholder"] { background: transparent !important; border: non
   function boot(){ fix(); setTimeout(fix,300); setTimeout(fix,1200); }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', boot); else boot();
   window.addEventListener('load', boot);
-})();</script></body></html>
+})();</script><style id="ce-intro-segs-centralizado">
+/* ── "Segmentos Atendidos" centralizado (pedido da cliente) ───────────────
+   O CSS da página vem INLINE (public/puck/pages/corporativo.css nem é
+   linkado no ar) e as regras vencedoras eram .intro-pill{ text-align:left
+   !important } — uma no head e a "mobile-extra" DEPOIS do </head> (no
+   corpo). Este bloco vai no FIM do tail.html => último do documento =>
+   decide todos os empates. */
+.intro-segs { text-align: center !important; }
+.intro-segs-title { justify-content: center !important; text-align: center !important; }
+.intro-pills { justify-content: center !important; }
+.intro-pill { text-align: center !important; }
+@media (max-width: 768px) {
+  .intro-segs-title { justify-content: center !important; }
+  .intro-pill { text-align: center !important; }
+}
+/* Telas de360px: a linha mais longa ("Restaurantes e espaços comerciais")
+   estourava7px com13px => fonte12px só nessa faixa. */
+@media (max-width: 374px) {
+  .intro-pill { font-size: 12px !important; letter-spacing: 2px !important; }
+}
+</style>
+</body></html>
 
 
