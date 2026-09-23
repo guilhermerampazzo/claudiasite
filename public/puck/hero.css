@@ -27,14 +27,40 @@
   /* sem essa margem os botões sobem para o meio do texto */
   body .hero .hero-actions { margin-top: 0 !important; }
 
-  /* ── Home (v2): mantém o conteúdo centralizado (logo em cima, botões embaixo)
-        e encolhe o que não cabe na proporção. Os tamanhos viram %/vw para
-        escalar junto com a largura (zoom do navegador não quebra mais). ── */
-  .ce-puck-scope .hero { justify-content: center !important; padding-bottom: 0 !important; }
-  .ce-puck-scope .hero .hero-actions { margin-top: 15% !important; }
-  .ce-puck-scope .hero-content { padding: 3.5% var(--pad, 20px) !important; }
-  /* o logo vinha com min(560px,86vw) — em telas de~1000px ele ficava com560px
-     fixos e estourava a altura da capa; aqui ele acompanha a largura. */
-  .ce-puck-scope .hero-content img { width: min(560px, 41vw) !important; height: auto !important; }
-  .ce-puck-scope .hero-respiro { height: 3vw !important; }
+  /* ── Home (v2): a capa desktop NÃO tem logo pintado — só o texto
+        (46%..63% da altura da foto) e a linha embaixo dele. O logo e os
+        botões são HTML e estavam sendo centralizados POR CIMA do texto
+        (logo em30%..54% = colisão) e o hero ficava com a altura inteira
+        da proporção16:9 (945px numa tela de950).
+        Receita: altura = até o FIM do texto pintado (35.5vw) +96px para os
+        botões; foto ancorada no topo (corta só o chão); logo colado no topo
+        e botões no rodapé => folga constante de23px e nada sobrepõe. ── */
+  .ce-puck-scope .hero {
+    aspect-ratio: auto !important;
+    height: calc(35.5vw + 96px) !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    padding-top: 40px !important;
+    padding-bottom: 0 !important;
+    justify-content: stretch !important;
+    background-position: 50% 0 !important;
+  }
+  .ce-puck-scope .hero .hero-bg {
+    background-position: 50% 0 !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
+  .ce-puck-scope .hero-content {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    padding: 0 var(--pad, 20px) 20px !important;
+    max-width: none !important;
+  }
+  .ce-puck-scope .hero .hero-actions { margin-top: 0 !important; }
+  /* largura calculada para o logo terminar SEMPRE acima do texto pintado
+     (espaço acima dele = 0.25875W − padding40 − folga10; altura do logo =40% da largura) */
+  .ce-puck-scope .hero-content img { width: min(520px, calc(64.7vw - 125px)) !important; height: auto !important; }
+  .ce-puck-scope .hero-respiro { display: none !important; }
 }
