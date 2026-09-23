@@ -1,3 +1,39 @@
+# Onde paramos — 23/09/2026 (banners novos da cliente)
+
+## O que chegou em `capasnovass/` (23/09)
+| Arquivo | Dimensão | Destino |
+|---|---|---|
+| `computador/papel de parede.jpg` | 1600×900 | `uploads/capas/papel-parede.jpg` (substitui a composição automática) |
+| `computador/persianas.jpg` | 1600×900 | `uploads/capas/persiana.jpg` (idem) |
+| `celular/home.jpg` | **900×1600 (9:16)** | `uploads/capas/mobile/home.jpg` |
+
+## Ajustes necessários junto
+1. **Proporção da capa mobile da Home mudou** (2:3 → 9:16): `blocks.css`
+   `min-height` do hero mobile `150vw` → **`177.78vw`** (senão o cover cortava
+  16% da altura). Validado em360/390/414: hero = capa, **100%/100%**.
+2. **Cache immutable** (`max-age=1 ano`) → troca de URL em TODAS as
+   referências: `?v=…20260921/20260923` → **`?v=20260923b`** em
+   `papeis-de-parede.json`, `persianas.json`, **`initial-home.json`** (o dado
+   salvo manda, não o `defaultProps` do config.js), `config.js` e thumbs do
+   `registry.js`.
+
+## Operação
+- Imagens trocadas **localmente** e **no volume docker da VPS**
+  (`claudiasite_site_10215_uploads/_data/capas/…`) — md5 igual ao local.
+- Backups: `/www/backup/capa-papel-parede-composta_*`, `capa-persiana-composta_*`
+  e `capa-home-mobile-antiga_*` (20260923_130458).
+- Commit `d800adc`; **atenção**: o primeiro deploy saiu em paralelo com o
+  push e a VPS ficou no commit antigo — refiz em sequência (HEAD `d800adc`,
+  container com os3 arquivos novos).
+
+## Verificado no ar
+- refs `?v=20260923b` presentes em `/`, `/papeis-de-parede`, `/persianas`;
+  `blocks.css` com `177.78vw`;6 páginas →200.
+- Playwright (produto): home360/390/414 → hero `360x640 /390x693 /414x736`
+  com capa `900x1600` → **largVis/altVis =100%**, sem transbordo;
+  papéis e persianas em1366 → capa `1600x900` → **100%/100%**;
+  `valida-hero` (7 páginas ×1024/1366/1920) → **PROBLEMAS:0**.
+
 # Onde paramos — 23/09/2026 (hero desktop: capa sem corte + botão sob o texto)
 
 ## Reclamação da cliente (prints do computador dela)
