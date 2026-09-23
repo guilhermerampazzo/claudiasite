@@ -394,3 +394,21 @@ body { background: var(--dark); color: var(--text-light); font-family: var(--fon
 }
 @media (min-width: 1025px) { .navbar { height: 104px; min-height: 104px; } }
 @media (min-width: 769px) and (max-width: 1024px) { .navbar { height: 92px; min-height: 92px; } }
+
+/* ── HERO MOBILE: a capa (1600x900) tem "Pisos" + subtítulo pintados ──────
+   Antes o hero tinha ~726px de altura: o cover mostrava só ~48% da largura
+   da foto (cortando o texto dos dois lados) e o botão caía em cima do
+   subtítulo. Com 135vw a janela visível fica em ~690px da foto — sempre,
+   em qualquer largura — então o texto aparece inteiro; 57,5% centraliza o
+   bloco de texto na tela. Os botões vão para embaixo, sob o subtítulo. */
+@media (max-width: 768px) {
+  section.hero {
+    min-height: 135vw !important;
+    justify-content: flex-end !important;
+    padding-bottom: 16px !important;
+    background-size: cover !important;
+    background-position: 57.5% 50% !important;
+    background-repeat: no-repeat !important;
+  }
+  section.hero .hero-actions { margin-top: 0 !important; }
+}

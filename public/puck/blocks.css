@@ -80,10 +80,8 @@ html,body{margin:0;padding:0;}
   overflow: hidden; padding-top: 70px;
 }
 .ce-puck-scope .hero-bg { position: absolute; inset: 0; background: var(--dark-card); background-size: cover; background-position: center; }
-.ce-puck-scope .hero-bg::after {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(to bottom, rgba(28,24,16,.55) 0%, rgba(28,24,16,.70) 100%);
-}
+/* Escurecimento removido a pedido da cliente ("não quero esse preto por cima
+   da imagem"). O texto da home já vem pintado na capa. */
 .ce-puck-scope .hero-content {
   position: relative; z-index: 1;
   display: flex; flex-direction: column; align-items: center; text-align: center;
@@ -249,7 +247,13 @@ html,body{margin:0;padding:0;}
   .ce-puck-scope { --pad: 20px; }
   .ce-puck-scope .navbar-nav { display: none; }
   .ce-puck-scope .hero-title { font-size: 48px; }
-  .ce-puck-scope .hero-content { padding: 60px var(--pad); }
+  /* Capa mobile é retrato (1024x1536 = 1,5). Na proporção certa o cover não
+     corta os lados => o texto pintado na capa aparece inteiro. */
+  .ce-puck-scope .hero { min-height: 150vw !important; }
+  .ce-puck-scope .hero-content { padding: 40px var(--pad); }
+  /* Sem os 280px do global: senão o hero fica grande demais e a próxima
+   seção sai da primeira dobra. */
+  .ce-puck-scope .hero .hero-actions { margin-top: 24px !important; }
   .ce-puck-scope .hero-actions { flex-direction: column; align-items: stretch; }
   .ce-puck-scope .hero-actions .btn-primary, .ce-puck-scope .hero-actions .btn-ghost { justify-content: center; width: 100%; }
   .ce-puck-scope .cat-grid { grid-template-columns: 1fr 1fr; }

@@ -1,3 +1,51 @@
+# Onde paramos — 22/09/2026 (capas da home e pisos no mobile)
+
+## Reclamações da cliente (prints de celular)
+1. **Pisos:** o botão "Ver por tipo" aparecia **por cima** do subtítulo.
+2. **Home:** o texto da capa **cortava** nos dois lados e o hero estava **grande demais**.
+3. **Home:** tirar o **preto com opacity** que ficava por cima da imagem.
+
+## Causa (reproduzida com Playwright a 390/360 no ar = v2)
+- Os títulos/subtítulos das capas estão **pintados na imagem**, não no HTML
+  (home: `showTitle/showSub = "no"` em `initial-home.json`; nada de `<h1>` no DOM).
+- **Home:** o `<style>` mobile aplicava a capa retrato
+  (`/uploads/capas/mobile/home.jpg`, 1024x1536) em `.hero`, mas a camada visível
+  é a filha `.hero-bg` (`inset:0`) com a capa **paisagem** 1600x900 → `cover` em
+  390x809 cortava os lados e escondia a capa mobile. Hero ainda ganhava
+  `margin-top:min(30vh,280px)` (global) + spacer de 96px = 809px de altura.
+  Escuro: `.hero-bg::after` = `linear-gradient(rgba(28,24,16,.55) → .70)`.
+- **Pisos:** **não existe capa mobile** (nem em `uploads/capas/mobile/`, nem em
+  `capasnovass/celular/` — as outras 6 páginas têm) → capa 1600x900 dentro de um
+  hero de 726px mostrava só ~48% da largura da foto (texto cortado dos dois lados)
+  e o botão, empurrado 280px, caía em cima do subtítulo.
+
+## Correções (mobile ≤768px; desktop intacto, exceto o véu escuro)
+- `lib/puck/config.js` — o `<style>` mobile agora mira `.hero, .hero .hero-bg`
+  (a camada que realmente pinta), com `background-repeat:no-repeat`.
+- `public/puck/blocks.css` — remove `.hero-bg::after` (preto);
+  `min-height:150vw` = proporção exata da capa retrato (1024/1536) → `cover` não
+  corta nada; `hero-actions margin-top:24px` (vence os 280px do global por
+  especificidade: `.ce-puck-scope .hero .hero-actions`); `hero-content padding:40px`.
+- `public/puck/pisos.css` — bloco mobile novo: `section.hero{min-height:135vw;
+  justify-content:flex-end; background-position:57.5% 50%; padding-bottom:16px}`
+  + `section.hero .hero-actions{margin-top:0}` → a janela visível da foto fica em
+  ~690px **em qualquer largura** (o texto inteiro cabe) e os botões descem para
+  **depois** do subtítulo.
+
+## Validado (dev local `:3111` + Playwright 390 / 360 / 1280)
+- Home 390: hero 809 → **585px**, texto inteiro, sem véu escuro, botões dentro.
+- Pisos 390/360: texto inteiro, botão **abaixo** do subtítulo (hero 726 → 527/486).
+- Desktop 1280: alturas inalteradas (home 891 / pisos 720); só perdeu o véu escuro.
+- Grep: nenhuma outra camada escura sobrou nos CSS do v2 (os dois `rgba(28,24,16,.92)`
+  que restam são a navbar).
+
+## Pendências
+- Commit + push + deploy VPS (`build web` + `up -d web`) — nada publicado ainda.
+- **Falta asset:** capa **mobile** de Pisos (retrato 1024x1536, como as outras 6);
+  hoje resolve-se com o ajuste de altura/posição, mas o ideal é a capa nova.
+- Contraste: sem o véu, o texto claro da capa da home fica sobre foto clara — se a
+  cliente achar fraco, dá para por um véu bem leve (~10%) só no desktop.
+
 # Onde paramos — 21/09/2026 (novo editor v2 + 7 páginas com fidelidade 0px)
 
 ## Objetivo
