@@ -1,3 +1,65 @@
+# Onde paramos — 23/09/2026 (hero desktop: capa sem corte + botão sob o texto)
+
+## Reclamação da cliente (prints do computador dela)
+"Nos heros (primeira seção) a imagem não está encaixando direito, ficando
+muita grande; outras o botão está ficando por cima."
+
+## Causa (medida no ar, ANTES — e **não** era a mudança de cabeçalho:
+teste ligando/desligando o `navbar.css` deu o mesmo hero em12 casos)
+| Página | Capa usada no desktop | Altura visível1366 /1920 |
+|---|---|---|
+| **papéis** | **retrato1024x1536** (errada) | 36% / **27%** → título "Papéis de Parede" cortado, texto gigante |
+| **persianas** | **retrato1024x1536** (errada) | 35% / **25%** → idem |
+| **corporativo** | paisagem mas hero fixo em**520px** | 68% / **48%** → botão em cima do texto |
+| pisos, cortinas, arquitetos | paisagem, hero fixo **720px** |94% / **67%** → botão sobre o subtítulo |
+| home | paisagem, altura por conteúdo |100% /83% |
+
+Raiz: `background-size:cover` com **altura fixa em px** — quando a tela é mais
+larga (1920) cortava topo/baixo e os botões HTML caíam sobre o texto pintado;
+quando a "largura CSS" encolhia (zoom do navegador) esticava a foto e o texto
+pintado ficava enorme/cortado. E faltavam **capas paisagem de papéis e
+persianas** (`capasnovass/computador/` só tem5).
+
+## O que foi feito
+1. **`scripts/monta-capa-paisagem.mjs`** (`npm run capa:paisagem`): compõe
+   capa **1600x900** a partir da retrato — fundo = mesma foto em
+   cover+blur+véu escuro, frente = capa inteira ajustada pela altura (**nada
+   cortado**). Gerou as capas de `papel-parede` e `persiana`.
+   - `uploads/capas/*.jpg` trocados (fora do git); na VPS o `uploads` é
+     **volume docker** (`claudiasite_site_10215_uploads/_data/capas/`), com
+     backup em `/www/backup/capa-*-retrato_20260923_123028.jpg`.
+   - `?v=20260921 → 20260923` nas2 páginas congeladas (cache é immutable).
+2. **`public/puck/hero.css`** (só `min-width:769px`, mobile intacto):
+   - `aspect-ratio:16/9` + `min-height:0` → a altura segue a largura ⇒ o
+     `cover` **nunca corta** (janela estreita, zoom do navegador,1920…);
+   - `justify-content:flex-end` + `padding-bottom:7%` (escala com a largura) ⇒
+     os **botões descem para o rodapé da capa, sempre abaixo do texto pintado**;
+   - home mantém conteúdo centralizado com tamanhos em `%`/`vw`
+     (logo `min(560px,41vw)`, respiro `3vw`, margem dos botões `15%`) para
+     caber na proporção — antes transbordava em911/1024.
+   - injetado em `/`, `/pisos`,5 `*.head.html` e no `renderHtml` (depois do
+     `navbar.css`); no v2 o respiro ganhou a classe `hero-respiro`.
+
+## Validado
+- **Local,6 larguras ×7 páginas** (600/911/1024/1366/1920/2560): de911 a2560,
+  `largVis/altVis =100%`, `transborda=false`, botões a69–84% da altura.
+- **Produção,4 larguras ×7 páginas**: idem (100%/sem transbordo, botões
+  78–84%). `hero.css` 200 + presente nas4 páginas testadas; capas novas
+  servindo121407/121363 bytes com `?v=20260923`.
+- **Visual**: recorte da zona inferior em1920 (arquitetos/corporativo/cortinas)
+  confirma botão **abaixo** do texto com folga; capas compostas de papéis e
+  persianas com título/subtítulo inteiros.
+- Casa `home` a2560 os botões ficam a65% (folga pequena mas sem sobreposição)
+  — único caso apertado; não afeta1366/1920.
+- Commits: `06805ab` (+docs). VPS `web` rebuildada, db intacto; backups das
+  capas antigas em `/www/backup/`.
+
+## Pendência (arte)
+Ideal: pedir à designer as **capas paisagem1600x900 de Papéis de Parede e
+Persianas** (as outras5 existem em `capasnovass/computador/`). Enquanto isso
+vale a composição automática (fundo borrado) — `npm run capa:paisagem
+<retrato> <saida>`.
+
 # Onde paramos — 23/09/2026 (cabeçalho único em todo o site)
 
 ## Pedido da cliente
