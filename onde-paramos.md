@@ -1,3 +1,41 @@
+# Onde paramos — 23/09/2026 (home: hero menor e sem sobreposição)
+
+## Reclamação da cliente (print dela)
+"Na home o **hero está muito grande** e o **texto está sendo sobreposto** pela
+logo, textos e botões."
+
+## Causa (medido com Playwright + capa aberta lado a lado)
+- A capa **desktop** da home tem só o **texto pintado em46%..63% da altura da
+  foto** (mais a linha) — **sem logo** (o logo é HTML).
+- O hero estava com `aspect-ratio:16/9` ⇒ altura **inteira** da proporção
+ (**945px** numa tela de950 ⇒ cortava a dobra = "muito grande") e o conteúdo
+ centralizado colocava o **logo HTML em30%..54%** ⇒ por cima do texto pintado
+ (o "fantasma" que ela viu) e os **botões em72%** ⇒ por cima da linha.
+- (Mobile estava bom: logo27..46%, texto~52..62%, botões66%.)
+
+## Correção (`public/puck/hero.css`, só `min-width:769px`)
+Receita com a foto **ancorada no topo** (corta só o chão, nunca o texto):
+| Regra | Por quê |
+|---|---|
+| `height: calc(35.5vw + 96px)` | `35.5vw =0.63×0.5625W` = **fim exato do texto pintado**; +96 = espaço dos botões |
+| `background-position:50% 0` | corta só o rodapé da foto (sofá/mesa) |
+| `.hero-content{flex:1; justify-content:space-between}` | logo **colado no topo**, botões **colados no rodapé** |
+| `padding-top:40` / `padding-bottom:20` | ancoras fixas |
+| logo `min(520px, calc(64.7vw -125px))` | largura **calculada** para terminar sempre acima do texto |
+| `.hero-respiro{display:none}` | o respiro de96px não cabe na composição |
+
+## Validado (dev:769/1024/1366/1680/1920/2560 + mobile390 → **PROBLEMAS:0**;
+produção:1024/1366/1680/1920 +390 → **PROBLEMAS:0**)
+- altura exata (`0.355W+96`) em todas as larguras;
+- **folga do logo** =10 (769) /17 (1024) /105 (1366) /187 (1680) /249 (1920) px;
+- **folga dos botões =25..26px constante** (abaixo da linha pintada);
+- zero transbordo e **hero cabe na primeira dobra** (a seção "Escolha o que"
+  aparece sem rolar);
+- **mobile intacto** (hero693 =177,78vw, sem corte);
+- conferido visualmente lado a lado com a capa.
+- Commit `f08095d`; conferi `35.5vw`/`64.7vw` **dentro do container** antes de
+  validar (lição do lote anterior).
+
 # Onde paramos — 23/09/2026 (logos "Quem confia" padronizadas)
 
 ## Pedido da cliente
