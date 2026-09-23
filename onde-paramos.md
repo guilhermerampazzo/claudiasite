@@ -1,3 +1,52 @@
+# Onde paramos — 23/09/2026 (logos "Quem confia" padronizadas)
+
+## Pedido da cliente
+Na home, seção **"Quem confia na Casa Estampa"**: tamanho das logos
+**padronizado**, todas **sem fundo** e na cor **branca** — igual ao que já
+fizemos no **Corporativo**.
+
+## Como estava (medido no ar, antes)
+- `height:140px` mas imagens **não aparadas** (360×360 com margens
+  transparentes) → tamanhos visuais bem diferentes (10% a33% de opacidade);
+- `filter: grayscale(.35)` + `opacity:.85` → logo **colorida/acinzentada**, não
+  branca;
+- **Fairmont com placa branca** (`chip:"yes"` → `background:#fff; padding:18`)
+  → o "fundo" que a cliente reclamou.
+
+## Padrão de referência (medido no Corporativo)
+- imagens aparadas em `assets/scraped/home/norm/` (RGBA, fundo transparente);
+- **altura fixa:100px (desktop) /74px (mobile)**, `width:auto`,
+  `object-fit:contain`;
+- `filter: brightness(0) invert(1)` (branca), `opacity:1`,
+  caixa sem `background`/borda/padding.
+
+## O que foi feito
+- `scripts/normaliza-logo.mjs`: recorta pelo bounding box do alfa → criou
+  **`norm/gafisa.png` (275×87)** e **`norm/cachoeiras.png` (311×123)** (faltavam;
+  as outras4 já existiam por serem do Corporativo).
+- `initial-home.json`: as6 logos passam a apontar para `norm/*`; **removido**
+  o `"chip": "yes"` do Fairmont.
+- `lib/puck/config.js`: componente `Clientes` sem mais a placa branca
+  (removido o `style` do chip **e** o campo `chip` do editor).
+- `public/puck/blocks.css`: `.clientes-grid img` → altura **100px**,
+  `filter: brightness(0) invert(1)`, `opacity:1`,
+  `background:transparent; padding:0; border:none` + **74px** no mobile.
+
+## Validado em produção (Playwright1366 e390)
+- **HOME = REFERÊNCIA: SIM ✅** nos dois tamanhos — mesmas alturas
+ (`100px`/`74px`), mesmo filtro, fundo `rgba(0,0,0,0)`, `opacity:1`;
+-6 logos, **zero imagem quebrada**, larguras162–316px (desktop) e120–234px
+ (mobile) → células padronizadas;
+- HTML sem `chip`; `blocks.css` com o filtro novo; as6 `norm/*` → **200**;
+- `PROBLEMAS: 0`.
+
+## Cuidado com o build (aconteceu nesse lote)
+O **1º build** da VPS saiu com código antigo (fetch/build antes de o GitHub
+confirmar o ref). Sintomas: `norm/gafisa.png`→404 e HTML/CSS velhos.
+Corrigi com `git fetch origin main` explícito + conferi **dentro do container**
+(`ls` do `norm/`, `grep` do CSS/JSON) antes de validar. Sempre conferir o
+arquivo **no container**, não só o HEAD do repo.
+
 # Onde paramos — 23/09/2026 (banners novos da cliente)
 
 ## O que chegou em `capasnovass/` (23/09)
