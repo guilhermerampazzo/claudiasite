@@ -7,6 +7,17 @@
 | `computador/persianas.jpg` | 1600×900 | `uploads/capas/persiana.jpg` (idem) |
 | `celular/home.jpg` | **900×1600 (9:16)** | `uploads/capas/mobile/home.jpg` |
 
+## Conferência por md5 (23/09) — nada mais pendente
+**13/13 pares** entre `capasnovass/`, `uploads/` local e o **volume Docker da
+VPS** estão byte a byte iguais. Em particular, `celular/papel de parede.jpg` e
+`celular/persianas.jpg` (de21/09) são **idênticos** aos
+`uploads/capas/mobile/papeis-de-parede.jpg` e `persianas.jpg` já publicados —
+a referência `?v=20260921` deles segue **correta** (conteúdo inalterado desde
+que aquela URL foi ao ar; trocar o `?v` sem mudar a imagem seria refetch à toa).
+Ou seja: os3 arquivos novos de hoje já estão no ar e o resto não precisa de
+troca. Se chegar arte nova, é seguir o mesmo caminho (trocar arquivo +
+`?v=` novo em todas as referências).
+
 ## Ajustes necessários junto
 1. **Proporção da capa mobile da Home mudou** (2:3 → 9:16): `blocks.css`
    `min-height` do hero mobile `150vw` → **`177.78vw`** (senão o cover cortava
