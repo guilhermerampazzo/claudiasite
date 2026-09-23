@@ -1,3 +1,56 @@
+# Onde paramos — 23/09/2026 (cabeçalho único em todo o site)
+
+## Pedido da cliente
+"Cada página está com um cabeçalho diferente — precisava que todas fossem o
+mesmo cabeçalho (o da home)."
+
+## O que existia (medido no ar,4 variantes)
+| Origem | Divergências |
+|---|---|
+| `/` e `/pisos` (v2 React) | referência… mas o **pisos não tinha o ícone do WhatsApp** no botão |
+| 5 páginas congeladas (`*.head.html`) | barra **social** + **busca** no topo, texto do botão **branco** (no corporativo o botão aparecia **mostarda** no desktop) |
+| páginas do banco (álbuns, produtos, catálogo, categorias) | header **190px** no mobile (vs130), **sem a linha telefone/Loja Virtual**, ícone do logo44/58px, social + busca |
+
+## Como ficou — fonte ÚNICA
+- **`lib/navbar.js`** — `NAVBAR_HTML` (o nav da home, com `data-ce-canonical`),
+  `NAVBAR_INNER`, `NAVBAR_CSS_LINK` e `bindNavbarToggle` (usa `onclick=`, não
+  `addEventListener`, senão o StrictMode duplicava o handler).
+- **`public/puck/navbar.css`** — grade + cores da home; gerado por
+  `npm run navbar:css` (`scripts/gen-navbar-css.mjs`) a partir de
+  `global.css` + `blocks.css`, **carregado por último em toda página**.
+- Ligações: `/` e `/pisos` (React, `dangerouslySetInnerHTML` **sem state** —
+  com state o React recriava os filhos e o handler/`aria` sumiam), os5
+  `*.head.html` congelados, e `lib/db.js`
+  (`getHomeHeaderHtml()` devolve o canônico; `applySiteChrome` não reescreve
+  mais o header canônico; `renderHtml` injeta o `navbar.css` após o global).
+
+## Dois problemas que apareceram na validação (e foram corrigidos)
+1. **`body.elementor-page-26152 .navbar-logo img{width:auto!important}`** no
+   `site.css` das congeladas vencia por especificidade → ícone do logo do
+   Papéis em **58px** (home:48). O `navbar.css` agora tem uma **segunda
+   passada blindada** com seletores `body .navbar …` (mais específicos).
+2. **`body{padding-top:190px}`** do CSS global continuava valendo nas páginas
+   do banco (o nav já era130) → **folga de60px** sob o cabeçalho. Agora o
+   padding acompanha a altura do header (104 /92 tablet /130 mobile).
+
+## Validado no ar (Playwright,12 páginas ×390 e1280 =24 checagens)
+- **1 único hash de markup** (`b596afc7`) nas24 → cabeçalho byte a byte igual.
+- `navH/bodyPad` =130/130 (mobile) e104/104 (desktop) em **todas**.
+- botão bege `rgb(194,165,122)` + texto escuro + ícone WhatsApp ✓
+- linha de contato: `flex` no mobile / `none` no desktop ✓
+- social e busca **ausentes** em todas ✓ ·7 itens de menu ✓ · ícone48 no
+  desktop (Papis saiu de58) ✓ · `navbar.css` carregado ✓
+- menu mobile abrindo/fechando com `aria-expanded` certo e **380px** em todas
+  (o Papéis abria com gap:16px =476px).
+- Commits: `88a9007` (unificação) + `8b8bfcf` (blindagem/padding); VPS em
+  `8b8bfcf`, `web` rebuildado, db intacto.
+
+## Observação
+Para ficar **igual à home**, saíram do cabeçalho das outras páginas: a barra
+social e a busca (a home não tem). Se quiser de volta em todas, é adicionar
+os dois blocos ao `NAVBAR_HTML` — com o `navbar.css` elas continuariam com o
+mesmo visual.
+
 # Onde paramos — 23/09/2026 (álbuns de papéis: grid + links)
 
 ## Reclamações da cliente
