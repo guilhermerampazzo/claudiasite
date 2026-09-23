@@ -249,7 +249,7 @@ html,body{margin:0;padding:0;}
   .ce-puck-scope .hero-title { font-size: 48px; }
   /* Capa mobile é retrato (1024x1536 = 1,5). Na proporção certa o cover não
      corta os lados => o texto pintado na capa aparece inteiro. */
-  .ce-puck-scope .hero { min-height: 150vw !important; }
+  .ce-puck-scope .hero { min-height: 177.78vw !important; }
   .ce-puck-scope .hero-content { padding: 40px var(--pad); }
   /* Sem os 280px do global: senão o hero fica grande demais e a próxima
    seção sai da primeira dobra. */
