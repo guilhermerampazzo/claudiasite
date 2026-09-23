@@ -1,3 +1,63 @@
+# Onde paramos — 23/09/2026 (álbuns de papéis: grid + links)
+
+## Reclamações da cliente
+1. Up to Date e "Storie of light" (= Stories of Life): **não abrem**.
+2. Absolutely Chic, Björn e Flow 3: **"só de um lado"**.
+3. Mobile: **tudo indo para a direita** (deveria ser 2 por linha).
+4. Desktop: **xadrez**, e no espaço vazio havia um álbum invisível.
+
+## Causas (todas confirmadas no ar)
+1. **`<a>` aninhadas duplicadas** no HTML dos álbuns:
+   `<a href="/produto/x"><a href="/produto/x"><article class="prod-card">…</article></a></a>`.
+   HTML não permite `<a>` dentro de `<a>` → o parser fecha a externa na hora e
+   sobra uma `<a>` **vazia** ocupando célula (37 em boho, 49 em bjorn/chic,
+   72 em flow-3, 54 em botanica). Resultado: colunas alternadas vazias no
+   desktop (xadrez) e **todos os cards na coluna 2** no mobile.
+   O "álbum invisível" que a cliente viu era exatamente essa `<a>` vazia
+   (o status bar mostrava `/produto/boho-35785`).
+2. **Capas sem link** na página de categorias: o `<img alt="Álbum Up to Date">`
+   e o de Stories of Life **não eram embrulhados em `<a href>`** — o único link
+   desses cards era o botão "Ver modelos", que é `display:none` em **todos**
+   os álbuns (padrão do layout). Clicar no card não fazia nada.
+3. (Achado na auditoria) **16 álbuns com cards de produto sem `<a href>`** —
+   clicar no papel de parede não abria o produto (up-to-date e stories também).
+
+## Correções
+- `lib/html-utils.js` — `collapseNestedAnchors`, `wrapAlbumCovers`,
+  `wrapProductCards`, `buildProductIndex` (match por **slug → nome → sufixo do
+  slug**, porque o texto do card vem sem o prefixo do WP; só aceita sufixo
+  **único** e alvo ≥ 6 chars) + `fixAlbumHtml` — todos idempotentes.
+- `lib/db.js` — `fixAlbumHtml` no pipeline do `renderHtml` (rede de segurança;
+  **não** cobre as páginas congeladas do v2, que não passam pelo render).
+- `content/original/papeis-de-parede.html` — 60 capas religadas (58 hrefs, todos
+  testados 200) + typo `Contempoâneo` → `Contemporâneo`.
+- `public/puck/pages/papeis-de-parede.json` — a página congelada é a que serve
+  `/papeis-de-parede`: +2 capas (18/18 com link). Substituição cirúrgica no texto
+  cru pra não reescrever a formatação do JSON.
+- `content/albuns/*.html` — **+2188 links de produto** em 35 arquivos (fonte do
+  reimport; sem isso um `import-albums` apagaria tudo).
+- `scripts/fix-album-links.js` — mesma correção aplicada ao banco.
+
+## Execução e deploy
+- Commits: `f43c960` (banco + render + fonte de papéis), `d4d5e12` (fontes +
+  JSON congelado), `df32b6c` (script).
+- **Backup antes de mexer no banco:** `/www/backup/pages_pre_albuns_20260923_035135.sql` (8,9M).
+- Banco: 6 páginas (âncoras + capas) e depois 18 páginas (**+1175 links de
+  produto**); reexecução em dry = `alteradas: 0` (idempotente).
+- Deploy: `git reset --hard origin/main` + `build web` + `up -d web`; db intacto.
+
+## Validado no ar (Playwright 1280/390 + crawl dos 59 álbuns)
+- **Grid:** 5 colunas no desktop / **2 por linha** no mobile, `anchorsVazios: 0`,
+  `cardsSemLink: 0` em boho, bjorn, flow-3, chic, botanica e up-to-date.
+- **Categorias:** 59/59 álbuns com card clicável, **0 capas sem link**; clique
+  real → `/up-to-date` = h1 "Álbum Up to date" e `/stories-of-life` = h1
+  "Álbum Stories of Life".
+- **591 hrefs de produto** gerados testados no ar = **todos 200**.
+
+## Pendências conhecidas (ficaram sem link de propósito — não inventamos URL)
+- `album-city-romance`: 21 produtos e `album-joy`: 1 não existem no catálogo.
+- `album-travertino`: 2 capas de seção "veja também" sem href candidato.
+
 # Onde paramos — 22/09/2026 (capas da home e pisos no mobile)
 
 ## Reclamações da cliente (prints de celular)
