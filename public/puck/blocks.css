@@ -180,7 +180,14 @@ html,body{margin:0;padding:0;}
   display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
   gap: clamp(28px, 4vw, 56px); margin-top: 40px;
 }
-.ce-puck-scope .clientes-grid img { height: 140px; width: auto; object-fit: contain; opacity: .85; filter: grayscale(.35); }
+/* Padrão igual ao da seção do Corporativo: logos APARADAS (norm/),
+   ALTURA FIXA (100px desktop /74px mobile), BRANCAS pelo filtro e sem
+   placa/fundo — a cliente pediu tamanho padronizado e todas branquinhas. */
+.ce-puck-scope .clientes-grid img {
+  height: 100px; width: auto; object-fit: contain;
+  background: transparent; padding: 0; border: none;
+  filter: brightness(0) invert(1); opacity: 1;
+}
 
 /* ── DEPOIMENTOS ── */
 .ce-puck-scope .depoimentos { padding: 100px var(--pad); background: var(--dark-warm); overflow: hidden; }
@@ -245,6 +252,7 @@ html,body{margin:0;padding:0;}
 /* ── MOBILE: o mesmo componente, 1 breakpoint ── */
 @media (max-width: 768px) {
   .ce-puck-scope { --pad: 20px; }
+  .ce-puck-scope .clientes-grid img { height: 74px; }
   .ce-puck-scope .navbar-nav { display: none; }
   .ce-puck-scope .hero-title { font-size: 48px; }
   /* Capa mobile é retrato (1024x1536 = 1,5). Na proporção certa o cover não
