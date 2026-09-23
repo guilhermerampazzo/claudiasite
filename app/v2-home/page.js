@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef } from "react";
 
 /*
  * Preview público da Home v2 — sem banco, sem login.
@@ -11,6 +11,7 @@ import { useState } from "react";
 import { Render } from "@measured/puck";
 import { puckHomeConfig } from "@/lib/puck/config";
 import initialHome from "@/lib/puck/initial-home.json";
+import { NAVBAR_INNER, bindNavbarToggle } from "@/lib/navbar";
 
 const WA = "https://api.whatsapp.com/send?phone=5521999886842";
 
@@ -25,46 +26,17 @@ const MENU = [
 ];
 
 export default function V2HomePreview() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const navRef = useRef(null);
+  useEffect(() => bindNavbarToggle(navRef.current), []);
   return (
     <>
       <style>{`*,*::before,*::after{box-sizing:border-box;}html,body{margin:0;padding:0;}`}</style>
-      <nav className={`navbar${menuOpen ? " is-menu-open" : ""}`}>
-        <a href="/" className="navbar-logo">
-          <img className="site-logo-icon" src="/assets/logo-icone.svg" alt="Casa Estampa" />
-          <img className="site-logo-lettering" src="/assets/logo-letra.svg" alt="Casa Estampa" />
-        </a>
-        <ul className="navbar-nav">
-          {MENU.map(([label, href]) => (
-            <li key={href}>
-              <a href={href}>{label}</a>
-            </li>
-          ))}
-        </ul>
-        <a href={WA} className="navbar-cta">
-          <i className="ti ti-brand-whatsapp" aria-hidden="true" /> Falar agora
-        </a>
-              <button
-          type="button"
-          className="navbar-toggle"
-          aria-label="Abrir menu"
-          aria-expanded={menuOpen}
-          aria-controls="navbar-mobile-menu"
-          onClick={() => setMenuOpen((v) => !v)}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
-        <div className="navbar-contact">
-          <a href="tel:+5521999886842">
-            <i className="ti ti-phone" aria-hidden="true" /> (21) 99988-6842
-          </a>
-          <a href="https://casaestampainteriores.lojavirtualnuvem.com.br/" target="_blank" rel="noopener noreferrer">
-            <i className="ti ti-lock" aria-hidden="true" /> Loja Virtual
-          </a>
-        </div>
-      </nav>
+      <nav
+        ref={navRef}
+        className="navbar"
+        data-ce-canonical="navbar"
+        dangerouslySetInnerHTML={{ __html: NAVBAR_INNER }}
+      />
 
       <Render config={puckHomeConfig} data={initialHome} />
 
