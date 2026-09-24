@@ -1,3 +1,40 @@
+# Onde paramos — 23/09/2026 (home: o "+" do FAQ não abria a resposta)
+
+## Reclamação da cliente
+"Notei um erro no home: o **+ não abre** das respostas das perguntas."
+
+## Diagnose (medido no navegador da produção)
+O clique **funcionava**: `aria-expanded` virava `true` e o ícone girava para
+`×` (`.faq-q.open`) — mas a **resposta ficava colapsada**, `max-height`
+computado = **0px**. Conflito de "contratos":
+
+| Regra | Valor |
+|---|---|
+| `blocks.css` `.ce-puck-scope .faq-a.open` | `max-height:300px` (sem importante) |
+| `global.css` **`.faq-item .faq-a`** | **`max-height:0 !important`** ← vence |
+| `global.css` `.faq-item.open .faq-a` | `500px !important` ← **nunca casava** |
+
+O componente React só colocava `open` em `.faq-q`/`.faq-a`; a regra que
+abre exige `.open` **no `.faq_ITEM`** — esse é o contrato do
+`buildFaqToggleScript` (que roda nas páginas do banco e já funcionava lá).
+
+## Correção (2 camadas)
+1. **`lib/puck/config.js`**: `<div class="faq-item{ open}">` → o componente
+   passa a seguir o mesmo contrato do resto do site (a regra legada passa a
+   valer e o `.faq-item.open .faq-q i` também gira o ícone).
+2. **`public/puck/blocks.css`**: backstop
+ `.ce-puck-scope .faq-item .faq-a.open { max-height:500px !important;
+   padding-bottom:18px !important }` → especificidade (0,4,0) + importante,
+   vence em **qualquer ordem** de carregamento.
+
+## Validado
+- **dev** (1366 e390): antes `alt=0/maxH=0`; clicando3 perguntas →
+ `alt41-86px`, `maxH=500px`, `aria=true`, classes `.faq-item.open` +
+ `.faq-q open` → **PROBLEMAS:0**;
+- **produção** (mesmo teste): idêntico → **PROBLEMAS:0**;
+- commit `ffd8573`; código conferido no container (comportamento muda = novo
+ código no ar); `web` rebuildada, db intacto.
+
 # Onde paramos — 23/09/2026 (corporativo: "Segmentos Atendidos" centralizado)
 
 ## Pedido da cliente
