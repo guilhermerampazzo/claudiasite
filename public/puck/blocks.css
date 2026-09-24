@@ -222,6 +222,11 @@ html,body{margin:0;padding:0;}
 .ce-puck-scope .faq-icon { font-size: 14px; color: var(--fendi); flex-shrink: 0; transition: transform .25s; display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border: 1px solid rgba(194,165,122,.5); }
 .ce-puck-scope .faq-a { font-size: 13px; color: var(--text-muted); line-height: 1.75; max-height: 0; overflow: hidden; padding: 0; }
 .ce-puck-scope .faq-a.open { max-height: 300px; padding-bottom: 20px; }
+/* O global.css traz `.faq-item .faq-a { max-height:0 !important }` (padrão do
+   script legado, que esperava a classe .open no .faq_ITEM) — como importante
+   vence especificidade, a resposta nunca abria (o "+" girava e nada aparecia).
+   Esta regra vence por especificidade (0,4,0) + importante. */
+.ce-puck-scope .faq-item .faq-a.open { max-height: 500px !important; padding-bottom: 18px !important; }
 
 /* ── CTA FINAL ── */
 .ce-puck-scope .cta-final {
