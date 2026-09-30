@@ -13,7 +13,7 @@ import { puckHomeConfig } from "@/lib/puck/config";
 import initialHome from "@/lib/puck/initial-home.json";
 import { NAVBAR_INNER, bindNavbarToggle } from "@/lib/navbar";
 
-const WA = "https://api.whatsapp.com/send?phone=5521999886842";
+const WA = "https://api.whatsapp.com/send?phone=5521964342730";
 
 const MENU = [
   ["Início", "/"],
@@ -62,7 +62,7 @@ export default function V2HomePreview() {
             <strong>Atendimento</strong>
             <a href={WA}>
               <i className="ti ti-brand-whatsapp" aria-hidden="true" />
-              Rio de Janeiro · (21) 99988-6842
+              Rio de Janeiro · (21) 96434-2730
             </a>
             <span>casaestampa.com</span>
             <div className="ce-footer-address">
