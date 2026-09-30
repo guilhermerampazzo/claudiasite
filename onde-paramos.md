@@ -1,3 +1,31 @@
+# Onde paramos — 30/09/2026 (editor v2: clique-para-editar nas congeladas + upload de imagem)
+
+## Pedidos
+1. Papéis, cortinas, persianas, arquitetos e corporativo mostravam só CÓDIGO no
+   editor (cada uma é 1 bloco de HTML de 350–670KB; só arquitetos tem 8 seções).
+2. Imagens pediam URL/caminho; cliente quer UPLOAD. Carrosséis precisam de "adicionar mais".
+
+## O que foi feito (commit deste lote)
+- `lib/puck/fields.js` (novo): `ImagemField` — preview + "Enviar imagem"
+  (POST /api/uploads, login de admin) + campo URL mantido; `imagemField(label)`.
+  Trocados todos os campos de imagem: home (`config.js`: bgImage, bgImageMobile,
+  logoImage, photo dos cards, logos, photos do Porquê) e pisos (`pisos.js`:
+  bgImage, photos do Mostruário e da Galeria). Listas do Puck (fotos, logos,
+  perguntas, depoimentos) já têm + adicionar / excluir / reordenar nativo.
+- `lib/puck/frozen.js`: `Secao` agora rende `SecaoEditavel` no canvas
+  (`editMode`): clique numa imagem → troca foto + alt; texto simples → edita
+  texto (+ destino do botão se houver link pai); link/botão → destino (+ texto
+  se simples). Aplica via `dispatch setData` (entra no histórico do Puck e no
+  rascunho localStorage). Elemento com formatação interna → avisa e indica o
+  HTML avançado. No `Render`/site a saída continua o HTML exato (sem editor).
+- Hint da toolbar atualizado nas duas situações.
+
+## Publicação (fluxo inalterado)
+Editor salva rascunho no navegador → Exportar JSON → copiar para
+`public/puck/pages/<slug>.json` (congeladas) ou `lib/puck/initial-*.json` →
+commit + `build web` + `up -d web` (só projeto claudiasite).
+
+---
 # Onde paramos — 23/09/2026 (home: o "+" do FAQ não abria a resposta)
 
 ## Reclamação da cliente

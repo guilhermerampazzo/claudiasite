@@ -110,8 +110,8 @@ export default function AdminV2Slug() {
           <span className="v2-hint">
             {status ||
               (page.frozen
-                ? "Página preservada 1:1 do site. Selecione uma seção para ver/editar o conteúdo (avançado)."
-                : "Edite à esquerda: textos/imagens/links. Estrutura travada: não quebra celular nem PC.")}
+                ? "Clique num texto, botão ou imagem da página para editar. Para trocar fotos, use “Enviar imagem”. O resto segue igual ao ar."
+                : "Edite à esquerda: textos/imagens/links. Estrutura travada: não quebra celular nem PC. Nas listas (fotos, logos, perguntas), use + para adicionar itens.")}
           </span>
         </div>
         <div className="v2-actions">
